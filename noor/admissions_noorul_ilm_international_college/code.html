@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admissions | Noorul Ilm International College</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-surface-variant": "#534344",
+                    "tertiary": "#191919",
+                    "surface-container": "#efeee9",
+                    "surface-container-highest": "#e3e3de",
+                    "ink-black": "#070707",
+                    "surface-container-high": "#e9e8e3",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#d8c1c3",
+                    "background": "#faf9f4",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "academic-gold": "#D3BC7C",
+                    "on-primary-container": "#d37b89",
+                    "secondary-fixed-dim": "#dcc584",
+                    "on-surface": "#1b1c19",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#867274",
+                    "inverse-primary": "#ffb2bd",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#75632c",
+                    "surface-dim": "#dbdad5",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#c9c6c5",
+                    "surface-variant": "#e3e3de",
+                    "on-primary-fixed": "#3d0414",
+                    "primary": "#390111",
+                    "surface-bright": "#faf9f4",
+                    "on-tertiary-fixed-variant": "#474646",
+                    "primary-fixed-dim": "#ffb2bd",
+                    "error": "#ba1a1a",
+                    "heritage-burgundy": "#551625",
+                    "on-primary-fixed-variant": "#762f3e",
+                    "inverse-on-surface": "#f2f1ec",
+                    "on-tertiary-container": "#969494",
+                    "on-background": "#1b1c19",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#2e2d2d",
+                    "primary-fixed": "#ffd9dd",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#934655",
+                    "primary-container": "#551625",
+                    "secondary-fixed": "#f9e19d",
+                    "inverse-surface": "#30312e",
+                    "on-secondary-fixed-variant": "#554511",
+                    "secondary-container": "#f9e19d",
+                    "paper-white": "#F9F8F3",
+                    "surface-container-low": "#f5f4ef",
+                    "surface": "#faf9f4",
+                    "secondary": "#6e5d27",
+                    "on-secondary-fixed": "#231a00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "margin-desktop": "48px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "label-md": ["Inter"],
+                    "headline-sm": ["Playfair Display"],
+                    "body-sm": ["Inter"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "label-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .perspective-1000 { perspective: 1000px; }
+        .hero-gradient {
+            background: linear-gradient(rgba(85, 22, 37, 0.85), rgba(85, 22, 37, 0.95));
+        }
+    </style>
+</head>
+<body class="bg-paper-white text-on-surface selection:bg-academic-gold selection:text-ink-black">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full bg-paper-white border-b border-on-surface-variant/10 shadow-sm z-50">
+<nav class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm font-bold text-heritage-burgundy">
+                Noorul Ilm International
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-heritage-burgundy transition-colors duration-200" href="#">Home</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-heritage-burgundy transition-colors duration-200" href="#">About Us</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-heritage-burgundy transition-colors duration-200" href="#">Leadership Board</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-heritage-burgundy transition-colors duration-200" href="#">Gallery</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-heritage-burgundy transition-colors duration-200" href="#">Contact</a>
+<a class="font-label-lg text-label-lg text-heritage-burgundy border-b-2 border-academic-gold pb-1 transition-colors duration-200" href="#">Admissions</a>
+<button class="bg-heritage-burgundy text-paper-white px-6 py-2 rounded font-label-lg text-label-lg hover:bg-opacity-90 transition-all">Portal</button>
+</div>
+<button class="md:hidden text-heritage-burgundy">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[716px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 hero-gradient z-10"></div>
+<div class="w-full h-full bg-cover bg-center" data-alt="A grand architectural view of a modern university building with large glass windows and stone accents during the golden hour. The lighting is warm and prestigious, highlighting the college's academic excellence. Students are seen walking in the distance, creating a sense of life and purpose. The overall aesthetic is clean, sophisticated, and internationally renowned." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkGKpYoDslNFXSUwdI0WSYBkNFYRW1_v3xuwp64ZcbcYPhxVA2__d_G7PzZR1zNE9rVyigMMO_Zu0-EjzlCVctC0Fg0BpaY5pemouZWJzqAV8Z0EFYtzBlQtK1JA2d5-WASJi3mwvJaxxswUBOf1FEjtRQ4MPMNhosBFg5mNO8JKjUkNQAIUBLAdywHhiwaavVGi2Z9u233ITB5vhYAHOnkYwRCBZqks2j5s-M1D513LDp0D96rGrReA')"></div>
+</div>
+<div class="relative z-20 px-margin-desktop max-w-container-max mx-auto w-full text-paper-white">
+<span class="inline-block px-4 py-1 border border-academic-gold text-academic-gold font-label-md text-label-md mb-6 uppercase tracking-widest">Enrollment 2024/2025</span>
+<h1 class="font-display-lg text-display-lg mb-6 max-w-3xl leading-tight">Your Journey to Global Excellence Starts Here</h1>
+<p class="font-body-lg text-body-lg mb-10 max-w-2xl opacity-90">Join a community dedicated to intellectual rigor, moral integrity, and the pursuit of knowledge through the prestigious Cambridge International pathway.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-academic-gold text-ink-black px-10 py-4 font-label-lg text-label-lg hover:scale-105 transition-transform duration-200">Apply Now</button>
+<button class="border border-paper-white text-paper-white px-10 py-4 font-label-lg text-label-lg hover:bg-paper-white hover:text-heritage-burgundy transition-all duration-200">Download Prospectus</button>
+</div>
+</div>
+</section>
+<!-- Admission Steps (Asymmetric Grid) -->
+<section class="py-24 px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-16">
+<h2 class="font-headline-lg text-headline-lg text-heritage-burgundy mb-4">The Admission Process</h2>
+<div class="w-24 h-1 bg-academic-gold"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Step 1 -->
+<div class="md:col-span-4 group">
+<div class="bg-surface-container-lowest p-8 border border-on-surface-variant/10 h-full transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-lg">
+<span class="font-display-lg text-display-lg text-academic-gold/20 block mb-4">01</span>
+<h3 class="font-headline-sm text-headline-sm text-heritage-burgundy mb-4">Inquiry &amp; Tour</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Schedule a visit to our campus to experience our world-class facilities and academic environment firsthand.</p>
+<a class="inline-flex items-center text-heritage-burgundy font-label-lg text-label-lg hover:text-academic-gold" href="#">
+                            Book a Tour <span class="material-symbols-outlined ml-2">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="md:col-span-8 group">
+<div class="bg-surface-container-lowest p-8 border border-on-surface-variant/10 h-full flex flex-col md:flex-row gap-8 transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-lg">
+<div class="md:w-1/2">
+<span class="font-display-lg text-display-lg text-academic-gold/20 block mb-4">02</span>
+<h3 class="font-headline-sm text-headline-sm text-heritage-burgundy mb-4">Application Submission</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Complete our digital application form and submit the required academic records, identification, and reference letters.</p>
+</div>
+<div class="md:w-1/2 bg-surface-container h-48 md:h-full flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-academic-gold" style="font-variation-settings: 'FILL' 1;">description</span>
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="md:col-span-7 group">
+<div class="bg-heritage-burgundy p-8 h-full transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-lg text-paper-white">
+<span class="font-display-lg text-display-lg text-white/10 block mb-4">03</span>
+<h3 class="font-headline-sm text-headline-sm mb-4">Assessment &amp; Interview</h3>
+<p class="font-body-md text-body-md opacity-90 mb-6">Prospective students participate in age-appropriate entrance assessments focusing on core competencies, followed by a personal interview with our admissions panel.</p>
+<div class="flex gap-4">
+<span class="px-3 py-1 bg-white/10 rounded-full text-label-md font-label-md">Cognitive Ability</span>
+<span class="px-3 py-1 bg-white/10 rounded-full text-label-md font-label-md">Oral Interview</span>
+</div>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="md:col-span-5 group">
+<div class="bg-surface-container-lowest p-8 border border-on-surface-variant/10 h-full transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-lg">
+<span class="font-display-lg text-display-lg text-academic-gold/20 block mb-4">04</span>
+<h3 class="font-headline-sm text-headline-sm text-heritage-burgundy mb-4">Enrollment Offer</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Successful candidates receive a formal letter of offer. Secure your place by completing the registration and fee payment process.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Cambridge Pathway Info -->
+<section class="bg-tertiary text-paper-white py-24">
+<div class="px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<h2 class="font-headline-lg text-headline-lg">The Cambridge Pathway</h2>
+<p class="font-body-lg text-body-lg text-on-tertiary-fixed-variant leading-relaxed">
+                        Noorul Ilm International College proudly implements the Cambridge International Curriculum, a global standard for education. Our pathway is designed to help students discover new abilities and a wider world.
+                    </p>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-academic-gold mt-1">check_circle</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-academic-gold">Cambridge Primary (Ages 5-11)</h4>
+<p class="font-body-sm text-body-sm opacity-70">Focusing on developing foundation skills in core subjects.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-academic-gold mt-1">check_circle</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-academic-gold">Cambridge Lower Secondary (Ages 11-14)</h4>
+<p class="font-body-sm text-body-sm opacity-70">Developing learner confidence and subject knowledge.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-academic-gold mt-1">check_circle</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-academic-gold">Cambridge Upper Secondary (Ages 14-16)</h4>
+<p class="font-body-sm text-body-sm opacity-70">Cambridge IGCSE provides a broad and balanced curriculum.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-academic-gold mt-1">check_circle</span>
+<div>
+<h4 class="font-label-lg text-label-lg text-academic-gold">Cambridge Advanced (Ages 16-19)</h4>
+<p class="font-body-sm text-body-sm opacity-70">A-Levels preparing students for top-tier global universities.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-10 -left-10 w-40 h-40 border border-academic-gold/30 hidden lg:block"></div>
+<div class="relative z-10 w-full aspect-[4/5] bg-cover bg-center shadow-2xl" data-alt="A focused student in a high-tech science laboratory, wearing a lab coat and safety goggles, conducting an experiment. The background is slightly blurred showing other state-of-the-art academic equipment. The lighting is professional and clean, emphasizing a serious academic environment. This image represents the high standards and practical learning of the Cambridge International curriculum at the college." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCA9wxtQMo9wXJ12oWvZ4lgG39LeHWwoUZ7JMNM3kegLnKqIy5KSZzecsBovGrjF-ITKZUiCnrxaXebKWEgACtP0ZgSjylGv-sSFNcAJr5cpZq3mohDhdHUPjy-EZPlPdNoqyxXJaG9YaFpwLRW1yNIOpuElcO8bkc_NQT1Ss-UUCmKMRz_A1JuofFpwnk5Wy9LdDcwKkJJExQvflK88Gd27EbdtPy07-21Zu2UX0XzrNgAk_hw_MT29g')"></div>
+<div class="absolute -bottom-6 -right-6 bg-academic-gold p-8 text-ink-black hidden md:block">
+<div class="text-4xl font-bold font-display-lg">100%</div>
+<div class="text-sm font-label-md uppercase tracking-widest">University Acceptance</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Entry Requirements -->
+<section class="py-24 px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-heritage-burgundy">Admission Requirements</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">Ensuring a seamless transition for every student.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-8 border border-on-surface-variant/10 rounded-lg">
+<span class="material-symbols-outlined text-heritage-burgundy text-4xl mb-6">description</span>
+<h3 class="font-headline-sm text-headline-sm text-heritage-burgundy mb-4">Academic Documentation</h3>
+<ul class="space-y-3 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex gap-2"><span>•</span> Latest school reports (last 3 years)</li>
+<li class="flex gap-2"><span>•</span> Transcript of grades</li>
+<li class="flex gap-2"><span>•</span> Transfer certificate</li>
+</ul>
+</div>
+<div class="p-8 border border-on-surface-variant/10 rounded-lg">
+<span class="material-symbols-outlined text-heritage-burgundy text-4xl mb-6">person</span>
+<h3 class="font-headline-sm text-headline-sm text-heritage-burgundy mb-4">Identity Verification</h3>
+<ul class="space-y-3 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex gap-2"><span>•</span> Passport copy (Student &amp; Guardian)</li>
+<li class="flex gap-2"><span>•</span> Recent passport-sized photos</li>
+<li class="flex gap-2"><span>•</span> Immunization records</li>
+</ul>
+</div>
+<div class="p-8 border border-on-surface-variant/10 rounded-lg">
+<span class="material-symbols-outlined text-heritage-burgundy text-4xl mb-6">language</span>
+<h3 class="font-headline-sm text-headline-sm text-heritage-burgundy mb-4">Language Proficiency</h3>
+<ul class="space-y-3 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex gap-2"><span>•</span> Fluent command of English</li>
+<li class="flex gap-2"><span>•</span> Internal EAL assessment if required</li>
+<li class="flex gap-2"><span>•</span> Supporting language certifications</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- FAQs -->
+<section class="bg-surface-container py-24">
+<div class="px-margin-desktop max-w-3xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-heritage-burgundy mb-12 text-center">Frequently Asked Questions</h2>
+<div class="space-y-4">
+<details class="group bg-paper-white rounded-lg p-6 cursor-pointer" open="">
+<summary class="flex justify-between items-center font-headline-sm text-headline-sm text-heritage-burgundy list-none">
+<span>When is the best time to apply?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 leading-relaxed">
+                            We operate on a rolling admissions basis, but we highly recommend applying between October and March for the following September intake to ensure space availability.
+                        </p>
+</details>
+<details class="group bg-paper-white rounded-lg p-6 cursor-pointer">
+<summary class="flex justify-between items-center font-headline-sm text-headline-sm text-heritage-burgundy list-none">
+<span>Is there a scholarship program?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 leading-relaxed">
+                            Yes, Noorul Ilm offers merit-based scholarships for students demonstrating exceptional academic achievement or artistic/athletic talent. Inquire with the admissions office for details.
+                        </p>
+</details>
+<details class="group bg-paper-white rounded-lg p-6 cursor-pointer">
+<summary class="flex justify-between items-center font-headline-sm text-headline-sm text-heritage-burgundy list-none">
+<span>What are the class sizes?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 leading-relaxed">
+                            We maintain an average student-to-teacher ratio of 15:1 to ensure personalized attention and optimal learning outcomes for every student.
+                        </p>
+</details>
+<details class="group bg-paper-white rounded-lg p-6 cursor-pointer">
+<summary class="flex justify-between items-center font-headline-sm text-headline-sm text-heritage-burgundy list-none">
+<span>Do you provide transportation?</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 leading-relaxed">
+                            Yes, we offer a safe and reliable school bus service across major metropolitan routes. Detailed route maps are available upon request.
+                        </p>
+</details>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-24 text-center px-margin-desktop">
+<div class="max-w-4xl mx-auto space-y-8">
+<h2 class="font-display-lg text-display-lg text-heritage-burgundy">Ready to Begin Your Excellence?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Our admissions team is here to guide you through every step of the process. Start your application today or reach out for more information.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<a class="bg-heritage-burgundy text-paper-white px-12 py-5 font-label-lg text-label-lg hover:shadow-xl transition-all" href="#">Start Online Application</a>
+<a class="border-2 border-heritage-burgundy text-heritage-burgundy px-12 py-5 font-label-lg text-label-lg hover:bg-heritage-burgundy hover:text-paper-white transition-all" href="#">Speak to an Advisor</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-tertiary text-paper-white pt-16 pb-8 border-t border-white/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto mb-16">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md text-academic-gold mb-6">Noorul Ilm</div>
+<p class="font-body-sm text-body-sm text-on-tertiary-fixed-variant pr-8">Cultivating wisdom, character, and global leadership through academic excellence since 2004.</p>
+</div>
+<div>
+<h5 class="font-label-lg text-label-lg mb-6">Quick Links</h5>
+<ul class="space-y-4 font-body-sm text-body-sm text-on-tertiary-fixed-variant">
+<li><a class="hover:text-academic-gold transition-colors" href="#">Campus Map</a></li>
+<li><a class="hover:text-academic-gold transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-academic-gold transition-colors" href="#">Accreditation</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-lg text-label-lg mb-6">Legal</h5>
+<ul class="space-y-4 font-body-sm text-body-sm text-on-tertiary-fixed-variant">
+<li><a class="hover:text-academic-gold transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-academic-gold transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-lg text-label-lg mb-6">Contact Us</h5>
+<ul class="space-y-4 font-body-sm text-body-sm text-on-tertiary-fixed-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-academic-gold text-sm">mail</span> admissions@noorulilm.edu</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-academic-gold text-sm">call</span> +1 (555) 000-ILM</li>
+</ul>
+</div>
+</div>
+<div class="px-margin-desktop max-w-container-max mx-auto border-t border-white/5 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center">
+<p class="font-body-sm text-body-sm text-on-tertiary-fixed-variant opacity-60">© 2024 Noorul Ilm International College. All Rights Reserved.</p>
+<div class="flex gap-4 mt-4 md:mt-0">
+<a class="w-10 h-10 border border-white/20 flex items-center justify-center rounded-full hover:border-academic-gold transition-all" href="#"><span class="material-symbols-outlined text-sm">public</span></a>
+<a class="w-10 h-10 border border-white/20 flex items-center justify-center rounded-full hover:border-academic-gold transition-all" href="#"><span class="material-symbols-outlined text-sm">share</span></a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll reveal for cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.group').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

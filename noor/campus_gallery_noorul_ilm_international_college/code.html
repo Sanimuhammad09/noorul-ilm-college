@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gallery | Noorul Ilm International College</title>
+<!-- Google Fonts: Playfair Display for headings, Inter for body -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-surface-variant": "#534344",
+                    "tertiary": "#191919",
+                    "surface-container": "#efeee9",
+                    "surface-container-highest": "#e3e3de",
+                    "ink-black": "#070707",
+                    "surface-container-high": "#e9e8e3",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#d8c1c3",
+                    "background": "#faf9f4",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "academic-gold": "#D3BC7C",
+                    "on-primary-container": "#d37b89",
+                    "secondary-fixed-dim": "#dcc584",
+                    "on-surface": "#1b1c19",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#867274",
+                    "inverse-primary": "#ffb2bd",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#75632c",
+                    "surface-dim": "#dbdad5",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#c9c6c5",
+                    "surface-variant": "#e3e3de",
+                    "on-primary-fixed": "#3d0414",
+                    "primary": "#390111",
+                    "surface-bright": "#faf9f4",
+                    "on-tertiary-fixed-variant": "#474646",
+                    "primary-fixed-dim": "#ffb2bd",
+                    "error": "#ba1a1a",
+                    "heritage-burgundy": "#551625",
+                    "on-primary-fixed-variant": "#762f3e",
+                    "inverse-on-surface": "#f2f1ec",
+                    "on-tertiary-container": "#969494",
+                    "on-background": "#1b1c19",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#2e2d2d",
+                    "primary-fixed": "#ffd9dd",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#934655",
+                    "primary-container": "#551625",
+                    "secondary-fixed": "#f9e19d",
+                    "inverse-surface": "#30312e",
+                    "on-secondary-fixed-variant": "#554511",
+                    "secondary-container": "#f9e19d",
+                    "paper-white": "#F9F8F3",
+                    "surface-container-low": "#f5f4ef",
+                    "surface": "#faf9f4",
+                    "secondary": "#6e5d27",
+                    "on-secondary-fixed": "#231a00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "margin-desktop": "48px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "label-md": ["Inter"],
+                    "headline-sm": ["Playfair Display"],
+                    "body-sm": ["Inter"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "label-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #F9F8F3;
+            color: #1b1c19;
+            overflow-x: hidden;
+        }
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-auto-rows: 200px;
+            gap: 24px;
+        }
+        .masonry-item-large { grid-row: span 2; grid-column: span 2; }
+        .masonry-item-tall { grid-row: span 2; }
+        .masonry-item-wide { grid-column: span 2; }
+
+        @media (max-width: 767px) {
+            .masonry-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: auto;
+            }
+            .masonry-item-large, .masonry-item-tall, .masonry-item-wide {
+                grid-row: auto;
+                grid-column: auto;
+            }
+        }
+        
+        .gallery-card {
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+        }
+        .gallery-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px -10px rgba(7, 7, 7, 0.08);
+        }
+        .gallery-card:hover .overlay {
+            opacity: 1;
+        }
+        .overlay {
+            background: linear-gradient(to top, rgba(85, 22, 37, 0.9) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .filter-btn.active {
+            color: #551625;
+            border-bottom: 2px solid #D3BC7C;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md bg-paper-white">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-paper-white border-b border-on-surface-variant/10 shadow-sm">
+<nav class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm font-bold text-heritage-burgundy">
+                Noorul Ilm International
+            </div>
+<div class="hidden md:flex items-center space-x-8 font-label-lg text-label-lg">
+<a class="text-on-surface-variant hover:text-heritage-burgundy transition-colors duration-200" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-heritage-burgundy transition-colors duration-200" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-heritage-burgundy transition-colors duration-200" href="#">Leadership Board</a>
+<a class="text-heritage-burgundy border-b-2 border-academic-gold pb-1" href="#">Gallery</a>
+<a class="text-on-surface-variant hover:text-heritage-burgundy transition-colors duration-200" href="#">Contact</a>
+<a class="text-on-surface-variant hover:text-heritage-burgundy transition-colors duration-200" href="#">Admissions</a>
+</div>
+<button class="bg-heritage-burgundy text-paper-white px-6 py-2 rounded-lg font-label-lg hover:opacity-80 transition-opacity active:scale-95">
+                Portal
+            </button>
+</nav>
+</header>
+<main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Header Section -->
+<section class="mb-16 text-center max-w-3xl mx-auto">
+<span class="text-academic-gold font-label-md uppercase tracking-widest mb-4 block">Capturing Excellence</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-heritage-burgundy mb-6 italic">Our Vibrant Campus Life</h1>
+<p class="text-on-surface-variant text-body-lg">Explore the modern infrastructure, spiritual sanctuary, and dynamic learning environments that define the Noorul Ilm experience.</p>
+</section>
+<!-- Gallery Filters -->
+<div class="flex flex-wrap justify-center gap-6 md:gap-12 mb-12 border-b border-outline-variant/30 pb-4">
+<button class="filter-btn active font-label-lg text-label-lg text-on-surface-variant hover:text-heritage-burgundy transition-all pb-4">All Gallery</button>
+<button class="filter-btn font-label-lg text-label-lg text-on-surface-variant hover:text-heritage-burgundy transition-all pb-4">Facilities</button>
+<button class="filter-btn font-label-lg text-label-lg text-on-surface-variant hover:text-heritage-burgundy transition-all pb-4">Academics</button>
+<button class="filter-btn font-label-lg text-label-lg text-on-surface-variant hover:text-heritage-burgundy transition-all pb-4">Islamic Life</button>
+<button class="filter-btn font-label-lg text-label-lg text-on-surface-variant hover:text-heritage-burgundy transition-all pb-4">Student Activities</button>
+</div>
+<!-- Masonry / Bento Grid Layout -->
+<div class="masonry-grid">
+<!-- Item 1: Primary Feature (Academics) -->
+<div class="gallery-card masonry-item-large relative overflow-hidden rounded-xl border border-ink-black/10 shadow-sm bg-surface-container-lowest">
+<img alt="Student Life Collaboration" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLt8tOQmunRzaMeettbBdk6CKR3bnFF8thyK56BO9PD2plcNGPDO7tqiE41IFUv5I03byZhmgLU1ThJrV6q1OFuFc6ZO_Gn5fS6eerjjzktJtxNjzyuQy1EnCx1ez7RIk0HLBe5wR3j_OjbdlcocqIANgI84oPyirmDVvZYvRc0tC5-yC6TnJ-jbULHq-HvK1f8n8NpfW_KV2gNqn_1KtpWQhUJ-mOXDtBA3kzhdSg4q6CtBfMgttczYu_Y"/>
+<div class="overlay absolute inset-0 flex flex-col justify-end p-8 text-paper-white">
+<span class="font-label-md bg-academic-gold/90 text-ink-black px-3 py-1 w-fit rounded-full mb-3">Academics</span>
+<h3 class="font-headline-sm text-headline-sm">Collaborative Learning Spaces</h3>
+<p class="font-body-sm opacity-90 mt-2">Fostering innovation through peer interaction and modern pedagogical techniques.</p>
+</div>
+</div>
+<!-- Item 2: Vertical Highlight (Islamic Life) -->
+<div class="gallery-card masonry-item-tall relative overflow-hidden rounded-xl border border-ink-black/10 shadow-sm bg-surface-container-lowest">
+<img alt="Spiritual Life" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLtpH35D05Q_-rJXlk8dF33R3G7w0cUV5Cxa0DzjSkPwnbN602rCqrAtKU86zjnijY6SPRi3mcmxklXenBnxQVhNv8sbKWs2_X-jbXfdNL7kaHUEGnAkQiAsVkcNY74zzQhJhx63HQs2rYqh6pm2F0i2mXrdqAAbwd4sIH5O1cByKXgFHVsaHxxRUMzyvnwmZ2BlJ_SmRmuGvOg45sHD97lFPR-_zCI6S0TORlpYg0DT1V2MLtj0D5dKc-RZ"/>
+<div class="overlay absolute inset-0 flex flex-col justify-end p-6 text-paper-white">
+<span class="font-label-md bg-heritage-burgundy text-paper-white px-3 py-1 w-fit rounded-full mb-3">Islamic Life</span>
+<h3 class="font-headline-sm text-headline-sm">Spiritual Reflection</h3>
+<p class="font-body-sm opacity-90 mt-2">Integrating faith and character development in daily life.</p>
+</div>
+</div>
+<!-- Item 3: Standard (Facilities) -->
+<div class="gallery-card relative overflow-hidden rounded-xl border border-ink-black/10 shadow-sm bg-surface-container-lowest">
+<img alt="Campus Infrastructure" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLtpH35D05Q_-rJXlk8dF33R3G7w0cUV5Cxa0DzjSkPwnbN602rCqrAtKU86zjnijY6SPRi3mcmxklXenBnxQVhNv8sbKWs2_X-jbXfdNL7kaHUEGnAkQiAsVkcNY74zzQhJhx63HQs2rYqh6pm2F0i2mXrdqAAbwd4sIH5O1cByKXgFHVsaHxxRUMzyvnwmZ2BlJ_SmRmuGvOg45sHD97lFPR-_zCI6S0TORlpYg0DT1V2MLtj0D5dKc-RZ"/>
+<div class="overlay absolute inset-0 flex flex-col justify-end p-6 text-paper-white">
+<span class="font-label-md bg-academic-gold/90 text-ink-black px-3 py-1 w-fit rounded-full mb-2">Facilities</span>
+<h4 class="font-label-lg">Modern Architecture</h4>
+</div>
+</div>
+<!-- Item 4: Wide Highlight (Activities) -->
+<div class="gallery-card masonry-item-wide relative overflow-hidden rounded-xl border border-ink-black/10 shadow-sm bg-surface-container-lowest">
+<img alt="Activities and Events" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLsUFeOMr9OyCUAC-ggSOuCpLghidgNjFkbBd8rdYr0MlUi9vuAQ4XeVGtCd5Vp2viS0AefbjSbDBhENrEDgsoiRNyCP037Q_Kf_x8JImg-6H9ZM5gGiBWqhlIa07ZeBjkPLpHkT1mbNqjy6AAzt_7FfOThWoj_I1X-hy0cvcAiJnzInHdvwWDt_lAQSybSky6wX9V5qTU8YfOE1WW2IE1hUx6JOdwfJvjmPGrV9bXDjZtHgPeB4mHNYJZy_"/>
+<div class="overlay absolute inset-0 flex flex-col justify-end p-8 text-paper-white">
+<span class="font-label-md bg-heritage-burgundy text-paper-white px-3 py-1 w-fit rounded-full mb-3">Activities</span>
+<h3 class="font-headline-sm text-headline-sm">Annual Sports Meet</h3>
+<p class="font-body-sm opacity-90 mt-2">Celebrating physical excellence and teamwork across all houses.</p>
+</div>
+</div>
+<!-- Additional Placeholders for Visual Rhythm -->
+<div class="gallery-card relative overflow-hidden rounded-xl border border-ink-black/10 shadow-sm bg-surface-container-lowest">
+<div class="w-full h-full bg-surface-container-highest flex items-center justify-center relative">
+<img class="w-full h-full object-cover" data-alt="A high-quality architectural photograph of a modern science laboratory with clean white benches, state-of-the-art microscopes, and large windows looking out onto a lush green campus. The lighting is bright and clinical yet inviting, reflecting the institution's commitment to technological excellence and transparency. Professional corporate photography style with heritage burgundy accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByM9lZSmTDyuXfLcgPNBLjAilcjsrWKqm4hAO8HP433KcEGL1UvFQ0BMbL2RK_XjZODTzTHHRZhBz6Ad2OB_6EL84P6SSEGwKj0Ht9kZ4s6YbWCDrCAnY0ZtZDI-p6DTsF4bpVsOyFszKQSIhh99PBinpjLTwgkp_AKSkEzg4yMEhPytfsMtxi9KUBx-MviGitbLrnBPxZDUQ0soF_hBaNIfsAq_J45y_hsMyK5e6aFGUvliw6oQz5pg"/>
+<div class="overlay absolute inset-0 flex flex-col justify-end p-6 text-paper-white">
+<span class="font-label-md bg-academic-gold/90 text-ink-black px-3 py-1 w-fit rounded-full mb-2">Facilities</span>
+<h4 class="font-label-lg">STEM Laboratories</h4>
+</div>
+</div>
+</div>
+<div class="gallery-card masonry-item-tall relative overflow-hidden rounded-xl border border-ink-black/10 shadow-sm bg-surface-container-lowest">
+<div class="w-full h-full bg-surface-container-highest relative">
+<img class="w-full h-full object-cover" data-alt="A portrait-oriented image showing a serene campus library with floor-to-ceiling wooden bookshelves filled with classic and modern texts. Soft, ambient golden lighting illuminates the study carrels where students are quietly reading. The scene exudes academic prestige and traditional scholarly atmosphere, using a palette of deep mahogany and paper-white." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9osUaYMrEly12o9h9E1i6gsZbJkl9oE-YBflfbdGUBm8JpeMffofdwjHhdJQooi2LRUj8Ks4DO_hECFpahTBAY8xMJLlza4RPuztY5BpOogFHkI0v7UEXtYRNB6bpfZX3BqQIUO-lJNs87-IyhnsoJS_rd1z93EokK9p6ltPYaFGh-A-urQvEQ7ysQUTzICg3mRyi_uKSzJtc_P5HBEOszxgzTeiy2WStNVtSCKFwxSgR9u4qZYjCKQ"/>
+<div class="overlay absolute inset-0 flex flex-col justify-end p-6 text-paper-white">
+<span class="font-label-md bg-academic-gold/90 text-ink-black px-3 py-1 w-fit rounded-full mb-2">Academics</span>
+<h4 class="font-label-lg">The Central Library</h4>
+</div>
+</div>
+</div>
+<div class="gallery-card relative overflow-hidden rounded-xl border border-ink-black/10 shadow-sm bg-surface-container-lowest">
+<div class="w-full h-full bg-surface-container-highest relative">
+<img class="w-full h-full object-cover" data-alt="A beautiful wide shot of students in traditional academic attire walking across a manicured green lawn towards a grand building with pillars and arched windows. The sky is a clear morning blue, casting long, soft shadows. The overall feel is one of global connectivity and elite educational heritage, with a clean and minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvD6NdWFglais_mkhHL_AtNOH3eUuMz1fQl9kb4e2KSq7sTRugiZU2q9xHdfi30D3A_m9Ii8gfvy8dh2ID1OzSpGqPtZ8_Y4GHruBwf1nv6TuFI7S7JZ2xNsE_g0cWt7eEP_lOZppl77JpM8LwwXgE030hAML1YzOZLYYKwyFjhKnxgbxFnMSaKoY38FR2eAOIW_mOfznOKXGiPYI6SORJXIsXwHEdsRjYPaU0KmPuOnK7PnqA_6y_nA"/>
+<div class="overlay absolute inset-0 flex flex-col justify-end p-6 text-paper-white">
+<span class="font-label-md bg-heritage-burgundy text-paper-white px-3 py-1 w-fit rounded-full mb-2">Campus Life</span>
+<h4 class="font-label-lg">Main Quadrangle</h4>
+</div>
+</div>
+</div>
+</div>
+<!-- Call to Action -->
+<section class="mt-24 bg-tertiary-container text-on-tertiary-container rounded-full p-12 text-center relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-headline-lg text-paper-white mb-4 italic">Witness Excellence in Person</h2>
+<p class="text-on-tertiary-container opacity-80 mb-8 max-w-xl mx-auto">Schedule a campus tour to see our world-class facilities and experience the vibrant Noorul Ilm atmosphere for yourself.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-academic-gold text-ink-black px-8 py-4 rounded-lg font-label-lg hover:opacity-90 transition-all">Book a Campus Tour</button>
+<button class="border border-paper-white/30 text-paper-white px-8 py-4 rounded-lg font-label-lg hover:bg-paper-white/10 transition-all">Download Brochure</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-tertiary dark:bg-ink-black w-full pt-16 pb-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto text-paper-white font-body-sm text-body-sm">
+<div class="col-span-1">
+<div class="font-headline-md text-headline-md text-academic-gold mb-6">Noorul Ilm</div>
+<p class="text-on-tertiary-fixed-variant mb-6 leading-relaxed">
+                    A global beacon of academic brilliance and spiritual grounding, preparing the next generation for international leadership.
+                </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-academic-gold transition-colors">public</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-academic-gold transition-colors">share</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-academic-gold transition-colors">alternate_email</span>
+</div>
+</div>
+<div class="col-span-1">
+<h4 class="text-academic-gold font-label-lg mb-6 uppercase tracking-wider">Quick Links</h4>
+<ul class="space-y-4">
+<li><a class="text-on-tertiary-fixed-variant hover:text-academic-gold transition-colors" href="#">Accreditation</a></li>
+<li><a class="text-on-tertiary-fixed-variant hover:text-academic-gold transition-colors" href="#">Campus Map</a></li>
+<li><a class="text-on-tertiary-fixed-variant hover:text-academic-gold transition-colors" href="#">Careers</a></li>
+<li><a class="text-on-tertiary-fixed-variant hover:text-academic-gold transition-colors" href="#">Admissions Policy</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="text-academic-gold font-label-lg mb-6 uppercase tracking-wider">Legal</h4>
+<ul class="space-y-4">
+<li><a class="text-on-tertiary-fixed-variant hover:text-academic-gold transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-tertiary-fixed-variant hover:text-academic-gold transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="text-academic-gold font-label-lg mb-6 uppercase tracking-wider">Contact Us</h4>
+<address class="not-italic text-on-tertiary-fixed-variant space-y-4">
+<p class="flex items-start gap-3">
+<span class="material-symbols-outlined text-academic-gold">location_on</span>
+                        International Academic Zone, Building 42, Global City
+                    </p>
+<p class="flex items-center gap-3">
+<span class="material-symbols-outlined text-academic-gold">call</span>
+                        +1 (800) NOORUL-ILM
+                    </p>
+<p class="flex items-center gap-3">
+<span class="material-symbols-outlined text-academic-gold">mail</span>
+                        admissions@noorulilm.edu
+                    </p>
+</address>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-16 pt-8 border-t border-paper-white/5 text-center text-on-tertiary-fixed-variant opacity-60">
+            © 2024 Noorul Ilm International College. All Rights Reserved.
+        </div>
+</footer>
+<script>
+        // Simple filtering interaction
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Animating items out and in
+                const cards = document.querySelectorAll('.gallery-card');
+                cards.forEach(card => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 300);
+                });
+            });
+        });
+
+        // Hover effect script enhancement
+        document.querySelectorAll('.gallery-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Future enhancement: could add specific parallax or deeper interactions here
+            });
+        });
+    </script>
+</body></html>

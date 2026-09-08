@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Leadership Board | Noorul Ilm International</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-surface-variant": "#534344",
+                    "tertiary": "#191919",
+                    "surface-container": "#efeee9",
+                    "surface-container-highest": "#e3e3de",
+                    "ink-black": "#070707",
+                    "surface-container-high": "#e9e8e3",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#d8c1c3",
+                    "background": "#faf9f4",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "academic-gold": "#D3BC7C",
+                    "on-primary-container": "#d37b89",
+                    "secondary-fixed-dim": "#dcc584",
+                    "on-surface": "#1b1c19",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#867274",
+                    "inverse-primary": "#ffb2bd",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#75632c",
+                    "surface-dim": "#dbdad5",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#c9c6c5",
+                    "surface-variant": "#e3e3de",
+                    "on-primary-fixed": "#3d0414",
+                    "primary": "#390111",
+                    "surface-bright": "#faf9f4",
+                    "on-tertiary-fixed-variant": "#474646",
+                    "primary-fixed-dim": "#ffb2bd",
+                    "error": "#ba1a1a",
+                    "heritage-burgundy": "#551625",
+                    "on-primary-fixed-variant": "#762f3e",
+                    "inverse-on-surface": "#f2f1ec",
+                    "on-tertiary-container": "#969494",
+                    "on-background": "#1b1c19",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#2e2d2d",
+                    "primary-fixed": "#ffd9dd",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#934655",
+                    "primary-container": "#551625",
+                    "secondary-fixed": "#f9e19d",
+                    "inverse-surface": "#30312e",
+                    "on-secondary-fixed-variant": "#554511",
+                    "secondary-container": "#f9e19d",
+                    "paper-white": "#F9F8F3",
+                    "surface-container-low": "#f5f4ef",
+                    "surface": "#faf9f4",
+                    "secondary": "#6e5d27",
+                    "on-secondary-fixed": "#231a00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "margin-desktop": "48px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "label-md": ["Inter"],
+                    "headline-sm": ["Playfair Display"],
+                    "body-sm": ["Inter"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "label-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(rgba(85, 22, 37, 0.9), rgba(85, 22, 37, 0.7));
+        }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-paper-white text-ink-black font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full bg-paper-white border-b border-on-surface-variant/10 shadow-sm z-50">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm font-bold text-heritage-burgundy">
+                Noorul Ilm International
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-heritage-burgundy transition-colors duration-200" href="#">Home</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-heritage-burgundy transition-colors duration-200" href="#">About Us</a>
+<a class="font-label-lg text-label-lg text-heritage-burgundy border-b-2 border-academic-gold pb-1 transition-colors duration-200" href="#">Leadership Board</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-heritage-burgundy transition-colors duration-200" href="#">Gallery</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-heritage-burgundy transition-colors duration-200" href="#">Contact</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-heritage-burgundy transition-colors duration-200" href="#">Admissions</a>
+</div>
+<button class="bg-heritage-burgundy text-paper-white px-6 py-2 rounded-lg font-label-lg hover:bg-opacity-90 transition-all">
+                Portal
+            </button>
+</div>
+</nav>
+<main class="mt-20">
+<!-- Hero Section -->
+<section class="relative h-[400px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-fixed bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLvAWwxpOtujV3WAQFt7q7RAY55vENPKzSd9Z6zYKjqITQBHY3Te0jjHNEoIvj90bqH_10L-OoJ3kKmR4Gwhp5Rf0IzfdGFJgvHyiKEYrFMKi2Z1Wrn-Mdx0stUYFovkn3hIcFHZ213GSPioHoddV0jMazuqLQxq7fD5x5crg2UVM81LxyQqZWycQFmqX-VKx_5UqwKJrMPH77XFvN3YVe-hZDliAk2gizvtG1kP8e--QLPGgpXIbKKkTQBx')"></div>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 text-center px-margin-mobile">
+<h1 class="font-display-lg text-display-lg text-paper-white mb-4">Governance &amp; Leadership</h1>
+<p class="font-body-lg text-body-lg text-academic-gold max-w-2xl mx-auto">Steered by tradition, driven by innovation. Meet the visionary leadership defining the future of Noorul Ilm International College.</p>
+</div>
+</section>
+<!-- Main Leader Feature -->
+<section class="py-24 px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative group">
+<div class="absolute -inset-4 bg-academic-gold/20 rounded-xl transform -rotate-2 group-hover:rotate-0 transition-transform duration-500"></div>
+<img alt="Principal Portrait" class="relative rounded-lg shadow-xl w-full object-cover aspect-[4/5] lg:aspect-auto" src="https://lh3.googleusercontent.com/aida/AP1WRLul86-9AHn7d5Ju5kd8QcaLuPcUbpB52C1J7EgxBBrxfH4WyXVGJPMVJ1F8NurSA5MwMy3MlQBJDT84PDFyrj82sMLUlJJq041SpsPAxxENV2auR9joEjAmnayd4xUN_WSWLux53LLnClLVlozdBU6PIOQtYGVcWkemyjaZH-JExjFnp1fVOg8gzPNtWEIXyUPCgiicfsxFN5hqM1z1Q5pOWtZuRuGtMhbu--aFo9Et2lpvwKFCyReGhF6M"/>
+</div>
+<div class="space-y-6">
+<div class="inline-flex items-center space-x-2 text-heritage-burgundy">
+<span class="w-12 h-[2px] bg-heritage-burgundy"></span>
+<span class="font-label-lg uppercase tracking-widest">Executive Principal</span>
+</div>
+<h2 class="font-display-lg text-display-lg text-heritage-burgundy">Sheikh Habeebullah Yusuf Adewuyi</h2>
+<div class="border-l-4 border-academic-gold pl-6 py-2">
+<p class="font-headline-sm text-headline-sm italic text-tertiary">"Education is not merely the acquisition of knowledge, but the refinement of the soul and the building of character for global citizenship."</p>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Sheikh Habeebullah Yusuf Adewuyi stands as the cornerstone of Noorul Ilm International College. With over two decades of experience in global academic administration and Islamic jurisprudence, he integrates traditional values with modern pedagogical excellence.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Under his guidance, the college has achieved international accreditation and foster a culture of intellectual curiosity. His leadership emphasizes a holistic approach to student development, ensuring that every graduate is equipped with both technical proficiency and moral integrity.
+                    </p>
+<div class="pt-4 flex space-x-4">
+<button class="bg-heritage-burgundy text-paper-white px-8 py-3 rounded-lg font-label-lg flex items-center space-x-2">
+<span>Read Full Bio</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="border border-heritage-burgundy text-heritage-burgundy px-8 py-3 rounded-lg font-label-lg hover:bg-heritage-burgundy/5 transition-colors">
+                            Contact Office
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Grid -->
+<section class="bg-surface-container-low py-24">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h3 class="font-headline-lg text-headline-lg text-heritage-burgundy mb-4">Board of Directors</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">Our distinguished board members bring a wealth of experience from academic, corporate, and religious sectors.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Board Member 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-on-surface-variant/5 shadow-sm hover:shadow-md transition-shadow group">
+<div class="mb-6 overflow-hidden rounded-lg aspect-square bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-heritage-burgundy/20 group-hover:scale-110 transition-transform">account_circle</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-heritage-burgundy">Dr. Amina Khalid</h4>
+<p class="font-label-md text-label-md text-academic-gold mb-4">Director of Academic Affairs</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">Specialist in international curriculum development with a PhD from Oxford University. Focused on STEM integration.</p>
+<hr class="my-4 border-on-surface-variant/10"/>
+<a class="text-heritage-burgundy font-label-lg flex items-center space-x-2 hover:underline" href="#">
+<span>Profile</span>
+<span class="material-symbols-outlined text-xs">open_in_new</span>
+</a>
+</div>
+<!-- Board Member 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-on-surface-variant/5 shadow-sm hover:shadow-md transition-shadow group">
+<div class="mb-6 overflow-hidden rounded-lg aspect-square bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-heritage-burgundy/20 group-hover:scale-110 transition-transform">account_circle</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-heritage-burgundy">Prof. Ibrahim Sani</h4>
+<p class="font-label-md text-label-md text-academic-gold mb-4">Head of Research &amp; Ethics</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">A world-renowned scholar in Ethics and Philosophy, overseeing the college's moral and research frameworks.</p>
+<hr class="my-4 border-on-surface-variant/10"/>
+<a class="text-heritage-burgundy font-label-lg flex items-center space-x-2 hover:underline" href="#">
+<span>Profile</span>
+<span class="material-symbols-outlined text-xs">open_in_new</span>
+</a>
+</div>
+<!-- Board Member 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-on-surface-variant/5 shadow-sm hover:shadow-md transition-shadow group">
+<div class="mb-6 overflow-hidden rounded-lg aspect-square bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-heritage-burgundy/20 group-hover:scale-110 transition-transform">account_circle</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-heritage-burgundy">Malama Zainab Bello</h4>
+<p class="font-label-md text-label-md text-academic-gold mb-4">Operations Manager</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">Strategic expert in institutional management with a focus on student welfare and facility excellence.</p>
+<hr class="my-4 border-on-surface-variant/10"/>
+<a class="text-heritage-burgundy font-label-lg flex items-center space-x-2 hover:underline" href="#">
+<span>Profile</span>
+<span class="material-symbols-outlined text-xs">open_in_new</span>
+</a>
+</div>
+<!-- Board Member 4 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-on-surface-variant/5 shadow-sm hover:shadow-md transition-shadow group">
+<div class="mb-6 overflow-hidden rounded-lg aspect-square bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-heritage-burgundy/20 group-hover:scale-110 transition-transform">account_circle</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-heritage-burgundy">Engr. Yusuf Alabi</h4>
+<p class="font-label-md text-label-md text-academic-gold mb-4">Trustee</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">Leading the infrastructure development wing, ensuring a world-class environment for all scholars.</p>
+<hr class="my-4 border-on-surface-variant/10"/>
+<a class="text-heritage-burgundy font-label-lg flex items-center space-x-2 hover:underline" href="#">
+<span>Profile</span>
+<span class="material-symbols-outlined text-xs">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-16 px-margin-desktop bg-tertiary">
+<div class="max-w-container-max mx-auto grid grid-cols-2 md:grid-cols-4 gap-gutter text-center">
+<div>
+<div class="font-display-lg text-display-lg text-academic-gold">25+</div>
+<p class="font-label-lg text-label-lg text-paper-white uppercase tracking-widest">Expert Faculty</p>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-academic-gold">15</div>
+<p class="font-label-lg text-label-lg text-paper-white uppercase tracking-widest">Global Partners</p>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-academic-gold">100%</div>
+<p class="font-label-lg text-label-lg text-paper-white uppercase tracking-widest">Placement Rate</p>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-academic-gold">2004</div>
+<p class="font-label-lg text-label-lg text-paper-white uppercase tracking-widest">Established</p>
+</div>
+</div>
+</section>
+<!-- Administrative Offices -->
+<section class="py-24 px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-heritage-burgundy">Administrative Support</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Dedicated teams ensuring the smooth operation of daily campus life.</p>
+</div>
+<button class="text-heritage-burgundy font-label-lg flex items-center space-x-2 group">
+<span>View Campus Directory</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-8 border border-on-surface-variant/10 rounded-lg hover:bg-paper-white transition-colors">
+<span class="material-symbols-outlined text-academic-gold text-4xl mb-4">school</span>
+<h5 class="font-headline-sm text-headline-sm text-heritage-burgundy mb-2">Office of Admissions</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Guiding prospective students through their journey of joining our prestigious institution.</p>
+<a class="font-label-md text-label-md text-heritage-burgundy uppercase tracking-wider" href="mailto:admissions@noorulilm.edu">Contact Office</a>
+</div>
+<div class="p-8 border border-on-surface-variant/10 rounded-lg hover:bg-paper-white transition-colors">
+<span class="material-symbols-outlined text-academic-gold text-4xl mb-4">account_balance</span>
+<h5 class="font-headline-sm text-headline-sm text-heritage-burgundy mb-2">Registrar's Office</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Managing academic records, transcripts, and institutional accreditations.</p>
+<a class="font-label-md text-label-md text-heritage-burgundy uppercase tracking-wider" href="mailto:registrar@noorulilm.edu">Contact Office</a>
+</div>
+<div class="p-8 border border-on-surface-variant/10 rounded-lg hover:bg-paper-white transition-colors">
+<span class="material-symbols-outlined text-academic-gold text-4xl mb-4">groups</span>
+<h5 class="font-headline-sm text-headline-sm text-heritage-burgundy mb-2">Student Affairs</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Ensuring a vibrant, safe, and nurturing environment for student life and activities.</p>
+<a class="font-label-md text-label-md text-heritage-burgundy uppercase tracking-wider" href="mailto:studentaffairs@noorulilm.edu">Contact Office</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-tertiary text-paper-white w-full pt-16 pb-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md text-academic-gold mb-6">Noorul Ilm</div>
+<p class="font-body-sm text-body-sm text-on-tertiary-fixed-variant mb-6">
+                    A leading international college dedicated to academic rigor and moral excellence. Empowering the leaders of tomorrow through holistic education.
+                </p>
+<div class="flex space-x-4">
+<a class="w-10 h-10 rounded-full border border-on-tertiary-fixed-variant flex items-center justify-center hover:bg-academic-gold hover:text-tertiary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">qr_code_2</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-on-tertiary-fixed-variant flex items-center justify-center hover:bg-academic-gold hover:text-tertiary transition-all" href="#">
+<span class="material-symbols-outlined text-xl">camera</span>
+</a>
+</div>
+</div>
+<div>
+<h6 class="font-label-lg text-label-lg text-paper-white uppercase tracking-widest mb-6">Quick Links</h6>
+<ul class="space-y-4">
+<li><a class="font-body-sm text-body-sm text-on-tertiary-fixed-variant hover:text-academic-gold transition-colors" href="#">Campus Map</a></li>
+<li><a class="font-body-sm text-body-sm text-on-tertiary-fixed-variant hover:text-academic-gold transition-colors" href="#">Careers</a></li>
+<li><a class="font-body-sm text-body-sm text-on-tertiary-fixed-variant hover:text-academic-gold transition-colors" href="#">Accreditation</a></li>
+<li><a class="font-body-sm text-body-sm text-on-tertiary-fixed-variant hover:text-academic-gold transition-colors" href="#">News &amp; Events</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-label-lg text-label-lg text-paper-white uppercase tracking-widest mb-6">Legal</h6>
+<ul class="space-y-4">
+<li><a class="font-body-sm text-body-sm text-on-tertiary-fixed-variant hover:text-academic-gold transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-sm text-body-sm text-on-tertiary-fixed-variant hover:text-academic-gold transition-colors" href="#">Terms of Service</a></li>
+<li><a class="font-body-sm text-body-sm text-on-tertiary-fixed-variant hover:text-academic-gold transition-colors" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-label-lg text-label-lg text-paper-white uppercase tracking-widest mb-6">Contact Us</h6>
+<p class="font-body-sm text-body-sm text-on-tertiary-fixed-variant mb-4">
+                    123 Academic Plaza,<br/>
+                    Global District, City Name
+                </p>
+<p class="font-body-sm text-body-sm text-on-tertiary-fixed-variant mb-2">+1 (234) 567-890</p>
+<p class="font-body-sm text-body-sm text-on-tertiary-fixed-variant">info@noorulilm.edu</p>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-on-tertiary-fixed-variant/20 px-margin-desktop max-w-container-max mx-auto flex flex-col md:row justify-between items-center gap-4">
+<p class="font-body-sm text-body-sm text-on-tertiary-fixed-variant">© 2024 Noorul Ilm International College. All Rights Reserved.</p>
+<div class="flex items-center space-x-2 text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-xs">language</span>
+<span class="font-label-md text-label-md">English (International)</span>
+</div>
+</div>
+</footer>
+<script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('scroll-reveal');
+            observer.observe(section);
+        });
+
+        // Simple sticky nav interaction
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white/95', 'backdrop-blur-sm');
+            } else {
+                nav.classList.remove('bg-white/95', 'backdrop-blur-sm');
+            }
+        });
+    </script>
+</body></html>

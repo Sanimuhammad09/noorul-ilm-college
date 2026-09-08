@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Noorul Ilm International College</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(7, 7, 7, 0.05);
+        }
+        .text-balance {
+            text-wrap: balance;
+        }
+        .academic-gradient {
+            background: linear-gradient(135deg, #551625 0%, #390111 100%);
+        }
+        .gold-border-focus:focus-within {
+            border-color: #D3BC7C;
+            box-shadow: 0 0 0 2px rgba(211, 188, 124, 0.2);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-surface-variant": "#534344",
+                    "tertiary": "#191919",
+                    "surface-container": "#efeee9",
+                    "surface-container-highest": "#e3e3de",
+                    "ink-black": "#070707",
+                    "surface-container-high": "#e9e8e3",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#d8c1c3",
+                    "background": "#faf9f4",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "academic-gold": "#D3BC7C",
+                    "on-primary-container": "#d37b89",
+                    "secondary-fixed-dim": "#dcc584",
+                    "on-surface": "#1b1c19",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#867274",
+                    "inverse-primary": "#ffb2bd",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#75632c",
+                    "surface-dim": "#dbdad5",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#c9c6c5",
+                    "surface-variant": "#e3e3de",
+                    "on-primary-fixed": "#3d0414",
+                    "primary": "#390111",
+                    "surface-bright": "#faf9f4",
+                    "on-tertiary-fixed-variant": "#474646",
+                    "primary-fixed-dim": "#ffb2bd",
+                    "error": "#ba1a1a",
+                    "heritage-burgundy": "#551625",
+                    "on-primary-fixed-variant": "#762f3e",
+                    "inverse-on-surface": "#f2f1ec",
+                    "on-tertiary-container": "#969494",
+                    "on-background": "#1b1c19",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#2e2d2d",
+                    "primary-fixed": "#ffd9dd",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#934655",
+                    "primary-container": "#551625",
+                    "secondary-fixed": "#f9e19d",
+                    "inverse-surface": "#30312e",
+                    "on-secondary-fixed-variant": "#554511",
+                    "secondary-container": "#f9e19d",
+                    "paper-white": "#F9F8F3",
+                    "surface-container-low": "#f5f4ef",
+                    "surface": "#faf9f4",
+                    "secondary": "#6e5d27",
+                    "on-secondary-fixed": "#231a00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "margin-desktop": "48px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "label-md": ["Inter"],
+                    "headline-sm": ["Playfair Display"],
+                    "body-sm": ["Inter"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "label-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-paper-white text-ink-black font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-paper-white/95 backdrop-blur-md border-b border-on-surface-variant/10 shadow-sm h-20 flex items-center">
+<div class="flex justify-between items-center h-full px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="flex items-center gap-4">
+<span class="font-headline-sm text-headline-sm font-bold text-heritage-burgundy">Noorul Ilm International</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-heritage-burgundy transition-colors duration-200" href="#">Home</a>
+<a class="font-label-lg text-label-lg text-heritage-burgundy border-b-2 border-academic-gold pb-1 transition-colors duration-200" href="#">About Us</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-heritage-burgundy transition-colors duration-200" href="#">Leadership Board</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-heritage-burgundy transition-colors duration-200" href="#">Gallery</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-heritage-burgundy transition-colors duration-200" href="#">Contact</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-heritage-burgundy transition-colors duration-200" href="#">Admissions</a>
+</div>
+<button class="bg-heritage-burgundy text-paper-white px-6 py-2.5 rounded-lg font-label-lg hover:bg-primary transition-all active:scale-95">Portal</button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[716px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center scale-105 animate-[pulse_10s_ease-in-out_infinite]" data-alt="A grand cinematic wide shot of a prestigious international college campus featuring modern stone architecture and lush landscaped grounds. The scene is bathed in the golden hour sun, creating a warm and authoritative atmosphere. The visual style is premium and corporate, emphasizing architectural excellence and tradition with a palette of deep burgundies and warm stone textures." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDmmeCGj7NcFPj_yShUPQxeOAHhddOMfCcj0MKl5BTJTQ-K7O17QfSupKaVVJiQ8j-CNoz4UCXQyq3XaD6odjhr-YoQ2f6fLZlwIZad0x_G-MwttriBBW4A-x7kBwlreML0FyPr7O0kZ0rUxXRn2vjS3wlehb1RGV5M9o3xxV2DYzLu__iNkf71XZ040ox5bRHdsJnSKDY5YW_FEAcUSGyiarZW8mxFOP7yFJ44ymte7kcsjx4X7UpWTw')"></div>
+<div class="absolute inset-0 bg-ink-black/40 backdrop-brightness-75"></div>
+</div>
+<div class="relative z-10 px-margin-desktop max-w-container-max mx-auto w-full text-paper-white">
+<div class="max-w-3xl">
+<span class="font-label-lg text-label-lg text-academic-gold uppercase tracking-widest mb-4 block">Established 2015</span>
+<h1 class="font-display-lg text-display-lg mb-6 leading-tight">Nurturing Minds, <br/>Global Excellence</h1>
+<p class="font-body-lg text-body-lg text-paper-white/90 max-w-xl">Noorul Ilm International College is dedicated to fostering an environment where academic rigor meets spiritual and moral integrity.</p>
+</div>
+</div>
+</section>
+<!-- Our Story -->
+<section class="py-24 bg-paper-white relative overflow-hidden">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1">
+<div class="relative group">
+<div class="absolute -top-6 -left-6 w-32 h-32 border-l-4 border-t-4 border-academic-gold z-0"></div>
+<div class="relative z-10 rounded-lg overflow-hidden shadow-2xl">
+<img class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-quality architectural photograph of a modern college classroom with large windows, ergonomic furniture, and advanced technology. Students of diverse backgrounds are engaged in a collaborative discussion, reflecting a prestigious and forward-thinking academic environment. The lighting is bright and clean, reinforcing the institution's commitment to quality education." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3F-0JKJbwKBD2gq3wH5VjG-aYaSBfW3qTqVPavY7eutGaqeKNn-AlSystcPAL9OsOBkNNIPwl2mHi9AtmA0n5Ge1Ir1okUPXi8_-bd9oKvxds_DrN-Xj-_RqxQd2gkDQ3GjF_hxbX2qlQELpFqw2Fj4JKvB8N0hy3NT3edKhbqi2v_FucjWlJcNzYlsHLEPh8uc0ClgEH-pQ3iEeLSMDqpxLmN8wMDeasORVoSP3ug8ztMSWZrz9fhQ"/>
+</div>
+<div class="absolute -bottom-6 -right-6 w-48 h-48 bg-heritage-burgundy/10 -z-10 rounded-full blur-3xl"></div>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<h2 class="font-headline-lg text-headline-lg text-heritage-burgundy mb-8">Our Story</h2>
+<div class="space-y-6 text-on-surface-variant font-body-lg leading-relaxed">
+<p>Founded in 2015, Noorul Ilm International College began with a singular vision: to bridge the gap between traditional moral values and modern global academic standards. Our journey started as a boutique institution focused on personalized excellence.</p>
+<p>Over the past decade, we have expanded our horizon, becoming a beacon of prestigious education in the region. We pride ourselves on creating an atmosphere where students are not just learners, but future leaders equipped with the resilience of character and the depth of knowledge required by the 21st century.</p>
+<blockquote class="border-l-4 border-heritage-burgundy pl-8 my-8 italic font-display-lg text-2xl text-heritage-burgundy">
+                                "Our foundation is built on the belief that education is the most powerful tool for positive change when grounded in moral truth."
+                            </blockquote>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Vision & Mission -->
+<section class="py-24 bg-surface-container-low">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Vision Card -->
+<div class="bg-white p-12 rounded-lg border border-on-surface-variant/5 shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-16 h-16 bg-heritage-burgundy flex items-center justify-center rounded-full mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-paper-white text-3xl">visibility</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-heritage-burgundy mb-6">Our Vision</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                            To be a world-class center of academic distinction, recognized globally for producing innovative thinkers who lead with unwavering integrity and Islamic morality.
+                        </p>
+</div>
+<!-- Mission Card -->
+<div class="bg-white p-12 rounded-lg border border-on-surface-variant/5 shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-16 h-16 bg-academic-gold flex items-center justify-center rounded-full mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-ink-black text-3xl">assignment</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-heritage-burgundy mb-6">Our Mission</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                            To empower students through a balanced curriculum of high-quality academics and spiritual growth, fostering a culture of excellence, discipline, and mutual respect.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Values: Bento Grid -->
+<section class="py-24 bg-paper-white">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-heritage-burgundy mb-4">Core Values</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto font-body-lg">The pillars that define our institutional culture and guide our educational philosophy.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-gutter">
+<!-- Excellence -->
+<div class="md:col-span-2 bg-heritage-burgundy text-paper-white p-10 rounded-lg relative overflow-hidden flex flex-col justify-end min-h-[320px]">
+<div class="absolute top-10 right-10 opacity-10">
+<span class="material-symbols-outlined text-[120px]">workspace_premium</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-4">Excellence</h4>
+<p class="text-paper-white/80 max-w-lg">We pursue the highest standards in everything we do, from academic performance to institutional administration, ensuring a premium experience for every student.</p>
+</div>
+<!-- Discipline -->
+<div class="bg-surface-container-high p-10 rounded-lg flex flex-col items-start justify-between border border-on-surface-variant/10">
+<span class="material-symbols-outlined text-heritage-burgundy text-4xl mb-6">shield</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-heritage-burgundy mb-2">Discipline</h4>
+<p class="text-on-surface-variant">Self-regulation and orderly behavior are central to academic success and character development.</p>
+</div>
+</div>
+<!-- Integrity -->
+<div class="bg-academic-gold/10 p-10 rounded-lg flex flex-col items-start justify-between border border-academic-gold/20">
+<span class="material-symbols-outlined text-heritage-burgundy text-4xl mb-6">verified_user</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-heritage-burgundy mb-2">Integrity</h4>
+<p class="text-on-surface-variant">Transparency, honesty, and ethical conduct form the bedrock of our college community.</p>
+</div>
+</div>
+<!-- Islamic Morality & Others (Tall Card) -->
+<div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-gutter">
+<div class="bg-white p-10 rounded-lg shadow-sm border border-on-surface-variant/5">
+<h4 class="font-label-lg text-label-lg text-academic-gold mb-2 uppercase">Spiritual Foundation</h4>
+<h3 class="font-headline-sm text-headline-sm text-heritage-burgundy mb-4">Islamic Morality</h3>
+<p class="text-on-surface-variant font-body-sm">Integrating faith-based values into the modern educational journey to build well-rounded global citizens.</p>
+</div>
+<div class="bg-white p-10 rounded-lg shadow-sm border border-on-surface-variant/5">
+<h4 class="font-label-lg text-label-lg text-academic-gold mb-2 uppercase">Mutual Bond</h4>
+<h3 class="font-headline-sm text-headline-sm text-heritage-burgundy mb-4">Respect</h3>
+<p class="text-on-surface-variant font-body-sm">Fostering an environment of inclusivity where every individual's dignity and perspective is honored.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-20 academic-gradient text-paper-white">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+<div>
+<div class="font-display-lg text-display-lg text-academic-gold mb-2">98%</div>
+<div class="font-label-lg uppercase tracking-widest opacity-80">University Placement</div>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-academic-gold mb-2">1:12</div>
+<div class="font-label-lg uppercase tracking-widest opacity-80">Teacher Ratio</div>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-academic-gold mb-2">15+</div>
+<div class="font-label-lg uppercase tracking-widest opacity-80">Nationalities</div>
+</div>
+<div>
+<div class="font-display-lg text-display-lg text-academic-gold mb-2">2015</div>
+<div class="font-label-lg uppercase tracking-widest opacity-80">Founding Year</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 bg-paper-white relative overflow-hidden">
+<div class="px-margin-desktop max-w-container-max mx-auto text-center relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-heritage-burgundy mb-8">Begin Your Academic Journey</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">Experience the standard of international education rooted in tradition. Join our global community of excellence.</p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<a class="bg-heritage-burgundy text-paper-white px-10 py-4 rounded-lg font-label-lg hover:bg-primary transition-all shadow-lg hover:shadow-xl" href="#">Apply for Admission</a>
+<a class="border-2 border-heritage-burgundy text-heritage-burgundy px-10 py-4 rounded-lg font-label-lg hover:bg-heritage-burgundy hover:text-paper-white transition-all" href="#">Schedule a Campus Tour</a>
+</div>
+</div>
+<div class="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none">
+<div class="grid grid-cols-12 h-full">
+<div class="border-r border-ink-black h-full"></div>
+<div class="border-r border-ink-black h-full"></div>
+<div class="border-r border-ink-black h-full"></div>
+<div class="border-r border-ink-black h-full"></div>
+<div class="border-r border-ink-black h-full"></div>
+<div class="border-r border-ink-black h-full"></div>
+<div class="border-r border-ink-black h-full"></div>
+<div class="border-r border-ink-black h-full"></div>
+<div class="border-r border-ink-black h-full"></div>
+<div class="border-r border-ink-black h-full"></div>
+<div class="border-r border-ink-black h-full"></div>
+<div class="border-r border-ink-black h-full"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-tertiary text-paper-white w-full pt-16 pb-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<div class="font-headline-md text-headline-md text-academic-gold mb-6">Noorul Ilm</div>
+<p class="font-body-sm text-body-sm text-on-tertiary-fixed-variant leading-relaxed">
+                    Elevating educational standards through a synthesis of global excellence and traditional morality since 2015.
+                </p>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-paper-white mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a class="font-body-sm text-body-sm text-on-tertiary-fixed-variant hover:text-academic-gold transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-sm text-body-sm text-on-tertiary-fixed-variant hover:text-academic-gold transition-colors" href="#">Terms of Service</a></li>
+<li><a class="font-body-sm text-body-sm text-on-tertiary-fixed-variant hover:text-academic-gold transition-colors" href="#">Accreditation</a></li>
+<li><a class="font-body-sm text-body-sm text-on-tertiary-fixed-variant hover:text-academic-gold transition-colors" href="#">Campus Map</a></li>
+<li><a class="font-body-sm text-body-sm text-on-tertiary-fixed-variant hover:text-academic-gold transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-paper-white mb-6">Admissions</h4>
+<ul class="space-y-3">
+<li><a class="font-body-sm text-body-sm text-on-tertiary-fixed-variant hover:text-academic-gold transition-colors" href="#">Apply Now</a></li>
+<li><a class="font-body-sm text-body-sm text-on-tertiary-fixed-variant hover:text-academic-gold transition-colors" href="#">Scholarships</a></li>
+<li><a class="font-body-sm text-body-sm text-on-tertiary-fixed-variant hover:text-academic-gold transition-colors" href="#">Fee Structure</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-lg text-label-lg text-paper-white mb-6">Contact Us</h4>
+<div class="font-body-sm text-body-sm text-on-tertiary-fixed-variant space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-academic-gold text-lg">location_on</span>
+<span>123 Academic Avenue,<br/>International Education District</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-academic-gold text-lg">phone</span>
+<span>+1 (555) 012-3456</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-white/10 px-margin-desktop max-w-container-max mx-auto text-center">
+<p class="font-body-sm text-body-sm text-on-tertiary-fixed-variant">© 2024 Noorul Ilm International College. All Rights Reserved.</p>
+</div>
+</footer>
+<script>
+        // Simple scroll interaction for the navigation bar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+
+        // Subtle animation trigger on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.bg-white');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease-out';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
+</body></html>

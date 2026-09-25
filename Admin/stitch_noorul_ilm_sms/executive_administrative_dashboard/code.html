@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"secondary-container":"#97f5cc","on-secondary-container":"#007353","on-primary-fixed":"#00164e","surface-dim":"#d2d9f4","background":"#faf8ff","inverse-surface":"#283044","inverse-primary":"#b6c4ff","tertiary":"#442100","on-error-container":"#93000a","surface-container-highest":"#dae2fd","secondary-fixed-dim":"#7bd8b1","inverse-on-surface":"#eef0ff","error-container":"#ffdad6","tertiary-fixed":"#ffdcc3","surface-container-low":"#f2f3ff","surface-container":"#eaedff","outline":"#757682","primary":"#00236f","surface-container-high":"#e2e7ff","on-error":"#ffffff","on-tertiary-container":"#fc922b","on-surface-variant":"#444651","on-primary":"#ffffff","on-tertiary-fixed-variant":"#6e3900","outline-variant":"#c5c5d3","on-secondary":"#ffffff","on-secondary-fixed":"#002115","primary-fixed-dim":"#b6c4ff","on-surface":"#131b2e","surface-variant":"#dae2fd","tertiary-fixed-dim":"#ffb77d","surface-container-lowest":"#ffffff","on-primary-fixed-variant":"#264191","error":"#ba1a1a","on-tertiary-fixed":"#2f1500","surface":"#faf8ff","secondary":"#006c4e","on-primary-container":"#90a8ff","on-tertiary":"#ffffff","surface-tint":"#4059aa","primary-container":"#1e3a8a","tertiary-container":"#653400","surface-bright":"#faf8ff","on-secondary-fixed-variant":"#00513a","primary-fixed":"#dce1ff","on-background":"#131b2e","secondary-fixed":"#97f5cc"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-lg":"1.5rem","gutter":"1.5rem","space-xs":"0.25rem","gutter-mobile":"1rem","space-md":"1rem","margin-mobile":"1rem","margin":"2rem","space-sm":"0.5rem","space-xl":"2.5rem"},fontFamily:{"label-md":["Inter"],"body-lg":["Inter"],"label-sm":["Inter"],"body-md":["Inter"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"label-lg":["Inter"],"metric-lg":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-sm":["Inter"]},fontSize:{"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"600"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-lg-mobile":["22px",{lineHeight:"28px",fontWeight:"600"}],"headline-md":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"display-lg":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"display-lg-mobile":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"700"}],"label-lg":["14px",{lineHeight:"20px",fontWeight:"600"}],"metric-lg":["30px",{lineHeight:"36px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-sm":["16px",{lineHeight:"24px",fontWeight:"600"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-lowest"><img alt="Noorul Ilm International School Crest Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UnsEmf0aNfbe6KbA2I2KOjy-AjJPn5HgJbPOPtp92hnrTYTxQU3Kprj-LudxqRJQgXA4zxDpCiPO_JirfX4CUT5LQqs6KeKJ_GSf2Ht-VHgKlfySV1L85K0vfUvC97WCuAzZIVoZDeC2b7HXIThvyHNLjPUSRbiHTNS7vBwbBm98BmECKvj6dOgbHU_hIBM6U-dF5bOg8DiWgfR6A2eilGNEpMRUCcR73OrDVlVhwFTuugrYTBeQ9Yrdc"/><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-primary truncate leading-tight">Noorul Ilm Int'l</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Kaduna • SMS Admin</span></div></div><div class="px-space-md py-space-sm"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px] text-secondary">verified</span><span class="truncate">Kaduna MoE Accredited</span></div></div><nav class="flex-1 px-space-sm py-space-xs space-y-space-md" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg shadow-sm"><div class="space-y-1"><div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Main</div><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 transition-colors bg-primary-container text-on-primary font-label-lg rounded-lg shadow-sm" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="truncate">Dashboard</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="notifications-alerts" href="#"><div class="flex items-center gap-space-sm truncate"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="truncate">Notifications &amp; Alerts</span></div><span class="px-1.5 py-0.5 rounded-full bg-error text-on-error font-label-sm text-[10px]">4</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="school-calendar" href="#"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span class="truncate">School Calendar</span></a></div><div class="space-y-1"><div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Academic Management</div><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="student-directory" href="#"><span class="material-symbols-outlined text-[20px]">school</span><span class="truncate">Student Directory</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="admissions-enrollment" href="#"><span class="material-symbols-outlined text-[20px]">how_to_reg</span><span class="truncate">Admissions &amp; Enrollment</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="classes-sections-arms" href="#"><span class="material-symbols-outlined text-[20px]">meeting_room</span><span class="truncate">Classes, Sections &amp; Arms</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="subjects-curriculum" href="#"><span class="material-symbols-outlined text-[20px]">menu_book</span><span class="truncate">Subjects &amp; Curriculum</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="timetable-scheduling" href="#"><span class="material-symbols-outlined text-[20px]">schedule</span><span class="truncate">Timetable &amp; Scheduling</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="daily-attendance" href="#"><span class="material-symbols-outlined text-[20px]">checklist_rtl</span><span class="truncate">Daily Attendance</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="examinations-assessments" href="#"><span class="material-symbols-outlined text-[20px]">assignment</span><span class="truncate">Examinations &amp; Assessments</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="results-report-cards" href="#"><span class="material-symbols-outlined text-[20px]">workspace_premium</span><span class="truncate">Results &amp; Report Cards</span></a></div><div class="space-y-1"><div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Financial Management</div><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="fee-structure-billing" href="#"><span class="material-symbols-outlined text-[20px]">request_quote</span><span class="truncate">Fee Structure &amp; Billing</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="payments-receipts" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="truncate">Payments &amp; Receipts (₦)</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="financial-reports-bursary" href="#"><span class="material-symbols-outlined text-[20px]">account_balance</span><span class="truncate">Financial Reports &amp; Bursary</span></a></div><div class="space-y-1"><div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Human Resources</div><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="staff-teachers-directory" href="#"><span class="material-symbols-outlined text-[20px]">badge</span><span class="truncate">Staff &amp; Teachers Directory</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="staff-attendance-leave" href="#"><span class="material-symbols-outlined text-[20px]">event_available</span><span class="truncate">Staff Attendance &amp; Leave</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="payroll" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span class="truncate">Payroll (₦)</span></a></div><div class="space-y-1"><div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">System &amp; Security (RBAC)</div><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="user-accounts-roles" href="#"><span class="material-symbols-outlined text-[20px]">manage_accounts</span><span class="truncate">User Accounts &amp; Roles</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="rbac-permissions" href="#"><span class="material-symbols-outlined text-[20px]">security</span><span class="truncate">RBAC &amp; Permissions</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="audit-logs-activity" href="#"><span class="material-symbols-outlined text-[20px]">history_edu</span><span class="truncate">Audit Logs &amp; Activity</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="system-settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="truncate">Settings &amp; Kaduna Config</span></a></div></nav></div><div class="p-space-md bg-surface-container-low m-space-sm rounded-xl"><div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1"><span class="font-medium">Academic Term</span><span class="text-secondary font-semibold">78% Elapsed</span></div><div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden"><div class="bg-secondary h-1.5 rounded-full w-[78%]"></div></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg gap-space-md"><div class="flex items-center gap-space-md flex-1 max-w-2xl"><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-high text-on-surface cursor-pointer hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span><span class="font-label-sm text-label-sm font-semibold truncate">2026/2027 • 1st Term (Active)</span><span class="material-symbols-outlined text-[16px] text-outline">arrow_drop_down</span></div><div class="relative flex-1"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full pl-9 pr-4 py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search students, staff, admission IDs, fee receipts... (Ctrl+K)" type="text"/></div></div><div class="flex items-center gap-space-md shrink-0"><button class="hidden sm:flex items-center gap-1.5 px-space-md py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[16px]">add</span><span>Quick Action</span></button><div class="hidden lg:flex flex-col text-right"><span class="font-label-sm text-label-sm text-on-surface font-semibold">Thursday, 16 Oct 2026</span><span class="font-body-sm text-[10px] text-on-surface-variant">Kaduna Time (GMT+1)</span></div><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-error text-on-error font-label-sm text-[10px] flex items-center justify-center font-bold">4</span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiGHmRJ5_PwbzMa3Nh1FSX52NfEBNn0ZEyNf__vuuCXdqxdB9yGe1zBiBmoE7HqWT4wZxteYR5p0Wfdh2gTB7-RjoRckPmT1W0Nm3FqlemLKCfgmvcY86nhQ-LnyWKI_8Z9Ac3pvyyVgRTrfei6-O51d4eAjnBc2V_W0Wuqanv_sQ1ummUo0JloAio9QTDs30Wq140LlR99s77O1mqoB9jk4Nuji9Mg4vCIA7j6_Fjc1hi9RZsEm0Zqw"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span></div><div class="hidden md:flex flex-col min-w-0"><span class="font-label-md text-label-md text-on-surface font-semibold truncate">Dr. Aminu Bello</span><span class="font-body-sm text-[11px] text-on-surface-variant truncate">Super Admin / Principal</span></div></div></div></header><main class="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background"><div class="flex flex-col w-full">
+<!-- Executive Context Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between pb-space-lg mb-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase tracking-wider font-semibold">Live Operational Sync</span>
+<span class="text-outline font-label-sm text-label-sm">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Session Snapshot</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Institutional Overview &amp; Operations</h1>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-space-xs mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">location_on</span>
+        Kaduna Campus • 2026/2027 Academic Session • 1st Term • Week 6 of 14
+      </p>
+</div>
+<div class="flex items-center gap-space-sm mt-space-md lg:mt-0 flex-wrap">
+<button class="flex items-center gap-space-xs px-space-md py-2 bg-surface-container-lowest text-on-surface rounded-lg font-label-md text-label-md shadow-sm hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline">description</span>
+<span>Download Daily Executive Brief</span>
+</button>
+<!-- Quick Actions Dropdown Parent -->
+<div class="relative group">
+<button class="flex items-center gap-space-xs px-space-md py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Quick Actions</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+<div class="absolute right-0 mt-1 w-56 py-2 bg-surface-container-lowest rounded-xl shadow-xl hidden group-hover:block hover:block z-30">
+<a class="flex items-center gap-space-sm px-space-md py-2 font-body-md text-body-md text-on-surface hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined text-secondary text-[18px]">person_add</span>
+<span>Register Student</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-md py-2 font-body-md text-body-md text-on-surface hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined text-on-tertiary-container text-[18px]">payments</span>
+<span>Record Payment</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-md py-2 font-body-md text-body-md text-on-surface hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined text-primary text-[18px]">how_to_reg</span>
+<span>Mark Attendance</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-md py-2 font-body-md text-body-md text-on-surface hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined text-error text-[18px]">campaign</span>
+<span>Issue Official Notice</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- 8 High-Impact KPI Metric Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-xl">
+<!-- Card 1: Total Students -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Total Enrolled Students</span>
+<div class="font-metric-lg text-metric-lg text-on-surface mt-1">1,842</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">groups</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-secondary font-semibold">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+4.2%</span>
+<span class="text-on-surface-variant font-normal">vs Term 3</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-[11px] mt-1 text-outline">
+<span>Pri: 920</span>
+<span>•</span>
+<span>JSS: 512</span>
+<span>•</span>
+<span>SSS: 410</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Teaching Staff -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Teaching Faculty</span>
+<div class="font-metric-lg text-metric-lg text-on-surface mt-1">86</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">school</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-secondary font-semibold">98% Duty Presence</span>
+<span class="text-on-surface-variant font-normal">84 In Class</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 mt-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full w-[98%]"></div>
+</div>
+</div>
+</div>
+<!-- Card 3: Non-Teaching Staff -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Support &amp; Admin Staff</span>
+<div class="font-metric-lg text-metric-lg text-on-surface mt-1">34</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[22px]">badge</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Operational: Normal</span>
+</div>
+<div class="font-body-sm text-[11px] text-outline mt-1 truncate">Security, Bursary, Lab &amp; Facilities on site</div>
+</div>
+</div>
+<!-- Card 4: Active Classes & Arms -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Classes &amp; Arms</span>
+<div class="font-metric-lg text-metric-lg text-on-surface mt-1">42 <span class="font-headline-sm text-headline-sm text-outline font-normal">Sections</span></div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary-container">
+<span class="material-symbols-outlined text-[22px]">meeting_room</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="font-semibold text-primary">Avg 43.8 / arm</span>
+<span class="text-outline">Max: 45 Cap</span>
+</div>
+<div class="font-body-sm text-[11px] text-outline mt-1 truncate">Primary 1-6 • JSS 1-3 • SSS 1-3 (Arts/Sci/Comm)</div>
+</div>
+</div>
+<!-- Card 5: Parent Portal Engagement -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Guardian Portal Adoption</span>
+<div class="font-metric-lg text-metric-lg text-on-surface mt-1">1,420</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">family_restroom</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-secondary font-semibold">88% Active Guardians</span>
+<span class="text-outline">SMS &amp; App Sync</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 mt-1.5 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full w-[88%]"></div>
+</div>
+</div>
+</div>
+<!-- Card 6: Fees Collected -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Fees Realized (Term 1)</span>
+<div class="font-headline-lg text-headline-lg text-secondary font-bold mt-1">₦142,650,000</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[22px]">account_balance_wallet</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-secondary font-semibold">76% of Projected Target</span>
+<span class="text-outline">Goal: ₦187.4M</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 mt-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full w-[76%]"></div>
+</div>
+</div>
+</div>
+<!-- Card 7: Outstanding Fees Balance -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Outstanding Arrears</span>
+<div class="font-headline-lg text-headline-lg text-error font-bold mt-1">₦44,820,000</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-error-container flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined text-[22px]">pending_actions</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-error font-semibold">312 Student Accounts</span>
+<span class="text-primary font-semibold cursor-pointer hover:underline">Bursary Notice →</span>
+</div>
+<div class="font-body-sm text-[11px] text-outline mt-1 truncate">Term 1 Payment cut-off: 30 Oct 2026</div>
+</div>
+</div>
+<!-- Card 8: Today's Attendance -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Today's Student Turnout</span>
+<div class="font-metric-lg text-metric-lg text-on-surface mt-1">96.4%</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">fact_check</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-secondary font-semibold">1,776 / 1,842 Present</span>
+<span class="text-error">66 Absent</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 mt-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full w-[96.4%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Visual Analytics & Charts Section (2 Columns: 60% / 40%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-xl">
+<!-- Left Column (60% -> 7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Fee Collection Revenue Flow Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md mb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Fee Collection &amp; Revenue Trajectory</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Monthly Bursary targets vs verified receipts (Jul 2026 - Oct 2026)</p>
+</div>
+<div class="flex items-center gap-space-md mt-space-sm sm:mt-0">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Target (₦M)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Realized (₦M)</span>
+</div>
+</div>
+</div>
+<!-- Inline High-Fidelity SVG Chart -->
+<div class="w-full h-64 relative flex items-end">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 540 220">
+<!-- Grid Lines -->
+<line stroke="#E2E7FF" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="540" y1="30" y2="30"></line>
+<line stroke="#E2E7FF" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="540" y1="80" y2="80"></line>
+<line stroke="#E2E7FF" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="540" y1="130" y2="130"></line>
+<line stroke="#E2E7FF" stroke-width="1" x1="0" x2="540" y1="180" y2="180"></line>
+<!-- Y-Axis Labels -->
+<text class="font-label-sm text-[10px] fill-[#757682]" x="5" y="26">₦60M</text>
+<text class="font-label-sm text-[10px] fill-[#757682]" x="5" y="76">₦40M</text>
+<text class="font-label-sm text-[10px] fill-[#757682]" x="5" y="126">₦20M</text>
+<text class="font-label-sm text-[10px] fill-[#757682]" x="5" y="176">₦0M</text>
+<!-- Month 1: July (Admissions & Enrolment Deposit) -->
+<!-- Target Bar -->
+<rect class="fill-[#DAE2FD]" height="65" rx="4" width="28" x="70" y="115"></rect>
+<!-- Actual Bar -->
+<rect class="fill-secondary" height="55" rx="4" width="28" x="102" y="125"></rect>
+<!-- Month 2: August (Early Bird Term Registration) -->
+<rect class="fill-[#DAE2FD]" height="100" rx="4" width="28" x="180" y="80"></rect>
+<rect class="fill-secondary" height="90" rx="4" width="28" x="212" y="90"></rect>
+<!-- Month 3: September (Term Opening Full Inflows) -->
+<rect class="fill-[#DAE2FD]" height="135" rx="4" width="28" x="290" y="45"></rect>
+<rect class="fill-secondary" height="128" rx="4" width="28" x="322" y="52"></rect>
+<!-- Month 4: October (Mid-Term Balances - In Progress) -->
+<rect class="fill-primary-container" height="110" rx="4" width="28" x="400" y="70"></rect>
+<rect class="fill-secondary" height="82" rx="4" width="28" x="432" y="98"></rect>
+<!-- Trend Line connecting Actuals -->
+<path d="M 116 125 L 226 90 L 336 52 L 446 98" fill="none" stroke="#00236F" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Nodes -->
+<circle class="fill-surface-container-lowest" cx="116" cy="125" r="4" stroke="#00236F" stroke-width="2"></circle>
+<circle class="fill-surface-container-lowest" cx="226" cy="90" r="4" stroke="#00236F" stroke-width="2"></circle>
+<circle class="fill-surface-container-lowest" cx="336" cy="52" r="4" stroke="#00236F" stroke-width="2"></circle>
+<circle class="fill-surface-container-lowest" cx="446" cy="98" r="4" stroke="#00236F" stroke-width="2"></circle>
+<!-- X-Axis Labels -->
+<text class="font-label-sm text-[11px] fill-[#444651] text-anchor-middle font-medium" x="96" y="202">Jul (Reg)</text>
+<text class="font-label-sm text-[11px] fill-[#444651] text-anchor-middle font-medium" x="206" y="202">Aug (Early)</text>
+<text class="font-label-sm text-[11px] fill-[#444651] text-anchor-middle font-medium" x="316" y="202">Sep (Rush)</text>
+<text class="font-label-sm text-[11px] fill-[#00236F] text-anchor-middle font-bold" x="424" y="202">Oct (Active)</text>
+</svg>
+</div>
+<div class="mt-space-md pt-space-sm bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between flex-wrap gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">verified</span>
+<span class="font-body-sm text-body-sm text-on-surface">Kaduna Board of Internal Revenue (KADIRS) stamp &amp; audit ready</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-primary">Last reconciled: Today, 08:30 AM</span>
+</div>
+</div>
+<!-- Weekly Attendance & Class Punctuality -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Attendance &amp; Punctuality Demographics</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Real-time breakdown across primary and secondary wings</p>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">96.4% Campus Average</span>
+</div>
+<div class="space-y-space-md">
+<!-- Primary School -->
+<div>
+<div class="flex items-center justify-between font-label-md text-label-md mb-1.5">
+<span class="text-on-surface font-semibold flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+                Primary Wing (Classes 1 - 6)
+              </span>
+<span class="text-on-surface-variant font-medium">896 / 920 (97.4%)</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2.5 overflow-hidden">
+<div class="bg-primary h-2.5 rounded-full w-[97.4%] transition-all"></div>
+</div>
+</div>
+<!-- Junior Secondary School (JSS) -->
+<div>
+<div class="flex items-center justify-between font-label-md text-label-md mb-1.5">
+<span class="text-on-surface font-semibold flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+                Junior Secondary School (JSS 1 - 3)
+              </span>
+<span class="text-on-surface-variant font-medium">492 / 512 (96.1%)</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2.5 overflow-hidden">
+<div class="bg-secondary h-2.5 rounded-full w-[96.1%] transition-all"></div>
+</div>
+</div>
+<!-- Senior Secondary School (SSS) -->
+<div>
+<div class="flex items-center justify-between font-label-md text-label-md mb-1.5">
+<span class="text-on-surface font-semibold flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container"></span>
+                Senior Secondary School (SSS 1 - 3: Sci/Arts/Comm)
+              </span>
+<span class="text-on-surface-variant font-medium">388 / 410 (94.6%)</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2.5 overflow-hidden">
+<div class="bg-on-tertiary-container h-2.5 rounded-full w-[94.6%] transition-all"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (40% -> 5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Admissions Pipeline Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Admissions Pipeline (2026/27)</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Intake cycle status &amp; applicant stages</p>
+</div>
+<span class="material-symbols-outlined text-outline">tune</span>
+</div>
+<div class="flex items-center justify-center my-space-sm">
+<!-- Donut SVG Visualization -->
+<div class="relative w-44 h-44 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<!-- Total = 310 + 45 + 28 + 64 = 447 -->
+<!-- Circle circumference = 2 * PI * 38 ≈ 238.76 -->
+<!-- Enrolled: 310/447 = 69.3% -> 165.5 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#1E3A8A" stroke-dasharray="165.5 238.76" stroke-dashoffset="0" stroke-width="12"></circle>
+<!-- Approved Pending Fee: 45/447 = 10.1% -> 24.1 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#006C4E" stroke-dasharray="24.1 238.76" stroke-dashoffset="-165.5" stroke-width="12"></circle>
+<!-- Under Review: 28/447 = 6.3% -> 15.0 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#FC922B" stroke-dasharray="15.0 238.76" stroke-dashoffset="-189.6" stroke-width="12"></circle>
+<!-- Entrance Exam: 64/447 = 14.3% -> 34.1 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#DAE2FD" stroke-dasharray="34.1 238.76" stroke-dashoffset="-204.6" stroke-width="12"></circle>
+</svg>
+<div class="absolute flex flex-col items-center justify-center text-center">
+<span class="font-headline-lg text-headline-lg font-bold text-primary">447</span>
+<span class="font-label-sm text-[10px] text-outline uppercase tracking-wider">Total Inflow</span>
+</div>
+</div>
+</div>
+<!-- Legend breakdown -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<div class="p-2 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span>Enrolled</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">310</div>
+</div>
+<div class="p-2 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span>Approved (Pay)</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">45</div>
+</div>
+<div class="p-2 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container"></span>
+<span>Under Review</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">28</div>
+</div>
+<div class="p-2 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-container-highest"></span>
+<span>Exam Scheduled</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">64</div>
+</div>
+</div>
+</div>
+<!-- Academic Departmental Progress -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-1">Academic Department Milestones</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">Syllabus completion toward Mid-Term Assessments</p>
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between p-2.5 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap- space-sm">
+<span class="material-symbols-outlined text-primary text-[20px] mr-2">biotech</span>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Science &amp; Technology</div>
+<div class="font-body-sm text-[11px] text-outline">Physics, Chem, Bio, Tech Drawing</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Week 6 Target Met</span>
+</div>
+<div class="flex items-center justify-between p-2.5 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap- space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px] mr-2">palette</span>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Humanities &amp; Arts</div>
+<div class="font-body-sm text-[11px] text-outline">Literature, History, Arabic, Hausa</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">92% On Schedule</span>
+</div>
+<div class="flex items-center justify-between p-2.5 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap- space-sm">
+<span class="material-symbols-outlined text-tertiary-container text-[20px] mr-2">monitoring</span>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Commercial Studies</div>
+<div class="font-body-sm text-[11px] text-outline">Financial Accounting, Commerce, Econ</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-semibold">Revision Phase</span>
+</div>
+<div class="flex items-center justify-between p-2.5 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap- space-sm">
+<span class="material-symbols-outlined text-primary text-[20px] mr-2">child_care</span>
+<div>
+<div class="font-label-md text-label-md font-semibold text-on-surface">Primary Foundational</div>
+<div class="font-body-sm text-[11px] text-outline">Numeracy, Literacy &amp; Tahfeez</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Exceeding Pace</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Operational & Activity Feeds (3 Columns) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg mb-space-xl">
+<!-- Column 1: Live Bursary Feed -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">receipt_long</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Live Bursary Receipts</h2>
+</div>
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+</div>
+<div class="space-y-space-md">
+<!-- Payment 1 -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-1">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Zainab Aliyu</span>
+<span class="font-label-md text-label-md font-bold text-secondary">₦185,000</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>SSS 2 Science A • Tuition &amp; Lab</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary font-label-sm text-[10px] font-semibold">POS</span>
+</div>
+<div class="font-label-sm text-[11px] text-outline flex items-center justify-between mt-1">
+<span>Rcpt: #NIIS-2026-891</span>
+<span>12 mins ago</span>
+</div>
+</div>
+<!-- Payment 2 -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-1">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Ibrahim Farouk</span>
+<span class="font-label-md text-label-md font-bold text-secondary">₦95,000</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>JSS 1 Gold • Tuition Part</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-primary font-label-sm text-[10px] font-semibold">GTBank Transfer</span>
+</div>
+<div class="font-label-sm text-[11px] text-outline flex items-center justify-between mt-1">
+<span>Rcpt: #NIIS-2026-892</span>
+<span>38 mins ago</span>
+</div>
+</div>
+<!-- Payment 3 -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-1">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Fatima Kabir Sani</span>
+<span class="font-label-md text-label-md font-bold text-secondary">₦120,000</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>Primary 4 Emerald • Full Term</span>
+<span class="px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-[10px] font-semibold">Paystack</span>
+</div>
+<div class="font-label-sm text-[11px] text-outline flex items-center justify-between mt-1">
+<span>Rcpt: #NIIS-2026-893</span>
+<span>1h 14m ago</span>
+</div>
+</div>
+<!-- Payment 4 -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-1">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Muhammad Bello</span>
+<span class="font-label-md text-label-md font-bold text-secondary">₦75,000</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>SSS 3 Arts • WAEC/NECO Reg Deposit</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-outline font-label-sm text-[10px] font-semibold">Cash Deposit</span>
+</div>
+<div class="font-label-sm text-[11px] text-outline flex items-center justify-between mt-1">
+<span>Rcpt: #NIIS-2026-894</span>
+<span>2h 05m ago</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs text-center">
+<a class="font-label-sm text-label-sm text-primary font-semibold hover:underline" href="#">View All 142 Realized Bursary Transactions →</a>
+</div>
+</div>
+<!-- Column 2: Milestones & School Calendar -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">event_upcoming</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Institutional Milestones</h2>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Oct - Nov 2026</span>
+</div>
+<div class="space-y-space-md">
+<!-- Milestone 1 -->
+<div class="flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex flex-col items-center justify-center shrink-0">
+<span class="font-label-sm text-[10px] text-primary uppercase font-bold">OCT</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface leading-none">20</span>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-label-md text-label-md font-semibold text-on-surface truncate">Mid-Term Continuous Assessment (CA)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-2">Test battery begins across all Primary &amp; Secondary classrooms under standardized supervision.</p>
+<span class="inline-block mt-1 font-label-sm text-[11px] text-outline">Kaduna State Unified Framework</span>
+</div>
+</div>
+<!-- Milestone 2 -->
+<div class="flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex flex-col items-center justify-center shrink-0">
+<span class="font-label-sm text-[10px] text-primary uppercase font-bold">OCT</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface leading-none">24</span>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-label-md text-label-md font-semibold text-on-surface truncate">PTA General Consultative Meeting</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-2">Kaduna Assembly Hall &amp; Hybrid Video Feed for diaspora parents.</p>
+<span class="inline-block mt-1 font-label-sm text-[11px] text-secondary font-semibold">10:00 AM • Main Auditorium</span>
+</div>
+</div>
+<!-- Milestone 3 -->
+<div class="flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex flex-col items-center justify-center shrink-0">
+<span class="font-label-sm text-[10px] text-primary uppercase font-bold">OCT</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface leading-none">28</span>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-label-md text-label-md font-semibold text-on-surface truncate">Inter-House Sports &amp; Cultural Day</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-2">Selection trials for Red, Blue, Green, and Gold houses at school sports arena.</p>
+<span class="inline-block mt-1 font-label-sm text-[11px] text-outline">Sports Commission Kaduna</span>
+</div>
+</div>
+<!-- Milestone 4 -->
+<div class="flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-error-container/40 flex flex-col items-center justify-center shrink-0">
+<span class="font-label-sm text-[10px] text-error uppercase font-bold">NOV</span>
+<span class="font-headline-sm text-headline-sm font-bold text-error leading-none">05</span>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="font-label-md text-label-md font-semibold text-error truncate">Kaduna Ministry of Education Inspection</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-2">Annual QA &amp; Curriculum compliance audit for Secondary Boarding &amp; Day Facilities.</p>
+<span class="inline-block mt-1 font-label-sm text-[11px] text-error font-medium">Statutory Inspectorate Visit</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs text-center">
+<a class="font-label-sm text-label-sm text-primary font-semibold hover:underline" href="#">Open Full School Calendar →</a>
+</div>
+</div>
+<!-- Column 3: Pending Administrative Tasks -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-on-tertiary-container text-[20px]">assignment_turned_in</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Administrative Approvals</h2>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">23 Pending</span>
+</div>
+<div class="space-y-space-md">
+<!-- Task 1: Fee Discounts -->
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">percent</span>
+<div>
+<h3 class="font-label-md text-label-md font-semibold text-on-surface">Fee Discounts &amp; Scholarships</h3>
+<p class="font-body-sm text-[12px] text-on-surface-variant">6 sibling &amp; merit requests awaiting Principal sign-off</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">6 Needs Action</span>
+</div>
+<div class="mt-space-sm flex items-center justify-end gap-space-xs">
+<button class="px-2.5 py-1 bg-surface-container-highest text-on-surface rounded font-label-sm text-label-sm hover:bg-surface-dim transition-colors">Review Dossiers</button>
+</div>
+</div>
+<!-- Task 2: Staff Leave -->
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">event_busy</span>
+<div>
+<h3 class="font-label-md text-label-md font-semibold text-on-surface">Staff Leave Authorization</h3>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Malam Garba Usman (Mathematics Dept) - 3 days medical</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-semibold">3 Requests</span>
+</div>
+<div class="mt-space-sm flex items-center justify-end gap-space-xs">
+<button class="px-2.5 py-1 bg-primary text-on-primary rounded font-label-sm text-label-sm hover:bg-primary-container transition-colors">Authorize Leave</button>
+</div>
+</div>
+<!-- Task 3: Transfer Certificates -->
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[20px]">move_up</span>
+<div>
+<h3 class="font-label-md text-label-md font-semibold text-on-surface">Student Transfer Clearance</h3>
+<p class="font-body-sm text-[12px] text-on-surface-variant">14 certificate &amp; testimonial dossiers awaiting clearance</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">14 Backlogged</span>
+</div>
+<div class="mt-space-sm flex items-center justify-end gap-space-xs">
+<button class="px-2.5 py-1 bg-surface-container-highest text-on-surface rounded font-label-sm text-label-sm hover:bg-surface-dim transition-colors">Verify Bursary Status</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs text-center">
+<a class="font-label-sm text-label-sm text-primary font-semibold hover:underline" href="#">Go to Executive Governance Portal →</a>
+</div>
+</div>
+</div>
+<!-- Operational Shortcuts & Module Launchpads -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm mb-space-lg">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Administrative Module Launchpads</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Frequently used workflows for executive officers &amp; registry personnel</p>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Terminal: NIIS-ADM-01</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Shortcut 1 -->
+<a class="group p-space-md bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-all flex items-start gap-space-sm" href="#">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary group-hover:scale-105 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[22px]">request_quote</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="font-label-md text-label-md font-semibold text-on-surface group-hover:text-primary transition-colors flex items-center justify-between">
+<span>Fee Invoicing</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-1">Generate bulk term bills &amp; levies</p>
+</div>
+</a>
+<!-- Shortcut 2 -->
+<a class="group p-space-md bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-all flex items-start gap-space-sm" href="#">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-secondary group-hover:scale-105 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[22px]">schedule</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="font-label-md text-label-md font-semibold text-on-surface group-hover:text-secondary transition-colors flex items-center justify-between">
+<span>Class Timetables</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-1">Inspect lecture rooms &amp; allocations</p>
+</div>
+</a>
+<!-- Shortcut 3 -->
+<a class="group p-space-md bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-all flex items-start gap-space-sm" href="#">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-on-tertiary-container group-hover:scale-105 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[22px]">workspace_premium</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="font-label-md text-label-md font-semibold text-on-surface group-hover:text-on-tertiary-container transition-colors flex items-center justify-between">
+<span>Report Card Compiler</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-1">CA &amp; Exam score reconciliation</p>
+</div>
+</a>
+<!-- Shortcut 4 -->
+<a class="group p-space-md bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-all flex items-start gap-space-sm" href="#">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary-container group-hover:scale-105 transition-transform shadow-sm">
+<span class="material-symbols-outlined text-[22px]">payments</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="font-label-md text-label-md font-semibold text-on-surface group-hover:text-primary transition-colors flex items-center justify-between">
+<span>Staff Payroll (₦)</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-1">October 2026 salary schedule</p>
+</div>
+</a>
+</div>
+</div>
+</div></main></div></body></html>

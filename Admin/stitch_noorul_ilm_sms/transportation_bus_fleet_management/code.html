@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_dashboard" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+@layer base {
+  html, body { margin: 0; padding: 0; }
+  body { overscroll-behavior: none; }
+  main > :first-child { margin-top: 0 !important; }
+  main > :last-child { margin-bottom: 0 !important; }
+}
+::-webkit-scrollbar { display: none; }
+</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "secondary-fixed": "#97f5cc",
+        "surface-bright": "#faf8ff",
+        "on-primary-fixed-variant": "#264191",
+        "tertiary-fixed": "#ffdcc3",
+        "background": "#faf8ff",
+        "on-tertiary-fixed-variant": "#6e3900",
+        "on-tertiary-container": "#fc922b",
+        "inverse-surface": "#283044",
+        "on-surface-variant": "#444651",
+        "primary-container": "#1e3a8a",
+        "surface-container-highest": "#dae2fd",
+        "tertiary": "#442100",
+        "outline-variant": "#c5c5d3",
+        "surface": "#faf8ff",
+        "on-background": "#131b2e",
+        "surface-variant": "#dae2fd",
+        "on-tertiary-fixed": "#2f1500",
+        "on-primary-container": "#90a8ff",
+        "on-primary": "#ffffff",
+        "inverse-primary": "#b6c4ff",
+        "on-secondary-container": "#007353",
+        "on-primary-fixed": "#00164e",
+        "on-error-container": "#93000a",
+        "surface-container-low": "#f2f3ff",
+        "outline": "#757682",
+        "on-surface": "#131b2e",
+        "surface-dim": "#d2d9f4",
+        "tertiary-container": "#653400",
+        "on-secondary": "#ffffff",
+        "primary-fixed": "#dce1ff",
+        "surface-container-lowest": "#ffffff",
+        "primary": "#00236f",
+        "secondary-fixed-dim": "#7bd8b1",
+        "surface-tint": "#4059aa",
+        "surface-container-high": "#e2e7ff",
+        "error-container": "#ffdad6",
+        "tertiary-fixed-dim": "#ffb77d",
+        "primary-fixed-dim": "#b6c4ff",
+        "inverse-on-surface": "#eef0ff",
+        "on-error": "#ffffff",
+        "error": "#ba1a1a",
+        "secondary": "#006c4e",
+        "surface-container": "#eaedff",
+        "on-secondary-fixed": "#002115",
+        "on-secondary-fixed-variant": "#00513a",
+        "secondary-container": "#97f5cc",
+        "on-tertiary": "#ffffff"
+      },
+      borderRadius: {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      spacing: {
+        "space-xl": "2.5rem",
+        "margin-mobile": "1rem",
+        "gutter": "1.5rem",
+        "space-sm": "0.5rem",
+        "margin": "2rem",
+        "space-xs": "0.25rem",
+        "space-lg": "1.5rem",
+        "space-md": "1rem",
+        "gutter-mobile": "1rem"
+      },
+      fontFamily: {
+        "display-lg-mobile": ["Plus Jakarta Sans"],
+        "label-md": ["Inter"],
+        "metric-lg": ["Plus Jakarta Sans"],
+        "label-lg": ["Inter"],
+        "headline-md": ["Plus Jakarta Sans"],
+        "display-lg": ["Plus Jakarta Sans"],
+        "body-sm": ["Inter"],
+        "headline-sm": ["Plus Jakarta Sans"],
+        "label-sm": ["Inter"],
+        "headline-lg": ["Plus Jakarta Sans"],
+        "body-md": ["Inter"],
+        "headline-lg-mobile": ["Plus Jakarta Sans"],
+        "body-lg": ["Inter"]
+      },
+      fontSize: {
+        "display-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }],
+        "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
+        "metric-lg": ["30px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+        "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }],
+        "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+        "headline-sm": ["16px", { lineHeight: "24px", fontWeight: "600" }],
+        "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "600" }],
+        "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+        "headline-lg-mobile": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+        "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }]
+      }
+    }
+  }
+};
+</script>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased">
+<aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto">
+<div class="flex flex-col">
+<div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-lowest shrink-0">
+<img alt="Noorul Ilm International School Crest Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UnsEmf0aNfbe6KbA2I2KOjy-AjJPn5HgJbPOPtp92hnrTYTxQU3Kprj-LudxqRJQgXA4zxDpCiPO_JirfX4CUT5LQqs6KeKJ_GSf2Ht-VHgKlfySV1L85K0vfUvC97WCuAzZIVoZDeC2b7HXIThvyHNLjPUSRbiHTNS7vBwbBm98BmECKvj6dOgbHU_hIBM6U-dF5bOg8DiWgfR6A2eilGNEpMRUCcR73OrDVlVhwFTuugrYTBeQ9Yrdc"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-primary truncate leading-tight">Noorul Ilm Int'l</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Kaduna • SMS Admin</span>
+</div>
+</div>
+<div class="px-space-md py-space-sm shrink-0">
+<div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="truncate">Kaduna MoE Accredited</span>
+</div>
+</div>
+<nav class="flex-1 px-space-sm py-space-xs space-y-space-md" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg shadow-sm">
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Main</div>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="executive-administrative-dashboard" href="#">Executive Administrative Dashboard</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="notifications-alerts" href="#">Notifications &amp; Alerts</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="school-calendar" href="#">School Calendar</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Academic Management</div>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="student-directory-records" href="#">Student Directory &amp; Records</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="admissions-student-onboarding-workflow" href="#">Admissions &amp; Student Onboarding</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="classes-sections-arms" href="#">Classes, Sections &amp; Arms</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="subjects-curriculum" href="#">Subjects &amp; Curriculum</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="timetable-master-academic-scheduling" href="#">Timetable &amp; Scheduling</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="student-daily-attendance-roll-call-register" href="#">Daily Attendance</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="examinations-continuous-assessment-report-card-compiler" href="#">Examinations &amp; CA Compiler</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Operations &amp; Student Services</div>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="school-clinic-medical-health-records" href="#">School Clinic &amp; Health Records</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="parent-guardian-multi-child-portal" href="#">Parent &amp; Guardian Multi-Child Portal</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="transportation-bus-fleet-management" href="#">Transportation &amp; Bus Fleet Management</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="hostel-boarding-accommodation-management" href="#">Hostel &amp; Boarding Accommodation Management</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="cafeteria-nutritional-meal-management" href="#">Cafeteria &amp; Nutritional Meal Management</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="inventory-assets-procurement" href="#">Inventory, Assets &amp; Procurement</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="library-services-learning-resource-center" href="#">Library Management</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Financial Management</div>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="fee-management-billing" href="#">Fee Management &amp; Billing</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="payments-receipts" href="#">Payments &amp; Receipts (₦)</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="financial-reports-bursary" href="#">Financial Reports &amp; Bursary</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Human Resources</div>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="staff-teachers-hr-directory" href="#">Staff &amp; Teachers Directory</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="staff-attendance-leave-management" href="#">Staff Attendance &amp; Leave</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="payroll" href="#">Payroll (₦)</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">System &amp; Security</div>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="security-audit-logs-system-inspector" href="#">Security, Audit Logs &amp; System Inspector</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="rbac-permission-matrix" href="#">RBAC Permission Matrix</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="user-accounts-roles" href="#">User Accounts &amp; Roles</a>
+</div>
+</nav>
+</div>
+<div class="p-space-md bg-surface-container-low m-space-sm rounded-xl shrink-0">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span class="font-medium">Academic Term</span>
+<span class="text-secondary font-semibold">78% Elapsed</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full w-[78%]"></div>
+</div>
+</div>
+</aside>
+<div class="pl-72 flex flex-col min-h-screen">
+<header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg gap-space-md">
+<div class="flex items-center gap-space-md flex-1 max-w-2xl">
+<div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-high text-on-surface cursor-pointer hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span>
+<span class="font-label-sm text-label-sm font-semibold truncate">2026/2027 • 1st Term (Active)</span>
+<span class="material-symbols-outlined text-[16px] text-outline">arrow_drop_down</span>
+</div>
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-4 py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search students, staff, modules... (Ctrl+K)" type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<button class="hidden sm:flex items-center gap-1.5 px-space-md py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Quick Action</span>
+</button>
+<div class="hidden lg:flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Thursday, 16 Oct 2026</span>
+<span class="font-body-sm text-[10px] text-on-surface-variant">Kaduna Time (GMT+1)</span>
+</div>
+<button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-error text-on-error font-label-sm text-[10px] flex items-center justify-center font-bold">4</span>
+</button>
+<div class="flex items-center gap-space-sm pl-space-xs">
+<div class="relative">
+<img alt="Dr. Aminu Bello" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiGHmRJ5_PwbzMa3Nh1FSX52NfEBNn0ZEyNf__vuuCXdqxdB9yGe1zBiBmoE7HqWT4wZxteYR5p0Wfdh2gTB7-RjoRckPmT1W0Nm3FqlemLKCfgmvcY86nhQ-LnyWKI_8Z9Ac3pvyyVgRTrfei6-O51d4eAjnBc2V_W0Wuqanv_sQ1ummUo0JloAio9QTDs30Wq140LlR99s77O1mqoB9jk4Nuji9Mg4vCIA7j6_Fjc1hi9RZsEm0Zqw"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="hidden md:flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Dr. Aminu Bello</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant truncate">Super Admin / Principal</span>
+</div>
+</div>
+</div>
+</header>
+<main class="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background">
+<div class="flex flex-col w-full">
+<!-- Breadcrumb & Top Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-space-xs">
+<span class="hover:text-primary transition-colors cursor-pointer">Operations</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Transportation Management</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Fleet &amp; Daily Route Logistics</span>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-high px-space-sm py-1 rounded-full text-[11px] font-medium text-on-surface-variant">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span>Kaduna Traffic Authority (KASTLEA) API: Connected • Low Delay Metrowide</span>
+</div>
+</div>
+<!-- Header Banner & Action Bar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm mb-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="max-w-3xl space-y-1">
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Transportation &amp; Bus Fleet Management</h1>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-2.5 py-0.5 rounded-full text-label-sm font-label-sm uppercase tracking-wide">Kaduna Metro</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Manage 14 school buses, student pickup &amp; drop-off routes, driver assignments, GPS telemetry, and safety compliance across Kaduna metropolis (Malali, Barnawa, Hayin Banki, Rigachikun, Ungwan Rimi, Kakuri).
+        </p>
+</div>
+<!-- Action Cluster -->
+<div class="flex flex-wrap items-center gap-space-xs shrink-0">
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>Assign Student</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors rounded-lg font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">sms</span>
+<span>Dispatch SMS</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors rounded-lg font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">local_gas_station</span>
+<span>Fuel &amp; Maint. Log</span>
+</button>
+<button class="inline-flex items-center gap-1 px-3 py-2 bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors rounded-lg font-label-md text-label-md" title="Export Fleet Report (.xlsx)" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export</span>
+</button>
+</div>
+</div>
+</div>
+<!-- KPI Metrics Bar -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-lg">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Active Bus Fleet</span>
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">directions_bus</span>
+</div>
+</div>
+<div>
+<div class="font-metric-lg text-metric-lg text-primary leading-none mb-1">14 / 14</div>
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center text-secondary font-semibold text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+            100% Operational
+          </span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">• On Road</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1 mt-3 overflow-hidden">
+<div class="bg-secondary h-1 rounded-full w-full"></div>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Students Transported Daily</span>
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">group</span>
+</div>
+</div>
+<div>
+<div class="font-metric-lg text-metric-lg text-primary leading-none mb-1">624 Pupils</div>
+<div class="flex items-center gap-1.5">
+<span class="text-on-surface font-semibold text-label-sm font-label-sm">38 Runs</span>
+<span class="text-on-surface-variant font-body-sm text-body-sm">• Morning &amp; Afternoon</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1 mt-3 overflow-hidden">
+<div class="bg-primary h-1 rounded-full w-[84%]"></div>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Average Punctuality</span>
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">schedule</span>
+</div>
+</div>
+<div>
+<div class="font-metric-lg text-metric-lg text-secondary leading-none mb-1">98.2%</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span>Arrival by 07:35 AM at Main Gate</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1 mt-3 overflow-hidden">
+<div class="bg-secondary h-1 rounded-full w-[98.2%]"></div>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Pending Maintenance</span>
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary-container">
+<span class="material-symbols-outlined text-[22px]">build</span>
+</div>
+</div>
+<div>
+<div class="font-metric-lg text-metric-lg text-tertiary-container leading-none mb-1">2 Vehicles Due</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm truncate">
+<span>Bus 04 (Brakes) • Bus 09 (Oil)</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1 mt-3 overflow-hidden">
+<div class="bg-tertiary-container h-1 rounded-full w-[25%]"></div>
+</div>
+</div>
+</div>
+<!-- Split Core Workspaces: 7-Col Left & 5-Col Right -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- LEFT COLUMN: Dispatch Table + RFID Tap Stream (7-Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Table Container -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm mb-space-sm">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Active Routes &amp; Zone Dispatch</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Live telemetry and passenger seating for Kaduna metropolitan circuits</p>
+</div>
+<span class="inline-flex items-center gap-1 text-[12px] font-semibold text-secondary bg-secondary-fixed/50 px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-[14px]">cell_tower</span>
+            Transmitting 1-sec ping
+          </span>
+</div>
+<!-- Filter Segmented Tabs -->
+<div class="flex items-center gap-1 p-1 bg-surface-container-low rounded-lg mb-space-md overflow-x-auto">
+<button class="px-3 py-1.5 rounded-md font-label-sm text-label-sm font-semibold bg-surface-container-lowest text-primary shadow-xs whitespace-nowrap" type="button">All Routes (8)</button>
+<button class="px-3 py-1.5 rounded-md font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" type="button">Northern Zone (Malali / Rimi)</button>
+<button class="px-3 py-1.5 rounded-md font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" type="button">Southern Zone (Barnawa / Kakuri)</button>
+<button class="px-3 py-1.5 rounded-md font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" type="button">Western Zone (Rigachikun)</button>
+</div>
+<!-- Table Responsive Container -->
+<div class="overflow-x-auto -mx-space-md px-space-md">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider rounded-lg">
+<th class="py-2.5 px-3 rounded-l-lg">Route Details</th>
+<th class="py-2.5 px-3">Vehicle / Plate</th>
+<th class="py-2.5 px-3">Crew (Driver • Conductor)</th>
+<th class="py-2.5 px-3">Load</th>
+<th class="py-2.5 px-3">Current Status</th>
+<th class="py-2.5 px-3 text-right rounded-r-lg">Quick Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Route Row 1 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-3">
+<div class="font-headline-sm text-[13px] text-primary font-bold">Route A1: Malali GRA Express</div>
+<div class="text-[11px] text-on-surface-variant">Via Ungwan Rimi • 6 Checkpoints</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-on-surface">Toyota Coaster Bus 01</div>
+<div class="text-[11px] text-outline font-mono">KD-882-KDA</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-on-surface">Malam Shehu Garba</div>
+<div class="text-[11px] text-secondary font-medium">Mrs. Rebecca Yohanna</div>
+</td>
+<td class="py-3 px-3">
+<div class="inline-flex items-center gap-1 font-semibold text-error text-[12px]">
+<span class="material-symbols-outlined text-[14px]">airline_seat_recline_normal</span>
+                    32 / 32 Full
+                  </div>
+<div class="w-16 bg-surface-container-highest rounded-full h-1 mt-1">
+<div class="bg-error h-1 rounded-full w-full"></div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-secondary-fixed text-on-secondary-fixed-variant">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    On Transit • Stop 4/6
+                  </span>
+</td>
+<td class="py-3 px-3 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container-high text-primary" title="Live GPS Telemetry" type="button">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant" title="Passenger Manifest" type="button">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-tertiary-container" title="Send Delay Alert" type="button">
+<span class="material-symbols-outlined text-[18px]">notifications_active</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Route Row 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-surface-container-lowest">
+<td class="py-3 px-3">
+<div class="font-headline-sm text-[13px] text-primary font-bold">Route B2: Barnawa Narayi Line</div>
+<div class="text-[11px] text-on-surface-variant">Via Narayi High Cost • 5 Stops</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-on-surface">Toyota HiAce Bus 06</div>
+<div class="text-[11px] text-outline font-mono">KD-114-TRK</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-on-surface">Mr. Patrick Okon</div>
+<div class="text-[11px] text-secondary font-medium">Hajiya Maryam Sani</div>
+</td>
+<td class="py-3 px-3">
+<div class="inline-flex items-center gap-1 font-semibold text-secondary text-[12px]">
+<span class="material-symbols-outlined text-[14px]">airline_seat_recline_normal</span>
+                    18 / 20 Seats
+                  </div>
+<div class="w-16 bg-surface-container-highest rounded-full h-1 mt-1">
+<div class="bg-secondary h-1 rounded-full w-[90%]"></div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-tertiary-fixed text-on-tertiary-fixed">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+                    Traffic Slow • +6m
+                  </span>
+</td>
+<td class="py-3 px-3 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container-high text-primary" title="Live GPS Telemetry" type="button">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant" title="Passenger Manifest" type="button">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-tertiary-container" title="Send Delay Alert" type="button">
+<span class="material-symbols-outlined text-[18px]">notifications_active</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Route Row 3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-3">
+<div class="font-headline-sm text-[13px] text-primary font-bold">Route C1: Rigachikun Express</div>
+<div class="text-[11px] text-on-surface-variant">Via Kawo &amp; Millennium City • 8 Stops</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-on-surface">Mercedes Sprinter Bus 04</div>
+<div class="text-[11px] text-outline font-mono">KD-552-ZAR</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-on-surface">Usman Al-Hassan</div>
+<div class="text-[11px] text-secondary font-medium">Grace Dangana</div>
+</td>
+<td class="py-3 px-3">
+<div class="inline-flex items-center gap-1 font-semibold text-primary text-[12px]">
+<span class="material-symbols-outlined text-[14px]">airline_seat_recline_normal</span>
+                    28 / 30 Seats
+                  </div>
+<div class="w-16 bg-surface-container-highest rounded-full h-1 mt-1">
+<div class="bg-primary h-1 rounded-full w-[93%]"></div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-surface-container-highest text-primary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+                    Campus Arrived
+                  </span>
+</td>
+<td class="py-3 px-3 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container-high text-primary" title="Live GPS Telemetry" type="button">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant" title="Passenger Manifest" type="button">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-tertiary-container" title="Send Delay Alert" type="button">
+<span class="material-symbols-outlined text-[18px]">notifications_active</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Route Row 4 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-surface-container-lowest">
+<td class="py-3 px-3">
+<div class="font-headline-sm text-[13px] text-primary font-bold">Route D3: Kakuri • TV Station</div>
+<div class="text-[11px] text-on-surface-variant">Via Stadium Roundabout • 4 Stops</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-on-surface">Toyota Coaster Bus 09</div>
+<div class="text-[11px] text-outline font-mono">KD-901-KAF</div>
+</td>
+<td class="py-3 px-3">
+<div class="font-medium text-on-surface">Haruna Ibrahim</div>
+<div class="text-[11px] text-secondary font-medium">Bilkisu Nuhu</div>
+</td>
+<td class="py-3 px-3">
+<div class="inline-flex items-center gap-1 font-semibold text-secondary text-[12px]">
+<span class="material-symbols-outlined text-[14px]">airline_seat_recline_normal</span>
+                    25 / 32 Seats
+                  </div>
+<div class="w-16 bg-surface-container-highest rounded-full h-1 mt-1">
+<div class="bg-secondary h-1 rounded-full w-[78%]"></div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-secondary-fixed text-on-secondary-fixed-variant">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    On Schedule • Transit
+                  </span>
+</td>
+<td class="py-3 px-3 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container-high text-primary" title="Live GPS Telemetry" type="button">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant" title="Passenger Manifest" type="button">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-tertiary-container" title="Send Delay Alert" type="button">
+<span class="material-symbols-outlined text-[18px]">notifications_active</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Live RFID Tap-In Monitor Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">contactless</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Daily RFID Tap-In &amp; SMS Broadcast Stream</h3>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Live Sync active (Kaduna GSM Gateways)</span>
+</div>
+</div>
+<div class="space-y-space-xs">
+<!-- Log Entry 1 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-[12px]">
+                AD
+              </div>
+<div>
+<div class="font-headline-sm text-[13px] text-primary">Aisha Mansur Danbaba</div>
+<div class="text-[11px] text-on-surface-variant">SSS 2 Science • Stop: Malali Waterboard Gate</div>
+</div>
+</div>
+<div class="flex flex-col items-end text-right">
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary bg-secondary-fixed/50 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px]">done_all</span>
+                RFID Boarded • 07:12 AM
+              </span>
+<span class="text-[10px] text-outline font-mono mt-0.5">Parent SMS Sent (MTN 07:12:08)</span>
+</div>
+</div>
+<!-- Log Entry 2 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center font-bold text-[12px]">
+                BA
+              </div>
+<div>
+<div class="font-headline-sm text-[13px] text-primary">Bilal Abdulrahman</div>
+<div class="text-[11px] text-on-surface-variant">Primary 3 Emerald • Stop: Barnawa Shopping Complex</div>
+</div>
+</div>
+<div class="flex flex-col items-end text-right">
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary bg-secondary-fixed/50 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px]">done_all</span>
+                RFID Boarded • 07:14 AM
+              </span>
+<span class="text-[10px] text-outline font-mono mt-0.5">Parent SMS Sent (Airtel 07:14:02)</span>
+</div>
+</div>
+<!-- Log Entry 3 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-surface-container-highest text-primary flex items-center justify-center font-bold text-[12px]">
+                FY
+              </div>
+<div>
+<div class="font-headline-sm text-[13px] text-primary">Fatima Yakubu Bello</div>
+<div class="text-[11px] text-on-surface-variant">JSS 1 Falcon • Stop: Ungwan Rimi Market Junction</div>
+</div>
+</div>
+<div class="flex flex-col items-end text-right">
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary bg-secondary-fixed/50 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px]">done_all</span>
+                RFID Boarded • 07:18 AM
+              </span>
+<span class="text-[10px] text-outline font-mono mt-0.5">Parent SMS Sent (Glo 07:18:14)</span>
+</div>
+</div>
+<!-- Log Entry 4 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-bold text-[12px]">
+                IU
+              </div>
+<div>
+<div class="font-headline-sm text-[13px] text-primary">Ibrahim Umar Sani</div>
+<div class="text-[11px] text-on-surface-variant">SSS 1 Pearl • Stop: Hayin Banki Railway Crossing</div>
+</div>
+</div>
+<div class="flex flex-col items-end text-right">
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-secondary bg-secondary-fixed/50 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px]">done_all</span>
+                RFID Boarded • 07:22 AM
+              </span>
+<span class="text-[10px] text-outline font-mono mt-0.5">Parent SMS Sent (MTN 07:22:04)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Telemetry Map + Driver Compliance + Fuel Log (5-Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Map & Real-Time Telemetry Container -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Kaduna Metropolis Telemetry</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Live positioning • GPS speed monitors</p>
+</div>
+<span class="px-2.5 py-1 bg-surface-container-high rounded text-[11px] font-mono text-primary font-semibold">Speed Cap: 50 km/h</span>
+</div>
+<!-- Static / Interactive Map Representation -->
+<div class="relative w-full h-64 rounded-xl overflow-hidden shadow-inner mb-space-sm" data-location="Kaduna, Nigeria" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBuxFS9ExIxwOeDxLUgoDaoXHH6m-cEcGv-JlxpgM3KEADm3EHS3AysH3a5p_-wFDnFVzc2naVbm842TV9zAaEt8ued_2J3fpi5K2bSeEowDhi8lFAgCaP4mXRasClwT336Ahg2NXOFBB3f_1eiuKfQM4BRDHvhuBY7wviFr11_GcQvqZlevUmthd7aTe8uHTrbs3Ir-yADo_eQgr4tiyqxq23yf__MUMeeKo41xO2_uMSDyh_v-_j90Q')">
+<!-- Visual telemetry overlay -->
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[1px] flex flex-col justify-between p-space-sm">
+<div class="flex items-center justify-between">
+<div class="bg-surface-container-lowest/90 backdrop-blur px-2.5 py-1 rounded text-[11px] font-medium text-primary shadow-xs">
+                Ahmadu Bello Way Corridor • Kawo Flyover
+              </div>
+<div class="bg-surface-container-lowest/90 backdrop-blur px-2 py-0.5 rounded text-[11px] text-secondary font-bold flex items-center gap-1 shadow-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Live Fleet: 14 Active
+              </div>
+</div>
+<!-- Route Nodes mockup on map -->
+<div class="space-y-1">
+<div class="bg-surface-container-lowest/95 backdrop-blur p-2 rounded-lg shadow-sm">
+<div class="flex items-center justify-between text-[11px]">
+<span class="font-semibold text-primary">Bus 01 (Malali Line)</span>
+<span class="font-mono text-secondary font-bold">42 km/h • Stop 4 (Rimi)</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1 mt-1.5">
+<div class="bg-secondary h-1 rounded-full w-3/4"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Traffic Delay Warning Component -->
+<div class="bg-tertiary-fixed/40 p-space-sm rounded-lg flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-container text-[20px] shrink-0">crisis_alert</span>
+<div class="min-w-0">
+<div class="font-headline-sm text-[12px] text-tertiary-container font-semibold">Minor Congestion: Stadium Roundabout</div>
+<p class="font-body-sm text-[11px] text-on-surface-variant leading-snug">
+              Estimated +6 min delay on Route B2. Auto SMS broadcast dispatched to 18 registered guardians in Zone B.
+            </p>
+</div>
+</div>
+</div>
+<!-- Driver & Safety Compliance Dossier -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary">Lead Driver &amp; Safety Compliance</h3>
+<span class="text-secondary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+            FRSC Certified
+          </span>
+</div>
+<div class="flex items-center gap-space-md mb-space-md">
+<img class="w-14 h-14 rounded-full object-cover shadow-sm" data-alt="Close up studio portrait of an experienced Nigerian middle aged bus driver Malam Shehu Garba wearing a neat dark blue collared uniform and a gentle professional expression against an academic campus background, natural morning lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClgYT_jtDXRiRJMaGgZi8ZwznFvlaNReHcE-EhGD_cUmI6jTPB5w4ULsIy6a8q8eOQV0P2AaELtGUNKyJKiUwG52dGtSxfeWrrEc48PLz6s8N2rIuBAqN6ON2nFHqSIPuBK_AeO7SGtCypvvg683QasiuCjzTYPJcq6ttuz_tYtBRyRGGLVOXqK8CL2fRODcB8ooWRXjPLE5j0B-wsO8PUZRrB4WdcqvbSEuf-rZGDEA5z9yKiVMcRog"/>
+<div class="min-w-0">
+<div class="font-headline-sm text-[15px] text-primary font-bold">Malam Shehu Garba</div>
+<div class="text-[12px] text-on-surface-variant">Senior Fleet Captain • 8 Years at NIIS</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="bg-surface-container-high px-2 py-0.5 rounded text-[10px] font-mono text-on-surface-variant font-medium">FRSC Lic: #KD-99120-E</span>
+<span class="text-secondary text-[11px] font-semibold">Zero Incidents (2018–2026)</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-xs text-[12px]">
+<div class="bg-surface-container-low p-2.5 rounded-lg">
+<span class="text-on-surface-variant text-[11px] block">FRSC License Validity</span>
+<span class="font-semibold text-primary">Valid until March 2028</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg">
+<span class="text-on-surface-variant text-[11px] block">Speed Limiter Calibrated</span>
+<span class="font-semibold text-secondary">50 km/h Governed</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg">
+<span class="text-on-surface-variant text-[11px] block">First Aid Officer Cert</span>
+<span class="font-semibold text-primary">St. John Ambulance Kad.</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg">
+<span class="text-on-surface-variant text-[11px] block">Alcohol &amp; Drug Screening</span>
+<span class="font-semibold text-secondary">Passed (12 Oct 2026)</span>
+</div>
+</div>
+</div>
+<!-- Fuel Allocation Voucher & Maintenance Schedule -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Bursary Fuel Vouchers &amp; KASTLEA Logs</h3>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Kaduna State Transport Authority Inspection Cycle</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">local_gas_station</span>
+</div>
+<div class="space-y-space-xs">
+<!-- Voucher Item 1 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-primary font-bold text-[12px]">
+                B02
+              </div>
+<div>
+<div class="font-headline-sm text-[12px] text-primary">Diesel Quota • Bus 02 (Toyota Coaster)</div>
+<div class="text-[11px] text-on-surface-variant">TotalEnergies Station, Independence Way</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-semibold text-primary text-[13px]">₦45,000</div>
+<span class="text-[10px] text-secondary font-medium">Bursary Cleared</span>
+</div>
+</div>
+<!-- Voucher Item 2 -->
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-primary font-bold text-[12px]">
+                B06
+              </div>
+<div>
+<div class="font-headline-sm text-[12px] text-primary">Diesel Quota • Bus 06 (Toyota HiAce)</div>
+<div class="text-[11px] text-on-surface-variant">NNPC Mega Station, Kawo</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-semibold text-primary text-[13px]">₦32,000</div>
+<span class="text-[10px] text-secondary font-medium">Bursary Cleared</span>
+</div>
+</div>
+<!-- Safety Inspection Certificate Banner -->
+<div class="p-2.5 rounded-lg bg-secondary-fixed/40 flex items-center justify-between mt-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified_user</span>
+<div class="text-[11px]">
+<span class="font-semibold text-primary block">KASTLEA Roadworthiness Certificate</span>
+<span class="text-on-surface-variant">All 14 Buses Cleared • Next Inspection Dec 2026</span>
+</div>
+</div>
+<button class="text-secondary font-label-sm text-label-sm font-semibold hover:underline" type="button">
+              View Certs
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

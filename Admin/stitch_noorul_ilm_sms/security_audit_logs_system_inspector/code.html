@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_dashboard" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+@layer base {
+  html, body { margin: 0; padding: 0; }
+  body { overscroll-behavior: none; }
+  main > :first-child { margin-top: 0 !important; }
+  main > :last-child { margin-bottom: 0 !important; }
+}
+::-webkit-scrollbar { display: none; }
+</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "secondary-fixed": "#97f5cc",
+        "surface-bright": "#faf8ff",
+        "on-primary-fixed-variant": "#264191",
+        "tertiary-fixed": "#ffdcc3",
+        "background": "#faf8ff",
+        "on-tertiary-fixed-variant": "#6e3900",
+        "on-tertiary-container": "#fc922b",
+        "inverse-surface": "#283044",
+        "on-surface-variant": "#444651",
+        "primary-container": "#1e3a8a",
+        "surface-container-highest": "#dae2fd",
+        "tertiary": "#442100",
+        "outline-variant": "#c5c5d3",
+        "surface": "#faf8ff",
+        "on-background": "#131b2e",
+        "surface-variant": "#dae2fd",
+        "on-tertiary-fixed": "#2f1500",
+        "on-primary-container": "#90a8ff",
+        "on-primary": "#ffffff",
+        "inverse-primary": "#b6c4ff",
+        "on-secondary-container": "#007353",
+        "on-primary-fixed": "#00164e",
+        "on-error-container": "#93000a",
+        "surface-container-low": "#f2f3ff",
+        "outline": "#757682",
+        "on-surface": "#131b2e",
+        "surface-dim": "#d2d9f4",
+        "tertiary-container": "#653400",
+        "on-secondary": "#ffffff",
+        "primary-fixed": "#dce1ff",
+        "surface-container-lowest": "#ffffff",
+        "primary": "#00236f",
+        "secondary-fixed-dim": "#7bd8b1",
+        "surface-tint": "#4059aa",
+        "surface-container-high": "#e2e7ff",
+        "error-container": "#ffdad6",
+        "tertiary-fixed-dim": "#ffb77d",
+        "primary-fixed-dim": "#b6c4ff",
+        "inverse-on-surface": "#eef0ff",
+        "on-error": "#ffffff",
+        "error": "#ba1a1a",
+        "secondary": "#006c4e",
+        "surface-container": "#eaedff",
+        "on-secondary-fixed": "#002115",
+        "on-secondary-fixed-variant": "#00513a",
+        "secondary-container": "#97f5cc",
+        "on-tertiary": "#ffffff"
+      },
+      borderRadius: {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      spacing: {
+        "space-xl": "2.5rem",
+        "margin-mobile": "1rem",
+        "gutter": "1.5rem",
+        "space-sm": "0.5rem",
+        "margin": "2rem",
+        "space-xs": "0.25rem",
+        "space-lg": "1.5rem",
+        "space-md": "1rem",
+        "gutter-mobile": "1rem"
+      },
+      fontFamily: {
+        "display-lg-mobile": ["Plus Jakarta Sans"],
+        "label-md": ["Inter"],
+        "metric-lg": ["Plus Jakarta Sans"],
+        "label-lg": ["Inter"],
+        "headline-md": ["Plus Jakarta Sans"],
+        "display-lg": ["Plus Jakarta Sans"],
+        "body-sm": ["Inter"],
+        "headline-sm": ["Plus Jakarta Sans"],
+        "label-sm": ["Inter"],
+        "headline-lg": ["Plus Jakarta Sans"],
+        "body-md": ["Inter"],
+        "headline-lg-mobile": ["Plus Jakarta Sans"],
+        "body-lg": ["Inter"]
+      },
+      fontSize: {
+        "display-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }],
+        "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
+        "metric-lg": ["30px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+        "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }],
+        "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+        "headline-sm": ["16px", { lineHeight: "24px", fontWeight: "600" }],
+        "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "600" }],
+        "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+        "headline-lg-mobile": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+        "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }]
+      }
+    }
+  }
+};
+</script>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased">
+<aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto">
+<div class="flex flex-col">
+<div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-lowest shrink-0">
+<img alt="Noorul Ilm International School Crest Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UnsEmf0aNfbe6KbA2I2KOjy-AjJPn5HgJbPOPtp92hnrTYTxQU3Kprj-LudxqRJQgXA4zxDpCiPO_JirfX4CUT5LQqs6KeKJ_GSf2Ht-VHgKlfySV1L85K0vfUvC97WCuAzZIVoZDeC2b7HXIThvyHNLjPUSRbiHTNS7vBwbBm98BmECKvj6dOgbHU_hIBM6U-dF5bOg8DiWgfR6A2eilGNEpMRUCcR73OrDVlVhwFTuugrYTBeQ9Yrdc"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-primary truncate leading-tight">Noorul Ilm Int'l</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Kaduna • SMS Admin</span>
+</div>
+</div>
+<div class="px-space-md py-space-sm shrink-0">
+<div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="truncate">Kaduna MoE Accredited</span>
+</div>
+</div>
+<nav class="flex-1 px-space-sm py-space-xs space-y-space-md" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg shadow-sm">
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Main</div>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="executive-administrative-dashboard" href="#">Executive Administrative Dashboard</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="notifications-alerts" href="#">Notifications &amp; Alerts</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="school-calendar" href="#">School Calendar</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Academic Management</div>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="student-directory-records" href="#">Student Directory &amp; Records</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="admissions-student-onboarding-workflow" href="#">Admissions &amp; Student Onboarding</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="classes-sections-arms" href="#">Classes, Sections &amp; Arms</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="subjects-curriculum" href="#">Subjects &amp; Curriculum</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="timetable-master-academic-scheduling" href="#">Timetable &amp; Scheduling</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="student-daily-attendance-roll-call-register" href="#">Daily Attendance</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="examinations-continuous-assessment-report-card-compiler" href="#">Examinations &amp; CA Compiler</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Operations &amp; Student Services</div>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="school-clinic-medical-health-records" href="#">School Clinic &amp; Health Records</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="parent-guardian-multi-child-portal" href="#">Parent &amp; Guardian Multi-Child Portal</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="transportation-bus-fleet-management" href="#">Transportation &amp; Bus Fleet Management</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="hostel-boarding-accommodation-management" href="#">Hostel &amp; Boarding Accommodation Management</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="cafeteria-nutritional-meal-management" href="#">Cafeteria &amp; Nutritional Meal Management</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="inventory-assets-procurement" href="#">Inventory, Assets &amp; Procurement</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="library-services-learning-resource-center" href="#">Library Management</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Financial Management</div>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="fee-management-billing" href="#">Fee Management &amp; Billing</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="payments-receipts" href="#">Payments &amp; Receipts (₦)</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="financial-reports-bursary" href="#">Financial Reports &amp; Bursary</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Human Resources</div>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="staff-teachers-hr-directory" href="#">Staff &amp; Teachers Directory</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="staff-attendance-leave-management" href="#">Staff Attendance &amp; Leave</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="payroll" href="#">Payroll (₦)</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">System &amp; Security</div>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="security-audit-logs-system-inspector" href="#">Security, Audit Logs &amp; System Inspector</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="rbac-permission-matrix" href="#">RBAC Permission Matrix</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="user-accounts-roles" href="#">User Accounts &amp; Roles</a>
+</div>
+</nav>
+</div>
+<div class="p-space-md bg-surface-container-low m-space-sm rounded-xl shrink-0">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span class="font-medium">Academic Term</span>
+<span class="text-secondary font-semibold">78% Elapsed</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full w-[78%]"></div>
+</div>
+</div>
+</aside>
+<div class="pl-72 flex flex-col min-h-screen">
+<header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg gap-space-md">
+<div class="flex items-center gap-space-md flex-1 max-w-2xl">
+<div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-high text-on-surface cursor-pointer hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span>
+<span class="font-label-sm text-label-sm font-semibold truncate">2026/2027 • 1st Term (Active)</span>
+<span class="material-symbols-outlined text-[16px] text-outline">arrow_drop_down</span>
+</div>
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-4 py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search students, staff, modules... (Ctrl+K)" type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<button class="hidden sm:flex items-center gap-1.5 px-space-md py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Quick Action</span>
+</button>
+<div class="hidden lg:flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Thursday, 16 Oct 2026</span>
+<span class="font-body-sm text-[10px] text-on-surface-variant">Kaduna Time (GMT+1)</span>
+</div>
+<button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-error text-on-error font-label-sm text-[10px] flex items-center justify-center font-bold">4</span>
+</button>
+<div class="flex items-center gap-space-sm pl-space-xs">
+<div class="relative">
+<img alt="Dr. Aminu Bello" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiGHmRJ5_PwbzMa3Nh1FSX52NfEBNn0ZEyNf__vuuCXdqxdB9yGe1zBiBmoE7HqWT4wZxteYR5p0Wfdh2gTB7-RjoRckPmT1W0Nm3FqlemLKCfgmvcY86nhQ-LnyWKI_8Z9Ac3pvyyVgRTrfei6-O51d4eAjnBc2V_W0Wuqanv_sQ1ummUo0JloAio9QTDs30Wq140LlR99s77O1mqoB9jk4Nuji9Mg4vCIA7j6_Fjc1hi9RZsEm0Zqw"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="hidden md:flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Dr. Aminu Bello</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant truncate">Super Admin / Principal</span>
+</div>
+</div>
+</div>
+</header>
+<main class="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background">
+<div class="flex flex-col w-full space-y-space-lg">
+<!-- Top Breadcrumbs & Page Action Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="space-y-1">
+<nav class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<span>System Administration</span>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span>Security &amp; Governance</span>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="text-primary font-semibold">Forensic Audit Logs &amp; Telemetry</span>
+</nav>
+<div class="flex flex-wrap items-baseline gap-x-space-md gap-y-1">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Security, Audit Logs &amp; System Inspector</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+          Telemetry Engine Active
+        </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-4xl">
+        Enterprise cryptographic audit trail, continuous session inspector, role privilege escalation logs, ISO 27001 / NDPR compliance monitoring, and automated threat defense.
+      </p>
+</div>
+<!-- Quick Action Toolbar -->
+<div class="flex flex-wrap items-center gap-space-xs shrink-0">
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md shadow-sm transition-colors" title="Export CSV for NDPR / External Auditors" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">download</span>
+<span>Export Log (.csv)</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">leak_remove</span>
+<span>Flush Stale Sessions</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Run Diagnostic</span>
+</button>
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Configure Security Baseline" type="button">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+</div>
+<!-- KPI Metric Overview Cards (4 Grid) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- KPI 1: System Posture -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Security Posture</span>
+<div class="font-metric-lg text-metric-lg text-on-surface">99.8%</div>
+</div>
+<div class="p-2.5 rounded-lg bg-secondary-fixed text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[24px]">shield</span>
+</div>
+</div>
+<div class="mt-3 flex items-center gap-1.5 font-label-sm text-label-sm text-secondary font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Zero Breach Alerts • NDPR Compliant</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1 mt-3">
+<div class="bg-secondary h-1 rounded-full w-[99.8%]"></div>
+</div>
+</div>
+<!-- KPI 2: Active Sessions -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Real-Time Sessions</span>
+<div class="font-metric-lg text-metric-lg text-primary">54 <span class="font-headline-sm text-headline-sm text-on-surface-variant">Active</span></div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-high text-primary">
+<span class="material-symbols-outlined text-[24px]">group</span>
+</div>
+</div>
+<div class="mt-3 font-body-sm text-body-sm text-on-surface-variant truncate">
+<span class="font-semibold text-on-surface">42</span> Staff • <span class="font-semibold text-on-surface">8</span> Admins • <span class="font-semibold text-on-surface">4</span> Parents
+      </div>
+<div class="w-full bg-surface-container-high rounded-full h-1 mt-3">
+<div class="bg-primary h-1 rounded-full w-[72%]"></div>
+</div>
+</div>
+<!-- KPI 3: Privileged State Transitions -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">State Transitions</span>
+<div class="font-metric-lg text-metric-lg text-tertiary-container">18 <span class="font-headline-sm text-headline-sm text-on-surface-variant">Today</span></div>
+</div>
+<div class="p-2.5 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined text-[24px]">key</span>
+</div>
+</div>
+<div class="mt-3 font-body-sm text-body-sm text-on-surface-variant truncate">
+        Exam locks, fee adjustments &amp; RBAC changes
+      </div>
+<div class="w-full bg-surface-container-high rounded-full h-1 mt-3">
+<div class="bg-tertiary-container h-1 rounded-full w-[45%]"></div>
+</div>
+</div>
+<!-- KPI 4: Failed Login / Geo Challenges -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">IP Challenges</span>
+<div class="font-metric-lg text-metric-lg text-error">3 <span class="font-headline-sm text-headline-sm text-on-surface-variant">Blocked</span></div>
+</div>
+<div class="p-2.5 rounded-lg bg-error-container text-on-error-container">
+<span class="material-symbols-outlined text-[24px]">gpp_bad</span>
+</div>
+</div>
+<div class="mt-3 font-body-sm text-body-sm text-on-surface-variant truncate">
+        Foreign IPs throttled via Kaduna Geo-Fence
+      </div>
+<div class="w-full bg-surface-container-high rounded-full h-1 mt-3">
+<div class="bg-error h-1 rounded-full w-[15%]"></div>
+</div>
+</div>
+</div>
+<!-- Main Administrative Content Columns -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column (7-col): Ledger & Dual-Signoff -->
+<div class="lg:col-span-7 space-y-space-lg">
+<!-- Immutable Cryptographic Audit Trail Ledger Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Ledger Header & Filter Controls -->
+<div class="p-space-lg space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">history_edu</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Immutable Cryptographic Audit Trail</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">SHA-256 chained transaction blocks for institutional accountability</p>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-low font-label-sm text-label-sm text-on-surface font-mono">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                CHAIN HEIGHT #41,209
+              </span>
+</div>
+</div>
+<!-- Filter Ribbon -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-xs">
+<div class="relative">
+<select class="w-full h-10 px-3 pr-8 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface appearance-none focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20">
+<option value="all">Module: All Domains</option>
+<option value="bursary">Bursary &amp; Payments</option>
+<option value="exam">Examinations &amp; CA</option>
+<option value="rbac">RBAC &amp; Permissions</option>
+<option value="admissions">Admissions &amp; Enrolment</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-[18px] pointer-events-none">expand_more</span>
+</div>
+<div class="relative">
+<select class="w-full h-10 px-3 pr-8 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface appearance-none focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20">
+<option value="all">Severity: All Levels</option>
+<option value="critical">Critical (Privilege/Finance)</option>
+<option value="warning">Warning (Overrides)</option>
+<option value="info">Informational</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-[18px] pointer-events-none">expand_more</span>
+</div>
+<div class="relative">
+<input class="w-full h-10 pl-9 pr-3 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20" placeholder="Filter SHA / Actor..." type="text"/>
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+</div>
+</div>
+</div>
+<!-- Ledger Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider h-11">
+<th class="px-space-md py-2 font-semibold">Timestamp / Hash</th>
+<th class="px-space-md py-2 font-semibold">Authorized Identity</th>
+<th class="px-space-md py-2 font-semibold">Operation &amp; Scope</th>
+<th class="px-space-md py-2 font-semibold">Client Terminal</th>
+<th class="px-space-md py-2 font-semibold text-right">Integrity</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high font-body-sm text-body-sm">
+<!-- Ledger Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-space-md py-3.5 align-top">
+<div class="font-label-md text-label-md font-semibold text-on-surface">11:24:15 AM</div>
+<div class="font-mono text-outline text-[11px] truncate max-w-[120px]" title="SHA-256 #8f2a9e04bc12d8445778841c01">#8f2a...c01</div>
+</td>
+<td class="px-space-md py-3.5 align-top">
+<div class="font-label-md text-label-md font-semibold text-on-surface">Mr. John Danladi</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Bursar Accountant</div>
+</td>
+<td class="px-space-md py-3.5 align-top space-y-1">
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[14px]">payments</span>
+<span>FEE_PAYMENT_VERIFIED</span>
+</div>
+<div class="text-on-surface text-body-sm font-medium">Confirmed ₦185,000 for Farouk Umar Sadiq (JS 2-B)</div>
+<div class="text-outline text-[11px]">Bank Ref: POL-KD-88129034 • Bursary Terminal 01</div>
+</td>
+<td class="px-space-md py-3.5 align-top font-mono text-[12px] text-on-surface-variant">
+<div>192.168.1.45</div>
+<div class="text-outline text-[11px]">Bursary LAN • Chrome</div>
+</td>
+<td class="px-space-md py-3.5 align-top text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-secondary font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[13px]">lock</span>
+                    Signed ✓
+                  </span>
+</td>
+</tr>
+<!-- Ledger Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-space-md py-3.5 align-top">
+<div class="font-label-md text-label-md font-semibold text-on-surface">10:48:02 AM</div>
+<div class="font-mono text-outline text-[11px] truncate max-w-[120px]" title="SHA-256 #e41d87f54c9a2e618844321b99">#e41d...b99</div>
+</td>
+<td class="px-space-md py-3.5 align-top">
+<div class="font-label-md text-label-md font-semibold text-on-surface">Ustaz Bashir Lawal</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Chief Examination Officer</div>
+</td>
+<td class="px-space-md py-3.5 align-top space-y-1">
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[14px]">lock_clock</span>
+<span>EXAM_MARKS_LOCK</span>
+</div>
+<div class="text-on-surface text-body-sm font-medium">Submitted Term 1 Further Maths for SSS 2 (Gold Arm)</div>
+<div class="text-outline text-[11px]">Cryptographic Seal: CA_TERMI_2026_MATH</div>
+</td>
+<td class="px-space-md py-3.5 align-top font-mono text-[12px] text-on-surface-variant">
+<div>192.168.2.14</div>
+<div class="text-outline text-[11px]">Exam HQ • Safari / macOS</div>
+</td>
+<td class="px-space-md py-3.5 align-top text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-secondary font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[13px]">lock</span>
+                    Signed ✓
+                  </span>
+</td>
+</tr>
+<!-- Ledger Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-space-md py-3.5 align-top">
+<div class="font-label-md text-label-md font-semibold text-on-surface">09:15:30 AM</div>
+<div class="font-mono text-outline text-[11px] truncate max-w-[120px]" title="SHA-256 #a08ce230ffbb3410298a5433f2">#a08c...3f2</div>
+</td>
+<td class="px-space-md py-3.5 align-top">
+<div class="font-label-md text-label-md font-semibold text-on-surface">Dr. Aminu Bello</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Super Admin / Principal</div>
+</td>
+<td class="px-space-md py-3.5 align-top space-y-1">
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[14px]">shield_person</span>
+<span>ROLE_PERMISSION_ELEVATED</span>
+</div>
+<div class="text-on-surface text-body-sm font-medium">Granted 24h CA Edit Override to Mal. Zainab Aliyu</div>
+<div class="text-outline text-[11px]">Reason: Medical Leave Assessment Correction (SSS 1)</div>
+</td>
+<td class="px-space-md py-3.5 align-top font-mono text-[12px] text-on-surface-variant">
+<div>192.168.1.10</div>
+<div class="text-outline text-[11px]">Principal Office • Biometric</div>
+</td>
+<td class="px-space-md py-3.5 align-top text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-secondary font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[13px]">lock</span>
+                    Signed ✓
+                  </span>
+</td>
+</tr>
+<!-- Ledger Row 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="px-space-md py-3.5 align-top">
+<div class="font-label-md text-label-md font-semibold text-on-surface">08:30:12 AM</div>
+<div class="font-mono text-outline text-[11px] truncate max-w-[120px]" title="SHA-256 #77cb4301eed192410a88711112">#77cb...112</div>
+</td>
+<td class="px-space-md py-3.5 align-top">
+<div class="font-label-md text-label-md font-semibold text-on-surface">Malam Garba Usman</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Senior Class Master</div>
+</td>
+<td class="px-space-md py-3.5 align-top space-y-1">
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[14px]">cloud_sync</span>
+<span>ATTENDANCE_BATCH_SUBMIT</span>
+</div>
+<div class="text-on-surface text-body-sm font-medium">Kaduna MoE Sync Token Dispatched (382 Pupils)</div>
+<div class="text-outline text-[11px]">Gateway: KD-MOE-EDU-API-2026-LIVE</div>
+</td>
+<td class="px-space-md py-3.5 align-top font-mono text-[12px] text-on-surface-variant">
+<div>192.168.3.102</div>
+<div class="text-outline text-[11px]">Staff Room • Firefox</div>
+</td>
+<td class="px-space-md py-3.5 align-top text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-secondary font-label-sm text-[11px] font-bold">
+<span class="material-symbols-outlined text-[13px]">lock</span>
+                    Signed ✓
+                  </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Ledger Footer Pagination -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm font-label-sm text-label-sm text-on-surface-variant">
+<span>Showing 4 of 2,841 cryptographically verified operations today</span>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface shadow-sm disabled:opacity-50" disabled="">Previous</button>
+<span class="px-2">Page 1 of 71</span>
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface shadow-sm hover:bg-surface-container-high transition-colors">Next</button>
+</div>
+</div>
+</div>
+<!-- Administrative State Change Approvals & Dual-Signoff History Card -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm space-y-space-md">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">policy</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Administrative Dual-Signoff Governance</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Two-party authorization mandate for high-impact financial waivers, grade tampering protections, and credential revocation.
+            </p>
+</div>
+<span class="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-secondary font-label-sm text-label-sm font-semibold">
+            2FA Enforced
+          </span>
+</div>
+<div class="space-y-3 pt-space-xs">
+<!-- Dual Signoff Item 1: Pending -->
+<div class="p-space-md rounded-lg bg-surface-container-low space-y-3">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container text-[20px]">currency_exchange</span>
+<span class="font-label-lg text-label-lg text-on-surface">Fee Refund Authorization: ₦45,000</span>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-[11px] font-semibold w-fit">
+                1 of 2 Signatures Acquired
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Student: Zainab Ahmad (Primary 3-A) • Excess boarding fee rebate requested by Alhaji Ahmad Dikko.
+            </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-1">
+<div class="p-2.5 rounded bg-surface-container-lowest flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface font-semibold">Mr. John Danladi</div>
+<div class="text-[10px] text-outline">Bursar • Signed 09:40 AM</div>
+</div>
+</div>
+<span class="font-label-sm text-[11px] text-secondary font-semibold">Approved</span>
+</div>
+<div class="p-2.5 rounded bg-surface-container-lowest flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">pending</span>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface font-semibold">Dr. Aminu Bello</div>
+<div class="text-[10px] text-outline">Principal Counter-Sign</div>
+</div>
+</div>
+<button class="px-2 py-1 rounded bg-primary text-on-primary font-label-sm text-[11px] hover:bg-primary-container transition-colors">
+                  Authorize Sign
+                </button>
+</div>
+</div>
+</div>
+<!-- Dual Signoff Item 2: Completed -->
+<div class="p-space-md rounded-lg bg-surface-container-low space-y-3">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">grading</span>
+<span class="font-label-lg text-label-lg text-on-surface">Term CA Score Amendment: Physics (SSS 3-C)</span>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-semibold w-fit">
+                Fully Counter-Signed ✓
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Score revised from 18/30 to 26/30 following remark of mid-term lab experiment paper #PH-891.
+            </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-1">
+<div class="p-2.5 rounded bg-surface-container-lowest flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface font-semibold">Mrs. Aisha Sani</div>
+<div class="text-[10px] text-outline">Physics Subject Teacher</div>
+</div>
+</div>
+<span class="font-label-sm text-[11px] text-secondary font-semibold">Signed</span>
+</div>
+<div class="p-2.5 rounded bg-surface-container-lowest flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface font-semibold">Ustaz Bashir Lawal</div>
+<div class="text-[10px] text-outline">Exam Officer Counter-Seal</div>
+</div>
+</div>
+<span class="font-label-sm text-[11px] text-secondary font-semibold">Ratified</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (5-col): Live Monitor, NDPR Compliance & Threats -->
+<div class="lg:col-span-5 space-y-space-lg">
+<!-- Live Session Monitor & Endpoint Security Card -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">devices</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Live Session Inspector</h2>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+            54 Active
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Real-time terminal telemetry monitoring IP bindings, inactivity timeouts, and hardware tokens across Kaduna campus nodes.
+        </p>
+<!-- Session List -->
+<div class="space-y-2.5">
+<!-- Session 1: Admin -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between gap-space-sm hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative shrink-0">
+<img class="w-9 h-9 rounded-full object-cover" data-alt="Professional portrait photograph of an African male educational executive wearing a navy institutional blazer against a soft library backdrop in Kaduna" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxyH65t_b0ec1ETmfMadreL2ZATvydG34lj_7XByA2qOnMjUNyqQJDEfIl2N-U4Hep6aJ5tDDDI7l44ERpQzulD34nvAvsD76Dult81MpJ9lOZwAl4hU_VbwhCGd0mEd0R8Xq123mQoIuZyrbOrHuKR-cdI369hMBREp1M95PbrLzfLz1DUzWe2O5TiO14hmvFkXMlMNW38b395pVLRLJaWGqNEHuov1cCngsKVvNpV-SyMxPLTace9w"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface-container-low"></span>
+</div>
+<div class="min-w-0">
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Dr. Aminu Bello</div>
+<div class="font-body-sm text-[11px] text-on-surface-variant truncate">Admin Office Block • 192.168.1.10</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-sm text-[11px] text-secondary font-semibold">Active now</span>
+<button class="p-1 rounded text-outline hover:text-error hover:bg-surface-container-high transition-colors" title="Force End Session">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+</button>
+</div>
+</div>
+<!-- Session 2: Teacher -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between gap-space-sm hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative shrink-0">
+<img class="w-9 h-9 rounded-full object-cover" data-alt="Close up photograph of a Nigerian male high school teacher wearing a white collared shirt in a bright classroom setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgNOlQ5QidBi780YIy8xM1LMX-knk-uWCTypYq7nr-FlzR3GxPXWz0yTiEgS74zXg5kL79DjnBBWLpH5uXm7HuDdJnB9FDVDKOPiSe0_ODAUZS3bwTAgE_eecp_AHnnVFNT7oPwk4Rhjwv-yLNRJOhr2ptCqoz3zkZo0DDossBlYA5fd6SzFvS93Pdgotb14nnBZoxoEl17Zops3Je9VTykLCgaPFgwMCsWh6yLtqJTWsSmM1SYVTLbQ"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface-container-low"></span>
+</div>
+<div class="min-w-0">
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Malam Garba Usman</div>
+<div class="font-body-sm text-[11px] text-on-surface-variant truncate">Staff Room Terminal 3 • 192.168.3.102</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-sm text-[11px] text-outline">Idle 12m</span>
+<button class="p-1 rounded text-outline hover:text-error hover:bg-surface-container-high transition-colors" title="Force End Session">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+</button>
+</div>
+</div>
+<!-- Session 3: Clinic Nurse -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between gap-space-sm hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative shrink-0">
+<img class="w-9 h-9 rounded-full object-cover" data-alt="Portrait photograph of an African female healthcare worker wearing clean medical scrubs and a warm professional smile in an institutional clinic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGSCEI1td01sAjNNVFSLqi6qumvYgJZJBV65TkcTDUK9nXbwwYEm7I6eUMwCSHqBb9Fzw95ZyaMJKFcW1HpgwjOIMVL-FSloEyzygOOgIVNufKbjNiFKJajejbxq5R504PM4Z3CvWM1bHajRkaq-c1m322ChxAn5iDrtmGg_nGnr_SkdNNhxayV2373SR2NH6J_cWm3sse8fZZhLjt18Ja3lVIhNuoiaueO8h3z4WkwOxQ5etVaMhvGQ"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface-container-low"></span>
+</div>
+<div class="min-w-0">
+<div class="font-label-md text-label-md font-semibold text-on-surface truncate">Nurse Maryam Kabir</div>
+<div class="font-body-sm text-[11px] text-on-surface-variant truncate">School Clinic Workstation • 192.168.4.18</div>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-label-sm text-[11px] text-secondary font-semibold">Active now</span>
+<button class="p-1 rounded text-outline hover:text-error hover:bg-surface-container-high transition-colors" title="Force End Session">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+</button>
+</div>
+</div>
+</div>
+<button class="w-full py-2 bg-surface-container hover:bg-surface-container-high text-on-surface rounded-lg font-label-sm text-label-sm font-semibold transition-colors text-center" type="button">
+          View All 54 Active Terminals
+        </button>
+</div>
+<!-- Kaduna Data Protection & NDPR Compliance Card -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm space-y-space-md">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">verified</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">NDPR &amp; ISO 27001 Posture</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Nigeria Data Protection Regulation compliance &amp; statutory audit readiness.
+            </p>
+</div>
+<span class="px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">
+            100% PASS
+          </span>
+</div>
+<div class="space-y-3 pt-space-xs font-body-sm text-body-sm">
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">location_on</span>
+<div class="space-y-0.5">
+<div class="font-label-sm text-label-sm font-semibold text-on-surface">Sovereign Data Residency</div>
+<p class="text-on-surface-variant text-[12px]">
+                Primary data cluster located in Lagos Tier-IV data center with encrypted offline replica in Kaduna Admin bunker. No cross-border student PII transfers.
+              </p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">enhanced_encryption</span>
+<div class="space-y-0.5">
+<div class="font-label-sm text-label-sm font-semibold text-on-surface">AES-256 Bit Field-Level Encryption</div>
+<p class="text-on-surface-variant text-[12px]">
+                Student clinical records, psychiatric observations, and parental BVN/account tokens encrypted with hardware-managed KMS keys.
+              </p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">history_toggle_off</span>
+<div class="space-y-0.5">
+<div class="font-label-sm text-label-sm font-semibold text-on-surface">7-Year Retention &amp; Auto-Purge Protocol</div>
+<p class="text-on-surface-variant text-[12px]">
+                Complies with Kaduna State Ministry of Education statutory record tenure before automated cryptographic erasure.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Automated Security Incident Alerts -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[22px]">crisis_alert</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Automated Threat Defense</h2>
+</div>
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+            Auto-Shield ON
+          </span>
+</div>
+<div class="space-y-2.5">
+<div class="p-3 rounded-lg bg-error-container/40 space-y-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">public_off</span>
+                IP Geo-Fence Perimeter Block
+              </span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">03:14 AM</span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface">
+              Unauthorized access attempt targeting Bursary portal routed through IP <span class="font-mono text-[11px] font-semibold">185.220.101.5</span> (Tor Exit Node / Romania). Blocked automatically by perimeter firewall.
+            </p>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low space-y-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-tertiary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">lock_reset</span>
+                Brute Force Throttle
+              </span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">Yesterday 22:40</span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant">
+              Account lockout triggered for portal username <span class="font-mono text-[11px]">parent_danladi</span> after 5 unsuccessful password attempts. Account secured; SMS unlock token sent.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

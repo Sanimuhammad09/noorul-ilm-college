@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E3A8A"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <!-- Outer Crest Shield -->
+  <path d="M120 15 C175 15 215 35 215 85 C215 155 160 205 120 225 C80 205 25 155 25 85 C25 35 65 15 120 15 Z" fill="url(#shieldGrad)" filter="url(#subtleShadow)" stroke="url(#goldGrad)" stroke-width="4"/>
+
+  <!-- Inner Trim Line -->
+  <path d="M120 25 C168 25 203 42 203 87 C203 148 155 194 120 212 C85 194 37 148 37 87 C37 42 72 25 120 25 Z" fill="none" stroke="rgba(245, 158, 11, 0.4)" stroke-width="2" stroke-dasharray="4 2"/>
+
+  <!-- Academic Torch & Star of Knowledge -->
+  <circle cx="120" cy="65" r="14" fill="url(#goldGrad)"/>
+  <path d="M120 42 L123 52 L133 55 L124 60 L126 70 L118 63 L110 68 L114 59 L106 53 L116 52 Z" fill="#FFFFFF"/>
+
+  <!-- Open Book Symbol of Ilm (Knowledge) -->
+  <g transform="translate(120, 122) scale(0.95)">
+    <!-- Book pages left -->
+    <path d="M-5 -5 C-25 -22 -65 -16 -75 -10 C-78 -8 -78 28 -78 30 C-68 24 -28 20 -5 32 Z" fill="#FFFFFF" opacity="0.95"/>
+    <!-- Book pages right -->
+    <path d="M5 -5 C25 -22 65 -16 75 -10 C78 -8 78 28 78 30 C68 24 28 20 5 32 Z" fill="#FFFFFF" opacity="0.95"/>
+    <!-- Center spine & bookmark -->
+    <path d="M-2 -8 L2 -8 L2 35 L-2 35 Z" fill="url(#goldGrad)"/>
+    <!-- Golden rays / pages lines -->
+    <line x1="-65" y1="5" x2="-15" y2="3" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+    <line x1="-65" y1="15" x2="-15" y2="13" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round"/>
+    <line x1="15" y1="3" x2="65" y2="5" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+    <line x1="15" y1="13" x2="65" y2="15" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Emerald Laurel Wreath Base -->
+  <path d="M60 160 C75 185 95 198 120 202 C145 198 165 185 180 160" fill="none" stroke="url(#emeraldGrad)" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="85" cy="180" r="3" fill="#F59E0B"/>
+  <circle cx="120" cy="195" r="4" fill="#F59E0B"/>
+  <circle cx="155" cy="180" r="3" fill="#F59E0B"/>
+
+  <!-- School Initials Banner -->
+  <text x="120" y="165" font-family="'Plus Jakarta Sans', Inter, sans-serif" font-size="14" font-weight="800" fill="#F8FAFC" text-anchor="middle" letter-spacing="3">NIIS</text>
+  <text x="120" y="178" font-family="'Plus Jakarta Sans', Inter, sans-serif" font-size="8" font-weight="600" fill="#FCD34D" text-anchor="middle" letter-spacing="1.5">KADUNA</text>
+</svg>

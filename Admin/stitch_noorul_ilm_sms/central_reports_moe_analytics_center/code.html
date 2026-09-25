@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_dashboard" name="shell-type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "secondary-fixed-dim": "#7bd8b1",
+          "inverse-surface": "#283044",
+          "surface-bright": "#faf8ff",
+          "outline-variant": "#c5c5d3",
+          "on-secondary-fixed-variant": "#00513a",
+          "surface-variant": "#dae2fd",
+          "primary-fixed": "#dce1ff",
+          "secondary-container": "#97f5cc",
+          "on-surface": "#131b2e",
+          "primary-container": "#1e3a8a",
+          "on-primary-fixed": "#00164e",
+          "on-primary-container": "#90a8ff",
+          "outline": "#757682",
+          "on-secondary-container": "#007353",
+          "error": "#ba1a1a",
+          "secondary-fixed": "#97f5cc",
+          "background": "#faf8ff",
+          "error-container": "#ffdad6",
+          "primary": "#00236f",
+          "secondary": "#006c4e",
+          "on-error-container": "#93000a",
+          "on-background": "#131b2e",
+          "surface-container-high": "#e2e7ff",
+          "on-secondary-fixed": "#002115",
+          "on-error": "#ffffff",
+          "tertiary": "#442100",
+          "tertiary-container": "#653400",
+          "tertiary-fixed-dim": "#ffb77d",
+          "surface-container-lowest": "#ffffff",
+          "on-primary-fixed-variant": "#264191",
+          "surface-container-highest": "#dae2fd",
+          "surface-tint": "#4059aa",
+          "on-primary": "#ffffff",
+          "primary-fixed-dim": "#b6c4ff",
+          "on-tertiary-container": "#fc922b",
+          "inverse-on-surface": "#eef0ff",
+          "on-surface-variant": "#444651",
+          "on-secondary": "#ffffff",
+          "tertiary-fixed": "#ffdcc3",
+          "surface-container": "#eaedff",
+          "surface-container-low": "#f2f3ff",
+          "surface": "#faf8ff",
+          "on-tertiary-fixed-variant": "#6e3900",
+          "on-tertiary": "#ffffff",
+          "inverse-primary": "#b6c4ff",
+          "on-tertiary-fixed": "#2f1500",
+          "surface-dim": "#d2d9f4"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "space-xl": "2.5rem",
+          "gutter-mobile": "1rem",
+          "space-sm": "0.5rem",
+          "margin-mobile": "1rem",
+          "space-lg": "1.5rem",
+          "gutter": "1.5rem",
+          "space-md": "1rem",
+          "margin": "2rem"
+        },
+        "fontFamily": {
+          "body-lg": ["Inter"],
+          "body-md": ["Inter"],
+          "label-lg": ["Inter"],
+          "display-lg-mobile": ["Plus Jakarta Sans"],
+          "label-md": ["Inter"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "metric-lg": ["Plus Jakarta Sans"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"],
+          "body-sm": ["Inter"],
+          "label-sm": ["Inter"],
+          "display-lg": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+          "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+          "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "metric-lg": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "headline-lg-mobile": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+          "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+          "display-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+        }
+      }
+    }
+  };
+  </script>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased">
+<aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto">
+<div class="flex flex-col">
+<div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-lowest">
+<img alt="Noorul Ilm International School Crest Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UnsEmf0aNfbe6KbA2I2KOjy-AjJPn5HgJbPOPtp92hnrTYTxQU3Kprj-LudxqRJQgXA4zxDpCiPO_JirfX4CUT5LQqs6KeKJ_GSf2Ht-VHgKlfySV1L85K0vfUvC97WCuAzZIVoZDeC2b7HXIThvyHNLjPUSRbiHTNS7vBwbBm98BmECKvj6dOgbHU_hIBM6U-dF5bOg8DiWgfR6A2eilGNEpMRUCcR73OrDVlVhwFTuugrYTBeQ9Yrdc"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-primary truncate leading-tight">Noorul Ilm Int'l</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Kaduna • SMS Admin</span>
+</div>
+</div>
+<div class="px-space-md py-space-sm">
+<div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="truncate">Kaduna MoE Accredited</span>
+</div>
+</div>
+<nav class="flex-1 px-space-sm py-space-xs space-y-space-md" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg shadow-sm">
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Main</div>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="executive-administrative-dashboard" href="#">Executive Administrative Dashboard</a>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="teacher-daily-classroom-portal" href="#">Teacher Classroom Portal</a>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="student-learning-assignment-portal" href="#">Student Learning &amp; Assignment</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Academic Management</div>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="academic-curriculum-lesson-plans" href="#">Curriculum &amp; Lesson Plans</a>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="classes-sections-arms" href="#">Classes, Sections &amp; Arms</a>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="examinations-assessments" href="#">Examinations &amp; Assessments</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Financial Management</div>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="fee-structure-billing" href="#">Fee Structure &amp; Billing</a>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="payments-receipts" href="#">Payments &amp; Receipts (₦)</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Student Services</div>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="student-directory" href="#">Student Directory</a>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="student-discipline-welfare-registry" href="#">Discipline &amp; Welfare Registry</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Operations</div>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="facilities-visitor-gatehouse-management" href="#">Facilities &amp; Visitor Gatehouse</a>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="staff-directory" href="#">Staff Directory</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Analytics &amp; Reports</div>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="central-reports-moe-analytics-center" href="#">Central Reports &amp; MoE Analytics</a>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="audit-logs-activity" href="#">Audit Logs &amp; Activity</a>
+</div>
+</nav>
+</div>
+<div class="p-space-md bg-surface-container-low m-space-sm rounded-xl">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span class="font-medium">Academic Term</span>
+<span class="text-secondary font-semibold">78% Elapsed</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full w-[78%]"></div>
+</div>
+</div>
+</aside>
+<div class="pl-72 flex flex-col min-h-screen">
+<header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg gap-space-md">
+<div class="flex items-center gap-space-md flex-1 max-w-2xl">
+<div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-high text-on-surface cursor-pointer hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span>
+<span class="font-label-sm text-label-sm font-semibold truncate">2026/2027 • 1st Term (Active)</span>
+<span class="material-symbols-outlined text-[16px] text-outline">arrow_drop_down</span>
+</div>
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-4 py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search students, staff, admission IDs, fee receipts... (Ctrl+K)" type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<button class="hidden sm:flex items-center gap-1.5 px-space-md py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Quick Action</span>
+</button>
+<div class="hidden lg:flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Thursday, 16 Oct 2026</span>
+<span class="font-body-sm text-[10px] text-on-surface-variant">Kaduna Time (GMT+1)</span>
+</div>
+<button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-error text-on-error font-label-sm text-[10px] flex items-center justify-center font-bold">4</span>
+</button>
+<div class="flex items-center gap-space-sm pl-space-xs">
+<div class="relative">
+<img alt="Dr. Aminu Bello Profile Avatar" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiGHmRJ5_PwbzMa3Nh1FSX52NfEBNn0ZEyNf__vuuCXdqxdB9yGe1zBiBmoE7HqWT4wZxteYR5p0Wfdh2gTB7-RjoRckPmT1W0Nm3FqlemLKCfgmvcY86nhQ-LnyWKI_8Z9Ac3pvyyVgRTrfei6-O51d4eAjnBc2V_W0Wuqanv_sQ1ummUo0JloAio9QTDs30Wq140LlR99s77O1mqoB9jk4Nuji9Mg4vCIA7j6_Fjc1hi9RZsEm0Zqw"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="hidden md:flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Dr. Aminu Bello</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant truncate">Super Admin / Principal</span>
+</div>
+</div>
+</div>
+</header>
+<main class="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background"><div class="flex flex-col w-full space-y-space-lg pb-space-xl">
+<!-- Top Executive Header & Action Bar -->
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="space-y-space-xs max-w-3xl">
+<div class="flex items-center gap-space-xs text-secondary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px]">account_balance</span>
+<span>Kaduna State Ministry of Education Regulatory Portal • EMIS Center</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Central Reports &amp; Statutory MoE Analytics Center</h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        Institutional business intelligence, Kaduna State Ministry of Education statutory broad-sheets, WAEC/NECO trend analyses, and bursary audit exports.
+      </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<button class="flex items-center gap-1.5 px-space-md py-2 bg-surface-container-high text-on-surface hover:bg-surface-variant font-label-md text-label-md rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">query_stats</span>
+<span>Custom BI Query</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 bg-surface-container-high text-on-surface hover:bg-surface-variant font-label-md text-label-md rounded-lg transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">description</span>
+<span>Generate Dossier</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 bg-secondary text-on-secondary hover:opacity-95 font-label-md text-label-md rounded-lg shadow-sm transition-opacity" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Compile MoE Broad-Sheet</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md rounded-lg shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">cloud_download</span>
+<span>Export All (.xlsx/.pdf)</span>
+</button>
+</div>
+</div>
+<!-- Statutory & Institutional KPI Metric Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-primary/5 rounded-full pointer-events-none group-hover:scale-110 transition-transform"></div>
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">WASSCE Distinction Trajectory</span>
+<div class="flex items-baseline gap-2">
+<span class="font-metric-lg text-metric-lg text-primary">88.6%</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +4.2%
+            </span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">workspace_premium</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs border-t-0 bg-surface-container-low px-2 py-1.5 rounded-lg flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>Projected A1–B3 Pass Rate</span>
+<span class="font-semibold text-primary">STEM Wing</span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-secondary/5 rounded-full pointer-events-none group-hover:scale-110 transition-transform"></div>
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">MoE Compliance Score</span>
+<div class="flex items-baseline gap-2">
+<span class="font-metric-lg text-metric-lg text-secondary">100%</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center">
+<span class="material-symbols-outlined text-[14px]">done_all</span> Validated
+            </span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[22px]">gavel</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs bg-surface-container-low px-2 py-1.5 rounded-lg flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>Kaduna QA Board Seal</span>
+<span class="font-semibold text-secondary">KD-QA-2026</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-tertiary-container/5 rounded-full pointer-events-none group-hover:scale-110 transition-transform"></div>
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Total Revenue Realization</span>
+<div class="flex items-baseline gap-1">
+<span class="font-metric-lg text-metric-lg text-on-surface">₦142.65M</span>
+<span class="font-body-sm text-body-sm text-outline">/ ₦187.5M</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">account_balance_wallet</span>
+</div>
+</div>
+<div class="mt-space-md space-y-1">
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full w-[76.1%]"></div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Term 1 Bursary Realization</span>
+<span class="font-semibold text-primary">76.1%</span>
+</div>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 bg-primary/5 rounded-full pointer-events-none group-hover:scale-110 transition-transform"></div>
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Terminal Retention Rate</span>
+<div class="flex items-baseline gap-2">
+<span class="font-metric-lg text-metric-lg text-primary">99.1%</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> +0.8%
+            </span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">diversity_3</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs bg-surface-container-low px-2 py-1.5 rounded-lg flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>Active Scholar Roll</span>
+<span class="font-semibold text-primary">1,842 Enrolled</span>
+</div>
+</div>
+</div>
+<!-- Navigation Category Tabs -->
+<div class="bg-surface-container-lowest p-1 rounded-xl shadow-sm flex items-center overflow-x-auto gap-1">
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md whitespace-nowrap shadow-sm">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Statutory MoE &amp; EMIS Reports</span>
+</button>
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-[18px]">school</span>
+<span>Academic &amp; Examination Performance</span>
+</button>
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>Financial &amp; Bursary Audits</span>
+</button>
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-[18px]">pie_chart</span>
+<span>Demographic &amp; Enrollment Metrics</span>
+</button>
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+<span>Faculty &amp; HR Analytics</span>
+</button>
+</div>
+<!-- Main Asymmetric Workspace Layout (65% / 35%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN (65% - 8 cols on desktop) -->
+<div class="lg:col-span-8 space-y-space-lg">
+<!-- Section: Statutory Broad-Sheet Interactive Preview -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm bg-surface-container-low -mx-space-lg -mt-space-lg p-space-md rounded-t-xl">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[24px]">assignment_turned_in</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-primary">Kaduna State Unified MoE Broad-Sheet Preview</h2>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">EMIS Live Sync</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">SS3 Science Wing • Terminal Assessment Cycle 2026/2027 • Hash: KD-EMIS-2026-T1-88912</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">security</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Digitally Signed • MoE Standard Form B</span>
+</div>
+</div>
+<!-- Filter Controls -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm pt-space-xs">
+<div>
+<label class="block font-label-sm text-label-sm text-outline mb-1">Academic Arm</label>
+<select class="w-full h-10 px-3 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest">
+<option selected="">SSS 3 - Al-Farabi (Science)</option>
+<option>SSS 3 - Ibn Khaldun (Arts)</option>
+<option>SSS 3 - Al-Khwarizmi (Tech)</option>
+</select>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-outline mb-1">Subject Cluster</label>
+<select class="w-full h-10 px-3 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest">
+<option selected="">Core WAEC/NECO (9 Subjects)</option>
+<option>Science Core Only</option>
+<option>Islamic Studies Core</option>
+</select>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-outline mb-1">Pass Threshold</label>
+<select class="w-full h-10 px-3 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest">
+<option selected="">Credit Benchmark (≥ 50% C6)</option>
+<option>Distinction Only (≥ 75% A1-B3)</option>
+<option>All Performance Tiers</option>
+</select>
+</div>
+<div class="flex items-end">
+<button class="w-full h-10 bg-primary text-on-primary rounded-lg font-label-md text-label-md flex items-center justify-center gap-1.5 hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>Recompute Ranks</span>
+</button>
+</div>
+</div>
+<!-- Broad-Sheet Data Grid Table -->
+<div class="overflow-x-auto rounded-lg bg-surface-container-lowest">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low h-11 text-outline font-label-sm text-label-sm uppercase tracking-wider">
+<th class="px-3 py-2 font-semibold">Adm ID</th>
+<th class="px-3 py-2 font-semibold">Student Full Name</th>
+<th class="px-3 py-2 font-semibold text-center">MATH</th>
+<th class="px-3 py-2 font-semibold text-center">ENG</th>
+<th class="px-3 py-2 font-semibold text-center">PHY</th>
+<th class="px-3 py-2 font-semibold text-center">CHEM</th>
+<th class="px-3 py-2 font-semibold text-center">BIO</th>
+<th class="px-3 py-2 font-semibold text-center">CIV</th>
+<th class="px-3 py-2 font-semibold text-center">AGG / POS</th>
+<th class="px-3 py-2 font-semibold text-center">STATE BENCHMARK</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm divide-y-0">
+<!-- Row 1 -->
+<tr class="h-12 hover:bg-surface-container-low/70 transition-colors">
+<td class="px-3 py-2 font-semibold text-primary">KD/NI/21/049</td>
+<td class="px-3 py-2">
+<div class="flex items-center gap-2">
+<img class="w-7 h-7 rounded-full object-cover" data-alt="Close up photographic portrait of a brilliant Nigerian female student wearing an immaculate white school hijab with dark navy uniform, smiling with poise inside Noorul Ilm Kaduna academy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmCVyvDsAY5qkKjIWf_mODTM_Sosw3X3iutXrtVqcl17umiFBfgaiee6DkT7V7hwwBZ7NGeUoI4IaFGmG4HgK6iQ8WPeuEaAdUKvhuHoHpsKU6MiWEYaEkPZ8IuHWCMsrams-6EZ_pXetNBRflseA4ZFnvIeD1uzUOVhzXobjlQjzWGK9nmAOGaiPVsKG5GZQt3eOCVB_c1JpQ0vuZFmYlObfQ7y5SBJDCq_Bcj8fdVomza2_af-KAwA"/>
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface font-semibold">Amina Zubairu Usman</span>
+<span class="text-[10px] text-outline">SSS 3A • Boarder</span>
+</div>
+</div>
+</td>
+<td class="px-3 py-2 text-center font-semibold text-secondary">94 (A1)</td>
+<td class="px-3 py-2 text-center font-semibold text-secondary">88 (A1)</td>
+<td class="px-3 py-2 text-center font-semibold text-secondary">91 (A1)</td>
+<td class="px-3 py-2 text-center font-semibold text-secondary">86 (A1)</td>
+<td class="px-3 py-2 text-center font-semibold text-secondary">89 (A1)</td>
+<td class="px-3 py-2 text-center font-semibold text-secondary">95 (A1)</td>
+<td class="px-3 py-2 text-center">
+<span class="font-bold text-primary">543</span>
+<span class="text-[10px] text-secondary font-bold block">1st / 128</span>
+</td>
+<td class="px-3 py-2 text-center">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-bold">
+                    MoE Honors
+                  </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="h-12 bg-surface-container-low/30 hover:bg-surface-container-low transition-colors">
+<td class="px-3 py-2 font-semibold text-primary">KD/NI/21/112</td>
+<td class="px-3 py-2">
+<div class="flex items-center gap-2">
+<img class="w-7 h-7 rounded-full object-cover" data-alt="Portrait of a young northern Nigerian teenage male scholar in crisp school blazer looking sharp and focused in a state-of-the-art laboratory at Noorul Ilm International Kaduna." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOLDP-0KwE5BhnpFb3oqnF_FzctidqGBNogLMnq5AQ4kGBpJa-nzGMkCHYX9I5apxexo2nXX_9upEB0wHa0eOpC3IADRgpI6BWwW3FKjMXBBQa3Dt_Tv7fQmNSpDIOHDAyH-JglS32QsN8HwtnVP4-0Be5nKGUTJW8awZac38SIhp_pPuv2FOL9LPwCjTZU4o2HXnfExaCCsgkwQECBjwkpjjKsBq_4jg1oy1knNXmDpn4taWI9lXCvg"/>
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface font-semibold">Farouq Abdullahi Sani</span>
+<span class="text-[10px] text-outline">SSS 3A • Day</span>
+</div>
+</div>
+</td>
+<td class="px-3 py-2 text-center font-semibold text-secondary">87 (A1)</td>
+<td class="px-3 py-2 text-center font-semibold text-primary">78 (B2)</td>
+<td class="px-3 py-2 text-center font-semibold text-secondary">85 (A1)</td>
+<td class="px-3 py-2 text-center font-semibold text-primary">80 (B2)</td>
+<td class="px-3 py-2 text-center font-semibold text-secondary">84 (B2)</td>
+<td class="px-3 py-2 text-center font-semibold text-secondary">90 (A1)</td>
+<td class="px-3 py-2 text-center">
+<span class="font-bold text-primary">504</span>
+<span class="text-[10px] text-outline block">2nd / 128</span>
+</td>
+<td class="px-3 py-2 text-center">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-bold">
+                    MoE Distinction
+                  </span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="h-12 hover:bg-surface-container-low/70 transition-colors">
+<td class="px-3 py-2 font-semibold text-primary">KD/NI/21/088</td>
+<td class="px-3 py-2">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xs">HK</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface font-semibold">Hauwa Khaleel Ibrahim</span>
+<span class="text-[10px] text-outline">SSS 3B • Boarder</span>
+</div>
+</div>
+</td>
+<td class="px-3 py-2 text-center font-semibold text-primary">79 (B2)</td>
+<td class="px-3 py-2 text-center font-semibold text-secondary">82 (B2)</td>
+<td class="px-3 py-2 text-center font-semibold text-primary">76 (B3)</td>
+<td class="px-3 py-2 text-center font-semibold text-secondary">88 (A1)</td>
+<td class="px-3 py-2 text-center font-semibold text-primary">77 (B3)</td>
+<td class="px-3 py-2 text-center font-semibold text-secondary">86 (A1)</td>
+<td class="px-3 py-2 text-center">
+<span class="font-bold text-primary">488</span>
+<span class="text-[10px] text-outline block">3rd / 128</span>
+</td>
+<td class="px-3 py-2 text-center">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[11px] font-semibold">
+                    MoE Credit Pass
+                  </span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="h-12 bg-surface-container-low/30 hover:bg-surface-container-low transition-colors">
+<td class="px-3 py-2 font-semibold text-primary">KD/NI/21/205</td>
+<td class="px-3 py-2">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-xs">MA</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface font-semibold">Muhammad Adam Bello</span>
+<span class="text-[10px] text-outline">SSS 3C • Day</span>
+</div>
+</div>
+</td>
+<td class="px-3 py-2 text-center font-semibold text-primary">74 (B3)</td>
+<td class="px-3 py-2 text-center font-semibold text-primary">71 (B3)</td>
+<td class="px-3 py-2 text-center font-semibold text-on-surface">68 (C4)</td>
+<td class="px-3 py-2 text-center font-semibold text-primary">73 (B3)</td>
+<td class="px-3 py-2 text-center font-semibold text-on-surface">65 (C5)</td>
+<td class="px-3 py-2 text-center font-semibold text-primary">78 (B2)</td>
+<td class="px-3 py-2 text-center">
+<span class="font-bold text-primary">429</span>
+<span class="text-[10px] text-outline block">9th / 128</span>
+</td>
+<td class="px-3 py-2 text-center">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-[11px]">
+                    MoE Verified
+                  </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">cloud_done</span>
+<span>All continuous assessments synchronized with Kaduna MoE central repository.</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1 rounded bg-surface-container-high text-on-surface hover:bg-surface-variant font-label-sm text-label-sm">Download Broad-Sheet .xlsx</button>
+<button class="px-3 py-1 rounded bg-primary text-on-primary hover:bg-primary-container font-label-sm text-label-sm">Sign &amp; Transmit MoE</button>
+</div>
+</div>
+</div>
+<!-- Section: Multi-Term Comparative Performance Charts -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Multi-Session Longitudinal Academic Analytics</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Comparative Subject Mastery: 2024/2025 vs 2025/2026 vs Current 2026/2027 Session</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-3 h-3 rounded-full bg-outline-variant"></span> 2024/25
+            </div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-3 h-3 rounded-full bg-primary-fixed-dim"></span> 2025/26
+            </div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-3 h-3 rounded-full bg-secondary"></span> 2026/27 (Current)
+            </div>
+</div>
+</div>
+<!-- Custom Inline High-Contrast Performance Graph (Clean SVG representation) -->
+<div class="w-full bg-surface-container-low p-space-md rounded-xl space-y-space-md">
+<div class="grid grid-cols-5 gap-2 text-center font-label-sm text-label-sm text-outline uppercase pb-1">
+<span>Mathematics</span>
+<span>English Lang.</span>
+<span>Physics</span>
+<span>Chemistry</span>
+<span>Civic Educ.</span>
+</div>
+<div class="grid grid-cols-5 gap-4 h-48 items-end px-2">
+<!-- Subject 1: Mathematics -->
+<div class="flex items-end justify-center gap-1.5 h-full">
+<div class="w-3 bg-outline-variant rounded-t transition-all hover:opacity-80" style="height: 68%;" title="2024/25: 68%"></div>
+<div class="w-3 bg-primary-fixed-dim rounded-t transition-all hover:opacity-80" style="height: 74%;" title="2025/26: 74%"></div>
+<div class="w-3.5 bg-secondary rounded-t shadow-sm transition-all hover:opacity-90" style="height: 89%;" title="2026/27: 89%"></div>
+</div>
+<!-- Subject 2: English Language -->
+<div class="flex items-end justify-center gap-1.5 h-full">
+<div class="w-3 bg-outline-variant rounded-t transition-all hover:opacity-80" style="height: 72%;" title="2024/25: 72%"></div>
+<div class="w-3 bg-primary-fixed-dim rounded-t transition-all hover:opacity-80" style="height: 81%;" title="2025/26: 81%"></div>
+<div class="w-3.5 bg-secondary rounded-t shadow-sm transition-all hover:opacity-90" style="height: 92%;" title="2026/27: 92%"></div>
+</div>
+<!-- Subject 3: Physics -->
+<div class="flex items-end justify-center gap-1.5 h-full">
+<div class="w-3 bg-outline-variant rounded-t transition-all hover:opacity-80" style="height: 62%;" title="2024/25: 62%"></div>
+<div class="w-3 bg-primary-fixed-dim rounded-t transition-all hover:opacity-80" style="height: 71%;" title="2025/26: 71%"></div>
+<div class="w-3.5 bg-secondary rounded-t shadow-sm transition-all hover:opacity-90" style="height: 84%;" title="2026/27: 84%"></div>
+</div>
+<!-- Subject 4: Chemistry -->
+<div class="flex items-end justify-center gap-1.5 h-full">
+<div class="w-3 bg-outline-variant rounded-t transition-all hover:opacity-80" style="height: 65%;" title="2024/25: 65%"></div>
+<div class="w-3 bg-primary-fixed-dim rounded-t transition-all hover:opacity-80" style="height: 77%;" title="2025/26: 77%"></div>
+<div class="w-3.5 bg-secondary rounded-t shadow-sm transition-all hover:opacity-90" style="height: 86%;" title="2026/27: 86%"></div>
+</div>
+<!-- Subject 5: Civic Education -->
+<div class="flex items-end justify-center gap-1.5 h-full">
+<div class="w-3 bg-outline-variant rounded-t transition-all hover:opacity-80" style="height: 80%;" title="2024/25: 80%"></div>
+<div class="w-3 bg-primary-fixed-dim rounded-t transition-all hover:opacity-80" style="height: 88%;" title="2025/26: 88%"></div>
+<div class="w-3.5 bg-secondary rounded-t shadow-sm transition-all hover:opacity-90" style="height: 96%;" title="2026/27: 96%"></div>
+</div>
+</div>
+<div class="grid grid-cols-5 gap-2 text-center font-label-md text-label-md text-primary font-bold pt-2 border-t-0 bg-surface-container-lowest py-2 rounded-lg">
+<span>89.0% (+15%)</span>
+<span>92.4% (+11%)</span>
+<span>84.1% (+13%)</span>
+<span>86.5% (+9%)</span>
+<span>96.0% (+8%)</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<span>*Data aggregated from WAEC Mock Trials, Kaduna MoE Common Entrance &amp; Mid-Term Continuous Assessments.</span>
+<a class="font-label-sm text-label-sm text-primary hover:underline font-semibold flex items-center gap-1" href="#">
+<span>View Full Statistical Variance</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Section: Departmental Efficiency & Wing Breakdown Table -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Departmental Efficiency &amp; Faculty Metrics</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Regulatory staffing parity, teacher-scholar ratios, and CA compliance speeds</p>
+</div>
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+            Kaduna MoE Benchmark Met
+          </span>
+</div>
+<div class="overflow-x-auto rounded-lg">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low h-10 text-outline font-label-sm text-label-sm uppercase">
+<th class="px-4 py-2 font-semibold">Wing / Division</th>
+<th class="px-4 py-2 font-semibold">Lead Academic Dean</th>
+<th class="px-4 py-2 font-semibold text-center">Enrollment</th>
+<th class="px-4 py-2 font-semibold text-center">Staff Ratio</th>
+<th class="px-4 py-2 font-semibold text-center">CA Turnaround</th>
+<th class="px-4 py-2 font-semibold text-right">Pass Rate (%)</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm">
+<tr class="h-12 hover:bg-surface-container-low/50">
+<td class="px-4 py-2 font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+                  Senior Secondary (SSS 1–3)
+                </td>
+<td class="px-4 py-2 text-on-surface-variant">Ustadh Dr. Kabir Danfulani</td>
+<td class="px-4 py-2 text-center font-bold text-primary">612 Scholars</td>
+<td class="px-4 py-2 text-center text-on-surface font-medium">1 : 19</td>
+<td class="px-4 py-2 text-center">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-semibold text-xs">48 Hours</span>
+</td>
+<td class="px-4 py-2 text-right font-bold text-secondary">94.8%</td>
+</tr>
+<tr class="h-12 bg-surface-container-low/30 hover:bg-surface-container-low/50">
+<td class="px-4 py-2 font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+                  Junior Secondary (JSS 1–3)
+                </td>
+<td class="px-4 py-2 text-on-surface-variant">Malama Aisha Balarabe</td>
+<td class="px-4 py-2 text-center font-bold text-primary">684 Scholars</td>
+<td class="px-4 py-2 text-center text-on-surface font-medium">1 : 21</td>
+<td class="px-4 py-2 text-center">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-semibold text-xs">36 Hours</span>
+</td>
+<td class="px-4 py-2 text-right font-bold text-secondary">91.2%</td>
+</tr>
+<tr class="h-12 hover:bg-surface-container-low/50">
+<td class="px-4 py-2 font-semibold text-on-surface flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-fixed-dim"></span>
+                  Primary &amp; Tahfeez Wing
+                </td>
+<td class="px-4 py-2 text-on-surface-variant">Sheikh Mustapha Al-Hassan</td>
+<td class="px-4 py-2 text-center font-bold text-primary">546 Scholars</td>
+<td class="px-4 py-2 text-center text-on-surface font-medium">1 : 16</td>
+<td class="px-4 py-2 text-center">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-semibold text-xs">24 Hours</span>
+</td>
+<td class="px-4 py-2 text-right font-bold text-secondary">97.6%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (35% - 4 cols on desktop) -->
+<div class="lg:col-span-4 space-y-space-lg">
+<!-- One-Click Statutory Export Hub -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[22px] text-primary">archive</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Statutory Export Hub</h2>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">4 Verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          MoE-certified bundles formatted strictly to Kaduna Ministry &amp; WAEC regulatory specifications.
+        </p>
+<!-- Document Item List -->
+<div class="space-y-space-sm">
+<!-- Doc 1 -->
+<div class="p-space-sm bg-surface-container-low rounded-xl flex items-center justify-between hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center font-bold text-xs">
+                XLS
+              </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface font-semibold truncate max-w-[180px]">Kaduna MoE Term 1 Form A Census</span>
+<span class="text-[10px] text-on-surface-variant">Validated 14 Oct • 4.2 MB</span>
+</div>
+</div>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-primary hover:text-on-primary shadow-sm transition-all" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+<!-- Doc 2 -->
+<div class="p-space-sm bg-surface-container-low rounded-xl flex items-center justify-between hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-error/10 text-error flex items-center justify-center font-bold text-xs">
+                PDF
+              </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface font-semibold truncate max-w-[180px]">WASSCE CA Benchmark Dossier</span>
+<span class="text-[10px] text-on-surface-variant">Digital Signature Active • 1.8 MB</span>
+</div>
+</div>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-primary hover:text-on-primary shadow-sm transition-all" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+<!-- Doc 3 -->
+<div class="p-space-sm bg-surface-container-low rounded-xl flex items-center justify-between hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">
+                PDF
+              </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface font-semibold truncate max-w-[180px]">Bursary Certified Cashbook &amp; Bank Rec</span>
+<span class="text-[10px] text-on-surface-variant">Kaduna Inland Rev. Verified • 3.1 MB</span>
+</div>
+</div>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-primary hover:text-on-primary shadow-sm transition-all" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+<!-- Doc 4 -->
+<div class="p-space-sm bg-surface-container-low rounded-xl flex items-center justify-between hover:bg-surface-container transition-colors group">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center font-bold text-xs">
+                XLS
+              </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface font-semibold truncate max-w-[180px]">Staff TRCN &amp; KTSC Registry</span>
+<span class="text-[10px] text-on-surface-variant">100% Certified Teachers • 850 KB</span>
+</div>
+</div>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-primary hover:text-on-primary shadow-sm transition-all" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+<button class="w-full py-2 bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-sm text-label-sm rounded-lg flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">history</span>
+<span>View 3-Year Regulatory Archives</span>
+</button>
+</div>
+<!-- Demographic & Catchment Distribution Insights -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-primary">Socioeconomic &amp; Catchment</h2>
+<span class="material-symbols-outlined text-outline text-[20px]">public</span>
+</div>
+<!-- Gender Parity Visual -->
+<div class="p-space-sm bg-surface-container-low rounded-xl space-y-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface font-semibold">Gender Equity Parity</span>
+<span class="text-secondary font-bold">1:1 Balanced</span>
+</div>
+<div class="flex w-full h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[52%]" title="Male: 52%"></div>
+<div class="bg-secondary h-full w-[48%]" title="Female: 48%"></div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-body-sm text-on-surface-variant pt-0.5">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span> 958 Male (52%)</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary"></span> 884 Female (48%)</span>
+</div>
+</div>
+<!-- Boarding vs Day Scholar Split -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-sm bg-surface-container-low rounded-xl text-center">
+<span class="font-label-sm text-label-sm text-outline uppercase block">Boarding Wing</span>
+<span class="font-headline-md text-headline-md text-primary font-bold">348</span>
+<span class="text-[11px] text-on-surface-variant block">18.9% Full Residency</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-xl text-center">
+<span class="font-label-sm text-label-sm text-outline uppercase block">Day Scholars</span>
+<span class="font-headline-md text-headline-md text-secondary font-bold">1,494</span>
+<span class="text-[11px] text-on-surface-variant block">81.1% Commuters</span>
+</div>
+</div>
+<!-- Geographic Catchment Zones -->
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block">Kaduna Metro Catchment Zones</span>
+<div class="space-y-1.5 font-body-sm text-body-sm">
+<div class="flex items-center justify-between py-1 px-2 rounded bg-surface-container-low">
+<span class="text-on-surface">Kaduna North (Malali, Ungwan Rimi)</span>
+<span class="font-semibold text-primary">42%</span>
+</div>
+<div class="flex items-center justify-between py-1 px-2 rounded bg-surface-container-low">
+<span class="text-on-surface">Kaduna South &amp; Barnawa</span>
+<span class="font-semibold text-primary">28%</span>
+</div>
+<div class="flex items-center justify-between py-1 px-2 rounded bg-surface-container-low">
+<span class="text-on-surface">Igabi &amp; Millennium City Ext.</span>
+<span class="font-semibold text-primary">18%</span>
+</div>
+<div class="flex items-center justify-between py-1 px-2 rounded bg-surface-container-low">
+<span class="text-on-surface">Zaria &amp; Outlying Boarders</span>
+<span class="font-semibold text-primary">12%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Scheduled Automated MoE Dispatch & Audit Log -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[22px] text-secondary">mark_email_read</span>
+<h2 class="font-headline-sm text-headline-sm text-primary">Scheduled Auto-Dispatch</h2>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">Active</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Autonomous transmission to Dr. Aminu Bello and the Kaduna State MoE Inspectorate.
+        </p>
+<div class="space-y-2 bg-surface-container-low p-space-sm rounded-xl">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-outline">Frequency:</span>
+<span class="font-semibold text-on-surface">Every Friday at 16:00 GMT+1</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-outline">Recipients:</span>
+<span class="font-semibold text-on-surface">Principal + 4 Trustees</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-outline">MoE Cloud Sync:</span>
+<span class="text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">cloud_done</span> Enabled
+            </span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center gap-2">
+<button class="flex-1 py-2 bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md rounded-lg transition-colors">
+            Configure Dispatch
+          </button>
+<button class="px-3 py-2 bg-surface-container-high text-on-surface hover:bg-surface-variant font-label-md text-label-md rounded-lg transition-colors" title="Send Test Alert">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for recomputing or refreshing broad-sheet ranks
+  document.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      if(this.textContent.includes('Recompute') || this.textContent.includes('Sync')) {
+        const originalText = this.innerHTML;
+        this.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span> Processing...';
+        setTimeout(() => {
+          this.innerHTML = originalText;
+        }, 800);
+      }
+    });
+  });
+</script></main>
+</div>
+</body></html>

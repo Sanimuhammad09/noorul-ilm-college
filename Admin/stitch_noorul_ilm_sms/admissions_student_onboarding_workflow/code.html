@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-fixed-dim":"#b6c4ff","primary-fixed":"#dce1ff","secondary":"#006c4e","surface-container":"#eaedff","on-error":"#ffffff","background":"#faf8ff","on-secondary":"#ffffff","on-tertiary":"#ffffff","on-primary-container":"#90a8ff","on-primary-fixed-variant":"#264191","tertiary-container":"#653400","surface-container-highest":"#dae2fd","primary-container":"#1e3a8a","on-surface":"#131b2e","surface-variant":"#dae2fd","surface-container-high":"#e2e7ff","primary":"#00236f","on-surface-variant":"#444651","surface-dim":"#d2d9f4","surface-tint":"#4059aa","outline":"#757682","on-primary-fixed":"#00164e","secondary-container":"#97f5cc","on-secondary-fixed":"#002115","surface-container-low":"#f2f3ff","surface":"#faf8ff","error-container":"#ffdad6","inverse-primary":"#b6c4ff","inverse-on-surface":"#eef0ff","secondary-fixed":"#97f5cc","surface-container-lowest":"#ffffff","tertiary-fixed-dim":"#ffb77d","outline-variant":"#c5c5d3","on-background":"#131b2e","tertiary-fixed":"#ffdcc3","on-secondary-fixed-variant":"#00513a","tertiary":"#442100","on-tertiary-fixed":"#2f1500","surface-bright":"#faf8ff","on-secondary-container":"#007353","on-primary":"#ffffff","error":"#ba1a1a","on-tertiary-fixed-variant":"#6e3900","inverse-surface":"#283044","on-tertiary-container":"#fc922b","on-error-container":"#93000a","secondary-fixed-dim":"#7bd8b1"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"gutter-mobile":"1rem","space-lg":"1.5rem","margin":"2rem","space-md":"1rem","gutter":"1.5rem","space-sm":"0.5rem","space-xl":"2.5rem","margin-mobile":"1rem","space-xs":"0.25rem"},fontFamily:{"body-sm":["Inter"],"headline-md":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"body-md":["Inter"],"body-lg":["Inter"],"label-lg":["Inter"],"headline-lg-mobile":["Plus Jakarta Sans"],"label-md":["Inter"],"headline-lg":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"metric-lg":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"label-sm":["Inter"]},fontSize:{"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"headline-md":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"display-lg":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"label-lg":["14px",{lineHeight:"20px",fontWeight:"600"}],"headline-lg-mobile":["22px",{lineHeight:"28px",fontWeight:"600"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-sm":["16px",{lineHeight:"24px",fontWeight:"600"}],"metric-lg":["30px",{lineHeight:"36px",letterSpacing:"-0.02em",fontWeight:"700"}],"display-lg-mobile":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"700"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-lowest"><img alt="Noorul Ilm International School Crest Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UnsEmf0aNfbe6KbA2I2KOjy-AjJPn5HgJbPOPtp92hnrTYTxQU3Kprj-LudxqRJQgXA4zxDpCiPO_JirfX4CUT5LQqs6KeKJ_GSf2Ht-VHgKlfySV1L85K0vfUvC97WCuAzZIVoZDeC2b7HXIThvyHNLjPUSRbiHTNS7vBwbBm98BmECKvj6dOgbHU_hIBM6U-dF5bOg8DiWgfR6A2eilGNEpMRUCcR73OrDVlVhwFTuugrYTBeQ9Yrdc"/><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-primary truncate leading-tight">Noorul Ilm Int'l</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Kaduna • SMS Admin</span></div></div><div class="px-space-md py-space-sm"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px] text-secondary">verified</span><span class="truncate">Kaduna MoE Accredited</span></div></div><nav class="flex-1 px-space-sm py-space-xs space-y-space-md" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg shadow-sm"><div class="space-y-1"><div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Main</div><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="executive-administrative-dashboard" href="#"><span class="truncate">Executive Administrative Dashboard</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="notifications-alerts" href="#"><span class="truncate">Notifications &amp; Alerts</span><span class="px-1.5 py-0.5 rounded-full bg-error text-on-error font-label-sm text-[10px]">4</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="school-calendar" href="#"><span class="truncate">School Calendar</span></a></div><div class="space-y-1"><div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Academic Management</div><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="student-directory-records" href="#"><span class="truncate">Student Directory &amp; Records</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="admissions-student-onboarding-workflow" href="#"><span class="truncate">Admissions &amp; Student Onboarding Workflow</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="classes-sections-arms" href="#"><span class="truncate">Classes, Sections &amp; Arms</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="subjects-curriculum" href="#"><span class="truncate">Subjects &amp; Curriculum</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="timetable-scheduling" href="#"><span class="truncate">Timetable &amp; Scheduling</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="daily-attendance" href="#"><span class="truncate">Daily Attendance</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="examinations-continuous-assessment-report-card-compiler" href="#"><span class="truncate">Examinations, Continuous Assessment &amp; Report Card Compiler</span></a></div><div class="space-y-1"><div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Financial Management</div><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="fee-management-billing" href="#"><span class="truncate">Fee Management &amp; Billing</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="payments-receipts" href="#"><span class="truncate">Payments &amp; Receipts (₦)</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="financial-reports-bursary" href="#"><span class="truncate">Financial Reports &amp; Bursary</span></a></div><div class="space-y-1"><div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Human Resources</div><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="staff-teachers-directory" href="#"><span class="truncate">Staff &amp; Teachers Directory</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="staff-attendance-leave" href="#"><span class="truncate">Staff Attendance &amp; Leave</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="payroll" href="#"><span class="truncate">Payroll (₦)</span></a></div><div class="space-y-1"><div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">System &amp; Security (RBAC)</div><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="rbac-permission-matrix" href="#"><span class="truncate">RBAC Permission Matrix</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="user-accounts-roles" href="#"><span class="truncate">User Accounts &amp; Roles</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="audit-logs-activity" href="#"><span class="truncate">Audit Logs &amp; Activity</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="system-settings" href="#"><span class="truncate">Settings &amp; Kaduna Config</span></a></div></nav></div><div class="p-space-md bg-surface-container-low m-space-sm rounded-xl"><div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1"><span class="font-medium">Academic Term</span><span class="text-secondary font-semibold">78% Elapsed</span></div><div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden"><div class="bg-secondary h-1.5 rounded-full w-[78%]"></div></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg gap-space-md"><div class="flex items-center gap-space-md flex-1 max-w-2xl"><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-high text-on-surface cursor-pointer hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span><span class="font-label-sm text-label-sm font-semibold truncate">2026/2027 • 1st Term (Active)</span><span class="material-symbols-outlined text-[16px] text-outline">arrow_drop_down</span></div><div class="relative flex-1"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full pl-9 pr-4 py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search students, staff, admission IDs, fee receipts... (Ctrl+K)" type="text"/></div></div><div class="flex items-center gap-space-md shrink-0"><button class="hidden sm:flex items-center gap-1.5 px-space-md py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[16px]">add</span><span>Quick Action</span></button><div class="hidden lg:flex flex-col text-right"><span class="font-label-sm text-label-sm text-on-surface font-semibold">Thursday, 16 Oct 2026</span><span class="font-body-sm text-[10px] text-on-surface-variant">Kaduna Time (GMT+1)</span></div><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-error text-on-error font-label-sm text-[10px] flex items-center justify-center font-bold">4</span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiGHmRJ5_PwbzMa3Nh1FSX52NfEBNn0ZEyNf__vuuCXdqxdB9yGe1zBiBmoE7HqWT4wZxteYR5p0Wfdh2gTB7-RjoRckPmT1W0Nm3FqlemLKCfgmvcY86nhQ-LnyWKI_8Z9Ac3pvyyVgRTrfei6-O51d4eAjnBc2V_W0Wuqanv_sQ1ummUo0JloAio9QTDs30Wq140LlR99s77O1mqoB9jk4Nuji9Mg4vCIA7j6_Fjc1hi9RZsEm0Zqw"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span></div><div class="hidden md:flex flex-col min-w-0"><span class="font-label-md text-label-md text-on-surface font-semibold truncate">Dr. Aminu Bello</span><span class="font-body-sm text-[11px] text-on-surface-variant truncate">Super Admin / Principal</span></div></div></div></header><main class="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background"><div class="flex flex-col w-full space-y-space-lg">
+<!-- Breadcrumb & Top Bar -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-outline">
+<span>Academic Management</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Admissions &amp; Enrollment</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold">2026/2027 Admissions Funnel</span>
+</div>
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md pt-space-xs">
+<div class="space-y-space-xs">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight">Admissions &amp; New Student Onboarding</h1>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            2026/2027 Intake Cycle • Active
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary">verified_user</span>
+            Kaduna State QA Approved
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-on-tertiary-container">event</span>
+            Entrance Exam Batch 3 Scheduled
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Central intake pipeline, screening verification workbench, and student registry minting for Noorul Ilm International School (Kaduna Campus).
+        </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center gap-space-xs shrink-0">
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline">download</span>
+<span>Admissions Register</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">schedule</span>
+<span>Batch Exam Scheduler</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow-sm hover:bg-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Intake Quotas</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md shadow-sm hover:bg-on-secondary-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>+ New Applicant</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Admissions Pipeline Overview (Funnel KPI Banner) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-sm">
+<!-- Stage 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between transition-all hover:shadow-md">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Stage 01</span>
+<span class="p-1 rounded-md bg-surface-container-low text-outline">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+</span>
+</div>
+<div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-metric-lg text-metric-lg text-on-surface">64</span>
+<span class="font-label-sm text-label-sm text-outline">applicants</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Inquiries &amp; Drafts</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 truncate">Portal signups &amp; desk drafts</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>Completion: 41%</span>
+<span class="text-secondary font-medium">8 added today</span>
+</div>
+</div>
+<!-- Stage 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between transition-all hover:shadow-md">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Stage 02</span>
+<span class="p-1 rounded-md bg-surface-container-low text-primary">
+<span class="material-symbols-outlined text-[16px]">fact_check</span>
+</span>
+</div>
+<div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-metric-lg text-metric-lg text-on-surface">142</span>
+<span class="font-label-sm text-label-sm text-outline">in review</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Submitted &amp; Vetting</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 truncate">Birth certs, testimonials, health</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>Pending QA: 19</span>
+<span class="text-on-tertiary-container font-medium">12 flagged</span>
+</div>
+</div>
+<!-- Stage 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between transition-all hover:shadow-md">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Stage 03</span>
+<span class="p-1 rounded-md bg-surface-container-low text-secondary">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+</span>
+</div>
+<div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-metric-lg text-metric-lg text-on-surface">88</span>
+<span class="font-label-sm text-label-sm text-outline">evaluated</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Entrance &amp; Interview</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 truncate">Batch A done, Batch B Oct 24</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>Avg: 74.2%</span>
+<span class="text-secondary font-medium">92% cutoff pass</span>
+</div>
+</div>
+<!-- Stage 4 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between transition-all hover:shadow-md">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Stage 04</span>
+<span class="p-1 rounded-md bg-surface-container-low text-on-tertiary-container">
+<span class="material-symbols-outlined text-[16px]">payments</span>
+</span>
+</div>
+<div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-metric-lg text-metric-lg text-on-surface">95</span>
+<span class="font-label-sm text-label-sm text-outline">provisional</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-primary mt-1">Offer &amp; Acceptance Fee</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 truncate">₦50,000 reservation fee</p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>Paid: 64</span>
+<span class="text-on-tertiary-container font-medium">31 pending payment</span>
+</div>
+</div>
+<!-- Stage 5 -->
+<div class="p-space-md rounded-xl bg-surface-container-high shadow-sm flex flex-col justify-between transition-all hover:shadow-md">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Stage 05 • Complete</span>
+<span class="p-1 rounded-md bg-secondary-fixed text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[16px]">how_to_reg</span>
+</span>
+</div>
+<div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-metric-lg text-metric-lg text-secondary">310</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">/ 450 Cap</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface mt-1">Fully Onboarded</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 truncate">ID minted &amp; arm assigned</p>
+</div>
+<div class="mt-space-sm pt-space-xs">
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full" style="width: 68.8%;"></div>
+</div>
+<div class="flex justify-between items-center text-label-sm font-label-sm mt-1 text-on-surface-variant">
+<span>Overall Intake Fill</span>
+<span class="text-secondary font-semibold">68.8%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Filter & Controls Workbench -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col xl:flex-row gap-space-md items-stretch xl:items-center justify-between">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-4 py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all" placeholder="Search applicant name, reference ID (e.g. NIIS-APP-2026-089), or guardian phone..." type="text"/>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-xs shrink-0">
+<!-- Intake Department -->
+<div class="relative">
+<select class="w-full appearance-none px-3 py-2 bg-surface-container-low rounded-lg font-label-sm text-label-sm text-on-surface pr-8 focus:outline-none cursor-pointer">
+<option>All Sections</option>
+<option>Senior Secondary (SSS 1)</option>
+<option>Junior Secondary (JSS 1)</option>
+<option>Primary (P1-P6)</option>
+<option>Nursery &amp; Early Years</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[16px] text-outline pointer-events-none">expand_more</span>
+</div>
+<!-- Funnel Status -->
+<div class="relative">
+<select class="w-full appearance-none px-3 py-2 bg-surface-container-low rounded-lg font-label-sm text-label-sm text-on-surface pr-8 focus:outline-none cursor-pointer">
+<option>All Funnel Stages</option>
+<option>Inquiry / Unsubmitted</option>
+<option>Document Verification</option>
+<option>Entrance Exam Ready</option>
+<option>Offer Extended</option>
+<option>Enrolled &amp; Minted</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[16px] text-outline pointer-events-none">expand_more</span>
+</div>
+<!-- Exam Score Band -->
+<div class="relative">
+<select class="w-full appearance-none px-3 py-2 bg-surface-container-low rounded-lg font-label-sm text-label-sm text-on-surface pr-8 focus:outline-none cursor-pointer">
+<option>Exam Cutoff: All</option>
+<option>High Merit (&gt;80%)</option>
+<option>Standard (50% - 79%)</option>
+<option>Below Cutoff (&lt;50%)</option>
+<option>Exempt / Oral Early Years</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[16px] text-outline pointer-events-none">expand_more</span>
+</div>
+<!-- Boarding / Day -->
+<div class="relative">
+<select class="w-full appearance-none px-3 py-2 bg-surface-container-low rounded-lg font-label-sm text-label-sm text-on-surface pr-8 focus:outline-none cursor-pointer">
+<option>Residency: All</option>
+<option>Day Scholar</option>
+<option>Full Boarder (Hostel)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-[16px] text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Interactive Multi-Stage Applicant Pipeline Table -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden">
+<div class="px-space-lg py-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">table_rows</span>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Candidate Screening &amp; Verification Registry</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Showing active candidates currently progressing through admissions clearance</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span>Displaying: <strong>6</strong> of <strong>699</strong> Total Applications</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-space-md">Applicant &amp; File ID</th>
+<th class="py-3 px-space-md">Target Class &amp; Stream</th>
+<th class="py-3 px-space-md">Exam &amp; Assessment</th>
+<th class="py-3 px-space-md">Documentation</th>
+<th class="py-3 px-space-md">Pipeline Status</th>
+<th class="py-3 px-space-md text-right">Workflow Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center font-headline-sm text-headline-sm text-on-primary-fixed">
+                  MB
+                </div>
+<div class="min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface block leading-tight">Maryam Bello Gusau</span>
+<span class="font-body-sm text-[11px] text-outline font-mono">NIIS-APP-2026-0041 • Kaduna North</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">SSS 1 Science</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Day Scholar</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-semibold">88% (Merit)</span>
+<span class="material-symbols-outlined text-secondary text-[16px]">stars</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                All 4 Verified
+              </span>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+                Offer Accepted (Paid)
+              </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm hover:bg-primary-container shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[15px]">badge</span>
+<span>Finalize &amp; Mint ID</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center font-headline-sm text-headline-sm text-primary">
+                  IK
+                </div>
+<div class="min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface block leading-tight">Ibrahim Kabir Danbatta</span>
+<span class="font-body-sm text-[11px] text-outline font-mono">NIIS-APP-2026-0089 • Kano / Zaria</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">JSS 1 Gold</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Boarder (Hostel A)</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-[11px] font-semibold">76% Standard</span>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">pending</span>
+                Medical Report Req.
+              </span>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+                Interview Cleared
+              </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">send</span>
+<span>Send Offer Letter</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center font-headline-sm text-headline-sm text-primary">
+                  FS
+                </div>
+<div class="min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface block leading-tight">Fatima Sani Zaria</span>
+<span class="font-body-sm text-[11px] text-outline font-mono">NIIS-APP-2026-0112 • Kaduna South</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Primary 4 Emerald</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Day Scholar</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-semibold">84% Merit</span>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                All 4 Verified
+              </span>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+                Entrance Exam Passed
+              </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">calendar_add_on</span>
+<span>Schedule Oral</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-error-container flex items-center justify-center font-headline-sm text-headline-sm text-error">
+                  AM
+                </div>
+<div class="min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface block leading-tight">Abubakar Mustapha</span>
+<span class="font-body-sm text-[11px] text-outline font-mono">NIIS-APP-2026-0150 • Igabi LGA</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">SSS 1 Arts &amp; Humanities</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Day Scholar</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-[11px]">62% Standard</span>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-error">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+                Transfer Cert Missing
+              </span>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">
+                Docs Incomplete
+              </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">sms</span>
+<span>Request Docs (SMS)</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed flex items-center justify-center font-headline-sm text-headline-sm text-on-secondary-fixed">
+                  RA
+                </div>
+<div class="min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface block leading-tight">Ruqayyah Al-Amin</span>
+<span class="font-body-sm text-[11px] text-outline font-mono">NIIS/2026/0448 • Barnawa</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Nursery 2 Pre-Prep</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Day Scholar</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px]">Oral: Exceeding</span>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                All Cleared
+              </span>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm font-semibold">
+                Enrolled
+              </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-sm hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">print</span>
+<span>Print Dossier &amp; ID</span>
+</button>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center font-headline-sm text-headline-sm text-primary">
+                  HU
+                </div>
+<div class="min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface block leading-tight">Hassan Usman Shehu</span>
+<span class="font-body-sm text-[11px] text-outline font-mono">NIIS-APP-2026-0205 • Kaduna North</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">SSS 1 Commercial</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Boarder (Hostel B)</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-[11px]">79% Standard</span>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                All 4 Verified
+              </span>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-tertiary font-label-sm text-label-sm font-semibold">
+                Provisional Offer Sent
+              </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px] text-on-tertiary-container">receipt_long</span>
+<span>Verify ₦50k Fee</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-space-xs">
+<span>Rows per page:</span>
+<select class="bg-surface-container-lowest rounded px-2 py-1 focus:outline-none">
+<option>10</option>
+<option>25</option>
+<option>50</option>
+</select>
+<span>1 - 6 of 699 candidates</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded bg-surface-container-lowest hover:bg-surface-container disabled:opacity-50" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="px-2 font-medium text-on-surface">Page 1 of 70</span>
+<button class="p-1 rounded bg-surface-container-lowest hover:bg-surface-container" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Split Section: Onboarding Stepper Workbench (60%) vs Analytics (40%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Panel: Active Onboarding & ID Minting Stepper (7 cols) -->
+<div class="lg:col-span-7 rounded-xl bg-surface-container-lowest shadow-sm p-space-lg space-y-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="p-2 rounded-lg bg-primary-container text-on-primary">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</span>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Active Screening Dossier</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Maryam Bello Gusau (NIIS-APP-2026-0041)</h3>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+          Ready for Student ID Mint
+        </span>
+</div>
+<!-- 5-Step Visual Stepper -->
+<div class="py-space-xs">
+<div class="grid grid-cols-5 gap-2 text-center">
+<!-- Step 1 Done -->
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-[13px] shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-label-sm text-[11px] text-on-surface mt-1.5 font-medium">1. Bio-Data</span>
+<span class="text-[10px] text-secondary">Verified</span>
+</div>
+<!-- Step 2 Done -->
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-[13px] shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-label-sm text-[11px] text-on-surface mt-1.5 font-medium">2. Docs QA</span>
+<span class="text-[10px] text-secondary">4 Docs OK</span>
+</div>
+<!-- Step 3 Done -->
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-[13px] shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-label-sm text-[11px] text-on-surface mt-1.5 font-medium">3. Exam &amp; Oral</span>
+<span class="text-[10px] text-secondary">Score: 88%</span>
+</div>
+<!-- Step 4 Done -->
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-[13px] shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-label-sm text-[11px] text-on-surface mt-1.5 font-medium">4. Acceptance</span>
+<span class="text-[10px] text-secondary">₦50k Paid</span>
+</div>
+<!-- Step 5 Active -->
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-[13px] shadow-md ring-4 ring-primary-fixed">
+              5
+            </div>
+<span class="font-label-sm text-[11px] text-primary mt-1.5 font-bold">5. Class &amp; ID</span>
+<span class="text-[10px] text-primary font-medium">In Progress</span>
+</div>
+</div>
+</div>
+<!-- Stepper Workbench Form Fields -->
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-space-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Class Arm Allocation -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Assigned Class &amp; Stream Arm</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest px-3 py-2 rounded-lg font-body-sm text-body-sm text-on-surface appearance-none focus:outline-none">
+<option selected="">SSS 1 Science Arm A (38/45 Capacity)</option>
+<option>SSS 1 Science Arm B (41/45 Capacity)</option>
+<option>SSS 1 Commercial Arm A (29/45 Capacity)</option>
+<option>SSS 1 Arts Arm A (32/45 Capacity)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[18px]">expand_more</span>
+</div>
+<p class="font-body-sm text-[11px] text-secondary">Current Cap: 38/45 learners • 7 seats available</p>
+</div>
+<!-- House Allocation -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Assigned School House</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest px-3 py-2 rounded-lg font-body-sm text-body-sm text-on-surface appearance-none focus:outline-none">
+<option selected="">Danfodiyo House (Green • 108 Members)</option>
+<option>Amina House (Yellow • 112 Members)</option>
+<option>Sardauna House (Blue • 109 Members)</option>
+<option>El-Kanemi House (Red • 105 Members)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[18px]">expand_more</span>
+</div>
+<p class="font-body-sm text-[11px] text-outline">Auto-balanced by gender &amp; boarding allocation ratio</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Class Teacher -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Form / Class Teacher</label>
+<div class="flex items-center gap-space-xs p-2 rounded-lg bg-surface-container-lowest">
+<span class="material-symbols-outlined text-primary text-[18px]">person</span>
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface block font-medium truncate">Malam Garba Usman, M.Sc.</span>
+<span class="text-[10px] text-outline">Lead Physics Educator • SSS 1 Coordinator</span>
+</div>
+</div>
+</div>
+<!-- Guardian Account Link -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Linked Guardian Profile</label>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest">
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface block font-medium truncate">Alhaji Bello Gusau</span>
+<span class="text-[10px] text-outline font-mono">+234 802 334 9912 • Father</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[18px]">link</span>
+</div>
+</div>
+</div>
+<!-- Admission Number Mint Preview Banner -->
+<div class="p-space-md rounded-xl bg-surface-container-highest flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="p-2 rounded-lg bg-primary text-on-primary">
+<span class="material-symbols-outlined text-[20px]">pin</span>
+</span>
+<div>
+<span class="font-label-sm text-[11px] uppercase tracking-wider text-outline font-bold">Official Registration Number</span>
+<div class="font-display-lg text-[22px] font-bold text-primary font-mono tracking-wider">
+                NIIS/2026/0451
+              </div>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-semibold">
+            Unallocated &amp; Reserved
+          </span>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-xs">
+<button class="w-full sm:w-auto px-space-md py-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors" type="button">
+          Save Progress as Draft
+        </button>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-space-lg py-2.5 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md hover:bg-on-secondary-container shadow-md transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Mint Student Record &amp; Dispatch SMS Welcome</span>
+</button>
+</div>
+</div>
+<!-- Right Panel: Admissions Demographics & Intake Quotas (5 cols) -->
+<div class="lg:col-span-5 space-y-space-lg">
+<!-- Card: Wing Quota Capacity Progress -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm p-space-lg space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">2026/2027 Section Quotas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Class capacity breakdown vs admissions target</p>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">donut_small</span>
+</div>
+<div class="space-y-space-md">
+<!-- Primary Wing -->
+<div class="space-y-1">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface font-semibold">Primary Wing (Grades 1 - 6)</span>
+<span class="text-secondary font-bold">110 / 120 (92%)</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden">
+<div class="bg-secondary h-2 rounded-full" style="width: 92%;"></div>
+</div>
+<div class="flex justify-between text-[11px] text-outline font-body-sm">
+<span>Only 10 slots remaining</span>
+<span>Waitlist: 14</span>
+</div>
+</div>
+<!-- JSS Wing -->
+<div class="space-y-1">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface font-semibold">Junior Secondary (JSS 1 Intake)</span>
+<span class="text-primary font-bold">132 / 150 (88%)</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-2 rounded-full" style="width: 88%;"></div>
+</div>
+<div class="flex justify-between text-[11px] text-outline font-body-sm">
+<span>18 open slots</span>
+<span>Waitlist: 27</span>
+</div>
+</div>
+<!-- SSS Wing -->
+<div class="space-y-1">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface font-semibold">Senior Secondary (SSS 1 Intake)</span>
+<span class="text-on-tertiary-container font-bold">134 / 180 (74%)</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden">
+<div class="bg-on-tertiary-container h-2 rounded-full" style="width: 74%;"></div>
+</div>
+<div class="flex justify-between text-[11px] text-outline font-body-sm">
+<span>46 open slots</span>
+<span>Science: 84% • Comm: 68% • Arts: 71%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card: Geographic Origin & Score Distribution -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm p-space-lg space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Catchment &amp; Geographic Reach</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Applicant residency distribution across Kaduna &amp; Northern Region</p>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">travel_explore</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<span class="font-body-sm text-[11px] text-outline uppercase font-semibold">Kaduna North / Central</span>
+<span class="font-metric-lg text-[22px] text-primary font-bold mt-1">48.2%</span>
+<span class="font-body-sm text-[11px] text-secondary">337 candidates</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<span class="font-body-sm text-[11px] text-outline uppercase font-semibold">Kaduna South / Barnawa</span>
+<span class="font-metric-lg text-[22px] text-primary font-bold mt-1">26.4%</span>
+<span class="font-body-sm text-[11px] text-secondary">185 candidates</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<span class="font-body-sm text-[11px] text-outline uppercase font-semibold">Zaria &amp; Northern LGA</span>
+<span class="font-metric-lg text-[22px] text-primary font-bold mt-1">14.1%</span>
+<span class="font-body-sm text-[11px] text-secondary">98 candidates</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col justify-between">
+<span class="font-body-sm text-[11px] text-outline uppercase font-semibold">Interstate / Boarding</span>
+<span class="font-metric-lg text-[22px] text-on-tertiary-container font-bold mt-1">11.3%</span>
+<span class="font-body-sm text-[11px] text-secondary">79 candidates (Kano/Abuja)</span>
+</div>
+</div>
+<!-- Quick Notice Callout -->
+<div class="p-space-md rounded-xl bg-surface-container-high flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px] shrink-0 mt-0.5">campaign</span>
+<div class="space-y-0.5">
+<span class="font-label-sm text-label-sm text-primary font-bold block">Next Entrance Exam Sitting</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+              Batch 3 assessment scheduled for <strong>Saturday, 24 October 2026 at 8:30 AM</strong> in the Main Multipurpose Hall. 42 candidate invitation slips dispatched via SMS.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

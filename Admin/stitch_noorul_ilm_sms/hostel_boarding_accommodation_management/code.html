@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_dashboard" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+@layer base {
+  html, body { margin: 0; padding: 0; }
+  body { overscroll-behavior: none; }
+  main > :first-child { margin-top: 0 !important; }
+  main > :last-child { margin-bottom: 0 !important; }
+}
+::-webkit-scrollbar { display: none; }
+</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "secondary-fixed": "#97f5cc",
+        "surface-bright": "#faf8ff",
+        "on-primary-fixed-variant": "#264191",
+        "tertiary-fixed": "#ffdcc3",
+        "background": "#faf8ff",
+        "on-tertiary-fixed-variant": "#6e3900",
+        "on-tertiary-container": "#fc922b",
+        "inverse-surface": "#283044",
+        "on-surface-variant": "#444651",
+        "primary-container": "#1e3a8a",
+        "surface-container-highest": "#dae2fd",
+        "tertiary": "#442100",
+        "outline-variant": "#c5c5d3",
+        "surface": "#faf8ff",
+        "on-background": "#131b2e",
+        "surface-variant": "#dae2fd",
+        "on-tertiary-fixed": "#2f1500",
+        "on-primary-container": "#90a8ff",
+        "on-primary": "#ffffff",
+        "inverse-primary": "#b6c4ff",
+        "on-secondary-container": "#007353",
+        "on-primary-fixed": "#00164e",
+        "on-error-container": "#93000a",
+        "surface-container-low": "#f2f3ff",
+        "outline": "#757682",
+        "on-surface": "#131b2e",
+        "surface-dim": "#d2d9f4",
+        "tertiary-container": "#653400",
+        "on-secondary": "#ffffff",
+        "primary-fixed": "#dce1ff",
+        "surface-container-lowest": "#ffffff",
+        "primary": "#00236f",
+        "secondary-fixed-dim": "#7bd8b1",
+        "surface-tint": "#4059aa",
+        "surface-container-high": "#e2e7ff",
+        "error-container": "#ffdad6",
+        "tertiary-fixed-dim": "#ffb77d",
+        "primary-fixed-dim": "#b6c4ff",
+        "inverse-on-surface": "#eef0ff",
+        "on-error": "#ffffff",
+        "error": "#ba1a1a",
+        "secondary": "#006c4e",
+        "surface-container": "#eaedff",
+        "on-secondary-fixed": "#002115",
+        "on-secondary-fixed-variant": "#00513a",
+        "secondary-container": "#97f5cc",
+        "on-tertiary": "#ffffff"
+      },
+      borderRadius: {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      spacing: {
+        "space-xl": "2.5rem",
+        "margin-mobile": "1rem",
+        "gutter": "1.5rem",
+        "space-sm": "0.5rem",
+        "margin": "2rem",
+        "space-xs": "0.25rem",
+        "space-lg": "1.5rem",
+        "space-md": "1rem",
+        "gutter-mobile": "1rem"
+      },
+      fontFamily: {
+        "display-lg-mobile": ["Plus Jakarta Sans"],
+        "label-md": ["Inter"],
+        "metric-lg": ["Plus Jakarta Sans"],
+        "label-lg": ["Inter"],
+        "headline-md": ["Plus Jakarta Sans"],
+        "display-lg": ["Plus Jakarta Sans"],
+        "body-sm": ["Inter"],
+        "headline-sm": ["Plus Jakarta Sans"],
+        "label-sm": ["Inter"],
+        "headline-lg": ["Plus Jakarta Sans"],
+        "body-md": ["Inter"],
+        "headline-lg-mobile": ["Plus Jakarta Sans"],
+        "body-lg": ["Inter"]
+      },
+      fontSize: {
+        "display-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }],
+        "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
+        "metric-lg": ["30px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+        "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }],
+        "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "body-sm": ["12px", { lineHeight: "16px", fontWeight: "400" }],
+        "headline-sm": ["16px", { lineHeight: "24px", fontWeight: "600" }],
+        "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.04em", fontWeight: "600" }],
+        "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+        "headline-lg-mobile": ["22px", { lineHeight: "28px", fontWeight: "600" }],
+        "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }]
+      }
+    }
+  }
+};
+</script>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased">
+<aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto">
+<div class="flex flex-col">
+<div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-lowest shrink-0">
+<img alt="Noorul Ilm International School Crest Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UnsEmf0aNfbe6KbA2I2KOjy-AjJPn5HgJbPOPtp92hnrTYTxQU3Kprj-LudxqRJQgXA4zxDpCiPO_JirfX4CUT5LQqs6KeKJ_GSf2Ht-VHgKlfySV1L85K0vfUvC97WCuAzZIVoZDeC2b7HXIThvyHNLjPUSRbiHTNS7vBwbBm98BmECKvj6dOgbHU_hIBM6U-dF5bOg8DiWgfR6A2eilGNEpMRUCcR73OrDVlVhwFTuugrYTBeQ9Yrdc"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-primary truncate leading-tight">Noorul Ilm Int'l</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Kaduna • SMS Admin</span>
+</div>
+</div>
+<div class="px-space-md py-space-sm shrink-0">
+<div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="truncate">Kaduna MoE Accredited</span>
+</div>
+</div>
+<nav class="flex-1 px-space-sm py-space-xs space-y-space-md" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg shadow-sm">
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Main</div>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="executive-administrative-dashboard" href="#">Executive Administrative Dashboard</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="notifications-alerts" href="#">Notifications &amp; Alerts</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="school-calendar" href="#">School Calendar</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Academic Management</div>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="student-directory-records" href="#">Student Directory &amp; Records</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="admissions-student-onboarding-workflow" href="#">Admissions &amp; Student Onboarding</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="classes-sections-arms" href="#">Classes, Sections &amp; Arms</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="subjects-curriculum" href="#">Subjects &amp; Curriculum</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="timetable-master-academic-scheduling" href="#">Timetable &amp; Scheduling</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="student-daily-attendance-roll-call-register" href="#">Daily Attendance</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="examinations-continuous-assessment-report-card-compiler" href="#">Examinations &amp; CA Compiler</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Operations &amp; Student Services</div>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="school-clinic-medical-health-records" href="#">School Clinic &amp; Health Records</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="parent-guardian-multi-child-portal" href="#">Parent &amp; Guardian Multi-Child Portal</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="transportation-bus-fleet-management" href="#">Transportation &amp; Bus Fleet Management</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="hostel-boarding-accommodation-management" href="#">Hostel &amp; Boarding Accommodation Management</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="cafeteria-nutritional-meal-management" href="#">Cafeteria &amp; Nutritional Meal Management</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="inventory-assets-procurement" href="#">Inventory, Assets &amp; Procurement</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="library-services-learning-resource-center" href="#">Library Management</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Financial Management</div>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="fee-management-billing" href="#">Fee Management &amp; Billing</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="payments-receipts" href="#">Payments &amp; Receipts (₦)</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="financial-reports-bursary" href="#">Financial Reports &amp; Bursary</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Human Resources</div>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="staff-teachers-hr-directory" href="#">Staff &amp; Teachers Directory</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="staff-attendance-leave-management" href="#">Staff Attendance &amp; Leave</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="payroll" href="#">Payroll (₦)</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">System &amp; Security</div>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="security-audit-logs-system-inspector" href="#">Security, Audit Logs &amp; System Inspector</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="rbac-permission-matrix" href="#">RBAC Permission Matrix</a>
+<a class="block px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md truncate" data-path="user-accounts-roles" href="#">User Accounts &amp; Roles</a>
+</div>
+</nav>
+</div>
+<div class="p-space-md bg-surface-container-low m-space-sm rounded-xl shrink-0">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span class="font-medium">Academic Term</span>
+<span class="text-secondary font-semibold">78% Elapsed</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full w-[78%]"></div>
+</div>
+</div>
+</aside>
+<div class="pl-72 flex flex-col min-h-screen">
+<header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg gap-space-md">
+<div class="flex items-center gap-space-md flex-1 max-w-2xl">
+<div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-high text-on-surface cursor-pointer hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span>
+<span class="font-label-sm text-label-sm font-semibold truncate">2026/2027 • 1st Term (Active)</span>
+<span class="material-symbols-outlined text-[16px] text-outline">arrow_drop_down</span>
+</div>
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-4 py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search students, staff, modules... (Ctrl+K)" type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<button class="hidden sm:flex items-center gap-1.5 px-space-md py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Quick Action</span>
+</button>
+<div class="hidden lg:flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Thursday, 16 Oct 2026</span>
+<span class="font-body-sm text-[10px] text-on-surface-variant">Kaduna Time (GMT+1)</span>
+</div>
+<button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-error text-on-error font-label-sm text-[10px] flex items-center justify-center font-bold">4</span>
+</button>
+<div class="flex items-center gap-space-sm pl-space-xs">
+<div class="relative">
+<img alt="Dr. Aminu Bello" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiGHmRJ5_PwbzMa3Nh1FSX52NfEBNn0ZEyNf__vuuCXdqxdB9yGe1zBiBmoE7HqWT4wZxteYR5p0Wfdh2gTB7-RjoRckPmT1W0Nm3FqlemLKCfgmvcY86nhQ-LnyWKI_8Z9Ac3pvyyVgRTrfei6-O51d4eAjnBc2V_W0Wuqanv_sQ1ummUo0JloAio9QTDs30Wq140LlR99s77O1mqoB9jk4Nuji9Mg4vCIA7j6_Fjc1hi9RZsEm0Zqw"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="hidden md:flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Dr. Aminu Bello</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant truncate">Super Admin / Principal</span>
+</div>
+</div>
+</div>
+</header>
+<main class="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background">
+<div class="flex flex-col w-full space-y-space-lg">
+<!-- Top Hero Header & Breadcrumb Strip -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-lg shadow-sm">
+<div class="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="absolute right-32 -bottom-20 h-64 w-64 rounded-full bg-secondary/10 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col xl:flex-row xl:items-center xl:justify-between gap-space-lg">
+<div class="space-y-space-xs max-w-3xl">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="hover:text-primary transition-colors cursor-pointer">Student Services</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Boarding &amp; Hostel Operations</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Dormitory Master Roster</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Hostel &amp; Boarding Accommodation Management</h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Complete residential hall supervision, bunk allocations, daily roll call registers, prep observation, exeat pass vetting, and Islamic pastoral welfare for Noorul Ilm boarding scholars.
+        </p>
+</div>
+<!-- Action Group -->
+<div class="flex flex-wrap items-center gap-space-sm shrink-0">
+<button class="flex items-center gap-1.5 px-space-md py-2 bg-surface-container-lowest text-on-surface rounded-lg font-label-md text-label-md shadow-sm hover:bg-surface-container-high transition-all" id="btn-export">
+<span class="material-symbols-outlined text-[18px] text-outline">file_download</span>
+<span>Export Register</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 bg-surface-container-lowest text-on-surface rounded-lg font-label-md text-label-md shadow-sm hover:bg-surface-container-high transition-all" id="btn-checklist">
+<span class="material-symbols-outlined text-[18px] text-outline">fact_check</span>
+<span>Inspection Checklist</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 bg-surface-container-lowest text-on-surface rounded-lg font-label-md text-label-md shadow-sm hover:bg-surface-container-high transition-all" id="btn-exeat">
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container">local_activity</span>
+<span>Issue Weekend Exeat</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md shadow-sm hover:bg-primary-container transition-all" id="btn-allocate">
+<span class="material-symbols-outlined text-[18px]">add_box</span>
+<span>+ Allocate Bed Space</span>
+</button>
+</div>
+</div>
+</div>
+<!-- KPI Metric Cards Grid (4 Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Total Boarding Population</span>
+<div class="font-metric-lg text-metric-lg text-primary">348 Scholars</div>
+</div>
+<div class="w-11 h-11 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">apartment</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+          184 Boys • 164 Girls
+        </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-semibold">100% Full</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Night Curfew &amp; Roll Call</span>
+<div class="font-metric-lg text-metric-lg text-secondary">100% Accounted</div>
+</div>
+<div class="w-11 h-11 rounded-lg bg-secondary-container/40 flex items-center justify-center text-on-secondary-container shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Zero Unexcused Dorm Absences</span>
+<span class="flex items-center gap-1 text-secondary font-semibold">
+<span class="material-symbols-outlined text-[14px]">done_all</span> Last: 21:45
+        </span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Active Exeat Passes</span>
+<div class="font-metric-lg text-metric-lg text-on-tertiary-fixed-variant">8 on Exeat</div>
+</div>
+<div class="w-11 h-11 rounded-lg bg-tertiary-fixed/60 flex items-center justify-center text-on-tertiary-container shrink-0">
+<span class="material-symbols-outlined text-[24px]">pin_invoke</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="truncate">4 Medical • 4 Family Weekend</span>
+<span class="font-semibold text-on-tertiary-container">Due 18:00 Sun</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Maintenance &amp; Facilities</span>
+<div class="font-metric-lg text-metric-lg text-on-surface">3 Workorders</div>
+</div>
+<div class="w-11 h-11 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">build</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="truncate">Plumbing &amp; Netting Upgrades</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-semibold text-[11px]">2 In-Flight</span>
+</div>
+</div>
+</div>
+<!-- Main Asymmetric Workspace (7-col / 5-col split) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT 7 COLUMNS: Dorms & Master Table -->
+<div class="lg:col-span-7 space-y-space-lg">
+<!-- Residential Wings Overview Card -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-xs">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Hostel Halls &amp; Dormitory Wings Overview</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Live utility health, bed capacity limits, and house leadership</p>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold self-start sm:self-auto">
+            Kaduna Campus
+          </span>
+</div>
+<!-- Hall Filter Tabs -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1">
+<button class="hall-tab px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md whitespace-nowrap shadow-sm">All Halls (4)</button>
+<button class="hall-tab px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md whitespace-nowrap">Danfodiyo Boys</button>
+<button class="hall-tab px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md whitespace-nowrap">Sultan Bello Boys</button>
+<button class="hall-tab px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md whitespace-nowrap">Nana Asma'u Girls</button>
+<button class="hall-tab px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md whitespace-nowrap">Queen Amina Girls</button>
+</div>
+<!-- Cards Sub-Grid of 4 Dorms -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md pt-space-xs">
+<!-- Dorm 1 -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col justify-between space-y-space-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Boys Residential Wing A</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Danfodiyo Boys Hall</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">person</span>
+                  Ustaz Ahmad Al-Hassan (Master)
+                </p>
+</div>
+<span class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary font-bold text-label-sm shadow-sm">
+                92/92
+              </span>
+</div>
+<div class="space-y-2 pt-space-xs">
+<div class="flex items-center justify-between text-body-sm font-label-sm">
+<span class="text-on-surface-variant">Capacity: 23 Bunk Quads</span>
+<span class="text-secondary font-semibold">100% Booked</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full w-full"></div>
+</div>
+<div class="grid grid-cols-3 gap-1 pt-1 text-center font-label-sm text-[10px]">
+<div class="p-1.5 rounded bg-surface-container-lowest text-secondary font-semibold flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[12px]">water_drop</span> Solar Borehole
+                </div>
+<div class="p-1.5 rounded bg-surface-container-lowest text-secondary font-semibold flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[12px]">bolt</span> 24/7 Inverter
+                </div>
+<div class="p-1.5 rounded bg-surface-container-lowest text-primary font-semibold flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[12px]">sanitizer</span> 98% Rating
+                </div>
+</div>
+</div>
+</div>
+<!-- Dorm 2 -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col justify-between space-y-space-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Boys Residential Wing B</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Sultan Bello Boys Hall</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">person</span>
+                  Mallam Idris Garba (Master)
+                </p>
+</div>
+<span class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary font-bold text-label-sm shadow-sm">
+                92/92
+              </span>
+</div>
+<div class="space-y-2 pt-space-xs">
+<div class="flex items-center justify-between text-body-sm font-label-sm">
+<span class="text-on-surface-variant">Capacity: 23 Bunk Quads</span>
+<span class="text-secondary font-semibold">100% Booked</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full w-full"></div>
+</div>
+<div class="grid grid-cols-3 gap-1 pt-1 text-center font-label-sm text-[10px]">
+<div class="p-1.5 rounded bg-surface-container-lowest text-secondary font-semibold flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[12px]">water_drop</span> Solar Borehole
+                </div>
+<div class="p-1.5 rounded bg-surface-container-lowest text-secondary font-semibold flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[12px]">bolt</span> 24/7 Inverter
+                </div>
+<div class="p-1.5 rounded bg-surface-container-lowest text-primary font-semibold flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[12px]">sanitizer</span> 96% Rating
+                </div>
+</div>
+</div>
+</div>
+<!-- Dorm 3 -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col justify-between space-y-space-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">Girls Residential Wing A</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Nana Asma'u Girls Hall</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">person</span>
+                  Hajiya Maryam Tanko (Mistress)
+                </p>
+</div>
+<span class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-secondary font-bold text-label-sm shadow-sm">
+                82/82
+              </span>
+</div>
+<div class="space-y-2 pt-space-xs">
+<div class="flex items-center justify-between text-body-sm font-label-sm">
+<span class="text-on-surface-variant">Capacity: 21 Bunk Quads</span>
+<span class="text-secondary font-semibold">100% Booked</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full w-full"></div>
+</div>
+<div class="grid grid-cols-3 gap-1 pt-1 text-center font-label-sm text-[10px]">
+<div class="p-1.5 rounded bg-surface-container-lowest text-secondary font-semibold flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[12px]">water_drop</span> Solar Borehole
+                </div>
+<div class="p-1.5 rounded bg-surface-container-lowest text-secondary font-semibold flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[12px]">bolt</span> 24/7 Inverter
+                </div>
+<div class="p-1.5 rounded bg-surface-container-lowest text-secondary font-semibold flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[12px]">sanitizer</span> 99% Rating
+                </div>
+</div>
+</div>
+</div>
+<!-- Dorm 4 -->
+<div class="rounded-xl bg-surface-container-low p-space-md flex flex-col justify-between space-y-space-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">Girls Residential Wing B</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Queen Amina Girls Hall</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">person</span>
+                  Uztaza Bilkisu Dan-Ali (Mistress)
+                </p>
+</div>
+<span class="w-8 h-8 rounded-lg bg-surface-container-lowest flex items-center justify-center text-secondary font-bold text-label-sm shadow-sm">
+                82/82
+              </span>
+</div>
+<div class="space-y-2 pt-space-xs">
+<div class="flex items-center justify-between text-body-sm font-label-sm">
+<span class="text-on-surface-variant">Capacity: 21 Bunk Quads</span>
+<span class="text-secondary font-semibold">100% Booked</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full w-full"></div>
+</div>
+<div class="grid grid-cols-3 gap-1 pt-1 text-center font-label-sm text-[10px]">
+<div class="p-1.5 rounded bg-surface-container-lowest text-secondary font-semibold flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[12px]">water_drop</span> Solar Borehole
+                </div>
+<div class="p-1.5 rounded bg-surface-container-lowest text-secondary font-semibold flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[12px]">bolt</span> 24/7 Inverter
+                </div>
+<div class="p-1.5 rounded bg-surface-container-lowest text-secondary font-semibold flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[12px]">sanitizer</span> 98% Rating
+                </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Residential Learner Master Registry & Bed Space Table -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-2">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Residential Learner Master Registry</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Live bed inventory tagging, class allocation, and residential status</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-outline text-[16px]">filter_list</span>
+<input class="pl-8 pr-3 py-1.5 bg-surface-container-low rounded-lg text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary w-48 text-[12px]" placeholder="Filter bed or name..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto rounded-lg">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead class="bg-surface-container-low text-outline uppercase font-label-sm text-[11px] tracking-wider">
+<tr>
+<th class="py-3 px-space-md">Bed Space Tag</th>
+<th class="py-3 px-space-md">Student Profile</th>
+<th class="py-3 px-space-md">Room &amp; Hall</th>
+<th class="py-3 px-space-md">Exeat / Roll Call</th>
+<th class="py-3 px-space-md text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md font-semibold text-primary font-mono text-[13px]">
+                  DAN-B1-04
+                </td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-2.5">
+<img class="w-8 h-8 rounded-full object-cover shrink-0" data-alt="Portrait photo of a young Nigerian male junior secondary boarding student wearing a crisp school uniform in Kaduna, studio lighting with navy school colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg-bEM0PWmQwAer5ANrm89rCGPyyRn73xbRtAzpvateMiYG8IvzSQHgCY0Numantg51eY2XJ6dFUaJR_9bYaobjixCzZWWyXTW5AXUQ0lQziEQXu8otjQ1u5uNlJMXt9p81qEwcUqZmNnWW9TKtcj-O79PbQqaSsN9lckENGHAV7xlNBuQ-DN_dKyIlKqUCAeCcWG7pZyYdMN_mb5I4FP-TQnHP7Y3k0Fuy2moU8Nu81luxxbBWPK61A"/>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-tight">Usman Kabir Mohammed</span>
+<span class="text-[11px] text-on-surface-variant">NIIS/2024/0312 • JSS 1-Gold</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Room 102 • Lower Bunk</span>
+<span class="text-[11px] text-on-surface-variant">Danfodiyo Boys Hall</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-[11px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> In Hall (Dorm)
+                  </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-primary hover:text-on-surface transition-colors" title="Manage Bed">
+<span class="material-symbols-outlined text-[18px]">bed</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Guardian Contact">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md font-semibold text-primary font-mono text-[13px]">
+                  SUL-B3-11
+                </td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-2.5">
+<img class="w-8 h-8 rounded-full object-cover shrink-0" data-alt="Portrait photo of a polite Nigerian teenage high school student in Kaduna, wearing school blazer and lanyard, dignified academic appearance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5kNPCe3Ye1KDNxkxqQlpO9n4ksrRedCzP8WDRonPTpgnevLUBAsLGp4iui9312Awl3ZOOK_8rSX5sc01uMiMlejgxKfHDPYXXftXPS1rgATyBxIpN9YcREebDb7aQci_B7n9gGw0kqoWyaSrs1MArjQv7QA8TljWKSSS5BvPHEXNR6MbMGvNJ_QHtMmmyb5K6xJ4E_lVOJ0jV1kv4V9Ep8fPMz62b2XTRkDAgug5BO3Psz6rTdPM_gg"/>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-tight">Farouk Umar Sadiq</span>
+<span class="text-[11px] text-on-surface-variant">NIIS/2022/0118 • SSS 2-Science</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Room 204 • Upper Bunk</span>
+<span class="text-[11px] text-on-surface-variant">Sultan Bello Boys Hall</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-[11px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> Pending Exeat
+                  </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-primary hover:text-on-surface transition-colors" title="Manage Bed">
+<span class="material-symbols-outlined text-[18px]">bed</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Guardian Contact">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md font-semibold text-primary font-mono text-[13px]">
+                  NAN-G2-07
+                </td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-2.5">
+<img class="w-8 h-8 rounded-full object-cover shrink-0" data-alt="Portrait photograph of a bright Northern Nigerian female high school student wearing an elegant white hijab uniform at Noorul Ilm Kaduna" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT6IttEMbXhGubmpvSffmbcAZi_bi2e3IN3f6H7Ff56BE-HBJ1opdUYwmESfgZ9QX2_RbGAsws9upAPwjOVkJhYGdAAxt0CErmm5no2JwapJRGsNTb3oSEA-s3ByZJWN-ZYBJNnYBdHMvkpnbZrPFCyplj5AbaJuMqPjq4Lc22W_oBN8_Q3T6Qu9ZCo2ATU8rKNOsZQUlNjGJli_WqoKiVwNWPKt-YcetQ6WBLJ7tA3XqplS_GR7ZjyA"/>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-tight">Zainab Ibrahim Yakubu</span>
+<span class="text-[11px] text-on-surface-variant">NIIS/2021/0089 • SSS 3-Arts</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Room 106 • Lower Bunk</span>
+<span class="text-[11px] text-on-surface-variant">Nana Asma'u Girls Hall</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-[11px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Exeat (Medical)
+                  </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-primary hover:text-on-surface transition-colors" title="Manage Bed">
+<span class="material-symbols-outlined text-[18px]">bed</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Guardian Contact">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-space-md font-semibold text-primary font-mono text-[13px]">
+                  QAM-G1-12
+                </td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-2.5">
+<img class="w-8 h-8 rounded-full object-cover shrink-0" data-alt="Portrait photo of a young Nigerian student girl smiling modestly wearing school headscarf uniform, studio lighting, clear high school environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEqOcLAIvO1jbiClMLLttOlE3aCCzrkgU5pr7pWOEhjkn290X5BF4PTAucoHcGk4jCN4KaulXLTlkr5jpCwPkVznvm93nADbW6FXJM6fo_QE4EK4eX4L_ZmNOt_tbL7EBt3JY6UhscRtHEe7zPJknj4tyXFFgJxv9OcRKmCzpGkqnO-Gp35jutnxzMfge2yz_VUp59PDhRoz10QsUosL8uQ3yQo5Ox3O__hrY9W8wPVIS6aacBxj-lxQ"/>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface leading-tight">Amina Abdullahi Bello</span>
+<span class="text-[11px] text-on-surface-variant">NIIS/2023/0445 • JSS 2-Diamond</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">Room 101 • Lower Bunk</span>
+<span class="text-[11px] text-on-surface-variant">Queen Amina Girls Hall</span>
+</div>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-[11px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Clinic Bed Rest
+                  </span>
+</td>
+<td class="py-3 px-space-md text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-primary hover:text-on-surface transition-colors" title="Manage Bed">
+<span class="material-symbols-outlined text-[18px]">bed</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Guardian Contact">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-body-sm font-label-sm text-on-surface-variant">
+<span>Showing 4 of 348 Boarding Scholars</span>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">Previous</button>
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-bold">1</span>
+<button class="px-2 py-0.5 rounded hover:bg-surface-container">2</button>
+<button class="px-2 py-0.5 rounded hover:bg-surface-container">3</button>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors">Next</button>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT 5 COLUMNS: Exeat Desk, Routine, Pastoral Care -->
+<div class="lg:col-span-5 space-y-space-lg">
+<!-- Exeat & Weekend Pass Approval Docket -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm space-y-space-md border-t-4 border-primary">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Exeat &amp; Weekend Pass Docket</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Strict biometric &amp; guardian PIN authorization</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-[11px] font-bold">2 Pending Action</span>
+</div>
+<!-- Exeat Request 1 (Interactive) -->
+<div class="rounded-xl bg-surface-container-low p-space-md space-y-space-sm transition-all" id="exeat-card-1">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-label-sm">
+                FS
+              </div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface block">Farouk Umar Sadiq</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Class: SSS 2 Science • Sultan Bello Hall</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-[10px] font-bold uppercase">
+              Action Req.
+            </span>
+</div>
+<div class="rounded-lg bg-surface-container-lowest p-space-sm text-body-sm text-on-surface space-y-1">
+<div class="flex items-center justify-between text-[12px]">
+<span class="text-on-surface-variant">Reason:</span>
+<span class="font-medium">Elder Sister Wedding Fatiha (Zaria)</span>
+</div>
+<div class="flex items-center justify-between text-[12px]">
+<span class="text-on-surface-variant">Guardian Contact:</span>
+<span class="font-mono font-medium text-secondary">Alhaji Umar Sadiq (PIN ••• Verified)</span>
+</div>
+<div class="flex items-center justify-between text-[12px]">
+<span class="text-on-surface-variant">Departure / Return:</span>
+<span>Fri 15:30 → Sun 18:00</span>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-1" id="exeat-actions-1">
+<button class="flex-1 py-1.5 px-3 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center gap-1 hover:bg-secondary-fixed-variant transition-colors shadow-sm" onclick="approveExeat('exeat-card-1', 'exeat-actions-1', 'Farouk Umar Sadiq')">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Approve Pass</span>
+</button>
+<button class="py-1.5 px-3 rounded-lg bg-surface-container-highest text-error font-label-md text-label-md hover:bg-error-container transition-colors" onclick="declineExeat('exeat-card-1', 'exeat-actions-1')">
+<span>Decline</span>
+</button>
+</div>
+</div>
+<!-- Exeat Request 2 (Already Approved) -->
+<div class="rounded-xl bg-surface-container-low p-space-md space-y-space-sm opacity-90">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-label-sm">
+                ZY
+              </div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface block">Zainab Ibrahim Yakubu</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Class: SSS 3 Arts • Nana Asma'u Hall</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-[10px] font-bold uppercase">
+              Approved
+            </span>
+</div>
+<div class="rounded-lg bg-surface-container-lowest p-space-sm text-body-sm text-on-surface space-y-1">
+<div class="flex items-center justify-between text-[12px]">
+<span class="text-on-surface-variant">Medical Reason:</span>
+<span class="font-medium truncate">Dental Care • 44 Army Ref. Hospital</span>
+</div>
+<div class="flex items-center justify-between text-[12px]">
+<span class="text-on-surface-variant">Security Passcode:</span>
+<span class="font-mono font-bold text-primary">#EX-884-KAD</span>
+</div>
+<div class="flex items-center justify-between text-[12px]">
+<span class="text-on-surface-variant">Chaperone:</span>
+<span>Hostel Matron (Mrs. Tanko)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Daily Boarding Routine & Prep Bell Schedule -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Daily Boarding Routine &amp; Prep Bells</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Synchronized Islamic prayer, study hours &amp; roll calls</p>
+</div>
+<span class="material-symbols-outlined text-primary text-[22px]">schedule</span>
+</div>
+<div class="space-y-3 relative before:absolute before:left-3.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-highest">
+<!-- Step 1 -->
+<div class="flex items-start gap-3 relative">
+<span class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-[11px] shrink-0 z-10">1</span>
+<div class="flex-1 bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-semibold">Fajr Prayer &amp; Morning Prep</span>
+<span class="text-[11px] text-on-surface-variant">School Mosque • Tajweed Recitation</span>
+</div>
+<span class="font-mono font-bold text-primary text-[12px]">05:30 AM</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex items-start gap-3 relative">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-bold text-[11px] shrink-0 z-10">2</span>
+<div class="flex-1 bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-semibold">Dining Hall Breakfast</span>
+<span class="text-[11px] text-on-surface-variant">Uniform Dress Code Inspection</span>
+</div>
+<span class="font-mono font-bold text-on-surface text-[12px]">07:00 AM</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex items-start gap-3 relative">
+<span class="w-7 h-7 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-bold text-[11px] shrink-0 z-10">3</span>
+<div class="flex-1 bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-semibold">Sports &amp; Outdoor Recreation</span>
+<span class="text-[11px] text-on-surface-variant">Football Pitch &amp; Badminton Courts</span>
+</div>
+<span class="font-mono font-bold text-on-surface text-[12px]">03:30 PM</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex items-start gap-3 relative">
+<span class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-[11px] shrink-0 z-10">4</span>
+<div class="flex-1 bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-semibold">Mandatory Night Study Prep</span>
+<span class="text-[11px] text-on-surface-variant">Academic Hall • Housemasters on Duty</span>
+</div>
+<span class="font-mono font-bold text-secondary text-[12px]">07:30 PM</span>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="flex items-start gap-3 relative">
+<span class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-[11px] shrink-0 z-10">5</span>
+<div class="flex-1 bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-semibold">Lights Out &amp; Curfew Roll Call</span>
+<span class="text-[11px] text-on-surface-variant">Dorm Doors Locked • Security Patrol Active</span>
+</div>
+<span class="font-mono font-bold text-primary text-[12px]">09:30 PM</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pastoral Care & Student Welfare Health Watch -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Pastoral Care &amp; Health Watch</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Dormitory sanitary compliance and clinic surveillance</p>
+</div>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary animate-ping"></span>
+</div>
+<div class="space-y-space-sm">
+<!-- Item 1: Nurse on Duty -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">medical_services</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-semibold">Hostel Nurse On-Duty</span>
+<span class="text-[11px] text-on-surface-variant">Staff Nurse Fatima Kabir (Clinic Ext. 14)</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container font-label-sm text-[10px] font-bold">
+              ACTIVE
+            </span>
+</div>
+<!-- Item 2: Mosquito Net Audit -->
+<div class="p-3 rounded-lg bg-surface-container-low space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-semibold">Insecticide Net Compliance</span>
+<span class="text-[11px] text-on-surface-variant">Kaduna State Malaria Prevention Standard</span>
+</div>
+</div>
+<span class="font-bold text-primary text-label-md">100%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full w-full"></div>
+</div>
+</div>
+<!-- Item 3: Nutrition & Dining Check -->
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-on-tertiary-container text-[20px]">restaurant</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface block font-semibold">Dinner Attendance Audit</span>
+<span class="text-[11px] text-on-surface-variant">344 Served • 4 Special Dietary Diets</span>
+</div>
+</div>
+<span class="text-[11px] text-on-surface-variant font-mono font-medium">98.9%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Micro-interaction / Client Logic -->
+<script>
+    // Tab switching micro-interaction
+    const tabs = document.querySelectorAll('.hall-tab');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        tabs.forEach(t => {
+          t.classList.remove('bg-primary-container', 'text-on-primary', 'shadow-sm');
+          t.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+        this.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        this.classList.add('bg-primary-container', 'text-on-primary', 'shadow-sm');
+      });
+    });
+
+    // Exeat Approve / Decline Handler
+    function approveExeat(cardId, actionId, studentName) {
+      const actionsEl = document.getElementById(actionId);
+      if (actionsEl) {
+        actionsEl.innerHTML = `
+          <div class="w-full py-2 px-3 rounded-lg bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-center font-bold flex items-center justify-center gap-1.5">
+            <span class="material-symbols-outlined text-[16px]">check_circle</span>
+            <span>Exeat Approved &amp; SMS PIN dispatched to Guardian</span>
+          </div>
+        `;
+      }
+    }
+
+    function declineExeat(cardId, actionId) {
+      const card = document.getElementById(cardId);
+      if (card) {
+        card.style.opacity = '0.5';
+        const actionsEl = document.getElementById(actionId);
+        actionsEl.innerHTML = `
+          <div class="w-full py-1.5 px-3 rounded bg-surface-container-highest text-error font-label-sm text-center font-semibold">
+            Pass Request Dismissed
+          </div>
+        `;
+      }
+    }
+  </script>
+</div>
+</main>
+</div>
+</body></html>

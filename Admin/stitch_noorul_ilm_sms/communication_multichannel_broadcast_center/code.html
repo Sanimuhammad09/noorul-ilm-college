@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_dashboard" name="shell-type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style>
+<script src="https://cdn.tailwindcss.com"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-low": "#f2f3ff",
+          "on-tertiary": "#ffffff",
+          "surface-container": "#eaedff",
+          "secondary-fixed": "#97f5cc",
+          "on-secondary-container": "#007353",
+          "on-tertiary-fixed-variant": "#6e3900",
+          "surface": "#faf8ff",
+          "surface-variant": "#dae2fd",
+          "surface-container-lowest": "#ffffff",
+          "on-primary-fixed": "#00164e",
+          "inverse-on-surface": "#eef0ff",
+          "on-secondary-fixed": "#002115",
+          "primary-container": "#1e3a8a",
+          "background": "#faf8ff",
+          "on-tertiary-container": "#fc922b",
+          "tertiary-fixed": "#ffdcc3",
+          "on-tertiary-fixed": "#2f1500",
+          "primary-fixed-dim": "#b6c4ff",
+          "on-error": "#ffffff",
+          "on-surface-variant": "#444651",
+          "outline": "#757682",
+          "tertiary": "#442100",
+          "inverse-primary": "#b6c4ff",
+          "surface-tint": "#4059aa",
+          "on-primary-fixed-variant": "#264191",
+          "on-error-container": "#93000a",
+          "primary-fixed": "#dce1ff",
+          "error": "#ba1a1a",
+          "error-container": "#ffdad6",
+          "on-primary-container": "#90a8ff",
+          "on-secondary": "#ffffff",
+          "tertiary-fixed-dim": "#ffb77d",
+          "surface-dim": "#d2d9f4",
+          "outline-variant": "#c5c5d3",
+          "secondary-container": "#97f5cc",
+          "primary": "#00236f",
+          "surface-bright": "#faf8ff",
+          "surface-container-high": "#e2e7ff",
+          "on-secondary-fixed-variant": "#00513a",
+          "tertiary-container": "#653400",
+          "surface-container-highest": "#dae2fd",
+          "on-surface": "#131b2e",
+          "secondary-fixed-dim": "#7bd8b1",
+          "secondary": "#006c4e",
+          "inverse-surface": "#283044",
+          "on-primary": "#ffffff",
+          "on-background": "#131b2e"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "gutter": "1.5rem",
+          "margin-mobile": "1rem",
+          "space-sm": "0.5rem",
+          "space-lg": "1.5rem",
+          "gutter-mobile": "1rem",
+          "space-xl": "2.5rem",
+          "margin": "2rem",
+          "space-md": "1rem"
+        },
+        "fontFamily": {
+          "label-lg": ["Inter"],
+          "display-lg-mobile": ["Plus Jakarta Sans"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "label-sm": ["Inter"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"],
+          "body-md": ["Inter"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "body-lg": ["Inter"],
+          "label-md": ["Inter"],
+          "body-sm": ["Inter"],
+          "metric-lg": ["Plus Jakarta Sans"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "display-lg": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+          "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+          "headline-sm": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}],
+          "headline-lg-mobile": ["22px", {"lineHeight": "28px", "fontWeight": "600"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+          "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+          "metric-lg": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "display-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+        }
+      }
+    }
+  };
+</script>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased">
+<aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-y-auto">
+<div class="flex flex-col">
+<div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-lowest shrink-0 border-b border-surface-container-low">
+<img alt="Noorul Ilm International School Crest Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UnsEmf0aNfbe6KbA2I2KOjy-AjJPn5HgJbPOPtp92hnrTYTxQU3Kprj-LudxqRJQgXA4zxDpCiPO_JirfX4CUT5LQqs6KeKJ_GSf2Ht-VHgKlfySV1L85K0vfUvC97WCuAzZIVoZDeC2b7HXIThvyHNLjPUSRbiHTNS7vBwbBm98BmECKvj6dOgbHU_hIBM6U-dF5bOg8DiWgfR6A2eilGNEpMRUCcR73OrDVlVhwFTuugrYTBeQ9Yrdc"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-primary truncate leading-tight">Noorul Ilm Int'l</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Kaduna • SMS Admin</span>
+</div>
+</div>
+<div class="px-space-md py-space-sm">
+<div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="truncate">Kaduna MoE Accredited</span>
+</div>
+</div>
+<nav class="flex-1 px-space-sm py-space-xs space-y-space-md" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded-lg shadow-sm">
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Main</div>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="executive-administrative-dashboard" href="#">Executive Administrative Dashboard</a>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="events-calendar" href="#">Events &amp; Academic Calendar</a>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="teacher-daily-classroom-portal" href="#">Teacher Classroom Portal</a>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="student-learning-assignment-portal" href="#">Student Learning &amp; Assignment</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Communication</div>
+<a aria-current="page" class="flex items-center px-space-sm py-2 transition-colors bg-primary-container text-on-primary font-label-lg rounded-lg shadow-sm" data-path="communication-hub" href="#">Multi-Channel Broadcast Center</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Academic Management</div>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="academic-curriculum-lesson-plans" href="#">Curriculum &amp; Lesson Plans</a>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="class-sections-config" href="#">Classes, Arms &amp; Capacity Allocator</a>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="examinations-assessments" href="#">Examinations &amp; Assessments</a>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="promotion-graduation" href="#">Promotion &amp; Graduation Engine</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Financial Management &amp; HR</div>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="fee-structure-billing" href="#">Fee Structure &amp; Billing</a>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="payments-receipts" href="#">Payments &amp; Receipts (₦)</a>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="payroll-remittance" href="#">Staff Payroll &amp; Tax Remittance</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Student Services</div>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="student-directory" href="#">Student Directory</a>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="student-discipline-welfare-registry" href="#">Discipline &amp; Welfare Registry</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Operations</div>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="facilities-visitor-gatehouse-management" href="#">Facilities &amp; Visitor Gatehouse</a>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="staff-directory" href="#">Staff Directory</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">Analytics &amp; Reports</div>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="central-reports-moe-analytics-center" href="#">Central Reports &amp; MoE Analytics</a>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="audit-logs-activity" href="#">Audit Logs &amp; Activity</a>
+</div>
+<div class="space-y-1">
+<div class="px-space-sm py-1 font-label-sm text-label-sm text-outline uppercase tracking-wider">System Administration</div>
+<a class="flex items-center px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="system-settings-profile" href="#">Settings &amp; School Profile</a>
+</div>
+</nav>
+</div>
+<div class="p-space-md bg-surface-container-low m-space-sm rounded-xl shrink-0">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span class="font-medium">Academic Term</span>
+<span class="text-secondary font-semibold">78% Elapsed</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full w-[78%]"></div>
+</div>
+</div>
+</aside>
+<div class="pl-72 flex flex-col min-h-screen">
+<header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg gap-space-md">
+<div class="flex items-center gap-space-md flex-1 max-w-2xl">
+<div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-high text-on-surface cursor-pointer hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span>
+<span class="font-label-sm text-label-sm font-semibold truncate">2026/2027 • 1st Term (Active)</span>
+<span class="material-symbols-outlined text-[16px] text-outline">arrow_drop_down</span>
+</div>
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-4 py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search students, staff, admission IDs, fee receipts... (Ctrl+K)" type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<button class="hidden sm:flex items-center gap-1.5 px-space-md py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Quick Action</span>
+</button>
+<div class="hidden lg:flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Thursday, 16 Oct 2026</span>
+<span class="font-body-sm text-[10px] text-on-surface-variant">Kaduna Time (GMT+1)</span>
+</div>
+<button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-4 h-4 rounded-full bg-error text-on-error font-label-sm text-[10px] flex items-center justify-center font-bold">4</span>
+</button>
+<div class="flex items-center gap-space-sm pl-space-xs">
+<div class="relative">
+<img alt="Dr. Aminu Bello Profile Avatar" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiGHmRJ5_PwbzMa3Nh1FSX52NfEBNn0ZEyNf__vuuCXdqxdB9yGe1zBiBmoE7HqWT4wZxteYR5p0Wfdh2gTB7-RjoRckPmT1W0Nm3FqlemLKCfgmvcY86nhQ-LnyWKI_8Z9Ac3pvyyVgRTrfei6-O51d4eAjnBc2V_W0Wuqanv_sQ1ummUo0JloAio9QTDs30Wq140LlR99s77O1mqoB9jk4Nuji9Mg4vCIA7j6_Fjc1hi9RZsEm0Zqw"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="hidden md:flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Dr. Aminu Bello</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant truncate">Super Admin / Principal</span>
+</div>
+</div>
+</div>
+</header>
+<main class="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background"><div class="flex flex-col w-full">
+<!-- Top Context Header Area -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md mb-space-lg">
+<div class="space-y-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-headline-lg text-headline-lg text-primary tracking-tight">Communication &amp; Multi-Channel Broadcast Center</span>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+          Kaduna SMS &amp; WhatsApp Gateway Active
+        </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+        Centralized communication management for school-wide notices, emergency broadcasts, class announcements, parent-teacher direct messaging, and telco SMS delivery analytics.
+      </p>
+</div>
+<!-- Quick Action / Wallet Pill Cluster -->
+<div class="flex items-center gap-space-sm flex-wrap shrink-0">
+<div class="flex items-center gap-space-xs px-space-md py-2 rounded-xl bg-surface-container shadow-sm">
+<span class="material-symbols-outlined text-[20px] text-tertiary-container">account_balance_wallet</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SMS Airtime Wallet</span>
+<span class="font-label-lg text-label-lg text-on-surface">₦184,500 <span class="font-body-sm text-body-sm text-outline font-normal">(36,900 Units)</span></span>
+</div>
+<button class="ml-2 px-2 py-1 rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container-high transition-colors font-label-sm text-label-sm shadow-sm" type="button">
+          Top Up
+        </button>
+</div>
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors shadow-sm font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline">content_copy</span>
+<span>Templates Library</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors shadow-sm font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline">history</span>
+<span>Delivery Audit Logs</span>
+</button>
+<a class="flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-all shadow-sm font-label-md text-label-md" href="#composer">
+<span class="material-symbols-outlined text-[18px]">campaign</span>
+<span>Compose New Broadcast</span>
+</a>
+</div>
+</div>
+<!-- Metric Summary Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-xl">
+<!-- Metric 1 -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Messages Sent This Term</span>
+<div class="font-metric-lg text-metric-lg text-on-surface">48,250</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">send</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="text-secondary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> +12.4% vs Term 3
+        </span>
+<span class="font-body-sm text-body-sm text-outline">99.1% delivered</span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Parent Mobile Reach</span>
+<div class="font-metric-lg text-metric-lg text-on-surface">1,420 <span class="font-body-md text-body-md text-outline font-normal">/ 1,440</span></div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-secondary-container flex items-center justify-center text-on-secondary-container shrink-0">
+<span class="material-symbols-outlined text-[22px]">contacts</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between font-label-sm text-label-sm">
+<div class="w-2/3 bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full w-[98.6%]"></div>
+</div>
+<span class="text-secondary font-semibold">98.6% active</span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Pending Outbox Queue</span>
+<div class="font-metric-lg text-metric-lg text-on-surface">0 <span class="font-headline-sm text-headline-sm font-normal text-secondary">Queued</span></div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">check_circle</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1 text-on-secondary-container">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Auto-retry ready
+        </span>
+<span class="font-body-sm text-body-sm text-outline">0 throttled</span>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">In-App Announcements</span>
+<div class="font-metric-lg text-metric-lg text-on-surface">18 <span class="font-headline-sm text-headline-sm font-normal text-on-surface-variant">Live</span></div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[22px]">notifications_active</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="text-primary font-semibold">84.5% read rate</span>
+<span class="font-body-sm text-body-sm text-outline">Parent &amp; Student</span>
+</div>
+</div>
+</div>
+<!-- Main Content Asymmetric Split -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg">
+<!-- Left Column (8 cols): Interactive Composer & Dispatch Ledger -->
+<div class="xl:col-span-8 space-y-space-lg">
+<!-- Composer Card -->
+<section class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm" id="composer">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md mb-space-md bg-surface-container-lowest">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Create Multichannel Announcement / Broadcast</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Instant push to GSM mobile networks, WhatsApp API, and Student/Parent Portals</p>
+</div>
+</div>
+<span class="mt-2 sm:mt-0 px-2.5 py-1 rounded-md bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm self-start sm:self-auto">
+            Sender ID: <strong class="text-primary">NOORUL-ILM</strong>
+</span>
+</div>
+<form class="space-y-space-md" onsubmit="event.preventDefault();">
+<!-- Step 1: Channels Selector -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2">Delivery Channels (Multi-select)</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-xs">
+<label class="flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface truncate">SMS Blast</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant truncate">MTN/Airtel/Glo/9mobile</span>
+</div>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface truncate">WhatsApp Direct</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant truncate">Meta Verified API</span>
+</div>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface truncate">Mobile App Push</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant truncate">Parent &amp; Student App</span>
+</div>
+</label>
+<label class="flex items-center gap-2 p-2.5 rounded-lg bg-surface-container-low cursor-pointer hover:bg-surface-container transition-colors">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface truncate">Email Digest</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant truncate">Official Domain Mail</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Step 2: Target Audience -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5" for="targetGroup">Target Audience Segment</label>
+<div class="relative">
+<select class="w-full h-10 pl-3 pr-8 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md appearance-none focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20" id="targetGroup">
+<option selected="">All Registered Parents &amp; Guardians (1,440 contacts)</option>
+<option>Specific Class Arm: SSS 2 Science A (38 contacts)</option>
+<option>Specific Class Arm: JSS 1 Emerald (42 contacts)</option>
+<option>Hostel Boarders Guardians Only (315 contacts)</option>
+<option>Debtors &amp; Term 1 Tuition Arrears List (124 contacts)</option>
+<option>Academic &amp; Non-Teaching Staff (86 contacts)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1.5" for="templatePreset">Quick Load Pre-Approved Template</label>
+<div class="relative">
+<select class="w-full h-10 pl-3 pr-8 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md appearance-none focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20" id="templatePreset" onchange="applyTemplate(this.value)">
+<option value="">-- Choose a standard notification --</option>
+<option value="harmattan">Harmattan Early Morning Schedule Notice</option>
+<option value="exam">1st Term Examination Clearance &amp; Timetable</option>
+<option value="fee">Outstanding Tuition Reminder (Kaduna MoE)</option>
+<option value="absence">Emergency Unexcused Attendance Notice</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[18px]">library_books</span>
+</div>
+</div>
+</div>
+<!-- Variable Tags Tray -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dynamic Data Tags (Click to Insert)</span>
+<span class="font-body-sm text-[11px] text-outline">Auto-populated per student profile</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-label-sm text-[12px] transition-colors" onclick="insertTag('{Student_Name}')" type="button">
+                + {Student_Name}
+              </button>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-label-sm text-[12px] transition-colors" onclick="insertTag('{Class_Arm}')" type="button">
+                + {Class_Arm}
+              </button>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-label-sm text-[12px] transition-colors" onclick="insertTag('{Outstanding_Balance}')" type="button">
+                + {Outstanding_Balance}
+              </button>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-label-sm text-[12px] transition-colors" onclick="insertTag('{Parent_Salutation}')" type="button">
+                + {Parent_Salutation}
+              </button>
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-label-sm text-[12px] transition-colors" onclick="insertTag('{Portal_Link}')" type="button">
+                + {Portal_Link}
+              </button>
+</div>
+</div>
+<!-- Message Body with Live Character Counter -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="broadcastMessage">Broadcast Content</label>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm">
+<span class="text-on-surface-variant" id="charCount">142 characters</span>
+<span class="text-outline">•</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-semibold" id="smsCount">1 SMS Unit / Contact</span>
+</div>
+</div>
+<textarea class="w-full p-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 placeholder:text-outline" id="broadcastMessage" oninput="updateCounter()" placeholder="Type school notice or advisory here..." rows="4">Dear {Parent_Salutation}, please note that Noorul Ilm Int'l 1st Term Mid-Term Assessment for {Student_Name} ({Class_Arm}) commences Monday 20 Oct 2026. Portal login: {Portal_Link}</textarea>
+</div>
+<!-- Multilingual Hausa / English Language Toggle & Cost preview -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary mt-0.5">translate</span>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold block">Kaduna Bilingual Delivery Option</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Include automatic Hausa translated copy in WhatsApp / SMS dispatch for registered Hausa-speaking households.</span>
+</div>
+</div>
+<label class="flex items-center gap-2 cursor-pointer self-start md:self-center shrink-0">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface">Enable Hausa SMS Sync</span>
+</label>
+</div>
+<!-- Action Buttons Bar -->
+<div class="pt-space-sm flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<span>Estimated Cost: <strong class="text-on-surface">1,440 Units (₦7,200)</strong></span>
+</div>
+<div class="flex items-center gap-space-sm w-full sm:w-auto justify-end">
+<button class="px-space-md py-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md" type="button">
+                Save Draft
+              </button>
+<button class="px-space-md py-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>Schedule Later</span>
+</button>
+<button class="px-space-md py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-all shadow-sm font-label-md text-label-md flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">rocket_launch</span>
+<span>Send Instant Broadcast</span>
+</button>
+</div>
+</div>
+</form>
+</section>
+<!-- Ledger / Broadcast History Table Card -->
+<section class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md mb-space-md bg-surface-container-lowest">
+<div class="space-y-0.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Recent Broadcast History &amp; Dispatch Ledger</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Live audit of dispatched bulk messages, DND exemptions, and carrier handoffs</p>
+</div>
+<div class="mt-2 sm:mt-0 flex items-center gap-space-xs">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+<span>Filter Channels</span>
+</button>
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export CSV</span>
+</button>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-space-sm rounded-l-lg">Dispatch Timestamp</th>
+<th class="py-3 px-space-sm">Broadcast Subject / Preview</th>
+<th class="py-3 px-space-sm">Channels</th>
+<th class="py-3 px-space-sm text-right">Recipients</th>
+<th class="py-3 px-space-sm text-center">Delivery Rate</th>
+<th class="py-3 px-space-sm">Dispatched By</th>
+<th class="py-3 px-space-sm rounded-r-lg text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low font-body-sm text-body-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-space-sm whitespace-nowrap text-on-surface font-medium">
+                  16 Oct 2026 <span class="text-outline text-[11px] block">07:45 AM</span>
+</td>
+<td class="py-3.5 px-space-sm max-w-xs">
+<span class="font-label-md text-label-md text-on-surface block truncate">Mid-Term Assessment Exam Timetable</span>
+<span class="text-outline text-[11px] truncate block">Assessment dates uploaded for all Junior &amp; Senior classes...</span>
+</td>
+<td class="py-3.5 px-space-sm whitespace-nowrap">
+<div class="flex items-center gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-label-sm text-[10px] text-primary">SMS</span>
+<span class="px-1.5 py-0.5 rounded bg-secondary-container font-label-sm text-[10px] text-on-secondary-container">WA</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high font-label-sm text-[10px] text-on-surface">APP</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm text-right font-medium text-on-surface">1,440</td>
+<td class="py-3.5 px-space-sm text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+                    99.4%
+                  </span>
+</td>
+<td class="py-3.5 px-space-sm whitespace-nowrap text-on-surface-variant">
+                  Dr. Aminu Bello <span class="text-outline text-[10px] block">Super Admin</span>
+</td>
+<td class="py-3.5 px-space-sm text-right whitespace-nowrap">
+<button class="p-1 rounded text-primary hover:bg-surface-container transition-colors" title="View Detail Logs">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Resend to 8 Failed">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-space-sm whitespace-nowrap text-on-surface font-medium">
+                  14 Oct 2026 <span class="text-outline text-[11px] block">02:15 PM</span>
+</td>
+<td class="py-3.5 px-space-sm max-w-xs">
+<span class="font-label-md text-label-md text-on-surface block truncate">Term 1 Tuition 2nd Tranche Reminder</span>
+<span class="text-outline text-[11px] truncate block">Friendly reminder regarding second installment payment for...</span>
+</td>
+<td class="py-3.5 px-space-sm whitespace-nowrap">
+<div class="flex items-center gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-label-sm text-[10px] text-primary">SMS</span>
+<span class="px-1.5 py-0.5 rounded bg-secondary-container font-label-sm text-[10px] text-on-secondary-container">WA</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm text-right font-medium text-on-surface">312</td>
+<td class="py-3.5 px-space-sm text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+                    98.8%
+                  </span>
+</td>
+<td class="py-3.5 px-space-sm whitespace-nowrap text-on-surface-variant">
+                  Malam Danladi <span class="text-outline text-[10px] block">Head Bursar</span>
+</td>
+<td class="py-3.5 px-space-sm text-right whitespace-nowrap">
+<button class="p-1 rounded text-primary hover:bg-surface-container transition-colors" title="View Detail Logs">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Resend">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-space-sm whitespace-nowrap text-on-surface font-medium">
+                  11 Oct 2026 <span class="text-outline text-[11px] block">06:10 AM</span>
+</td>
+<td class="py-3.5 px-space-sm max-w-xs">
+<span class="font-label-md text-label-md text-on-surface block truncate">Harmattan Weather Warning &amp; Bus Route Reschedule</span>
+<span class="text-outline text-[11px] truncate block">Due to dense haze along Zaria Expressway, morning bus routes...</span>
+</td>
+<td class="py-3.5 px-space-sm whitespace-nowrap">
+<div class="flex items-center gap-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-label-sm text-[10px] text-primary">SMS</span>
+<span class="px-1.5 py-0.5 rounded bg-secondary-container font-label-sm text-[10px] text-on-secondary-container">WA</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high font-label-sm text-[10px] text-on-surface">APP</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm text-right font-medium text-on-surface">1,440</td>
+<td class="py-3.5 px-space-sm text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+                    100.0%
+                  </span>
+</td>
+<td class="py-3.5 px-space-sm whitespace-nowrap text-on-surface-variant">
+                  Dr. Aminu Bello <span class="text-outline text-[10px] block">Principal</span>
+</td>
+<td class="py-3.5 px-space-sm text-right whitespace-nowrap">
+<button class="p-1 rounded text-primary hover:bg-surface-container transition-colors" title="View Detail Logs">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Resend">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-space-sm whitespace-nowrap text-on-surface font-medium">
+                  08 Oct 2026 <span class="text-outline text-[11px] block">01:40 PM</span>
+</td>
+<td class="py-3.5 px-space-sm max-w-xs">
+<span class="font-label-md text-label-md text-on-surface block truncate">SSS 3 WAEC Science Practicals Lab Fees</span>
+<span class="text-outline text-[11px] truncate block">Senior secondary parents notice for laboratory consumables...</span>
+</td>
+<td class="py-3.5 px-space-sm whitespace-nowrap">
+<div class="flex items-center gap-1">
+<span class="px-1.5 py-0.5 rounded bg-secondary-container font-label-sm text-[10px] text-on-secondary-container">WA</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high font-label-sm text-[10px] text-on-surface">APP</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm text-right font-medium text-on-surface">118</td>
+<td class="py-3.5 px-space-sm text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+                    99.1%
+                  </span>
+</td>
+<td class="py-3.5 px-space-sm whitespace-nowrap text-on-surface-variant">
+                  Mrs. Zainab Aliyu <span class="text-outline text-[10px] block">Exam Officer</span>
+</td>
+<td class="py-3.5 px-space-sm text-right whitespace-nowrap">
+<button class="p-1 rounded text-primary hover:bg-surface-container transition-colors" title="View Detail Logs">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Resend">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<!-- Right Column (4 cols): Telco Gateway Health, Templates, Direct 2-Way Feed -->
+<div class="xl:col-span-4 space-y-space-lg">
+<!-- Telco Gateway Health & Network Latency Card -->
+<section class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary">cell_tower</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Gateway Health &amp; Latency</h3>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">99.8% Nominal</span>
+</div>
+<div class="space-y-space-sm">
+<!-- MTN Nigeria -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-7 h-7 rounded-md bg-amber-400/20 text-tertiary font-bold font-label-sm text-[11px] flex items-center justify-center shrink-0">
+                MTN
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">MTN Nigeria GSM Core</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Avg latency: 1.2s • Kaduna Hub</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-secondary-container">Connected</span>
+</div>
+</div>
+<!-- Airtel Nigeria -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-7 h-7 rounded-md bg-red-400/20 text-error font-bold font-label-sm text-[11px] flex items-center justify-center shrink-0">
+                AIR
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">Airtel Kaduna Gateway</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Avg latency: 1.6s • Operational</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-secondary-container">Connected</span>
+</div>
+</div>
+<!-- WhatsApp Cloud API -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-7 h-7 rounded-md bg-secondary-container text-on-secondary-container font-bold font-label-sm text-[11px] flex items-center justify-center shrink-0">
+                WA
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">WhatsApp Business API</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Tier-2 High Throughput</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-secondary-container">Tier Active</span>
+</div>
+</div>
+</div>
+<!-- Latency Sparkline Graph Visualizer -->
+<div class="mt-space-md pt-space-sm bg-surface-container-lowest">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-[11px] mb-1">
+<span>24-Hour Dispatch Throughput</span>
+<span class="text-primary font-medium">Peak: 180 msg/min</span>
+</div>
+<svg class="w-full h-12 text-primary" fill="none" viewbox="0 0 300 48">
+<path class="fill-primary/10" d="M0,40 Q30,35 60,38 T120,20 T180,25 T240,8 T300,16 L300,48 L0,48 Z"></path>
+<path d="M0,40 Q30,35 60,38 T120,20 T180,25 T240,8 T300,16" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<circle class="fill-primary animate-ping" cx="240" cy="8" r="3"></circle>
+<circle class="fill-primary" cx="240" cy="8" r="3"></circle>
+</svg>
+</div>
+</section>
+<!-- Pre-Approved Message Templates Quick-Use Cards -->
+<section class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Standard SMS Templates</h3>
+<span class="font-label-sm text-label-sm text-primary cursor-pointer hover:underline">Manage All</span>
+</div>
+<div class="space-y-space-sm">
+<!-- Template 1 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer" onclick="loadCardTemplate('fee')">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Outstanding Fee Notice</span>
+<span class="font-label-sm text-[10px] text-tertiary-container bg-tertiary-fixed px-1.5 py-0.5 rounded">Bursary</span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant line-clamp-2">
+              "Dear Guardian, kindly settle the 1st Term balance of {Outstanding_Balance} for {Student_Name} before Friday..."
+            </p>
+</div>
+<!-- Template 2 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer" onclick="loadCardTemplate('harmattan')">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Harmattan Weather Delay</span>
+<span class="font-label-sm text-[10px] text-primary bg-primary-fixed px-1.5 py-0.5 rounded">Logistics</span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant line-clamp-2">
+              "School resumption tomorrow shifted to 8:30 AM due to dense atmospheric dust haze. School transport adjusted..."
+            </p>
+</div>
+<!-- Template 3 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer" onclick="loadCardTemplate('absence')">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Unexcused Absence Alert</span>
+<span class="font-label-sm text-[10px] text-error bg-error-container px-1.5 py-0.5 rounded">Discipline</span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant line-clamp-2">
+              "Notice: {Student_Name} was marked unexcused absent today at 08:15 AM roll call. Please contact Form Master..."
+            </p>
+</div>
+</div>
+</section>
+<!-- Direct 2-Way Parent Messages (Live Feed Drawer) -->
+<section class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">forum</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">2-Way Parent Inquiries</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-[11px] font-bold">3 Unread</span>
+</div>
+<div class="space-y-space-md">
+<!-- Inquiry 1 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-6 h-6 rounded-full bg-primary-fixed text-primary font-bold font-label-sm text-[11px] flex items-center justify-center shrink-0">HA</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Hajiya Aisha Danbatta</span>
+</div>
+<span class="font-body-sm text-[10px] text-outline shrink-0">12m ago</span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant mb-2">
+              "Salam Alaikum, please confirm if the school bus will pick up Ibrahim around Barnawa tomorrow morning given the road works?"
+            </p>
+<div class="flex items-center gap-1">
+<input class="w-full px-2.5 py-1 text-[12px] bg-surface-container-lowest rounded-md text-on-surface font-body-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Type quick SMS reply..." type="text"/>
+<button class="p-1 rounded-md bg-primary text-on-primary hover:bg-primary-container transition-colors shrink-0" type="button">
+<span class="material-symbols-outlined text-[16px]">send</span>
+</button>
+</div>
+</div>
+<!-- Inquiry 2 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container font-bold font-label-sm text-[11px] flex items-center justify-center shrink-0">EU</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Engr. Usman Bello</span>
+</div>
+<span class="font-body-sm text-[10px] text-outline shrink-0">45m ago</span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant mb-2">
+              "Good afternoon Bursar, I just transferred ₦85,000 for Fatima's boarding fee. Kindly confirm receipt token."
+            </p>
+<div class="flex items-center gap-1">
+<input class="w-full px-2.5 py-1 text-[12px] bg-surface-container-lowest rounded-md text-on-surface font-body-sm focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Type quick SMS reply..." type="text"/>
+<button class="p-1 rounded-md bg-primary text-on-primary hover:bg-primary-container transition-colors shrink-0" type="button">
+<span class="material-symbols-outlined text-[16px]">send</span>
+</button>
+</div>
+</div>
+</div>
+<button class="mt-space-md w-full py-2 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors text-center" type="button">
+          Open Full 2-Way Messaging Console →
+        </button>
+</section>
+</div>
+</div>
+</div>
+<script>
+  function insertTag(tag) {
+    var textarea = document.getElementById('broadcastMessage');
+    var startPos = textarea.selectionStart;
+    var endPos = textarea.selectionEnd;
+    textarea.value = textarea.value.substring(0, startPos) + tag + textarea.value.substring(endPos, textarea.value.length);
+    textarea.focus();
+    textarea.selectionStart = startPos + tag.length;
+    textarea.selectionEnd = startPos + tag.length;
+    updateCounter();
+  }
+
+  function updateCounter() {
+    var textarea = document.getElementById('broadcastMessage');
+    var charCount = textarea.value.length;
+    var charEl = document.getElementById('charCount');
+    var smsEl = document.getElementById('smsCount');
+    
+    charEl.textContent = charCount + ' characters';
+    
+    // Standard GSM SMS calculation: 160 chars = 1 unit, thereafter 153 chars per concatenated segment
+    var units = 1;
+    if (charCount > 160) {
+      units = Math.ceil(charCount / 153);
+    }
+    smsEl.textContent = units + ' SMS Unit' + (units > 1 ? 's' : '') + ' / Contact';
+  }
+
+  var templatesMap = {
+    harmattan: "Emergency Advisory: Due to heavy Harmattan haze along Kaduna-Zaria bypass, school opening tomorrow 17 Oct is moved to 8:30 AM. School buses will depart 45 mins later than usual. Keep pupils warm.",
+    exam: "Notice to Parents: 1st Term Examinations for {Student_Name} commence on Monday. Please verify that all revision kits and ID cards are in order. Timetable available at: {Portal_Link}",
+    fee: "Dear {Parent_Salutation}, this is a gentle reminder that the outstanding 1st Term balance for {Student_Name} ({Class_Arm}) is {Outstanding_Balance}. Kindly regularize before examination clearances.",
+    absence: "Attendance Alert: {Student_Name} was recorded unexcused absent from Noorul Ilm Int'l today at morning assembly roll-call. Kindly contact the Form Master immediately if this is unexpected."
+  };
+
+  function applyTemplate(val) {
+    if (templatesMap[val]) {
+      document.getElementById('broadcastMessage').value = templatesMap[val];
+      updateCounter();
+    }
+  }
+
+  function loadCardTemplate(key) {
+    applyTemplate(key);
+    var sel = document.getElementById('templatePreset');
+    if (sel) {
+      sel.value = key;
+    }
+    document.getElementById('broadcastMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  // Initialize counter on load
+  updateCounter();
+</script></main>
+</div>
+</body></html>

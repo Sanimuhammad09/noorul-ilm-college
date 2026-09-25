@@ -7,7 +7,7 @@ export const Route = createLazyFileRoute('/admin/school-events-academic-calendar
 
 function SchoolEventsAcademicCalendar() {
   return (
-    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background"><div className="flex flex-col w-full">
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-surface"><div className="flex flex-col w-full">
 {/*  Sub-Header / Page Intent Banner  */}
 <div className="mb-space-lg flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
 <div className="space-y-1">

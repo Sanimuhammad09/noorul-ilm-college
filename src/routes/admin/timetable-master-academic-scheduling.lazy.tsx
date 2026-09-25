@@ -8,7 +8,7 @@ export const Route = createLazyFileRoute(
 
 function TimetableMasterAcademicScheduling() {
   return (
-    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background">
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-surface">
       <div className="flex flex-col w-full space-y-space-lg">
         {/*  Breadcrumb Navigation & Top System Status Banner  */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">

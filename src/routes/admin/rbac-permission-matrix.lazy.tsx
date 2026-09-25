@@ -7,7 +7,7 @@ export const Route = createLazyFileRoute('/admin/rbac-permission-matrix')({
 
 function RbacPermissionMatrix() {
   return (
-    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background"><div className="flex flex-col w-full">
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-surface"><div className="flex flex-col w-full">
 {/*  Sticky Global Save & Confirmation Banner if unsaved state  */}
 <div className="hidden mb-space-md p-space-md bg-secondary-container text-on-secondary-container rounded-xl shadow-sm flex flex-col md:flex-row items-center justify-between gap-space-md transition-all duration-300" id="unsaved-changes-banner">
 <div className="flex items-center gap-space-sm">

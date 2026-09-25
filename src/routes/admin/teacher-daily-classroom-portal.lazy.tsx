@@ -7,7 +7,7 @@ export const Route = createLazyFileRoute('/admin/teacher-daily-classroom-portal'
 
 function TeacherDailyClassroomPortal() {
   return (
-    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background"><div className="flex flex-col w-full gap-space-lg">
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-surface"><div className="flex flex-col w-full gap-space-lg">
 {/*  TOP IDENTITY & STATUS BAR (NO BORDERS, RICH TIERS)  */}
 <div className="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-lg shadow-sm">
 <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-secondary/5 blur-3xl pointer-events-none"></div>

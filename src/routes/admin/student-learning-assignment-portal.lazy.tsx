@@ -8,7 +8,7 @@ export const Route = createLazyFileRoute(
 
 function StudentLearningAssignmentPortal() {
   return (
-    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background">
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-surface">
       <div className="flex flex-col w-full gap-space-lg">
         {/*  Student Profile Banner & Command Hub  */}
         <section className="relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm p-space-lg sm:p-space-xl">

@@ -8,7 +8,7 @@ export const Route = createLazyFileRoute(
 
 function AcademicCurriculumLessonPlans() {
   return (
-    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background">
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-surface">
       <div className="flex flex-col w-full gap-space-lg">
         {/*  Top Academic Command Header  */}
         <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">

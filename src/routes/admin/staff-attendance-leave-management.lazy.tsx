@@ -8,7 +8,7 @@ export const Route = createLazyFileRoute(
 
 function StaffAttendanceLeaveManagement() {
   return (
-    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background">
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-surface">
       <div className="flex flex-col w-full space-y-space-lg">
         {/*  Breadcrumbs & Live Pulse Ribbon  */}
         <div className="flex flex-wrap items-center justify-between gap-space-sm">

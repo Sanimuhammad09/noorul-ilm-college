@@ -7,7 +7,7 @@ export const Route = createLazyFileRoute('/admin/staff-teachers-hr-directory')({
 
 function StaffTeachersHrDirectory() {
   return (
-    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background"><div className="flex flex-col w-full">
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-surface"><div className="flex flex-col w-full">
 {/*  Top Breadcrumb & Metadata Strip  */}
 <div className="flex flex-wrap items-center justify-between gap-y-space-sm mb-space-md">
 <div className="flex items-center gap-space-xs font-label-sm text-label-sm text-outline">

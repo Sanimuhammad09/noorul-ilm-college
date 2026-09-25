@@ -7,7 +7,7 @@ export const Route = createLazyFileRoute('/admin/communication-multichannel-broa
 
 function CommunicationMultichannelBroadcastCenter() {
   return (
-    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background"><div className="flex flex-col w-full">
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-surface"><div className="flex flex-col w-full">
 {/*  Top Context Header Area  */}
 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md mb-space-lg">
 <div className="space-y-space-xs">

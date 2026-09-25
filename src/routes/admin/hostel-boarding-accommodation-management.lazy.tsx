@@ -7,7 +7,7 @@ export const Route = createLazyFileRoute('/admin/hostel-boarding-accommodation-m
 
 function HostelBoardingAccommodationManagement() {
   return (
-    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background">
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-surface">
 <div className="flex flex-col w-full space-y-space-lg">
 {/*  Top Hero Header & Breadcrumb Strip  */}
 <div className="relative overflow-hidden rounded-xl bg-surface-container-low p-space-lg shadow-sm">

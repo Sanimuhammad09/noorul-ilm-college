@@ -7,7 +7,7 @@ export const Route = createLazyFileRoute('/admin/classes-arms-section-capacity-a
 
 function ClassesArmsSectionCapacityAllocator() {
   return (
-    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background"><div className="flex flex-col w-full">
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-surface"><div className="flex flex-col w-full">
 {/*  Subtle decorative ambient background pulse (contained)  */}
 <div className="relative w-full overflow-hidden">
 <div className="absolute -top-24 -right-16 w-96 h-96 rounded-full bg-primary-fixed-dim/20 blur-3xl pointer-events-none"></div>

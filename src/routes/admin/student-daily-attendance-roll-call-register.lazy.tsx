@@ -7,7 +7,7 @@ export const Route = createLazyFileRoute('/admin/student-daily-attendance-roll-c
 
 function StudentDailyAttendanceRollCallRegister() {
   return (
-    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background"><div className="flex flex-col w-full">
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-surface"><div className="flex flex-col w-full">
 {/*  Sub-Header / Notification Alert Banner  */}
 <div className="flex items-center justify-between px-space-md py-2.5 bg-surface-container-high rounded-xl mb-space-md text-on-surface shadow-sm">
 <div className="flex items-center gap-space-sm min-w-0">

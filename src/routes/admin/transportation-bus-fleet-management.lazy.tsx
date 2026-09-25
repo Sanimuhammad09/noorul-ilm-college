@@ -8,7 +8,7 @@ export const Route = createLazyFileRoute(
 
 function TransportationBusFleetManagement() {
   return (
-    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background">
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-surface">
       <div className="flex flex-col w-full">
         {/*  Breadcrumb & Top Bar  */}
         <div className="flex flex-wrap items-center justify-between gap-space-sm mb-space-sm text-on-surface-variant font-label-sm text-label-sm">

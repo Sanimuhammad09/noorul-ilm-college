@@ -8,7 +8,7 @@ export const Route = createLazyFileRoute(
 
 function FacilitiesVisitorGatehouseManagement() {
   return (
-    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background">
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-surface">
       <div className="flex flex-col w-full space-y-space-lg">
         {/*  TOP CONTEXTUAL BANNER / HEADER  */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">

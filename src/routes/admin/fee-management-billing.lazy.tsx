@@ -7,7 +7,7 @@ export const Route = createLazyFileRoute('/admin/fee-management-billing')({
 
 function FeeManagementBilling() {
   return (
-    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background"><div className="flex flex-col w-full">
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-surface"><div className="flex flex-col w-full">
 {/*  Top Breadcrumb & Administrative Header Bar  */}
 <div className="flex flex-col gap-space-sm pb-space-lg">
 {/*  Breadcrumb Stream  */}

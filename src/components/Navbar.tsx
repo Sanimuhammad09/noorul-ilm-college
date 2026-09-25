@@ -14,11 +14,11 @@ export function Navbar() {
   }, [])
 
   const navLinkClass = "font-label-lg text-label-lg transition-colors duration-200"
-  const inactiveClass = "text-on-surface-variant hover:text-heritage-burgundy"
-  const activeClass = "text-heritage-burgundy border-b-2 border-academic-gold pb-1"
+  const inactiveClass = "text-on-surface-variant hover:text-primary"
+  const activeClass = "text-primary border-b-2 border-tertiary pb-1"
 
   return (
-    <nav className={`fixed top-0 w-full z-50 bg-paper-white/95 backdrop-blur-md border-b border-on-surface-variant/10 h-20 flex items-center transition-shadow ${isScrolled ? 'shadow-md' : 'shadow-sm'}`}>
+    <nav className={`fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-md border-b border-on-surface-variant/10 h-20 flex items-center transition-shadow ${isScrolled ? 'shadow-md' : 'shadow-sm'}`}>
       <div className="flex justify-between items-center h-full px-margin-desktop max-w-container-max mx-auto w-full">
         <div className="flex items-center gap-4">
           <Link to="/">
@@ -45,7 +45,7 @@ export function Navbar() {
             Contact
           </Link>
         </div>
-        <button className="bg-heritage-burgundy text-paper-white px-6 py-2.5 rounded-lg font-label-lg hover:bg-primary transition-all active:scale-95">Portal</button>
+        <button className="bg-primary text-surface px-6 py-2.5 rounded-lg font-label-lg hover:bg-primary transition-all active:scale-95">Portal</button>
       </div>
     </nav>
   )

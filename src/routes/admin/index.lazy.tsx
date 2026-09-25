@@ -6,7 +6,7 @@ export const Route = createLazyFileRoute("/admin/")({
 
 function ExecutiveAdministrativeDashboard() {
   return (
-    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background">
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-surface">
       <div className="flex flex-col w-full">
         {/*  Executive Context Bar  */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between pb-space-lg mb-space-md">

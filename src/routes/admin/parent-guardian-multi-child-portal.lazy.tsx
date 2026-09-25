@@ -7,7 +7,7 @@ export const Route = createLazyFileRoute('/admin/parent-guardian-multi-child-por
 
 function ParentGuardianMultiChildPortal() {
   return (
-    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background">
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-surface">
 <div className="flex flex-col w-full">
 {/*  Breadcrumbs & Meta Top Strip  */}
 <div className="flex flex-wrap items-center justify-between gap-y-space-sm mb-space-md">

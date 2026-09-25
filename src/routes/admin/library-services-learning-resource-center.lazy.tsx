@@ -8,7 +8,7 @@ export const Route = createLazyFileRoute(
 
 function LibraryServicesLearningResourceCenter() {
   return (
-    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background">
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-surface">
       <div className="flex flex-col w-full">
         <div className="flex flex-col gap-space-md mb-space-lg">
           <div className="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">

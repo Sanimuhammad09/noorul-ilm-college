@@ -7,7 +7,7 @@ export const Route = createLazyFileRoute('/admin/central-reports-moe-analytics-c
 
 function CentralReportsMoeAnalyticsCenter() {
   return (
-    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background"><div className="flex flex-col w-full space-y-space-lg pb-space-xl">
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-surface"><div className="flex flex-col w-full space-y-space-lg pb-space-xl">
 {/*  Top Executive Header & Action Bar  */}
 <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
 <div className="space-y-space-xs max-w-3xl">

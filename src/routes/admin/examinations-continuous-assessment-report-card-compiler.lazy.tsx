@@ -8,7 +8,7 @@ export const Route = createLazyFileRoute(
 
 function ExaminationsContinuousAssessmentReportCardCompiler() {
   return (
-    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background">
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-surface">
       <div className="flex flex-col w-full space-y-space-lg">
         {/*  Breadcrumbs & Administrative Meta Banner  */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">

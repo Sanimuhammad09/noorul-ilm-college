@@ -7,7 +7,7 @@ export const Route = createLazyFileRoute('/admin/system-settings-school-profile-
 
 function SystemSettingsSchoolProfileConfiguration() {
   return (
-    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background"><div className="flex flex-col w-full space-y-space-lg">
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-surface"><div className="flex flex-col w-full space-y-space-lg">
 {/*  PAGE HEADER & TOP ACTION BAR  */}
 <div className="flex flex-col xl:flex-row xl:items-start justify-between gap-space-lg bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
 <div className="space-y-space-xs max-w-4xl">

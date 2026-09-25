@@ -1,0 +1,949 @@
+import { createLazyFileRoute } from "@tanstack/react-router";
+
+export const Route = createLazyFileRoute(
+  "/admin/school-clinic-medical-health-records",
+)({
+  component: SchoolClinicMedicalHealthRecords,
+});
+
+function SchoolClinicMedicalHealthRecords() {
+  return (
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background">
+      <div className="flex flex-col w-full space-y-space-lg">
+        {/*  Breadcrumb & Top Bar  */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+          <div className="flex flex-col space-y-1">
+            <div className="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+              <span>Student Services</span>
+              <span className="material-symbols-outlined text-[14px]">
+                chevron_right
+              </span>
+              <span>Clinic &amp; Health Records</span>
+              <span className="material-symbols-outlined text-[14px]">
+                chevron_right
+              </span>
+              <span className="text-primary font-semibold">
+                Patient Log &amp; Medical Registry
+              </span>
+            </div>
+            <h1 className="font-headline-lg text-headline-lg text-primary tracking-tight">
+              School Clinic &amp; Student Medical Registry
+            </h1>
+            <p className="font-body-md text-body-md text-on-surface-variant max-w-4xl">
+              Secure student health profiles, daily clinic consultations,
+              allergy alerts, medication dispensation, and Kaduna State Ministry
+              of Health emergency protocols.
+            </p>
+          </div>
+          {/*  Quick Action Bar  */}
+          <div className="flex flex-wrap items-center gap-space-xs shrink-0">
+            <button
+              className="flex items-center gap-1.5 px-space-md py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm"
+              type="button"
+            >
+              <span className="material-symbols-outlined text-[18px]">
+                add_circle
+              </span>
+              <span>+ Log New Clinic Visit</span>
+            </button>
+            <button
+              className="flex items-center gap-1.5 px-space-md py-2 bg-surface-container-low text-primary rounded-lg font-label-md text-label-md hover:bg-surface-container transition-colors shadow-sm"
+              type="button"
+            >
+              <span className="material-symbols-outlined text-[18px] text-secondary">
+                medication
+              </span>
+              <span>Dispense Medication</span>
+            </button>
+            <button
+              className="flex items-center gap-1.5 px-space-md py-2 bg-error text-on-error rounded-lg font-label-md text-label-md hover:bg-on-error-container transition-colors shadow-sm"
+              type="button"
+            >
+              <span className="material-symbols-outlined text-[18px]">
+                emergency
+              </span>
+              <span>Emergency Notice</span>
+            </button>
+            <button
+              className="flex items-center gap-1.5 px-space-md py-2 bg-surface-container-lowest text-on-surface rounded-lg font-label-md text-label-md hover:bg-surface-container transition-colors shadow-sm"
+              type="button"
+            >
+              <span className="material-symbols-outlined text-[18px] text-outline">
+                description
+              </span>
+              <span>Export Audit Summary</span>
+            </button>
+          </div>
+        </div>
+        {/*  Harmattan Respiratory Care Banner  */}
+        <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-surface-container-high via-surface-container to-secondary-container/40 p-space-md shadow-sm">
+          <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+            <div className="flex items-start gap-space-sm">
+              <div className="p-2 rounded-lg bg-surface-container-lowest text-secondary shadow-sm mt-0.5">
+                <span className="material-symbols-outlined text-[24px]">
+                  air
+                </span>
+              </div>
+              <div className="space-y-0.5">
+                <div className="flex items-center gap-2">
+                  <span className="px-2 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm">
+                    Active Protocol
+                  </span>
+                  <h2 className="font-headline-sm text-headline-sm text-primary">
+                    Kaduna Harmattan Season Respiratory Care Advisory
+                  </h2>
+                </div>
+                <p className="font-body-md text-body-md text-on-surface-variant">
+                  High airborne dust index in Ungwan Rimi &amp; Malali areas.
+                  Inhalers and nebulizer kits in Ward 1 inspected and fully
+                  replenished. Nurse Maryam Tanko (RN, Kaduna MoH Reg #KD-7734)
+                  on triage duty.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-space-sm shrink-0">
+              <div className="flex items-center gap-2 bg-surface-container-lowest/80 px-space-sm py-1.5 rounded-lg shadow-sm">
+                <span className="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+                <span className="font-label-sm text-label-sm text-on-surface font-medium">
+                  Nebulizer Bay: 4/4 Ready
+                </span>
+              </div>
+              <button className="px-space-md py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm hover:bg-primary-container transition-colors">
+                View Protocol SOP
+              </button>
+            </div>
+          </div>
+        </div>
+        {/*  KPI Stat Metrics Grid  */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+          {/*  Card 1  */}
+          <div className="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between space-y-3 relative overflow-hidden">
+            <div className="flex items-start justify-between">
+              <div className="space-y-1">
+                <span className="font-label-sm text-label-sm text-outline uppercase tracking-wider">
+                  Today's Clinic Consultations
+                </span>
+                <div className="flex items-baseline gap-2">
+                  <span className="font-metric-lg text-metric-lg text-primary">
+                    12
+                  </span>
+                  <span className="font-label-sm text-label-sm text-secondary font-medium">
+                    +3 vs yesterday
+                  </span>
+                </div>
+              </div>
+              <div className="p-2.5 rounded-lg bg-surface-container-low text-primary">
+                <span className="material-symbols-outlined text-[24px]">
+                  stethoscope
+                </span>
+              </div>
+            </div>
+            <div className="pt-2 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+              <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-primary"></span> 8
+                Primary Wing
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-secondary"></span> 4
+                Secondary Wing
+              </span>
+            </div>
+          </div>
+          {/*  Card 2  */}
+          <div className="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between space-y-3 relative overflow-hidden">
+            <div className="flex items-start justify-between">
+              <div className="space-y-1">
+                <span className="font-label-sm text-label-sm text-outline uppercase tracking-wider">
+                  Active Medical Alerts
+                </span>
+                <div className="flex items-baseline gap-2">
+                  <span className="font-metric-lg text-metric-lg text-error">
+                    46
+                  </span>
+                  <span className="font-label-sm text-label-sm text-on-surface-variant">
+                    Flagged Profiles
+                  </span>
+                </div>
+              </div>
+              <div className="p-2.5 rounded-lg bg-error-container text-error">
+                <span className="material-symbols-outlined text-[24px]">
+                  crisis_alert
+                </span>
+              </div>
+            </div>
+            <div className="pt-2 text-on-surface-variant font-label-sm text-label-sm truncate">
+              Asthma (18), G6PD (7), Sickle Cell HbSS (9), Allergies (12)
+            </div>
+          </div>
+          {/*  Card 3  */}
+          <div className="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between space-y-3 relative overflow-hidden">
+            <div className="flex items-start justify-between">
+              <div className="space-y-1">
+                <span className="font-label-sm text-label-sm text-outline uppercase tracking-wider">
+                  Bed Rest / Observation Ward
+                </span>
+                <div className="flex items-baseline gap-2">
+                  <span className="font-metric-lg text-metric-lg text-on-tertiary-container">
+                    2
+                  </span>
+                  <span className="font-label-sm text-label-sm text-outline">
+                    / 6 Beds Occupied
+                  </span>
+                </div>
+              </div>
+              <div className="p-2.5 rounded-lg bg-surface-container-low text-tertiary">
+                <span className="material-symbols-outlined text-[24px]">
+                  hotel
+                </span>
+              </div>
+            </div>
+            <div className="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+              <div className="bg-on-tertiary-container h-1.5 rounded-full w-[33%]"></div>
+            </div>
+          </div>
+          {/*  Card 4  */}
+          <div className="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between space-y-3 relative overflow-hidden">
+            <div className="flex items-start justify-between">
+              <div className="space-y-1">
+                <span className="font-label-sm text-label-sm text-outline uppercase tracking-wider">
+                  Medical Incident Rate
+                </span>
+                <div className="flex items-baseline gap-2">
+                  <span className="font-metric-lg text-metric-lg text-secondary">
+                    Low
+                  </span>
+                  <span className="font-label-sm text-label-sm text-secondary font-medium">
+                    100% Stable
+                  </span>
+                </div>
+              </div>
+              <div className="p-2.5 rounded-lg bg-secondary-container text-on-secondary-container">
+                <span className="material-symbols-outlined text-[24px]">
+                  verified_user
+                </span>
+              </div>
+            </div>
+            <div className="pt-2 flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+              <span className="material-symbols-outlined text-[16px] text-secondary">
+                schedule
+              </span>
+              <span>Guardian SMS broadcast dispatch &lt; 15 mins</span>
+            </div>
+          </div>
+        </div>
+        {/*  Main Grid (70% Clinical Log Table, 30% Active Medical Profile & Inventory)  */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+          {/*  Left Column: Daily Clinic Consultations Table (8 cols on desktop)  */}
+          <div className="lg:col-span-8 flex flex-col space-y-space-md">
+            <div className="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col space-y-space-md">
+              {/*  Table Filter & Header Controls  */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-sm border-b border-surface-container">
+                <div className="flex items-center gap-space-sm">
+                  <div className="p-2 rounded-lg bg-primary-container text-on-primary">
+                    <span className="material-symbols-outlined text-[20px]">
+                      clinical_notes
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="font-headline-sm text-headline-sm text-primary">
+                      Daily Clinic Consultations &amp; Ward Registry
+                    </h3>
+                    <p className="font-body-sm text-body-sm text-on-surface-variant">
+                      Live registry for Thursday, 16 October 2026
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-space-xs">
+                  <div className="flex items-center rounded-lg bg-surface-container-low p-1">
+                    <button className="px-2.5 py-1 rounded bg-surface-container-lowest shadow-sm font-label-sm text-label-sm text-primary font-semibold">
+                      All (12)
+                    </button>
+                    <button className="px-2.5 py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface">
+                      In Ward (2)
+                    </button>
+                    <button className="px-2.5 py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface">
+                      Discharged (10)
+                    </button>
+                  </div>
+                  <button
+                    className="p-2 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors"
+                    title="Filter columns"
+                  >
+                    <span className="material-symbols-outlined text-[18px]">
+                      filter_list
+                    </span>
+                  </button>
+                </div>
+              </div>
+              {/*  Table Container  */}
+              <div className="overflow-x-auto -mx-space-md">
+                <table className="w-full text-left min-w-[760px]">
+                  <thead>
+                    <tr className="bg-surface-container-low text-outline font-label-sm text-label-sm uppercase tracking-wider">
+                      <th className="py-3 px-space-md">
+                        Visit Time &amp; Token
+                      </th>
+                      <th className="py-3 px-space-sm">
+                        Student / Staff Profile
+                      </th>
+                      <th className="py-3 px-space-sm">
+                        Chief Complaint &amp; Symptoms
+                      </th>
+                      <th className="py-3 px-space-sm">Vitals &amp; Triage</th>
+                      <th className="py-3 px-space-sm">
+                        Intervention &amp; Rx
+                      </th>
+                      <th className="py-3 px-space-md text-right">
+                        Disposition / Guardian
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-surface-container-low font-body-sm text-body-sm">
+                    {/*  Row 1: Aisha Mansur Danbaba  */}
+                    <tr className="hover:bg-surface-container-low/50 transition-colors">
+                      <td className="py-3.5 px-space-md whitespace-nowrap">
+                        <div className="font-label-md text-label-md text-primary font-semibold">
+                          08:45 AM
+                        </div>
+                        <div className="font-label-sm text-label-sm text-outline">
+                          Token #12
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-sm">
+                        <div className="flex items-center gap-space-xs">
+                          <img
+                            className="w-8 h-8 rounded-full object-cover shrink-0"
+                            data-alt="Close-up portrait of a high school female student Aisha wearing a navy blue hijab in a bright Nigerian school classroom, soft daylight, sharp academic photography"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV_dAcdibbpDbkrts0KQk5Ow72SupujevmyAEZ8F4KNhJnZoyLxuTLCNK0sDRSmKapRJY68Bb7-mfjKYnb-3BBuTkNUqzSZQzu9hw92xH1HrNifMku12JshDMjo6295L9DMVbAQsrC_Bxtvi5RfApCwoyzpr1lh6R7cRT5Z31p3_hsfBG8Y81rZahCbiSceF0NtWGkbrbbnDbavnV8U-bv_urHwbYXsJZtp877Er9nCvKKcSbx-I_G7w"
+                          />
+                          <div className="min-w-0">
+                            <div className="font-label-md text-label-md text-on-surface font-semibold truncate flex items-center gap-1">
+                              <span>Aisha Mansur Danbaba</span>
+                              <span
+                                className="material-symbols-outlined text-[14px] text-error"
+                                title="Chronic Asthma Alert"
+                              >
+                                emergency
+                              </span>
+                            </div>
+                            <div className="text-[11px] text-on-surface-variant truncate">
+                              SSS 2 Science A • Reg #NIS-2022-094
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-sm max-w-[180px]">
+                        <div className="font-medium text-on-surface line-clamp-1">
+                          Mild Asthmatic Wheezing
+                        </div>
+                        <div className="text-[11px] text-on-surface-variant line-clamp-1">
+                          Harmattan morning PT dust exposure
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-sm whitespace-nowrap">
+                        <div className="flex flex-col gap-0.5 font-label-sm text-[11px]">
+                          <span className="text-on-surface font-medium">
+                            Temp: 37.1°C
+                          </span>
+                          <span className="text-error font-medium">
+                            SpO2: 94% ➔ 98%
+                          </span>
+                          <span className="text-outline">BP: 105/68</span>
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-sm">
+                        <div className="font-medium text-primary text-[11px]">
+                          Salbutamol Inhaler (2 puffs)
+                        </div>
+                        <div className="text-[11px] text-on-surface-variant">
+                          Nebulizer 5 min + 30m bed rest
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-md text-right whitespace-nowrap">
+                        <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[10px] font-semibold">
+                          <span className="material-symbols-outlined text-[12px]">
+                            check_circle
+                          </span>{" "}
+                          Discharged 09:40 AM
+                        </div>
+                        <div className="text-[10px] text-secondary mt-0.5 font-medium">
+                          SMS Sent: Alhaji Mansur (Ack)
+                        </div>
+                      </td>
+                    </tr>
+                    {/*  Row 2: Bilal Abdulrahman  */}
+                    <tr className="hover:bg-surface-container-low/50 transition-colors bg-surface-container-lowest">
+                      <td className="py-3.5 px-space-md whitespace-nowrap">
+                        <div className="font-label-md text-label-md text-primary font-semibold">
+                          09:20 AM
+                        </div>
+                        <div className="font-label-sm text-label-sm text-outline">
+                          Token #13
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-sm">
+                        <div className="flex items-center gap-space-xs">
+                          <img
+                            className="w-8 h-8 rounded-full object-cover shrink-0"
+                            data-alt="Portrait of a young Nigerian male primary school pupil Bilal wearing a crisp collared school uniform, smiling gently, high resolution educational photo"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN8_e-vdP66Vj_8hIGZz_qEshcfofEOwDnaNYtQ-RjW5o3zkx02Z0HIEhH1WpFUJ0ebLzNxuGWYUFoyfyA2-ZGmQV57VPlw2g-vk_Hqm_G96WS8EQd2s5DV6iRK3mGgLcUQMW0S5MkbAfWs7sbfI83JQjOR4a03VVx_kzgnpHyjyM627sXpb4H2rYktw5V4gn0fnpWwrMVvs7N5UQDBW2SlBUg_RqzgcESpNep2KybwcrUdBk1FmZzuQ"
+                          />
+                          <div className="min-w-0">
+                            <div className="font-label-md text-label-md text-on-surface font-semibold truncate">
+                              Bilal Abdulrahman
+                            </div>
+                            <div className="text-[11px] text-on-surface-variant truncate">
+                              Primary 3 Sapphire • Reg #NIS-2024-211
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-sm max-w-[180px]">
+                        <div className="font-medium text-error line-clamp-1">
+                          Pyrexia &amp; Frontal Headache
+                        </div>
+                        <div className="text-[11px] text-on-surface-variant line-clamp-1">
+                          Fever started 2nd period Math
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-sm whitespace-nowrap">
+                        <div className="flex flex-col gap-0.5 font-label-sm text-[11px]">
+                          <span className="text-error font-bold">
+                            Temp: 38.6°C
+                          </span>
+                          <span className="text-on-surface">SpO2: 99%</span>
+                          <span className="text-outline">Pulse: 104 bpm</span>
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-sm">
+                        <div className="font-medium text-primary text-[11px]">
+                          Paracetamol 250mg Susp.
+                        </div>
+                        <div className="text-[11px] text-on-surface-variant">
+                          Cold compress + Hydration ORS
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-md text-right whitespace-nowrap">
+                        <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-tertiary-container font-label-sm text-[10px] font-semibold">
+                          <span className="material-symbols-outlined text-[12px] animate-pulse">
+                            hotel
+                          </span>{" "}
+                          Bed 2 (Obs Ward B)
+                        </div>
+                        <div className="text-[10px] text-outline mt-0.5">
+                          Mother notified • Pickup expected
+                        </div>
+                      </td>
+                    </tr>
+                    {/*  Row 3: Usman Kabir Mohammed  */}
+                    <tr className="hover:bg-surface-container-low/50 transition-colors">
+                      <td className="py-3.5 px-space-md whitespace-nowrap">
+                        <div className="font-label-md text-label-md text-primary font-semibold">
+                          10:05 AM
+                        </div>
+                        <div className="font-label-sm text-label-sm text-outline">
+                          Token #14
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-sm">
+                        <div className="flex items-center gap-space-xs">
+                          <div className="w-8 h-8 rounded-full bg-primary-fixed text-primary flex items-center justify-center font-label-md font-bold shrink-0">
+                            UK
+                          </div>
+                          <div className="min-w-0">
+                            <div className="font-label-md text-label-md text-on-surface font-semibold truncate">
+                              Usman Kabir Mohammed
+                            </div>
+                            <div className="text-[11px] text-on-surface-variant truncate">
+                              JSS 1 Diamond • Reg #NIS-2023-145
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-sm max-w-[180px]">
+                        <div className="font-medium text-on-surface line-clamp-1">
+                          Knee Abrasion &amp; Bruising
+                        </div>
+                        <div className="text-[11px] text-on-surface-variant line-clamp-1">
+                          Slid on gravel pitch during recess
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-sm whitespace-nowrap">
+                        <div className="flex flex-col gap-0.5 font-label-sm text-[11px]">
+                          <span className="text-on-surface font-medium">
+                            Temp: 36.8°C
+                          </span>
+                          <span className="text-on-surface">SpO2: 99%</span>
+                          <span className="text-outline">
+                            Wound Grade: Minor Superficial
+                          </span>
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-sm">
+                        <div className="font-medium text-primary text-[11px]">
+                          Savlon Cleansing + Betadine
+                        </div>
+                        <div className="text-[11px] text-on-surface-variant">
+                          Sterile gauze dressing + Ibuprofen tab
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-md text-right whitespace-nowrap">
+                        <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[10px] font-semibold">
+                          <span className="material-symbols-outlined text-[12px]">
+                            check_circle
+                          </span>{" "}
+                          Discharged 10:28 AM
+                        </div>
+                        <div className="text-[10px] text-on-surface-variant mt-0.5">
+                          PE Form exemption signed
+                        </div>
+                      </td>
+                    </tr>
+                    {/*  Row 4: Malam Garba Usman (Faculty)  */}
+                    <tr className="hover:bg-surface-container-low/50 transition-colors">
+                      <td className="py-3.5 px-space-md whitespace-nowrap">
+                        <div className="font-label-md text-label-md text-primary font-semibold">
+                          10:40 AM
+                        </div>
+                        <div className="font-label-sm text-label-sm text-outline">
+                          Token #15
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-sm">
+                        <div className="flex items-center gap-space-xs">
+                          <div className="w-8 h-8 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center font-label-md font-bold shrink-0">
+                            GU
+                          </div>
+                          <div className="min-w-0">
+                            <div className="font-label-md text-label-md text-on-surface font-semibold truncate flex items-center gap-1">
+                              <span>Malam Garba Usman</span>
+                              <span className="px-1.5 py-0.2 rounded bg-surface-container-high text-primary font-label-sm text-[9px] uppercase">
+                                Faculty
+                              </span>
+                            </div>
+                            <div className="text-[11px] text-on-surface-variant truncate">
+                              Senior Islamic Studies • Staff #STA-404
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-sm max-w-[180px]">
+                        <div className="font-medium text-on-surface line-clamp-1">
+                          Acute Abdominal Colic
+                        </div>
+                        <div className="text-[11px] text-on-surface-variant line-clamp-1">
+                          Epigastric discomfort post-breakfast
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-sm whitespace-nowrap">
+                        <div className="flex flex-col gap-0.5 font-label-sm text-[11px]">
+                          <span className="text-on-surface font-medium">
+                            Temp: 36.9°C
+                          </span>
+                          <span className="text-error font-medium">
+                            BP: 138/88 mmHg
+                          </span>
+                          <span className="text-outline">Pulse: 78 bpm</span>
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-sm">
+                        <div className="font-medium text-primary text-[11px]">
+                          Hyoscine Butylbromide 10mg
+                        </div>
+                        <div className="text-[11px] text-on-surface-variant">
+                          Oral antacid gel + 20 min observation
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-md text-right whitespace-nowrap">
+                        <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-tertiary-container font-label-sm text-[10px] font-semibold">
+                          <span className="material-symbols-outlined text-[12px] animate-pulse">
+                            hotel
+                          </span>{" "}
+                          Bed 1 (Faculty Rest)
+                        </div>
+                        <div className="text-[10px] text-outline mt-0.5">
+                          Vitals re-check at 11:15 AM
+                        </div>
+                      </td>
+                    </tr>
+                    {/*  Row 5: Zainab Haruna  */}
+                    <tr className="hover:bg-surface-container-low/50 transition-colors">
+                      <td className="py-3.5 px-space-md whitespace-nowrap">
+                        <div className="font-label-md text-label-md text-primary font-semibold">
+                          11:10 AM
+                        </div>
+                        <div className="font-label-sm text-label-sm text-outline">
+                          Token #16
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-sm">
+                        <div className="flex items-center gap-space-xs">
+                          <img
+                            className="w-8 h-8 rounded-full object-cover shrink-0"
+                            data-alt="Portrait of a young northern Nigerian girl Zainab in school uniform looking attentive and calm, medical clinic context, clean lighting"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuASv90QUR1KSppWHVR_xlww13Qmtdc4UOXGn8KWePLVoI9eRlQmWgIIVNzwdOqfoA912HqbSHDV97Hd4WvOS-3OU80J4TJUMb8knQFx7X7Ln_6SvE1HqxvP5mqFIDGC5CMd9l4xQ3krduBQWV9X-5ntlRHLUL5O-VLoMVCYF1gJ5X5Qt8fjMmKM16zVrXtQS4gdFkPWlVN-AcHp4vlVkZleg4lmQ69TwEJuftyZJSrFNWUGM68Wp48kow"
+                          />
+                          <div className="min-w-0">
+                            <div className="font-label-md text-label-md text-on-surface font-semibold truncate">
+                              Zainab Haruna Sambo
+                            </div>
+                            <div className="text-[11px] text-on-surface-variant truncate">
+                              Primary 5 Amber • Reg #NIS-2021-309
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-sm max-w-[180px]">
+                        <div className="font-medium text-on-surface line-clamp-1">
+                          Epistaxis (Nosebleed)
+                        </div>
+                        <div className="text-[11px] text-on-surface-variant line-clamp-1">
+                          Dry nasal mucosa due to harmattan winds
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-sm whitespace-nowrap">
+                        <div className="flex flex-col gap-0.5 font-label-sm text-[11px]">
+                          <span className="text-on-surface font-medium">
+                            Temp: 36.7°C
+                          </span>
+                          <span className="text-on-surface">SpO2: 100%</span>
+                          <span className="text-outline">
+                            Hemostasis achieved: 6m
+                          </span>
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-sm">
+                        <div className="font-medium text-primary text-[11px]">
+                          Direct Pinch + Ice Pack Bridge
+                        </div>
+                        <div className="text-[11px] text-on-surface-variant">
+                          Topical Petroleum jelly moisturization
+                        </div>
+                      </td>
+                      <td className="py-3.5 px-space-md text-right whitespace-nowrap">
+                        <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[10px] font-semibold">
+                          <span className="material-symbols-outlined text-[12px]">
+                            check_circle
+                          </span>{" "}
+                          Discharged 11:32 AM
+                        </div>
+                        <div className="text-[10px] text-secondary mt-0.5">
+                          Moisture advisory sent to parents
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              {/*  Pagination & Clinic Summary Footer  */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+                <span>Showing 5 of 12 logged patient records today</span>
+                <div className="flex items-center gap-1">
+                  <button className="px-2.5 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface disabled:opacity-50">
+                    Prev
+                  </button>
+                  <span className="px-2 font-medium text-primary">
+                    Page 1 of 3
+                  </span>
+                  <button className="px-2.5 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface">
+                    Next
+                  </button>
+                </div>
+              </div>
+            </div>
+            {/*  Emergency Referral Protocols & Kaduna MOH Escalation Card  */}
+            <div className="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col space-y-space-sm">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-secondary text-[22px]">
+                    health_and_safety
+                  </span>
+                  <h3 className="font-headline-sm text-headline-sm text-primary">
+                    Emergency Referral &amp; Kaduna MOH Protocols
+                  </h3>
+                </div>
+                <span className="px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">
+                  MoH Liaison Center: Barau Dikko Teaching Hosp. (5.2 km)
+                </span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-space-sm pt-1">
+                <div className="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-xs">
+                  <span className="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">
+                    ambulance
+                  </span>
+                  <div className="min-w-0">
+                    <div className="font-label-md text-label-md text-on-surface font-semibold">
+                      School Emergency Driver
+                    </div>
+                    <div className="font-body-sm text-[11px] text-on-surface-variant">
+                      Malam Shehu (Bus 4) • On Standby
+                    </div>
+                    <div className="font-label-sm text-[11px] text-primary font-bold">
+                      +234 802 110 9942
+                    </div>
+                  </div>
+                </div>
+                <div className="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-xs">
+                  <span className="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">
+                    local_hospital
+                  </span>
+                  <div className="min-w-0">
+                    <div className="font-label-md text-label-md text-on-surface font-semibold">
+                      Primary Referral Hospital
+                    </div>
+                    <div className="font-body-sm text-[11px] text-on-surface-variant">
+                      St. Gerald Catholic Hospital, Kakuri
+                    </div>
+                    <div className="font-label-sm text-[11px] text-primary font-bold">
+                      ER Desk: +234 62 240 188
+                    </div>
+                  </div>
+                </div>
+                <div className="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-xs">
+                  <span className="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">
+                    emergency_heat
+                  </span>
+                  <div className="min-w-0">
+                    <div className="font-label-md text-label-md text-on-surface font-semibold">
+                      Kaduna State Epidemiological
+                    </div>
+                    <div className="font-body-sm text-[11px] text-on-surface-variant">
+                      Disease Surveillance &amp; Notification
+                    </div>
+                    <div className="font-label-sm text-[11px] text-primary font-bold">
+                      Toll Free: 112 / 0803 555 4920
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/*  Right Column: High-Priority Watchlist & Inventory (4 cols on desktop)  */}
+          <div className="lg:col-span-4 flex flex-col space-y-space-md">
+            {/*  Critical Chronic Health Watchlist  */}
+            <div className="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col space-y-space-sm">
+              <div className="flex items-center justify-between pb-space-xs border-b border-surface-container">
+                <div className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-error text-[20px]">
+                    warning
+                  </span>
+                  <h3 className="font-headline-sm text-headline-sm text-primary">
+                    Chronic Watchlist
+                  </h3>
+                </div>
+                <span className="px-2 py-0.5 rounded-full bg-error-container text-error font-label-sm text-label-sm font-bold">
+                  High Priority
+                </span>
+              </div>
+              <div className="space-y-space-sm pt-1">
+                {/*  Item 1: Aisha Mansur  */}
+                <div className="p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors space-y-2">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-error"></span>
+                      <span className="font-label-md text-label-md text-on-surface font-bold">
+                        Aisha Mansur Danbaba
+                      </span>
+                    </div>
+                    <span className="font-label-sm text-[10px] text-on-surface-variant uppercase font-semibold">
+                      SSS 2 Sci A
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1.5 font-label-sm text-[11px] text-error font-medium">
+                    <span className="material-symbols-outlined text-[14px]">
+                      air
+                    </span>
+                    <span>Chronic Asthma • Storage: Locker B-04</span>
+                  </div>
+                  <div className="flex items-center justify-between text-on-surface-variant text-[11px] pt-1 border-t border-surface-container">
+                    <span>Personal Inhaler on shelf</span>
+                    <span className="text-primary font-medium">
+                      Guardian: +234 803 555 0192
+                    </span>
+                  </div>
+                </div>
+                {/*  Item 2: Khadijah Ahmad Rufai  */}
+                <div className="p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors space-y-2">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-error"></span>
+                      <span className="font-label-md text-label-md text-on-surface font-bold">
+                        Khadijah Ahmad Rufai
+                      </span>
+                    </div>
+                    <span className="font-label-sm text-[10px] text-on-surface-variant uppercase font-semibold">
+                      JSS 2 Emerald
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1.5 font-label-sm text-[11px] text-error font-medium">
+                    <span className="material-symbols-outlined text-[14px]">
+                      notification_important
+                    </span>
+                    <span>Peanut &amp; Penicillin Anaphylaxis</span>
+                  </div>
+                  <div className="flex items-center justify-between text-on-surface-variant text-[11px] pt-1 border-t border-surface-container">
+                    <span>Epipen: Nurse Station Box #1</span>
+                    <span className="text-primary font-medium">
+                      Guardian: +234 809 112 8760
+                    </span>
+                  </div>
+                </div>
+                {/*  Item 3: Abubakar Sadiq Bello  */}
+                <div className="p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors space-y-2">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+                      <span className="font-label-md text-label-md text-on-surface font-bold">
+                        Abubakar Sadiq Bello
+                      </span>
+                    </div>
+                    <span className="font-label-sm text-[10px] text-on-surface-variant uppercase font-semibold">
+                      Primary 6 Gold
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1.5 font-label-sm text-[11px] text-tertiary-container font-medium">
+                    <span className="material-symbols-outlined text-[14px]">
+                      water_drop
+                    </span>
+                    <span>Sickle Cell HbSS • Hydration Strict</span>
+                  </div>
+                  <div className="flex items-center justify-between text-on-surface-variant text-[11px] pt-1 border-t border-surface-container">
+                    <span>Routine Folic Acid checked</span>
+                    <span className="text-primary font-medium">
+                      Guardian: +234 802 770 4419
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <button className="w-full py-2 mt-1 rounded-lg bg-surface-container-low hover:bg-surface-container text-primary font-label-sm text-label-sm font-semibold transition-colors flex items-center justify-center gap-1">
+                <span>View All 46 Medical Care Plans</span>
+                <span className="material-symbols-outlined text-[14px]">
+                  arrow_forward
+                </span>
+              </button>
+            </div>
+            {/*  First-Aid & Essential Drug Inventory Card  */}
+            <div className="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col space-y-space-sm">
+              <div className="flex items-center justify-between pb-space-xs border-b border-surface-container">
+                <div className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-secondary text-[20px]">
+                    vaccines
+                  </span>
+                  <h3 className="font-headline-sm text-headline-sm text-primary">
+                    Clinic Pharmacy Stock
+                  </h3>
+                </div>
+                <span className="font-label-sm text-label-sm text-outline">
+                  Cabinet A &amp; B
+                </span>
+              </div>
+              <div className="space-y-space-sm pt-1">
+                {/*  Drug Item 1: Paracetamol  */}
+                <div className="space-y-1">
+                  <div className="flex justify-between items-center text-on-surface font-label-sm text-label-sm">
+                    <span className="font-semibold">
+                      Paracetamol Syrup &amp; Tabs (500mg)
+                    </span>
+                    <span className="text-secondary font-bold">84% Stock</span>
+                  </div>
+                  <div className="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+                    <div className="bg-secondary h-2 rounded-full w-[84%]"></div>
+                  </div>
+                  <div className="flex justify-between text-[10px] text-outline">
+                    <span>Batch #KD-2026-09</span>
+                    <span>Exp: Dec 2027</span>
+                  </div>
+                </div>
+                {/*  Drug Item 2: Salbutamol Inhalers  */}
+                <div className="space-y-1">
+                  <div className="flex justify-between items-center text-on-surface font-label-sm text-label-sm">
+                    <span className="font-semibold">
+                      Ventolin / Salbutamol Inhalers
+                    </span>
+                    <span className="text-on-tertiary-container font-bold">
+                      6 Units Left
+                    </span>
+                  </div>
+                  <div className="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+                    <div className="bg-on-tertiary-container h-2 rounded-full w-[45%]"></div>
+                  </div>
+                  <div className="flex justify-between text-[10px] text-outline">
+                    <span>Reorder threshold: 4 units</span>
+                    <span>Ward 1 Nebulizer Kit</span>
+                  </div>
+                </div>
+                {/*  Drug Item 3: ORS  */}
+                <div className="space-y-1">
+                  <div className="flex justify-between items-center text-on-surface font-label-sm text-label-sm">
+                    <span className="font-semibold">
+                      Oral Rehydration Salts (ORS)
+                    </span>
+                    <span className="text-secondary font-bold">92% Stock</span>
+                  </div>
+                  <div className="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+                    <div className="bg-secondary h-2 rounded-full w-[92%]"></div>
+                  </div>
+                  <div className="flex justify-between text-[10px] text-outline">
+                    <span>WHO Formula Packets</span>
+                    <span>Exp: Aug 2028</span>
+                  </div>
+                </div>
+                {/*  Drug Item 4: Antiseptics & Bandages  */}
+                <div className="space-y-1">
+                  <div className="flex justify-between items-center text-on-surface font-label-sm text-label-sm">
+                    <span className="font-semibold">
+                      Bandages, Gauze &amp; Antiseptic (Savlon)
+                    </span>
+                    <span className="text-secondary font-bold">
+                      Fully Stocked
+                    </span>
+                  </div>
+                  <div className="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+                    <div className="bg-secondary h-2 rounded-full w-[98%]"></div>
+                  </div>
+                  <div className="flex justify-between text-[10px] text-outline">
+                    <span>Dressing Kits: 24 Sterile sets</span>
+                    <span>Sterilized today</span>
+                  </div>
+                </div>
+              </div>
+              <div className="pt-2 flex items-center justify-between">
+                <button className="text-secondary hover:text-on-secondary-container font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-colors">
+                  <span className="material-symbols-outlined text-[16px]">
+                    history
+                  </span>
+                  <span>Dispensation Log</span>
+                </button>
+                <button className="px-3 py-1.5 rounded-lg bg-surface-container text-primary hover:bg-surface-container-high font-label-sm text-label-sm font-semibold transition-colors">
+                  Request Restock
+                </button>
+              </div>
+            </div>
+            {/*  Quick Nurse Duty Rota  */}
+            <div className="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="font-label-sm text-label-sm text-outline uppercase tracking-wider">
+                  Clinical Staff on Duty
+                </span>
+                <span className="w-2 h-2 rounded-full bg-secondary"></span>
+              </div>
+              <div className="flex items-center gap-space-sm pt-1">
+                <div className="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold">
+                  MT
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="font-label-md text-label-md text-on-surface font-bold truncate">
+                    Nurse Maryam Tanko (RN)
+                  </div>
+                  <div className="font-body-sm text-body-sm text-on-surface-variant truncate">
+                    Kaduna MoH Licensed • Shift 07:30 - 15:30
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+}

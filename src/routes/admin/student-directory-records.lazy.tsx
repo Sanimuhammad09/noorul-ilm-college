@@ -1,0 +1,1461 @@
+import { createLazyFileRoute } from "@tanstack/react-router";
+
+export const Route = createLazyFileRoute("/admin/student-directory-records")({
+  component: StudentDirectoryRecords,
+});
+
+function StudentDirectoryRecords() {
+  return (
+    <main className="w-full pt-16 px-space-lg py-space-lg flex-1 bg-background">
+      <div className="flex flex-col w-full space-y-space-lg">
+        {/*  Breadcrumbs & Header Strip  */}
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+          <div className="flex flex-col space-y-1">
+            <nav className="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+              <a
+                className="hover:text-primary transition-colors flex items-center gap-1"
+                href="#"
+              >
+                <span className="material-symbols-outlined text-[15px]">
+                  home
+                </span>
+                <span>Home</span>
+              </a>
+              <span className="material-symbols-outlined text-[14px] text-outline">
+                chevron_right
+              </span>
+              <span className="text-on-surface-variant font-medium">
+                Academic Management
+              </span>
+              <span className="material-symbols-outlined text-[14px] text-outline">
+                chevron_right
+              </span>
+              <span className="text-primary font-semibold">
+                Student Directory
+              </span>
+            </nav>
+            <div className="flex items-baseline gap-space-sm">
+              <h1 className="font-headline-lg text-headline-lg text-primary tracking-tight">
+                Student Directory &amp; Records
+              </h1>
+              <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+                Kaduna EMIS Synced
+              </span>
+            </div>
+            <p className="font-body-md text-body-md text-on-surface-variant">
+              Manage 1,842 active students across Nursery, Primary, JSS, and SSS
+              departments
+            </p>
+          </div>
+          {/*  Action Toolbar  */}
+          <div className="flex flex-wrap items-center gap-space-sm">
+            <button
+              className="inline-flex items-center gap-1.5 px-space-md py-2 bg-surface-container-lowest text-on-surface hover:bg-surface-container rounded-lg font-label-md text-label-md shadow-sm transition-colors"
+              type="button"
+            >
+              <span className="material-symbols-outlined text-[18px] text-primary">
+                upload_file
+              </span>
+              <span>Bulk Import</span>
+            </button>
+            <button
+              className="inline-flex items-center gap-1.5 px-space-md py-2 bg-surface-container-lowest text-on-surface hover:bg-surface-container rounded-lg font-label-md text-label-md shadow-sm transition-colors"
+              type="button"
+            >
+              <span className="material-symbols-outlined text-[18px] text-secondary">
+                file_download
+              </span>
+              <span>Export (PDF/Excel)</span>
+            </button>
+            <button
+              className="inline-flex items-center gap-1.5 px-space-md py-2 bg-surface-container-lowest text-on-surface hover:bg-surface-container rounded-lg font-label-md text-label-md shadow-sm transition-colors"
+              type="button"
+            >
+              <span className="material-symbols-outlined text-[18px] text-on-surface-variant">
+                badge
+              </span>
+              <span>Print ID Cards</span>
+            </button>
+            <button
+              className="inline-flex items-center gap-1.5 px-space-md py-2 bg-primary text-on-primary hover:bg-primary-container rounded-lg font-label-md text-label-md shadow-md transition-all active:scale-[0.98]"
+              type="button"
+            >
+              <span className="material-symbols-outlined text-[18px] text-tertiary-fixed">
+                person_add
+              </span>
+              <span>Register New Student</span>
+            </button>
+          </div>
+        </div>
+        {/*  Key Metrics Bento Row  */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+          {/*  Stat 1  */}
+          <div className="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+            <div className="space-y-1">
+              <span className="font-label-sm text-label-sm text-outline uppercase font-semibold">
+                Active Enrollment
+              </span>
+              <div className="flex items-baseline gap-2">
+                <span className="font-display-lg text-display-lg text-primary">
+                  1,842
+                </span>
+                <span className="text-secondary font-label-sm text-label-sm font-semibold flex items-center">
+                  <span className="material-symbols-outlined text-[14px]">
+                    arrow_upward
+                  </span>
+                  +4.2%
+                </span>
+              </div>
+              <p className="font-body-sm text-body-sm text-on-surface-variant">
+                Primary: 820 | JSS: 540 | SSS: 482
+              </p>
+            </div>
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+              <span className="material-symbols-outlined text-[24px]">
+                school
+              </span>
+            </div>
+          </div>
+          {/*  Stat 2  */}
+          <div className="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+            <div className="space-y-1">
+              <span className="font-label-sm text-label-sm text-outline uppercase font-semibold">
+                Term 1 Fee Clearance
+              </span>
+              <div className="flex items-baseline gap-2">
+                <span className="font-display-lg text-display-lg text-secondary">
+                  86.4%
+                </span>
+                <span className="text-on-surface-variant font-label-sm text-label-sm font-medium">
+                  ₦284.6M Coll.
+                </span>
+              </div>
+              <div className="w-36 bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+                <div className="bg-secondary h-full rounded-full w-[86.4%]"></div>
+              </div>
+            </div>
+            <div className="w-12 h-12 rounded-xl bg-secondary-container/50 flex items-center justify-center text-secondary">
+              <span className="material-symbols-outlined text-[24px]">
+                account_balance_wallet
+              </span>
+            </div>
+          </div>
+          {/*  Stat 3  */}
+          <div className="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+            <div className="space-y-1">
+              <span className="font-label-sm text-label-sm text-outline uppercase font-semibold">
+                Daily Attendance (Today)
+              </span>
+              <div className="flex items-baseline gap-2">
+                <span className="font-display-lg text-display-lg text-on-surface">
+                  97.8%
+                </span>
+                <span className="text-secondary font-label-sm text-label-sm font-semibold">
+                  1,802 Present
+                </span>
+              </div>
+              <p className="font-body-sm text-body-sm text-on-surface-variant">
+                40 excused | 0 unaccounted
+              </p>
+            </div>
+            <div className="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
+              <span className="material-symbols-outlined text-[24px]">
+                co_present
+              </span>
+            </div>
+          </div>
+          {/*  Stat 4  */}
+          <div className="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+            <div className="space-y-1">
+              <span className="font-label-sm text-label-sm text-outline uppercase font-semibold">
+                Academic Distinction Rate
+              </span>
+              <div className="flex items-baseline gap-2">
+                <span className="font-display-lg text-display-lg text-primary-container">
+                  34.2%
+                </span>
+                <span className="text-primary font-label-sm text-label-sm font-semibold">
+                  &gt; 80% Avg CA
+                </span>
+              </div>
+              <p className="font-body-sm text-body-sm text-on-surface-variant">
+                WAEC Prep Benchmark Met
+              </p>
+            </div>
+            <div className="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary">
+              <span className="material-symbols-outlined text-[24px]">
+                military_tech
+              </span>
+            </div>
+          </div>
+        </div>
+        {/*  Search & Filter Console Card  */}
+        <div className="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-md">
+          {/*  Top Row: Global Search  */}
+          <div className="flex flex-col md:flex-row items-stretch md:items-center gap-space-sm">
+            <div className="relative flex-1">
+              <span className="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">
+                search
+              </span>
+              <input
+                className="w-full pl-11 pr-4 py-2.5 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all"
+                placeholder="Search by Student Name, Admission No (e.g. NIIS/2026/0412), Guardian Name or Phone..."
+                type="text"
+              />
+            </div>
+            <div className="flex items-center gap-space-xs shrink-0">
+              <button
+                className="px-space-md py-2.5 bg-surface-container-low hover:bg-surface-container text-on-surface rounded-lg font-label-md text-label-md flex items-center gap-1.5 transition-colors"
+                type="button"
+              >
+                <span className="material-symbols-outlined text-[18px]">
+                  tune
+                </span>
+                <span>Advanced Query</span>
+              </button>
+              <button
+                className="px-space-md py-2.5 bg-primary text-on-primary hover:bg-primary-container rounded-lg font-label-md text-label-md flex items-center gap-1.5 transition-colors shadow-sm"
+                type="button"
+              >
+                <span>Search</span>
+              </button>
+            </div>
+          </div>
+          {/*  Filter Dropdown Matrix  */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-space-sm pt-2">
+            {/*  Academic Section  */}
+            <div className="space-y-1">
+              <label className="font-label-sm text-label-sm text-on-surface-variant font-medium">
+                Academic Dept
+              </label>
+              <select className="w-full py-2 px-3 bg-surface-container-low text-on-surface rounded-lg font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all">
+                <option>All Depts (Nursery-SSS)</option>
+                <option>Senior Secondary (SSS)</option>
+                <option>Junior Secondary (JSS)</option>
+                <option>Primary Section</option>
+                <option>Tahfeez &amp; Islamiyyah</option>
+              </select>
+            </div>
+            {/*  Class  */}
+            <div className="space-y-1">
+              <label className="font-label-sm text-label-sm text-on-surface-variant font-medium">
+                Class Level
+              </label>
+              <select className="w-full py-2 px-3 bg-surface-container-low text-on-surface rounded-lg font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all font-semibold text-primary">
+                <option>SSS 2 (Selected)</option>
+                <option>SSS 3</option>
+                <option>SSS 1</option>
+                <option>JSS 3</option>
+                <option>JSS 2</option>
+                <option>JSS 1</option>
+                <option>Primary 1 - 6</option>
+              </select>
+            </div>
+            {/*  Arm  */}
+            <div className="space-y-1">
+              <label className="font-label-sm text-label-sm text-on-surface-variant font-medium">
+                Class Arm
+              </label>
+              <select className="w-full py-2 px-3 bg-surface-container-low text-on-surface rounded-lg font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all">
+                <option>All Arms</option>
+                <option>Science A</option>
+                <option>Science B</option>
+                <option>Commercial</option>
+                <option>Arts &amp; Humanities</option>
+                <option>Emerald</option>
+                <option>Gold</option>
+                <option>Diamond</option>
+                <option>Sapphire</option>
+              </select>
+            </div>
+            {/*  Gender  */}
+            <div className="space-y-1">
+              <label className="font-label-sm text-label-sm text-on-surface-variant font-medium">
+                Gender
+              </label>
+              <select className="w-full py-2 px-3 bg-surface-container-low text-on-surface rounded-lg font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all">
+                <option>All Genders</option>
+                <option>Female (52%)</option>
+                <option>Male (48%)</option>
+              </select>
+            </div>
+            {/*  Fee Status  */}
+            <div className="space-y-1">
+              <label className="font-label-sm text-label-sm text-on-surface-variant font-medium">
+                Fee Clearance
+              </label>
+              <select className="w-full py-2 px-3 bg-surface-container-low text-on-surface rounded-lg font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all">
+                <option>All Statuses</option>
+                <option>Fully Paid (100%)</option>
+                <option>Partial Payment</option>
+                <option>Overdue / Defaulter</option>
+                <option>Scholarship / Waived</option>
+              </select>
+            </div>
+            {/*  Enrollment Status  */}
+            <div className="space-y-1">
+              <label className="font-label-sm text-label-sm text-on-surface-variant font-medium">
+                Enrollment State
+              </label>
+              <select className="w-full py-2 px-3 bg-surface-container-low text-on-surface rounded-lg font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all">
+                <option>Active (1,842)</option>
+                <option>Suspended (2)</option>
+                <option>Transferred (8)</option>
+                <option>Alumni (410)</option>
+                <option>Deferred (1)</option>
+              </select>
+            </div>
+          </div>
+          {/*  Active Filters & Summary Bar  */}
+          <div className="flex flex-wrap items-center justify-between gap-space-sm pt-2 bg-surface-container-low/60 p-space-sm rounded-lg">
+            <div className="flex flex-wrap items-center gap-space-xs">
+              <span className="font-label-sm text-label-sm text-outline font-semibold uppercase mr-1">
+                Active Filters:
+              </span>
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest text-primary font-label-sm text-label-sm shadow-sm">
+                <span>
+                  Class: <strong>SSS 2</strong>
+                </span>
+                <button
+                  className="hover:text-error transition-colors flex items-center"
+                  type="button"
+                >
+                  <span className="material-symbols-outlined text-[14px]">
+                    close
+                  </span>
+                </button>
+              </span>
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest text-secondary font-label-sm text-label-sm shadow-sm">
+                <span>
+                  Status: <strong>Active</strong>
+                </span>
+                <button
+                  className="hover:text-error transition-colors flex items-center"
+                  type="button"
+                >
+                  <span className="material-symbols-outlined text-[14px]">
+                    close
+                  </span>
+                </button>
+              </span>
+              <button
+                className="px-2 py-1 text-outline hover:text-error font-label-sm text-label-sm underline transition-colors"
+                type="button"
+              >
+                Clear All
+              </button>
+            </div>
+            <div className="flex items-center gap-space-sm">
+              <span className="px-3 py-1 bg-surface-container-highest text-primary font-label-sm text-label-sm font-semibold rounded-full">
+                Showing 148 students matching criteria
+              </span>
+            </div>
+          </div>
+        </div>
+        {/*  Bulk Action Dynamic Indicator Bar (Shows active selection status)  */}
+        <div className="flex items-center justify-between px-space-md py-space-sm bg-primary text-on-primary rounded-xl shadow-md">
+          <div className="flex items-center gap-space-md">
+            <div className="flex items-center gap-space-xs">
+              <input
+                defaultChecked
+                className="w-4 h-4 rounded text-secondary focus:ring-0 cursor-pointer"
+                type="checkbox"
+              />
+              <span className="font-label-md text-label-md font-semibold tracking-wide">
+                3 Students Selected
+              </span>
+            </div>
+            <span className="hidden md:inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            <span className="hidden md:inline font-body-sm text-body-sm text-on-primary-container">
+              Perform synchronized batch operations:
+            </span>
+          </div>
+          <div className="flex flex-wrap items-center gap-space-xs">
+            <button
+              className="inline-flex items-center gap-1 px-3 py-1.5 bg-surface-container-lowest/15 hover:bg-surface-container-lowest/25 rounded-lg font-label-sm text-label-sm font-semibold transition-colors"
+              type="button"
+            >
+              <span className="material-symbols-outlined text-[16px] text-tertiary-fixed">
+                sms
+              </span>
+              <span>SMS Guardians</span>
+            </button>
+            <button
+              className="inline-flex items-center gap-1 px-3 py-1.5 bg-surface-container-lowest/15 hover:bg-surface-container-lowest/25 rounded-lg font-label-sm text-label-sm font-semibold transition-colors"
+              type="button"
+            >
+              <span className="material-symbols-outlined text-[16px] text-secondary-fixed">
+                receipt
+              </span>
+              <span>Bulk Invoices</span>
+            </button>
+            <button
+              className="inline-flex items-center gap-1 px-3 py-1.5 bg-surface-container-lowest/15 hover:bg-surface-container-lowest/25 rounded-lg font-label-sm text-label-sm font-semibold transition-colors"
+              type="button"
+            >
+              <span className="material-symbols-outlined text-[16px]">
+                id_card
+              </span>
+              <span>Print Badges</span>
+            </button>
+            <button
+              className="inline-flex items-center gap-1 px-3 py-1.5 bg-secondary hover:bg-on-secondary-container text-on-secondary rounded-lg font-label-sm text-label-sm font-semibold transition-colors shadow-sm"
+              type="button"
+            >
+              <span className="material-symbols-outlined text-[16px]">
+                arrow_circle_up
+              </span>
+              <span>Promote Class</span>
+            </button>
+          </div>
+        </div>
+        {/*  Main Directory Layout: Split Grid with Table & Live Dossier  */}
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+          {/*  Table Container (8 Cols on XL)  */}
+          <div className="xl:col-span-8 bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left font-body-md text-body-md border-collapse">
+                <thead>
+                  <tr className="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+                    <th className="py-3 px-4 w-10">
+                      <input
+                        defaultChecked
+                        className="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer"
+                        type="checkbox"
+                      />
+                    </th>
+                    <th className="py-3 px-4">Student &amp; Identity</th>
+                    <th className="py-3 px-4">Class &amp; Arm</th>
+                    <th className="py-3 px-4">Guardian Contact</th>
+                    <th className="py-3 px-4 text-center">CA Avg</th>
+                    <th className="py-3 px-4">Bursary Status</th>
+                    <th className="py-3 px-4 text-center">Att.</th>
+                    <th className="py-3 px-4 text-right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-surface-container-low">
+                  {/*  Row 1: Aisha Mansur Danbaba (Active Selection / Previewed)  */}
+                  <tr className="bg-surface-container-high/40 hover:bg-surface-container-high/70 transition-colors">
+                    <td className="py-3.5 px-4">
+                      <input
+                        defaultChecked
+                        className="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer"
+                        type="checkbox"
+                      />
+                    </td>
+                    <td className="py-3.5 px-4">
+                      <div className="flex items-center gap-space-sm">
+                        <div className="relative shrink-0">
+                          <img
+                            className="w-10 h-10 rounded-full object-cover shadow-sm ring-2 ring-primary/20"
+                            data-alt="Close up professional portrait of a 16-year-old Nigerian female student Aisha wearing a tidy navy blue hijab and school blazer smiling politely in a bright institutional campus environment"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCnFBIS3S2RUEvPP3ikXe_tqYyl3ys-nwN_vYEk_d8y31MfalttyOSInuEsm4TIb6MdJJmaqsnBSOOUwIOp86u9KEENAwWoXCWcJgZ-IVmY6G3BfNwhcLRt9G5RpzdKXh64WFzrUDdkeplmY71T7qWb_kEgwIoV4IA0bwScuWGJct9brC8ZQuuBeZomfrbdlChO1GW9P04ZrmqEy2vg367FN8xkJZkXTXxmfBFB5hGhobGzkpz8Qq4_g"
+                          />
+                          <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-secondary rounded-full ring-2 ring-surface-container-lowest"></span>
+                        </div>
+                        <div className="flex flex-col min-w-0">
+                          <span className="font-label-lg text-label-lg font-semibold text-on-surface hover:text-primary transition-colors cursor-pointer truncate">
+                            Aisha Mansur Danbaba
+                          </span>
+                          <div className="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+                            <span className="font-mono text-primary font-semibold">
+                              NIIS/2024/0118
+                            </span>
+                            <span>•</span>
+                            <span>Kaduna State</span>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 whitespace-nowrap">
+                      <div className="flex flex-col">
+                        <span className="font-label-md text-label-md font-semibold text-primary">
+                          SSS 2 - Science A
+                        </span>
+                        <span className="font-body-sm text-body-sm text-on-surface-variant">
+                          Female • 16 yrs
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 whitespace-nowrap">
+                      <div className="flex flex-col">
+                        <span className="font-body-md text-body-md text-on-surface font-medium">
+                          Alhaji Mansur Danbaba
+                        </span>
+                        <span className="font-label-sm text-label-sm text-on-surface-variant font-mono">
+                          +234 803 555 0192
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 text-center whitespace-nowrap">
+                      <div className="inline-flex flex-col items-center">
+                        <span className="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">
+                          89.2%
+                        </span>
+                        <span className="font-body-sm text-[10px] text-secondary font-medium">
+                          Distinction (A1)
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 whitespace-nowrap">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm font-semibold">
+                        <span className="material-symbols-outlined text-[14px]">
+                          check_circle
+                        </span>
+                        <span>Paid • ₦185k</span>
+                      </span>
+                    </td>
+                    <td className="py-3.5 px-4 text-center whitespace-nowrap">
+                      <span className="font-label-sm text-label-sm font-semibold text-secondary">
+                        99%
+                      </span>
+                      <span className="block font-body-sm text-[10px] text-on-surface-variant">
+                        41/41
+                      </span>
+                    </td>
+                    <td className="py-3.5 px-4 text-right whitespace-nowrap">
+                      <div className="flex items-center justify-end gap-1">
+                        <button
+                          className="p-1.5 rounded-lg text-primary bg-primary/10 hover:bg-primary hover:text-on-primary transition-colors"
+                          title="View Profile"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            visibility
+                          </span>
+                        </button>
+                        <button
+                          className="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                          title="Academic Transcript"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            workspace_premium
+                          </span>
+                        </button>
+                        <button
+                          className="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                          title="Fee Statement"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            receipt_long
+                          </span>
+                        </button>
+                        <button
+                          className="p-1.5 rounded-lg text-outline hover:text-on-surface transition-colors"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            more_vert
+                          </span>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  {/*  Row 2: Farouk Umar Sadiq  */}
+                  <tr className="hover:bg-surface-container-low transition-colors">
+                    <td className="py-3.5 px-4">
+                      <input
+                        defaultChecked
+                        className="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer"
+                        type="checkbox"
+                      />
+                    </td>
+                    <td className="py-3.5 px-4">
+                      <div className="flex items-center gap-space-sm">
+                        <div className="relative shrink-0">
+                          <img
+                            className="w-10 h-10 rounded-full object-cover shadow-sm"
+                            data-alt="Headshot of a handsome 16-year-old Nigerian male secondary school student Farouk wearing a pressed deep navy blue school sweater and white collared shirt in classroom lighting"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhSncQRdJPvsCAPS6NJosorCDXUjSTQOEmrK-DIyZ1OXDk07XFaa2gP6Gc3zBuHtVHuN3DgybkNTiY_ablyh0ZCPhoThovCQOU1bzdeqjwvJ5D8_pYZPiyuuQVLYA5fSZ4L-mhK3jQ8vjgFsC4yYGv2wAoxQ77ifktMO5uqVMjrA7JBcI4rBk-_yiO5cuz0uFPZHIFHG7qXMIxSp7NAX79AWLtZPEZNtlwWUTYDiby60ErHhYe3ttd1g"
+                          />
+                          <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-secondary rounded-full ring-2 ring-surface-container-lowest"></span>
+                        </div>
+                        <div className="flex flex-col min-w-0">
+                          <span className="font-label-lg text-label-lg font-semibold text-on-surface hover:text-primary transition-colors cursor-pointer truncate">
+                            Farouk Umar Sadiq
+                          </span>
+                          <div className="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+                            <span className="font-mono text-primary font-semibold">
+                              NIIS/2024/0145
+                            </span>
+                            <span>•</span>
+                            <span>Katsina State</span>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 whitespace-nowrap">
+                      <div className="flex flex-col">
+                        <span className="font-label-md text-label-md font-semibold text-primary">
+                          SSS 2 - Science A
+                        </span>
+                        <span className="font-body-sm text-body-sm text-on-surface-variant">
+                          Male • 16 yrs
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 whitespace-nowrap">
+                      <div className="flex flex-col">
+                        <span className="font-body-md text-body-md text-on-surface font-medium">
+                          Dr. Umar Sadiq
+                        </span>
+                        <span className="font-label-sm text-label-sm text-on-surface-variant font-mono">
+                          +234 802 331 4488
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 text-center whitespace-nowrap">
+                      <div className="inline-flex flex-col items-center">
+                        <span className="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">
+                          78.4%
+                        </span>
+                        <span className="font-body-sm text-[10px] text-on-surface-variant font-medium">
+                          Credit (B2)
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 whitespace-nowrap">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold">
+                        <span className="material-symbols-outlined text-[14px]">
+                          timelapse
+                        </span>
+                        <span>Due ₦35k</span>
+                      </span>
+                    </td>
+                    <td className="py-3.5 px-4 text-center whitespace-nowrap">
+                      <span className="font-label-sm text-label-sm font-semibold text-on-surface">
+                        95%
+                      </span>
+                      <span className="block font-body-sm text-[10px] text-on-surface-variant">
+                        39/41
+                      </span>
+                    </td>
+                    <td className="py-3.5 px-4 text-right whitespace-nowrap">
+                      <div className="flex items-center justify-end gap-1">
+                        <button
+                          className="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                          title="View Profile"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            visibility
+                          </span>
+                        </button>
+                        <button
+                          className="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                          title="Academic Transcript"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            workspace_premium
+                          </span>
+                        </button>
+                        <button
+                          className="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                          title="Fee Statement"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            receipt_long
+                          </span>
+                        </button>
+                        <button
+                          className="p-1.5 rounded-lg text-outline hover:text-on-surface transition-colors"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            more_vert
+                          </span>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  {/*  Row 3: Khadijah Ahmad Rufai  */}
+                  <tr className="hover:bg-surface-container-low transition-colors">
+                    <td className="py-3.5 px-4">
+                      <input
+                        defaultChecked
+                        className="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer"
+                        type="checkbox"
+                      />
+                    </td>
+                    <td className="py-3.5 px-4">
+                      <div className="flex items-center gap-space-sm">
+                        <div className="relative shrink-0">
+                          <img
+                            className="w-10 h-10 rounded-full object-cover shadow-sm"
+                            data-alt="Gentle portrait of a 13-year-old Nigerian junior secondary school girl Khadijah in a neat emerald-trimmed school hijab looking confident in an academic library setting"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6in7hiOOSHEavelmIdJZILP5umfNz9LT_jb4e4HQozQ4gyzRfXiQt-PSIbw3CC7qpeKTqMrIUnvoEYly8TVg2hKCnktIuH8gw9xn1T2AwASsz5o4cuAjZNMpU2zJtSZSPfoUxOKyZYMKzOqOrGuANkc4QuA9yK4o7-4IWaxuiqco-RXCMvDE0gq_0OynWsDrUdOmneov767nsfBTnt8LmF9kg-SW7c6ziHejLV-wNWwwQ7AP0ntz2oA"
+                          />
+                          <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-secondary rounded-full ring-2 ring-surface-container-lowest"></span>
+                        </div>
+                        <div className="flex flex-col min-w-0">
+                          <span className="font-label-lg text-label-lg font-semibold text-on-surface hover:text-primary transition-colors cursor-pointer truncate">
+                            Khadijah Ahmad Rufai
+                          </span>
+                          <div className="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+                            <span className="font-mono text-primary font-semibold">
+                              NIIS/2025/0302
+                            </span>
+                            <span>•</span>
+                            <span>Kano State</span>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 whitespace-nowrap">
+                      <div className="flex flex-col">
+                        <span className="font-label-md text-label-md font-semibold text-primary">
+                          JSS 2 - Emerald
+                        </span>
+                        <span className="font-body-sm text-body-sm text-on-surface-variant">
+                          Female • 13 yrs
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 whitespace-nowrap">
+                      <div className="flex flex-col">
+                        <span className="font-body-md text-body-md text-on-surface font-medium">
+                          Engr. Ahmad Rufai
+                        </span>
+                        <span className="font-label-sm text-label-sm text-on-surface-variant font-mono">
+                          +234 806 772 1100
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 text-center whitespace-nowrap">
+                      <div className="inline-flex flex-col items-center">
+                        <span className="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">
+                          92.1%
+                        </span>
+                        <span className="font-body-sm text-[10px] text-secondary font-medium">
+                          Distinction (A1)
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 whitespace-nowrap">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm font-semibold">
+                        <span className="material-symbols-outlined text-[14px]">
+                          check_circle
+                        </span>
+                        <span>Paid • ₦150k</span>
+                      </span>
+                    </td>
+                    <td className="py-3.5 px-4 text-center whitespace-nowrap">
+                      <span className="font-label-sm text-label-sm font-semibold text-secondary">
+                        98%
+                      </span>
+                      <span className="block font-body-sm text-[10px] text-on-surface-variant">
+                        40/41
+                      </span>
+                    </td>
+                    <td className="py-3.5 px-4 text-right whitespace-nowrap">
+                      <div className="flex items-center justify-end gap-1">
+                        <button
+                          className="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                          title="View Profile"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            visibility
+                          </span>
+                        </button>
+                        <button
+                          className="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                          title="Academic Transcript"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            workspace_premium
+                          </span>
+                        </button>
+                        <button
+                          className="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                          title="Fee Statement"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            receipt_long
+                          </span>
+                        </button>
+                        <button
+                          className="p-1.5 rounded-lg text-outline hover:text-on-surface transition-colors"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            more_vert
+                          </span>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  {/*  Row 4: Bilal Abdulrahman  */}
+                  <tr className="hover:bg-surface-container-low transition-colors">
+                    <td className="py-3.5 px-4">
+                      <input
+                        className="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer"
+                        type="checkbox"
+                      />
+                    </td>
+                    <td className="py-3.5 px-4">
+                      <div className="flex items-center gap-space-sm">
+                        <div className="relative shrink-0">
+                          <img
+                            className="w-10 h-10 rounded-full object-cover shadow-sm"
+                            data-alt="Portrait of an 8-year-old lively Northern Nigerian boy Bilal smiling cheerfully wearing a spotless primary school uniform in front of a colorful school mural"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgRWX9HS0K9hB-B_iWUhzy1IR3PBgUIr0YDJVwgpp7mG_H8DpIrRjh0PWa7pyqdR0eq57ZpiyYbuCHvdbUSf2dYu-P8JQ0vyscj1c1qEUzSpaIG9iLsX-WeU0E0p1OSFydlvb8iw69FXG5rLpOGwwY3MP7SNedTyJc83PbIb_jkO9AqgxeA4UaiQk_6Xlj3cKTljIBhv9zuiWkmXIYYn3ye6z-cz8KXuimGRnZe4BVJcC1giemfPlO5A"
+                          />
+                          <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-secondary rounded-full ring-2 ring-surface-container-lowest"></span>
+                        </div>
+                        <div className="flex flex-col min-w-0">
+                          <span className="font-label-lg text-label-lg font-semibold text-on-surface hover:text-primary transition-colors cursor-pointer truncate">
+                            Bilal Abdulrahman
+                          </span>
+                          <div className="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+                            <span className="font-mono text-primary font-semibold">
+                              NIIS/2026/0589
+                            </span>
+                            <span>•</span>
+                            <span>Kaduna State</span>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 whitespace-nowrap">
+                      <div className="flex flex-col">
+                        <span className="font-label-md text-label-md font-semibold text-primary">
+                          Primary 3 - Sapphire
+                        </span>
+                        <span className="font-body-sm text-body-sm text-on-surface-variant">
+                          Male • 8 yrs
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 whitespace-nowrap">
+                      <div className="flex flex-col">
+                        <span className="font-body-md text-body-md text-on-surface font-medium">
+                          Hajiya Maryam Bello
+                        </span>
+                        <span className="font-label-sm text-label-sm text-on-surface-variant font-mono">
+                          +234 809 112 3344
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 text-center whitespace-nowrap">
+                      <div className="inline-flex flex-col items-center">
+                        <span className="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">
+                          81.0%
+                        </span>
+                        <span className="font-body-sm text-[10px] text-primary font-medium">
+                          Merit (B1)
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 whitespace-nowrap">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm font-semibold">
+                        <span className="material-symbols-outlined text-[14px]">
+                          check_circle
+                        </span>
+                        <span>Paid • ₦125k</span>
+                      </span>
+                    </td>
+                    <td className="py-3.5 px-4 text-center whitespace-nowrap">
+                      <span className="font-label-sm text-label-sm font-semibold text-secondary">
+                        100%
+                      </span>
+                      <span className="block font-body-sm text-[10px] text-on-surface-variant">
+                        41/41
+                      </span>
+                    </td>
+                    <td className="py-3.5 px-4 text-right whitespace-nowrap">
+                      <div className="flex items-center justify-end gap-1">
+                        <button
+                          className="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                          title="View Profile"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            visibility
+                          </span>
+                        </button>
+                        <button
+                          className="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                          title="Academic Transcript"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            workspace_premium
+                          </span>
+                        </button>
+                        <button
+                          className="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                          title="Fee Statement"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            receipt_long
+                          </span>
+                        </button>
+                        <button
+                          className="p-1.5 rounded-lg text-outline hover:text-on-surface transition-colors"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            more_vert
+                          </span>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  {/*  Row 5: Zainab Ibrahim Yakubu  */}
+                  <tr className="hover:bg-surface-container-low transition-colors">
+                    <td className="py-3.5 px-4">
+                      <input
+                        className="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer"
+                        type="checkbox"
+                      />
+                    </td>
+                    <td className="py-3.5 px-4">
+                      <div className="flex items-center gap-space-sm">
+                        <div className="relative shrink-0">
+                          <img
+                            className="w-10 h-10 rounded-full object-cover shadow-sm"
+                            data-alt="Professional headshot of a 17-year-old Nigerian female senior student Zainab wearing a gold and navy trimmed hijab with a thoughtful expression in a study hall"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVP0J1Qa4X524eqVytykd5GozCXNQmbmQ0YkqO0_uZ3mV7gO2lQiXQnZutsfPAHVcVAycjwCMYB4zVr9Sm0q6KPGKGqiUMxrKevOgEKn6UsVKvD510Js8SHFvLu6L4lxKotVXh8llVSbQkJyqmbYHdexbxRLuqM4LomsbilTK0_CqsDl1Lvrpi3mW56FmhJpfFd0lm3OYdk4xFKTcmdlZtf93PXbDQ9-rgkrXLNs87Oi5rBbSZ2qUiMA"
+                          />
+                          <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-secondary rounded-full ring-2 ring-surface-container-lowest"></span>
+                        </div>
+                        <div className="flex flex-col min-w-0">
+                          <span className="font-label-lg text-label-lg font-semibold text-on-surface hover:text-primary transition-colors cursor-pointer truncate">
+                            Zainab Ibrahim Yakubu
+                          </span>
+                          <div className="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+                            <span className="font-mono text-primary font-semibold">
+                              NIIS/2023/0088
+                            </span>
+                            <span>•</span>
+                            <span>Niger State</span>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 whitespace-nowrap">
+                      <div className="flex flex-col">
+                        <span className="font-label-md text-label-md font-semibold text-primary">
+                          SSS 3 - Commercial
+                        </span>
+                        <span className="font-body-sm text-body-sm text-on-surface-variant">
+                          Female • 17 yrs
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 whitespace-nowrap">
+                      <div className="flex flex-col">
+                        <span className="font-body-md text-body-md text-on-surface font-medium">
+                          Mallam Ibrahim Yakubu
+                        </span>
+                        <span className="font-label-sm text-label-sm text-on-surface-variant font-mono">
+                          +234 814 660 9988
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 text-center whitespace-nowrap">
+                      <div className="inline-flex flex-col items-center">
+                        <span className="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold">
+                          74.5%
+                        </span>
+                        <span className="font-body-sm text-[10px] text-on-surface-variant font-medium">
+                          Credit (B3)
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 whitespace-nowrap">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+                        <span className="material-symbols-outlined text-[14px]">
+                          warning
+                        </span>
+                        <span>Due ₦185k</span>
+                      </span>
+                    </td>
+                    <td className="py-3.5 px-4 text-center whitespace-nowrap">
+                      <span className="font-label-sm text-label-sm font-semibold text-on-surface-variant">
+                        91%
+                      </span>
+                      <span className="block font-body-sm text-[10px] text-on-surface-variant">
+                        37/41
+                      </span>
+                    </td>
+                    <td className="py-3.5 px-4 text-right whitespace-nowrap">
+                      <div className="flex items-center justify-end gap-1">
+                        <button
+                          className="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                          title="View Profile"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            visibility
+                          </span>
+                        </button>
+                        <button
+                          className="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                          title="Academic Transcript"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            workspace_premium
+                          </span>
+                        </button>
+                        <button
+                          className="p-1.5 rounded-lg text-error bg-error-container/30 hover:bg-error-container hover:text-on-error-container transition-colors"
+                          title="Fee Statement"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            receipt_long
+                          </span>
+                        </button>
+                        <button
+                          className="p-1.5 rounded-lg text-outline hover:text-on-surface transition-colors"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            more_vert
+                          </span>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  {/*  Row 6: Usman Kabir Mohammed  */}
+                  <tr className="hover:bg-surface-container-low transition-colors">
+                    <td className="py-3.5 px-4">
+                      <input
+                        className="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer"
+                        type="checkbox"
+                      />
+                    </td>
+                    <td className="py-3.5 px-4">
+                      <div className="flex items-center gap-space-sm">
+                        <div className="relative shrink-0">
+                          <img
+                            className="w-10 h-10 rounded-full object-cover shadow-sm"
+                            data-alt="Young 12-year-old Nigerian junior secondary boy Usman with a bright engaging expression wearing a high-collared navy uniform shirt indoors in Kaduna"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU5zifTD_nD7oWvPlfP2l3ZsNQNFUFvl1LQ6lcsoDH1WGkJ9LC-RrtWJP-H_4uxDuvYfJm8Hk2CUZfDrr8ES0tcoTrGWMo9WbxXzF8ojHqFY8v-r_XjmaSOVNruC8mgeZ1YjGOSWxqNZKf69GkzYegH0-WcTZ92q0-Jo_1xXkCnvXN4a5OFpEEQxrp0EtuPUjk7xnGZu2kmXA_OtTU1aa6knGuCMqdn2kb33EydE4BQZrQVc6zoItYxw"
+                          />
+                          <span className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-secondary rounded-full ring-2 ring-surface-container-lowest"></span>
+                        </div>
+                        <div className="flex flex-col min-w-0">
+                          <span className="font-label-lg text-label-lg font-semibold text-on-surface hover:text-primary transition-colors cursor-pointer truncate">
+                            Usman Kabir Mohammed
+                          </span>
+                          <div className="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+                            <span className="font-mono text-primary font-semibold">
+                              NIIS/2025/0421
+                            </span>
+                            <span>•</span>
+                            <span>Kaduna State</span>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 whitespace-nowrap">
+                      <div className="flex flex-col">
+                        <span className="font-label-md text-label-md font-semibold text-primary">
+                          JSS 1 - Diamond
+                        </span>
+                        <span className="font-body-sm text-body-sm text-on-surface-variant">
+                          Male • 12 yrs
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 whitespace-nowrap">
+                      <div className="flex flex-col">
+                        <span className="font-body-md text-body-md text-on-surface font-medium">
+                          Barr. Kabir Mohammed
+                        </span>
+                        <span className="font-label-sm text-label-sm text-on-surface-variant font-mono">
+                          +234 805 443 2211
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 text-center whitespace-nowrap">
+                      <div className="inline-flex flex-col items-center">
+                        <span className="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">
+                          86.8%
+                        </span>
+                        <span className="font-body-sm text-[10px] text-secondary font-medium">
+                          Distinction (A1)
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-3.5 px-4 whitespace-nowrap">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm font-semibold">
+                        <span className="material-symbols-outlined text-[14px]">
+                          check_circle
+                        </span>
+                        <span>Paid • ₦160k</span>
+                      </span>
+                    </td>
+                    <td className="py-3.5 px-4 text-center whitespace-nowrap">
+                      <span className="font-label-sm text-label-sm font-semibold text-secondary">
+                        97%
+                      </span>
+                      <span className="block font-body-sm text-[10px] text-on-surface-variant">
+                        40/41
+                      </span>
+                    </td>
+                    <td className="py-3.5 px-4 text-right whitespace-nowrap">
+                      <div className="flex items-center justify-end gap-1">
+                        <button
+                          className="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors"
+                          title="View Profile"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            visibility
+                          </span>
+                        </button>
+                        <button
+                          className="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                          title="Academic Transcript"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            workspace_premium
+                          </span>
+                        </button>
+                        <button
+                          className="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
+                          title="Fee Statement"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            receipt_long
+                          </span>
+                        </button>
+                        <button
+                          className="p-1.5 rounded-lg text-outline hover:text-on-surface transition-colors"
+                          type="button"
+                        >
+                          <span className="material-symbols-outlined text-[18px]">
+                            more_vert
+                          </span>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            {/*  Pagination Footer  */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-space-md p-space-md bg-surface-container-low/50">
+              <div className="flex items-center gap-space-sm text-on-surface-variant font-body-sm text-body-sm">
+                <span>Rows per page:</span>
+                <select className="py-1 px-2.5 bg-surface-container-lowest text-on-surface rounded-md font-label-sm text-label-sm focus:outline-none">
+                  <option>10 entries</option>
+                  <option>25 entries</option>
+                  <option>50 entries</option>
+                </select>
+                <span className="hidden sm:inline">
+                  • Showing <strong>1 - 6</strong> of <strong>148</strong>{" "}
+                  students
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <button
+                  className="px-2.5 py-1.5 rounded-lg text-outline bg-surface-container-lowest cursor-not-allowed font-label-sm text-label-sm flex items-center gap-1"
+                  disabled
+                  type="button"
+                >
+                  <span className="material-symbols-outlined text-[16px]">
+                    chevron_left
+                  </span>
+                  <span className="hidden sm:inline">Previous</span>
+                </button>
+                <button
+                  className="w-8 h-8 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold flex items-center justify-center"
+                  type="button"
+                >
+                  1
+                </button>
+                <button
+                  className="w-8 h-8 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center justify-center transition-colors"
+                  type="button"
+                >
+                  2
+                </button>
+                <button
+                  className="w-8 h-8 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center justify-center transition-colors"
+                  type="button"
+                >
+                  3
+                </button>
+                <span className="px-1 text-outline font-label-sm">...</span>
+                <button
+                  className="w-8 h-8 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center justify-center transition-colors"
+                  type="button"
+                >
+                  15
+                </button>
+                <button
+                  className="px-2.5 py-1.5 rounded-lg text-on-surface bg-surface-container-lowest hover:bg-surface-container font-label-sm text-label-sm flex items-center gap-1 transition-colors"
+                  type="button"
+                >
+                  <span className="hidden sm:inline">Next</span>
+                  <span className="material-symbols-outlined text-[16px]">
+                    chevron_right
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          {/*  Live Student Dossier & Quick Profile Preview (4 Cols on XL)  */}
+          <div className="xl:col-span-4 bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col space-y-space-md">
+            {/*  Card Header Banner with Islamic Architecture Accent Texture  */}
+            <div className="relative p-space-md bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-t-xl overflow-hidden">
+              <div className="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-secondary/15 blur-2xl pointer-events-none"></div>
+              <div className="relative z-10 flex items-start justify-between">
+                <div className="flex items-center gap-space-sm">
+                  <img
+                    className="w-16 h-16 rounded-xl object-cover ring-2 ring-tertiary-fixed shadow-md"
+                    data-alt="Direct high resolution photographic portrait of a teenage Nigerian scholar Aisha Mansur Danbaba in pristine school hijab smiling proudly in an administrative office"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7KZkGhWs7M-bI-_E8lA_bTTBxM0vElCABGLL0-_eAytP7RcRL6tbdAdztj9c0vKVMw_f_I583n3Eiq0cUtGvjOU1ZLyVEVbNOQKowx-tc4QbLuqQ5UNfIiaO0twHpLM_U-pCyXYsi8ZmKYuzq0AAQxWmDFqu_eg1ITnukgoMt-q0nOVfknKRt9pOMKMwBeKrVqN-Q7c-lYufQWV5MpvE_W3HZfzO_ysKFv1x6_vAcWJxaLLA_QjjLvA"
+                  />
+                  <div className="flex flex-col min-w-0">
+                    <span className="px-2 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-[10px] uppercase font-bold w-fit mb-1">
+                      Active Scholar
+                    </span>
+                    <h3 className="font-headline-sm text-headline-sm font-bold text-on-primary truncate">
+                      Aisha Mansur Danbaba
+                    </h3>
+                    <p className="font-label-sm text-label-sm text-primary-fixed-dim">
+                      NIIS/2024/0118 • SSS 2 Science A
+                    </p>
+                  </div>
+                </div>
+                <button
+                  className="p-1 rounded-lg text-on-primary/70 hover:text-on-primary hover:bg-surface-container-lowest/15 transition-colors"
+                  type="button"
+                >
+                  <span className="material-symbols-outlined text-[20px]">
+                    open_in_new
+                  </span>
+                </button>
+              </div>
+            </div>
+            {/*  Quick Metrics Strip inside Drawer  */}
+            <div className="px-space-md grid grid-cols-3 gap-2 text-center">
+              <div className="bg-surface-container-low p-2 rounded-lg">
+                <span className="font-label-sm text-label-sm text-outline block">
+                  Cumulative
+                </span>
+                <span className="font-headline-sm text-headline-sm text-secondary font-bold">
+                  89.2%
+                </span>
+                <span className="text-[10px] text-on-surface-variant font-medium">
+                  Rank: 2nd / 42
+                </span>
+              </div>
+              <div className="bg-surface-container-low p-2 rounded-lg">
+                <span className="font-label-sm text-label-sm text-outline block">
+                  Attendance
+                </span>
+                <span className="font-headline-sm text-headline-sm text-primary font-bold">
+                  99%
+                </span>
+                <span className="text-[10px] text-on-surface-variant font-medium">
+                  41/41 Days
+                </span>
+              </div>
+              <div className="bg-surface-container-low p-2 rounded-lg">
+                <span className="font-label-sm text-label-sm text-outline block">
+                  House
+                </span>
+                <span className="font-headline-sm text-headline-sm text-tertiary font-bold">
+                  Danfodio
+                </span>
+                <span className="text-[10px] text-on-surface-variant font-medium">
+                  Green House
+                </span>
+              </div>
+            </div>
+            {/*  Detail Accordions / Info Cards  */}
+            <div className="px-space-md space-y-space-md flex-1">
+              {/*  Emergency & Medical Notice  */}
+              <div className="p-space-sm rounded-lg bg-surface-container-high/60 space-y-1.5">
+                <div className="flex items-center justify-between">
+                  <span className="font-label-sm text-label-sm font-semibold text-primary flex items-center gap-1">
+                    <span className="material-symbols-outlined text-[16px] text-error">
+                      medical_services
+                    </span>
+                    <span>Health &amp; Medical Profile</span>
+                  </span>
+                  <span className="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-[10px] font-bold">
+                    Mild Asthma Alert
+                  </span>
+                </div>
+                <p className="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+                  Inhaler stored in School Clinic (Room B-04). Avoid cold
+                  harmattan morning sports without pre-ventilation. Blood Group:
+                  B+, Genotype: AA.
+                </p>
+              </div>
+              {/*  Guardian & Contact Dossier  */}
+              <div className="space-y-2">
+                <span className="font-label-sm text-label-sm uppercase font-semibold text-outline tracking-wider">
+                  Primary Guardian Contact
+                </span>
+                <div className="p-space-sm rounded-lg bg-surface-container-low flex flex-col space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="font-label-md text-label-md font-semibold text-on-surface">
+                      Alhaji Mansur Danbaba
+                    </span>
+                    <span className="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[10px] font-semibold">
+                      Verified Father
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface-variant">
+                    <span className="material-symbols-outlined text-[16px] text-secondary">
+                      phone_iphone
+                    </span>
+                    <span className="font-mono text-on-surface font-medium">
+                      +234 803 555 0192
+                    </span>
+                    <button
+                      className="ml-auto text-primary hover:underline font-label-sm text-label-sm flex items-center gap-0.5"
+                      type="button"
+                    >
+                      <span className="material-symbols-outlined text-[14px]">
+                        call
+                      </span>{" "}
+                      Call
+                    </button>
+                  </div>
+                  <div className="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface-variant">
+                    <span className="material-symbols-outlined text-[16px] text-primary">
+                      mail
+                    </span>
+                    <span className="truncate">mansur.danbaba@kdsg.gov.ng</span>
+                  </div>
+                  <div className="flex items-center gap-space-sm font-body-sm text-body-sm text-on-surface-variant">
+                    <span className="material-symbols-outlined text-[16px] text-outline">
+                      location_on
+                    </span>
+                    <span className="truncate">
+                      Malali GRA, Kaduna North LGA, Kaduna
+                    </span>
+                  </div>
+                </div>
+              </div>
+              {/*  Registered 10 Subjects Grid  */}
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="font-label-sm text-label-sm uppercase font-semibold text-outline tracking-wider">
+                    Enrolled Curriculum (10 Subjects)
+                  </span>
+                  <span className="font-label-sm text-label-sm text-secondary font-semibold">
+                    SSS 2 Science Track
+                  </span>
+                </div>
+                <div className="grid grid-cols-2 gap-1.5 font-label-sm text-label-sm">
+                  <div className="p-2 rounded bg-surface-container-low flex items-center justify-between">
+                    <span className="text-on-surface truncate">
+                      English Language
+                    </span>
+                    <span className="font-bold text-secondary">88%</span>
+                  </div>
+                  <div className="p-2 rounded bg-surface-container-low flex items-center justify-between">
+                    <span className="text-on-surface truncate">
+                      General Mathematics
+                    </span>
+                    <span className="font-bold text-secondary">94%</span>
+                  </div>
+                  <div className="p-2 rounded bg-surface-container-low flex items-center justify-between">
+                    <span className="text-on-surface truncate">
+                      Further Mathematics
+                    </span>
+                    <span className="font-bold text-secondary">91%</span>
+                  </div>
+                  <div className="p-2 rounded bg-surface-container-low flex items-center justify-between">
+                    <span className="text-on-surface truncate">Physics</span>
+                    <span className="font-bold text-secondary">86%</span>
+                  </div>
+                  <div className="p-2 rounded bg-surface-container-low flex items-center justify-between">
+                    <span className="text-on-surface truncate">Chemistry</span>
+                    <span className="font-bold text-secondary">84%</span>
+                  </div>
+                  <div className="p-2 rounded bg-surface-container-low flex items-center justify-between">
+                    <span className="text-on-surface truncate">Biology</span>
+                    <span className="font-bold text-secondary">90%</span>
+                  </div>
+                  <div className="p-2 rounded bg-surface-container-low flex items-center justify-between">
+                    <span className="text-on-surface truncate">
+                      Civic Education
+                    </span>
+                    <span className="font-bold text-secondary">85%</span>
+                  </div>
+                  <div className="p-2 rounded bg-surface-container-low flex items-center justify-between">
+                    <span className="text-on-surface truncate">
+                      Islamic Studies
+                    </span>
+                    <span className="font-bold text-secondary">96%</span>
+                  </div>
+                  <div className="p-2 rounded bg-surface-container-low flex items-center justify-between">
+                    <span className="text-on-surface truncate">
+                      Computer Studies
+                    </span>
+                    <span className="font-bold text-secondary">89%</span>
+                  </div>
+                  <div className="p-2 rounded bg-surface-container-low flex items-center justify-between">
+                    <span className="text-on-surface truncate">
+                      Data Processing
+                    </span>
+                    <span className="font-bold text-secondary">88%</span>
+                  </div>
+                </div>
+              </div>
+              {/*  Bursary Ledger Snapshot  */}
+              <div className="p-space-sm rounded-lg bg-surface-container-high/40 space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="font-label-sm text-label-sm font-semibold text-on-surface">
+                    2026/2027 1st Term Tuition
+                  </span>
+                  <span className="text-secondary font-label-sm text-label-sm font-bold">
+                    PAID IN FULL
+                  </span>
+                </div>
+                <div className="flex items-center justify-between text-body-sm text-body-sm text-on-surface-variant font-mono">
+                  <span>Receipt: #NIIS-RCT-88219</span>
+                  <span>₦185,000.00</span>
+                </div>
+              </div>
+            </div>
+            {/*  Quick Profile Footer CTAs  */}
+            <div className="p-space-md bg-surface-container-low/80 flex items-center gap-space-sm mt-auto">
+              <button
+                className="flex-1 py-2 px-3 bg-primary text-on-primary hover:bg-primary-container rounded-lg font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors shadow-sm"
+                type="button"
+              >
+                <span className="material-symbols-outlined text-[16px]">
+                  account_circle
+                </span>
+                <span>Full Dossier</span>
+              </button>
+              <button
+                className="py-2 px-3 bg-surface-container-lowest hover:bg-surface-container text-on-surface rounded-lg font-label-md text-label-md flex items-center justify-center gap-1 transition-colors shadow-sm"
+                title="Print Term Report Card"
+                type="button"
+              >
+                <span className="material-symbols-outlined text-[18px] text-primary">
+                  download
+                </span>
+                <span className="hidden sm:inline">Report Card</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+}

@@ -11,6 +11,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as AdminRouteImport } from './routes/admin'
 
 const IndexLazyRouteImport = createFileRoute('/')()
 const AcademicProgramsLazyRouteImport = createFileRoute('/academic-programs')()
@@ -18,6 +19,89 @@ const AdmissionsLazyRouteImport = createFileRoute('/admissions')()
 const CampusGalleryLazyRouteImport = createFileRoute('/campus-gallery')()
 const ContactUsLazyRouteImport = createFileRoute('/contact-us')()
 const LeadershipBoardLazyRouteImport = createFileRoute('/leadership-board')()
+const AdminIndexLazyRouteImport = createFileRoute('/admin/')()
+const AdminAcademicCurriculumLessonPlansLazyRouteImport = createFileRoute(
+  '/admin/academic-curriculum-lesson-plans',
+)()
+const AdminAdmissionsStudentOnboardingWorkflowLazyRouteImport = createFileRoute(
+  '/admin/admissions-student-onboarding-workflow',
+)()
+const AdminCafeteriaNutritionalMealManagementLazyRouteImport = createFileRoute(
+  '/admin/cafeteria-nutritional-meal-management',
+)()
+const AdminCentralReportsMoeAnalyticsCenterLazyRouteImport = createFileRoute(
+  '/admin/central-reports-moe-analytics-center',
+)()
+const AdminClassesArmsSectionCapacityAllocatorLazyRouteImport = createFileRoute(
+  '/admin/classes-arms-section-capacity-allocator',
+)()
+const AdminCommunicationMultichannelBroadcastCenterLazyRouteImport =
+  createFileRoute('/admin/communication-multichannel-broadcast-center')()
+const AdminExaminationsContinuousAssessmentReportCardCompilerLazyRouteImport =
+  createFileRoute(
+    '/admin/examinations-continuous-assessment-report-card-compiler',
+  )()
+const AdminFacilitiesVisitorGatehouseManagementLazyRouteImport =
+  createFileRoute('/admin/facilities-visitor-gatehouse-management')()
+const AdminFeeManagementBillingLazyRouteImport = createFileRoute(
+  '/admin/fee-management-billing',
+)()
+const AdminHostelBoardingAccommodationManagementLazyRouteImport =
+  createFileRoute('/admin/hostel-boarding-accommodation-management')()
+const AdminInventoryAssetsProcurementLazyRouteImport = createFileRoute(
+  '/admin/inventory-assets-procurement',
+)()
+const AdminLibraryServicesLearningResourceCenterLazyRouteImport =
+  createFileRoute('/admin/library-services-learning-resource-center')()
+const AdminParentGuardianMultiChildPortalLazyRouteImport = createFileRoute(
+  '/admin/parent-guardian-multi-child-portal',
+)()
+const AdminPromotionGraduationEngineLazyRouteImport = createFileRoute(
+  '/admin/promotion-graduation-engine',
+)()
+const AdminRbacPermissionMatrixLazyRouteImport = createFileRoute(
+  '/admin/rbac-permission-matrix',
+)()
+const AdminSchoolClinicMedicalHealthRecordsLazyRouteImport = createFileRoute(
+  '/admin/school-clinic-medical-health-records',
+)()
+const AdminSchoolEventsAcademicCalendarLazyRouteImport = createFileRoute(
+  '/admin/school-events-academic-calendar',
+)()
+const AdminSecurityAuditLogsSystemInspectorLazyRouteImport = createFileRoute(
+  '/admin/security-audit-logs-system-inspector',
+)()
+const AdminStaffAttendanceLeaveManagementLazyRouteImport = createFileRoute(
+  '/admin/staff-attendance-leave-management',
+)()
+const AdminStaffPayrollRemittanceLedgerLazyRouteImport = createFileRoute(
+  '/admin/staff-payroll-remittance-ledger',
+)()
+const AdminStaffTeachersHrDirectoryLazyRouteImport = createFileRoute(
+  '/admin/staff-teachers-hr-directory',
+)()
+const AdminStudentDailyAttendanceRollCallRegisterLazyRouteImport =
+  createFileRoute('/admin/student-daily-attendance-roll-call-register')()
+const AdminStudentDirectoryRecordsLazyRouteImport = createFileRoute(
+  '/admin/student-directory-records',
+)()
+const AdminStudentDisciplineWelfareRegistryLazyRouteImport = createFileRoute(
+  '/admin/student-discipline-welfare-registry',
+)()
+const AdminStudentLearningAssignmentPortalLazyRouteImport = createFileRoute(
+  '/admin/student-learning-assignment-portal',
+)()
+const AdminSystemSettingsSchoolProfileConfigurationLazyRouteImport =
+  createFileRoute('/admin/system-settings-school-profile-configuration')()
+const AdminTeacherDailyClassroomPortalLazyRouteImport = createFileRoute(
+  '/admin/teacher-daily-classroom-portal',
+)()
+const AdminTimetableMasterAcademicSchedulingLazyRouteImport = createFileRoute(
+  '/admin/timetable-master-academic-scheduling',
+)()
+const AdminTransportationBusFleetManagementLazyRouteImport = createFileRoute(
+  '/admin/transportation-bus-fleet-management',
+)()
 
 const IndexLazyRoute = IndexLazyRouteImport.update({
   id: '/',
@@ -31,6 +115,11 @@ const AcademicProgramsLazyRoute = AcademicProgramsLazyRouteImport.update({
 } as any).lazy(() =>
   import('./routes/academic-programs.lazy').then((d) => d.Route),
 )
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdmissionsLazyRoute = AdmissionsLazyRouteImport.update({
   id: '/admissions',
   path: '/admissions',
@@ -55,14 +144,338 @@ const LeadershipBoardLazyRoute = LeadershipBoardLazyRouteImport.update({
 } as any).lazy(() =>
   import('./routes/leadership-board.lazy').then((d) => d.Route),
 )
+const AdminIndexLazyRoute = AdminIndexLazyRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminRoute,
+} as any).lazy(() => import('./routes/admin/index.lazy').then((d) => d.Route))
+const AdminAcademicCurriculumLessonPlansLazyRoute =
+  AdminAcademicCurriculumLessonPlansLazyRouteImport.update({
+    id: '/academic-curriculum-lesson-plans',
+    path: '/academic-curriculum-lesson-plans',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/academic-curriculum-lesson-plans.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminAdmissionsStudentOnboardingWorkflowLazyRoute =
+  AdminAdmissionsStudentOnboardingWorkflowLazyRouteImport.update({
+    id: '/admissions-student-onboarding-workflow',
+    path: '/admissions-student-onboarding-workflow',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/admissions-student-onboarding-workflow.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminCafeteriaNutritionalMealManagementLazyRoute =
+  AdminCafeteriaNutritionalMealManagementLazyRouteImport.update({
+    id: '/cafeteria-nutritional-meal-management',
+    path: '/cafeteria-nutritional-meal-management',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/cafeteria-nutritional-meal-management.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminCentralReportsMoeAnalyticsCenterLazyRoute =
+  AdminCentralReportsMoeAnalyticsCenterLazyRouteImport.update({
+    id: '/central-reports-moe-analytics-center',
+    path: '/central-reports-moe-analytics-center',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/central-reports-moe-analytics-center.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminClassesArmsSectionCapacityAllocatorLazyRoute =
+  AdminClassesArmsSectionCapacityAllocatorLazyRouteImport.update({
+    id: '/classes-arms-section-capacity-allocator',
+    path: '/classes-arms-section-capacity-allocator',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/classes-arms-section-capacity-allocator.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminCommunicationMultichannelBroadcastCenterLazyRoute =
+  AdminCommunicationMultichannelBroadcastCenterLazyRouteImport.update({
+    id: '/communication-multichannel-broadcast-center',
+    path: '/communication-multichannel-broadcast-center',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/communication-multichannel-broadcast-center.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminExaminationsContinuousAssessmentReportCardCompilerLazyRoute =
+  AdminExaminationsContinuousAssessmentReportCardCompilerLazyRouteImport.update(
+    {
+      id: '/examinations-continuous-assessment-report-card-compiler',
+      path: '/examinations-continuous-assessment-report-card-compiler',
+      getParentRoute: () => AdminRoute,
+    } as any,
+  ).lazy(() =>
+    import('./routes/admin/examinations-continuous-assessment-report-card-compiler.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminFacilitiesVisitorGatehouseManagementLazyRoute =
+  AdminFacilitiesVisitorGatehouseManagementLazyRouteImport.update({
+    id: '/facilities-visitor-gatehouse-management',
+    path: '/facilities-visitor-gatehouse-management',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/facilities-visitor-gatehouse-management.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminFeeManagementBillingLazyRoute =
+  AdminFeeManagementBillingLazyRouteImport.update({
+    id: '/fee-management-billing',
+    path: '/fee-management-billing',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/fee-management-billing.lazy').then((d) => d.Route),
+  )
+const AdminHostelBoardingAccommodationManagementLazyRoute =
+  AdminHostelBoardingAccommodationManagementLazyRouteImport.update({
+    id: '/hostel-boarding-accommodation-management',
+    path: '/hostel-boarding-accommodation-management',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/hostel-boarding-accommodation-management.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminInventoryAssetsProcurementLazyRoute =
+  AdminInventoryAssetsProcurementLazyRouteImport.update({
+    id: '/inventory-assets-procurement',
+    path: '/inventory-assets-procurement',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/inventory-assets-procurement.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminLibraryServicesLearningResourceCenterLazyRoute =
+  AdminLibraryServicesLearningResourceCenterLazyRouteImport.update({
+    id: '/library-services-learning-resource-center',
+    path: '/library-services-learning-resource-center',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/library-services-learning-resource-center.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminParentGuardianMultiChildPortalLazyRoute =
+  AdminParentGuardianMultiChildPortalLazyRouteImport.update({
+    id: '/parent-guardian-multi-child-portal',
+    path: '/parent-guardian-multi-child-portal',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/parent-guardian-multi-child-portal.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminPromotionGraduationEngineLazyRoute =
+  AdminPromotionGraduationEngineLazyRouteImport.update({
+    id: '/promotion-graduation-engine',
+    path: '/promotion-graduation-engine',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/promotion-graduation-engine.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminRbacPermissionMatrixLazyRoute =
+  AdminRbacPermissionMatrixLazyRouteImport.update({
+    id: '/rbac-permission-matrix',
+    path: '/rbac-permission-matrix',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/rbac-permission-matrix.lazy').then((d) => d.Route),
+  )
+const AdminSchoolClinicMedicalHealthRecordsLazyRoute =
+  AdminSchoolClinicMedicalHealthRecordsLazyRouteImport.update({
+    id: '/school-clinic-medical-health-records',
+    path: '/school-clinic-medical-health-records',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/school-clinic-medical-health-records.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminSchoolEventsAcademicCalendarLazyRoute =
+  AdminSchoolEventsAcademicCalendarLazyRouteImport.update({
+    id: '/school-events-academic-calendar',
+    path: '/school-events-academic-calendar',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/school-events-academic-calendar.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminSecurityAuditLogsSystemInspectorLazyRoute =
+  AdminSecurityAuditLogsSystemInspectorLazyRouteImport.update({
+    id: '/security-audit-logs-system-inspector',
+    path: '/security-audit-logs-system-inspector',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/security-audit-logs-system-inspector.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminStaffAttendanceLeaveManagementLazyRoute =
+  AdminStaffAttendanceLeaveManagementLazyRouteImport.update({
+    id: '/staff-attendance-leave-management',
+    path: '/staff-attendance-leave-management',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/staff-attendance-leave-management.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminStaffPayrollRemittanceLedgerLazyRoute =
+  AdminStaffPayrollRemittanceLedgerLazyRouteImport.update({
+    id: '/staff-payroll-remittance-ledger',
+    path: '/staff-payroll-remittance-ledger',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/staff-payroll-remittance-ledger.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminStaffTeachersHrDirectoryLazyRoute =
+  AdminStaffTeachersHrDirectoryLazyRouteImport.update({
+    id: '/staff-teachers-hr-directory',
+    path: '/staff-teachers-hr-directory',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/staff-teachers-hr-directory.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminStudentDailyAttendanceRollCallRegisterLazyRoute =
+  AdminStudentDailyAttendanceRollCallRegisterLazyRouteImport.update({
+    id: '/student-daily-attendance-roll-call-register',
+    path: '/student-daily-attendance-roll-call-register',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/student-daily-attendance-roll-call-register.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminStudentDirectoryRecordsLazyRoute =
+  AdminStudentDirectoryRecordsLazyRouteImport.update({
+    id: '/student-directory-records',
+    path: '/student-directory-records',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/student-directory-records.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminStudentDisciplineWelfareRegistryLazyRoute =
+  AdminStudentDisciplineWelfareRegistryLazyRouteImport.update({
+    id: '/student-discipline-welfare-registry',
+    path: '/student-discipline-welfare-registry',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/student-discipline-welfare-registry.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminStudentLearningAssignmentPortalLazyRoute =
+  AdminStudentLearningAssignmentPortalLazyRouteImport.update({
+    id: '/student-learning-assignment-portal',
+    path: '/student-learning-assignment-portal',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/student-learning-assignment-portal.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminSystemSettingsSchoolProfileConfigurationLazyRoute =
+  AdminSystemSettingsSchoolProfileConfigurationLazyRouteImport.update({
+    id: '/system-settings-school-profile-configuration',
+    path: '/system-settings-school-profile-configuration',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/system-settings-school-profile-configuration.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminTeacherDailyClassroomPortalLazyRoute =
+  AdminTeacherDailyClassroomPortalLazyRouteImport.update({
+    id: '/teacher-daily-classroom-portal',
+    path: '/teacher-daily-classroom-portal',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/teacher-daily-classroom-portal.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminTimetableMasterAcademicSchedulingLazyRoute =
+  AdminTimetableMasterAcademicSchedulingLazyRouteImport.update({
+    id: '/timetable-master-academic-scheduling',
+    path: '/timetable-master-academic-scheduling',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/timetable-master-academic-scheduling.lazy').then(
+      (d) => d.Route,
+    ),
+  )
+const AdminTransportationBusFleetManagementLazyRoute =
+  AdminTransportationBusFleetManagementLazyRouteImport.update({
+    id: '/transportation-bus-fleet-management',
+    path: '/transportation-bus-fleet-management',
+    getParentRoute: () => AdminRoute,
+  } as any).lazy(() =>
+    import('./routes/admin/transportation-bus-fleet-management.lazy').then(
+      (d) => d.Route,
+    ),
+  )
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
+  '/admin': typeof AdminRouteWithChildren
   '/academic-programs': typeof AcademicProgramsLazyRoute
   '/admissions': typeof AdmissionsLazyRoute
   '/campus-gallery': typeof CampusGalleryLazyRoute
   '/contact-us': typeof ContactUsLazyRoute
   '/leadership-board': typeof LeadershipBoardLazyRoute
+  '/admin/academic-curriculum-lesson-plans': typeof AdminAcademicCurriculumLessonPlansLazyRoute
+  '/admin/admissions-student-onboarding-workflow': typeof AdminAdmissionsStudentOnboardingWorkflowLazyRoute
+  '/admin/cafeteria-nutritional-meal-management': typeof AdminCafeteriaNutritionalMealManagementLazyRoute
+  '/admin/central-reports-moe-analytics-center': typeof AdminCentralReportsMoeAnalyticsCenterLazyRoute
+  '/admin/classes-arms-section-capacity-allocator': typeof AdminClassesArmsSectionCapacityAllocatorLazyRoute
+  '/admin/communication-multichannel-broadcast-center': typeof AdminCommunicationMultichannelBroadcastCenterLazyRoute
+  '/admin/examinations-continuous-assessment-report-card-compiler': typeof AdminExaminationsContinuousAssessmentReportCardCompilerLazyRoute
+  '/admin/facilities-visitor-gatehouse-management': typeof AdminFacilitiesVisitorGatehouseManagementLazyRoute
+  '/admin/fee-management-billing': typeof AdminFeeManagementBillingLazyRoute
+  '/admin/hostel-boarding-accommodation-management': typeof AdminHostelBoardingAccommodationManagementLazyRoute
+  '/admin/inventory-assets-procurement': typeof AdminInventoryAssetsProcurementLazyRoute
+  '/admin/library-services-learning-resource-center': typeof AdminLibraryServicesLearningResourceCenterLazyRoute
+  '/admin/parent-guardian-multi-child-portal': typeof AdminParentGuardianMultiChildPortalLazyRoute
+  '/admin/promotion-graduation-engine': typeof AdminPromotionGraduationEngineLazyRoute
+  '/admin/rbac-permission-matrix': typeof AdminRbacPermissionMatrixLazyRoute
+  '/admin/school-clinic-medical-health-records': typeof AdminSchoolClinicMedicalHealthRecordsLazyRoute
+  '/admin/school-events-academic-calendar': typeof AdminSchoolEventsAcademicCalendarLazyRoute
+  '/admin/security-audit-logs-system-inspector': typeof AdminSecurityAuditLogsSystemInspectorLazyRoute
+  '/admin/staff-attendance-leave-management': typeof AdminStaffAttendanceLeaveManagementLazyRoute
+  '/admin/staff-payroll-remittance-ledger': typeof AdminStaffPayrollRemittanceLedgerLazyRoute
+  '/admin/staff-teachers-hr-directory': typeof AdminStaffTeachersHrDirectoryLazyRoute
+  '/admin/student-daily-attendance-roll-call-register': typeof AdminStudentDailyAttendanceRollCallRegisterLazyRoute
+  '/admin/student-directory-records': typeof AdminStudentDirectoryRecordsLazyRoute
+  '/admin/student-discipline-welfare-registry': typeof AdminStudentDisciplineWelfareRegistryLazyRoute
+  '/admin/student-learning-assignment-portal': typeof AdminStudentLearningAssignmentPortalLazyRoute
+  '/admin/system-settings-school-profile-configuration': typeof AdminSystemSettingsSchoolProfileConfigurationLazyRoute
+  '/admin/teacher-daily-classroom-portal': typeof AdminTeacherDailyClassroomPortalLazyRoute
+  '/admin/timetable-master-academic-scheduling': typeof AdminTimetableMasterAcademicSchedulingLazyRoute
+  '/admin/transportation-bus-fleet-management': typeof AdminTransportationBusFleetManagementLazyRoute
+  '/admin/': typeof AdminIndexLazyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
@@ -71,25 +484,117 @@ export interface FileRoutesByTo {
   '/campus-gallery': typeof CampusGalleryLazyRoute
   '/contact-us': typeof ContactUsLazyRoute
   '/leadership-board': typeof LeadershipBoardLazyRoute
+  '/admin/academic-curriculum-lesson-plans': typeof AdminAcademicCurriculumLessonPlansLazyRoute
+  '/admin/admissions-student-onboarding-workflow': typeof AdminAdmissionsStudentOnboardingWorkflowLazyRoute
+  '/admin/cafeteria-nutritional-meal-management': typeof AdminCafeteriaNutritionalMealManagementLazyRoute
+  '/admin/central-reports-moe-analytics-center': typeof AdminCentralReportsMoeAnalyticsCenterLazyRoute
+  '/admin/classes-arms-section-capacity-allocator': typeof AdminClassesArmsSectionCapacityAllocatorLazyRoute
+  '/admin/communication-multichannel-broadcast-center': typeof AdminCommunicationMultichannelBroadcastCenterLazyRoute
+  '/admin/examinations-continuous-assessment-report-card-compiler': typeof AdminExaminationsContinuousAssessmentReportCardCompilerLazyRoute
+  '/admin/facilities-visitor-gatehouse-management': typeof AdminFacilitiesVisitorGatehouseManagementLazyRoute
+  '/admin/fee-management-billing': typeof AdminFeeManagementBillingLazyRoute
+  '/admin/hostel-boarding-accommodation-management': typeof AdminHostelBoardingAccommodationManagementLazyRoute
+  '/admin/inventory-assets-procurement': typeof AdminInventoryAssetsProcurementLazyRoute
+  '/admin/library-services-learning-resource-center': typeof AdminLibraryServicesLearningResourceCenterLazyRoute
+  '/admin/parent-guardian-multi-child-portal': typeof AdminParentGuardianMultiChildPortalLazyRoute
+  '/admin/promotion-graduation-engine': typeof AdminPromotionGraduationEngineLazyRoute
+  '/admin/rbac-permission-matrix': typeof AdminRbacPermissionMatrixLazyRoute
+  '/admin/school-clinic-medical-health-records': typeof AdminSchoolClinicMedicalHealthRecordsLazyRoute
+  '/admin/school-events-academic-calendar': typeof AdminSchoolEventsAcademicCalendarLazyRoute
+  '/admin/security-audit-logs-system-inspector': typeof AdminSecurityAuditLogsSystemInspectorLazyRoute
+  '/admin/staff-attendance-leave-management': typeof AdminStaffAttendanceLeaveManagementLazyRoute
+  '/admin/staff-payroll-remittance-ledger': typeof AdminStaffPayrollRemittanceLedgerLazyRoute
+  '/admin/staff-teachers-hr-directory': typeof AdminStaffTeachersHrDirectoryLazyRoute
+  '/admin/student-daily-attendance-roll-call-register': typeof AdminStudentDailyAttendanceRollCallRegisterLazyRoute
+  '/admin/student-directory-records': typeof AdminStudentDirectoryRecordsLazyRoute
+  '/admin/student-discipline-welfare-registry': typeof AdminStudentDisciplineWelfareRegistryLazyRoute
+  '/admin/student-learning-assignment-portal': typeof AdminStudentLearningAssignmentPortalLazyRoute
+  '/admin/system-settings-school-profile-configuration': typeof AdminSystemSettingsSchoolProfileConfigurationLazyRoute
+  '/admin/teacher-daily-classroom-portal': typeof AdminTeacherDailyClassroomPortalLazyRoute
+  '/admin/timetable-master-academic-scheduling': typeof AdminTimetableMasterAcademicSchedulingLazyRoute
+  '/admin/transportation-bus-fleet-management': typeof AdminTransportationBusFleetManagementLazyRoute
+  '/admin': typeof AdminIndexLazyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexLazyRoute
+  '/admin': typeof AdminRouteWithChildren
   '/academic-programs': typeof AcademicProgramsLazyRoute
   '/admissions': typeof AdmissionsLazyRoute
   '/campus-gallery': typeof CampusGalleryLazyRoute
   '/contact-us': typeof ContactUsLazyRoute
   '/leadership-board': typeof LeadershipBoardLazyRoute
+  '/admin/academic-curriculum-lesson-plans': typeof AdminAcademicCurriculumLessonPlansLazyRoute
+  '/admin/admissions-student-onboarding-workflow': typeof AdminAdmissionsStudentOnboardingWorkflowLazyRoute
+  '/admin/cafeteria-nutritional-meal-management': typeof AdminCafeteriaNutritionalMealManagementLazyRoute
+  '/admin/central-reports-moe-analytics-center': typeof AdminCentralReportsMoeAnalyticsCenterLazyRoute
+  '/admin/classes-arms-section-capacity-allocator': typeof AdminClassesArmsSectionCapacityAllocatorLazyRoute
+  '/admin/communication-multichannel-broadcast-center': typeof AdminCommunicationMultichannelBroadcastCenterLazyRoute
+  '/admin/examinations-continuous-assessment-report-card-compiler': typeof AdminExaminationsContinuousAssessmentReportCardCompilerLazyRoute
+  '/admin/facilities-visitor-gatehouse-management': typeof AdminFacilitiesVisitorGatehouseManagementLazyRoute
+  '/admin/fee-management-billing': typeof AdminFeeManagementBillingLazyRoute
+  '/admin/hostel-boarding-accommodation-management': typeof AdminHostelBoardingAccommodationManagementLazyRoute
+  '/admin/inventory-assets-procurement': typeof AdminInventoryAssetsProcurementLazyRoute
+  '/admin/library-services-learning-resource-center': typeof AdminLibraryServicesLearningResourceCenterLazyRoute
+  '/admin/parent-guardian-multi-child-portal': typeof AdminParentGuardianMultiChildPortalLazyRoute
+  '/admin/promotion-graduation-engine': typeof AdminPromotionGraduationEngineLazyRoute
+  '/admin/rbac-permission-matrix': typeof AdminRbacPermissionMatrixLazyRoute
+  '/admin/school-clinic-medical-health-records': typeof AdminSchoolClinicMedicalHealthRecordsLazyRoute
+  '/admin/school-events-academic-calendar': typeof AdminSchoolEventsAcademicCalendarLazyRoute
+  '/admin/security-audit-logs-system-inspector': typeof AdminSecurityAuditLogsSystemInspectorLazyRoute
+  '/admin/staff-attendance-leave-management': typeof AdminStaffAttendanceLeaveManagementLazyRoute
+  '/admin/staff-payroll-remittance-ledger': typeof AdminStaffPayrollRemittanceLedgerLazyRoute
+  '/admin/staff-teachers-hr-directory': typeof AdminStaffTeachersHrDirectoryLazyRoute
+  '/admin/student-daily-attendance-roll-call-register': typeof AdminStudentDailyAttendanceRollCallRegisterLazyRoute
+  '/admin/student-directory-records': typeof AdminStudentDirectoryRecordsLazyRoute
+  '/admin/student-discipline-welfare-registry': typeof AdminStudentDisciplineWelfareRegistryLazyRoute
+  '/admin/student-learning-assignment-portal': typeof AdminStudentLearningAssignmentPortalLazyRoute
+  '/admin/system-settings-school-profile-configuration': typeof AdminSystemSettingsSchoolProfileConfigurationLazyRoute
+  '/admin/teacher-daily-classroom-portal': typeof AdminTeacherDailyClassroomPortalLazyRoute
+  '/admin/timetable-master-academic-scheduling': typeof AdminTimetableMasterAcademicSchedulingLazyRoute
+  '/admin/transportation-bus-fleet-management': typeof AdminTransportationBusFleetManagementLazyRoute
+  '/admin/': typeof AdminIndexLazyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/admin'
     | '/academic-programs'
     | '/admissions'
     | '/campus-gallery'
     | '/contact-us'
     | '/leadership-board'
+    | '/admin/academic-curriculum-lesson-plans'
+    | '/admin/admissions-student-onboarding-workflow'
+    | '/admin/cafeteria-nutritional-meal-management'
+    | '/admin/central-reports-moe-analytics-center'
+    | '/admin/classes-arms-section-capacity-allocator'
+    | '/admin/communication-multichannel-broadcast-center'
+    | '/admin/examinations-continuous-assessment-report-card-compiler'
+    | '/admin/facilities-visitor-gatehouse-management'
+    | '/admin/fee-management-billing'
+    | '/admin/hostel-boarding-accommodation-management'
+    | '/admin/inventory-assets-procurement'
+    | '/admin/library-services-learning-resource-center'
+    | '/admin/parent-guardian-multi-child-portal'
+    | '/admin/promotion-graduation-engine'
+    | '/admin/rbac-permission-matrix'
+    | '/admin/school-clinic-medical-health-records'
+    | '/admin/school-events-academic-calendar'
+    | '/admin/security-audit-logs-system-inspector'
+    | '/admin/staff-attendance-leave-management'
+    | '/admin/staff-payroll-remittance-ledger'
+    | '/admin/staff-teachers-hr-directory'
+    | '/admin/student-daily-attendance-roll-call-register'
+    | '/admin/student-directory-records'
+    | '/admin/student-discipline-welfare-registry'
+    | '/admin/student-learning-assignment-portal'
+    | '/admin/system-settings-school-profile-configuration'
+    | '/admin/teacher-daily-classroom-portal'
+    | '/admin/timetable-master-academic-scheduling'
+    | '/admin/transportation-bus-fleet-management'
+    | '/admin/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -98,18 +603,80 @@ export interface FileRouteTypes {
     | '/campus-gallery'
     | '/contact-us'
     | '/leadership-board'
+    | '/admin/academic-curriculum-lesson-plans'
+    | '/admin/admissions-student-onboarding-workflow'
+    | '/admin/cafeteria-nutritional-meal-management'
+    | '/admin/central-reports-moe-analytics-center'
+    | '/admin/classes-arms-section-capacity-allocator'
+    | '/admin/communication-multichannel-broadcast-center'
+    | '/admin/examinations-continuous-assessment-report-card-compiler'
+    | '/admin/facilities-visitor-gatehouse-management'
+    | '/admin/fee-management-billing'
+    | '/admin/hostel-boarding-accommodation-management'
+    | '/admin/inventory-assets-procurement'
+    | '/admin/library-services-learning-resource-center'
+    | '/admin/parent-guardian-multi-child-portal'
+    | '/admin/promotion-graduation-engine'
+    | '/admin/rbac-permission-matrix'
+    | '/admin/school-clinic-medical-health-records'
+    | '/admin/school-events-academic-calendar'
+    | '/admin/security-audit-logs-system-inspector'
+    | '/admin/staff-attendance-leave-management'
+    | '/admin/staff-payroll-remittance-ledger'
+    | '/admin/staff-teachers-hr-directory'
+    | '/admin/student-daily-attendance-roll-call-register'
+    | '/admin/student-directory-records'
+    | '/admin/student-discipline-welfare-registry'
+    | '/admin/student-learning-assignment-portal'
+    | '/admin/system-settings-school-profile-configuration'
+    | '/admin/teacher-daily-classroom-portal'
+    | '/admin/timetable-master-academic-scheduling'
+    | '/admin/transportation-bus-fleet-management'
+    | '/admin'
   id:
     | '__root__'
     | '/'
+    | '/admin'
     | '/academic-programs'
     | '/admissions'
     | '/campus-gallery'
     | '/contact-us'
     | '/leadership-board'
+    | '/admin/academic-curriculum-lesson-plans'
+    | '/admin/admissions-student-onboarding-workflow'
+    | '/admin/cafeteria-nutritional-meal-management'
+    | '/admin/central-reports-moe-analytics-center'
+    | '/admin/classes-arms-section-capacity-allocator'
+    | '/admin/communication-multichannel-broadcast-center'
+    | '/admin/examinations-continuous-assessment-report-card-compiler'
+    | '/admin/facilities-visitor-gatehouse-management'
+    | '/admin/fee-management-billing'
+    | '/admin/hostel-boarding-accommodation-management'
+    | '/admin/inventory-assets-procurement'
+    | '/admin/library-services-learning-resource-center'
+    | '/admin/parent-guardian-multi-child-portal'
+    | '/admin/promotion-graduation-engine'
+    | '/admin/rbac-permission-matrix'
+    | '/admin/school-clinic-medical-health-records'
+    | '/admin/school-events-academic-calendar'
+    | '/admin/security-audit-logs-system-inspector'
+    | '/admin/staff-attendance-leave-management'
+    | '/admin/staff-payroll-remittance-ledger'
+    | '/admin/staff-teachers-hr-directory'
+    | '/admin/student-daily-attendance-roll-call-register'
+    | '/admin/student-directory-records'
+    | '/admin/student-discipline-welfare-registry'
+    | '/admin/student-learning-assignment-portal'
+    | '/admin/system-settings-school-profile-configuration'
+    | '/admin/teacher-daily-classroom-portal'
+    | '/admin/timetable-master-academic-scheduling'
+    | '/admin/transportation-bus-fleet-management'
+    | '/admin/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
+  AdminRoute: typeof AdminRouteWithChildren
   AcademicProgramsLazyRoute: typeof AcademicProgramsLazyRoute
   AdmissionsLazyRoute: typeof AdmissionsLazyRoute
   CampusGalleryLazyRoute: typeof CampusGalleryLazyRoute
@@ -131,6 +698,13 @@ declare module '@tanstack/react-router' {
       path: '/academic-programs'
       fullPath: '/academic-programs'
       preLoaderRoute: typeof AcademicProgramsLazyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admissions': {
@@ -161,11 +735,316 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LeadershipBoardLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/': {
+      id: '/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/academic-curriculum-lesson-plans': {
+      id: '/admin/academic-curriculum-lesson-plans'
+      path: '/academic-curriculum-lesson-plans'
+      fullPath: '/admin/academic-curriculum-lesson-plans'
+      preLoaderRoute: typeof AdminAcademicCurriculumLessonPlansLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/admissions-student-onboarding-workflow': {
+      id: '/admin/admissions-student-onboarding-workflow'
+      path: '/admissions-student-onboarding-workflow'
+      fullPath: '/admin/admissions-student-onboarding-workflow'
+      preLoaderRoute: typeof AdminAdmissionsStudentOnboardingWorkflowLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/cafeteria-nutritional-meal-management': {
+      id: '/admin/cafeteria-nutritional-meal-management'
+      path: '/cafeteria-nutritional-meal-management'
+      fullPath: '/admin/cafeteria-nutritional-meal-management'
+      preLoaderRoute: typeof AdminCafeteriaNutritionalMealManagementLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/central-reports-moe-analytics-center': {
+      id: '/admin/central-reports-moe-analytics-center'
+      path: '/central-reports-moe-analytics-center'
+      fullPath: '/admin/central-reports-moe-analytics-center'
+      preLoaderRoute: typeof AdminCentralReportsMoeAnalyticsCenterLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/classes-arms-section-capacity-allocator': {
+      id: '/admin/classes-arms-section-capacity-allocator'
+      path: '/classes-arms-section-capacity-allocator'
+      fullPath: '/admin/classes-arms-section-capacity-allocator'
+      preLoaderRoute: typeof AdminClassesArmsSectionCapacityAllocatorLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/communication-multichannel-broadcast-center': {
+      id: '/admin/communication-multichannel-broadcast-center'
+      path: '/communication-multichannel-broadcast-center'
+      fullPath: '/admin/communication-multichannel-broadcast-center'
+      preLoaderRoute: typeof AdminCommunicationMultichannelBroadcastCenterLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/examinations-continuous-assessment-report-card-compiler': {
+      id: '/admin/examinations-continuous-assessment-report-card-compiler'
+      path: '/examinations-continuous-assessment-report-card-compiler'
+      fullPath: '/admin/examinations-continuous-assessment-report-card-compiler'
+      preLoaderRoute: typeof AdminExaminationsContinuousAssessmentReportCardCompilerLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/facilities-visitor-gatehouse-management': {
+      id: '/admin/facilities-visitor-gatehouse-management'
+      path: '/facilities-visitor-gatehouse-management'
+      fullPath: '/admin/facilities-visitor-gatehouse-management'
+      preLoaderRoute: typeof AdminFacilitiesVisitorGatehouseManagementLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/fee-management-billing': {
+      id: '/admin/fee-management-billing'
+      path: '/fee-management-billing'
+      fullPath: '/admin/fee-management-billing'
+      preLoaderRoute: typeof AdminFeeManagementBillingLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/hostel-boarding-accommodation-management': {
+      id: '/admin/hostel-boarding-accommodation-management'
+      path: '/hostel-boarding-accommodation-management'
+      fullPath: '/admin/hostel-boarding-accommodation-management'
+      preLoaderRoute: typeof AdminHostelBoardingAccommodationManagementLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/inventory-assets-procurement': {
+      id: '/admin/inventory-assets-procurement'
+      path: '/inventory-assets-procurement'
+      fullPath: '/admin/inventory-assets-procurement'
+      preLoaderRoute: typeof AdminInventoryAssetsProcurementLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/library-services-learning-resource-center': {
+      id: '/admin/library-services-learning-resource-center'
+      path: '/library-services-learning-resource-center'
+      fullPath: '/admin/library-services-learning-resource-center'
+      preLoaderRoute: typeof AdminLibraryServicesLearningResourceCenterLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/parent-guardian-multi-child-portal': {
+      id: '/admin/parent-guardian-multi-child-portal'
+      path: '/parent-guardian-multi-child-portal'
+      fullPath: '/admin/parent-guardian-multi-child-portal'
+      preLoaderRoute: typeof AdminParentGuardianMultiChildPortalLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/promotion-graduation-engine': {
+      id: '/admin/promotion-graduation-engine'
+      path: '/promotion-graduation-engine'
+      fullPath: '/admin/promotion-graduation-engine'
+      preLoaderRoute: typeof AdminPromotionGraduationEngineLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/rbac-permission-matrix': {
+      id: '/admin/rbac-permission-matrix'
+      path: '/rbac-permission-matrix'
+      fullPath: '/admin/rbac-permission-matrix'
+      preLoaderRoute: typeof AdminRbacPermissionMatrixLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/school-clinic-medical-health-records': {
+      id: '/admin/school-clinic-medical-health-records'
+      path: '/school-clinic-medical-health-records'
+      fullPath: '/admin/school-clinic-medical-health-records'
+      preLoaderRoute: typeof AdminSchoolClinicMedicalHealthRecordsLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/school-events-academic-calendar': {
+      id: '/admin/school-events-academic-calendar'
+      path: '/school-events-academic-calendar'
+      fullPath: '/admin/school-events-academic-calendar'
+      preLoaderRoute: typeof AdminSchoolEventsAcademicCalendarLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/security-audit-logs-system-inspector': {
+      id: '/admin/security-audit-logs-system-inspector'
+      path: '/security-audit-logs-system-inspector'
+      fullPath: '/admin/security-audit-logs-system-inspector'
+      preLoaderRoute: typeof AdminSecurityAuditLogsSystemInspectorLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/staff-attendance-leave-management': {
+      id: '/admin/staff-attendance-leave-management'
+      path: '/staff-attendance-leave-management'
+      fullPath: '/admin/staff-attendance-leave-management'
+      preLoaderRoute: typeof AdminStaffAttendanceLeaveManagementLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/staff-payroll-remittance-ledger': {
+      id: '/admin/staff-payroll-remittance-ledger'
+      path: '/staff-payroll-remittance-ledger'
+      fullPath: '/admin/staff-payroll-remittance-ledger'
+      preLoaderRoute: typeof AdminStaffPayrollRemittanceLedgerLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/staff-teachers-hr-directory': {
+      id: '/admin/staff-teachers-hr-directory'
+      path: '/staff-teachers-hr-directory'
+      fullPath: '/admin/staff-teachers-hr-directory'
+      preLoaderRoute: typeof AdminStaffTeachersHrDirectoryLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/student-daily-attendance-roll-call-register': {
+      id: '/admin/student-daily-attendance-roll-call-register'
+      path: '/student-daily-attendance-roll-call-register'
+      fullPath: '/admin/student-daily-attendance-roll-call-register'
+      preLoaderRoute: typeof AdminStudentDailyAttendanceRollCallRegisterLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/student-directory-records': {
+      id: '/admin/student-directory-records'
+      path: '/student-directory-records'
+      fullPath: '/admin/student-directory-records'
+      preLoaderRoute: typeof AdminStudentDirectoryRecordsLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/student-discipline-welfare-registry': {
+      id: '/admin/student-discipline-welfare-registry'
+      path: '/student-discipline-welfare-registry'
+      fullPath: '/admin/student-discipline-welfare-registry'
+      preLoaderRoute: typeof AdminStudentDisciplineWelfareRegistryLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/student-learning-assignment-portal': {
+      id: '/admin/student-learning-assignment-portal'
+      path: '/student-learning-assignment-portal'
+      fullPath: '/admin/student-learning-assignment-portal'
+      preLoaderRoute: typeof AdminStudentLearningAssignmentPortalLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/system-settings-school-profile-configuration': {
+      id: '/admin/system-settings-school-profile-configuration'
+      path: '/system-settings-school-profile-configuration'
+      fullPath: '/admin/system-settings-school-profile-configuration'
+      preLoaderRoute: typeof AdminSystemSettingsSchoolProfileConfigurationLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/teacher-daily-classroom-portal': {
+      id: '/admin/teacher-daily-classroom-portal'
+      path: '/teacher-daily-classroom-portal'
+      fullPath: '/admin/teacher-daily-classroom-portal'
+      preLoaderRoute: typeof AdminTeacherDailyClassroomPortalLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/timetable-master-academic-scheduling': {
+      id: '/admin/timetable-master-academic-scheduling'
+      path: '/timetable-master-academic-scheduling'
+      fullPath: '/admin/timetable-master-academic-scheduling'
+      preLoaderRoute: typeof AdminTimetableMasterAcademicSchedulingLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/transportation-bus-fleet-management': {
+      id: '/admin/transportation-bus-fleet-management'
+      path: '/transportation-bus-fleet-management'
+      fullPath: '/admin/transportation-bus-fleet-management'
+      preLoaderRoute: typeof AdminTransportationBusFleetManagementLazyRouteImport
+      parentRoute: typeof AdminRoute
+    }
   }
 }
 
+interface AdminRouteChildren {
+  AdminAcademicCurriculumLessonPlansLazyRoute: typeof AdminAcademicCurriculumLessonPlansLazyRoute
+  AdminAdmissionsStudentOnboardingWorkflowLazyRoute: typeof AdminAdmissionsStudentOnboardingWorkflowLazyRoute
+  AdminCafeteriaNutritionalMealManagementLazyRoute: typeof AdminCafeteriaNutritionalMealManagementLazyRoute
+  AdminCentralReportsMoeAnalyticsCenterLazyRoute: typeof AdminCentralReportsMoeAnalyticsCenterLazyRoute
+  AdminClassesArmsSectionCapacityAllocatorLazyRoute: typeof AdminClassesArmsSectionCapacityAllocatorLazyRoute
+  AdminCommunicationMultichannelBroadcastCenterLazyRoute: typeof AdminCommunicationMultichannelBroadcastCenterLazyRoute
+  AdminExaminationsContinuousAssessmentReportCardCompilerLazyRoute: typeof AdminExaminationsContinuousAssessmentReportCardCompilerLazyRoute
+  AdminFacilitiesVisitorGatehouseManagementLazyRoute: typeof AdminFacilitiesVisitorGatehouseManagementLazyRoute
+  AdminFeeManagementBillingLazyRoute: typeof AdminFeeManagementBillingLazyRoute
+  AdminHostelBoardingAccommodationManagementLazyRoute: typeof AdminHostelBoardingAccommodationManagementLazyRoute
+  AdminInventoryAssetsProcurementLazyRoute: typeof AdminInventoryAssetsProcurementLazyRoute
+  AdminLibraryServicesLearningResourceCenterLazyRoute: typeof AdminLibraryServicesLearningResourceCenterLazyRoute
+  AdminParentGuardianMultiChildPortalLazyRoute: typeof AdminParentGuardianMultiChildPortalLazyRoute
+  AdminPromotionGraduationEngineLazyRoute: typeof AdminPromotionGraduationEngineLazyRoute
+  AdminRbacPermissionMatrixLazyRoute: typeof AdminRbacPermissionMatrixLazyRoute
+  AdminSchoolClinicMedicalHealthRecordsLazyRoute: typeof AdminSchoolClinicMedicalHealthRecordsLazyRoute
+  AdminSchoolEventsAcademicCalendarLazyRoute: typeof AdminSchoolEventsAcademicCalendarLazyRoute
+  AdminSecurityAuditLogsSystemInspectorLazyRoute: typeof AdminSecurityAuditLogsSystemInspectorLazyRoute
+  AdminStaffAttendanceLeaveManagementLazyRoute: typeof AdminStaffAttendanceLeaveManagementLazyRoute
+  AdminStaffPayrollRemittanceLedgerLazyRoute: typeof AdminStaffPayrollRemittanceLedgerLazyRoute
+  AdminStaffTeachersHrDirectoryLazyRoute: typeof AdminStaffTeachersHrDirectoryLazyRoute
+  AdminStudentDailyAttendanceRollCallRegisterLazyRoute: typeof AdminStudentDailyAttendanceRollCallRegisterLazyRoute
+  AdminStudentDirectoryRecordsLazyRoute: typeof AdminStudentDirectoryRecordsLazyRoute
+  AdminStudentDisciplineWelfareRegistryLazyRoute: typeof AdminStudentDisciplineWelfareRegistryLazyRoute
+  AdminStudentLearningAssignmentPortalLazyRoute: typeof AdminStudentLearningAssignmentPortalLazyRoute
+  AdminSystemSettingsSchoolProfileConfigurationLazyRoute: typeof AdminSystemSettingsSchoolProfileConfigurationLazyRoute
+  AdminTeacherDailyClassroomPortalLazyRoute: typeof AdminTeacherDailyClassroomPortalLazyRoute
+  AdminTimetableMasterAcademicSchedulingLazyRoute: typeof AdminTimetableMasterAcademicSchedulingLazyRoute
+  AdminTransportationBusFleetManagementLazyRoute: typeof AdminTransportationBusFleetManagementLazyRoute
+  AdminIndexLazyRoute: typeof AdminIndexLazyRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminAcademicCurriculumLessonPlansLazyRoute:
+    AdminAcademicCurriculumLessonPlansLazyRoute,
+  AdminAdmissionsStudentOnboardingWorkflowLazyRoute:
+    AdminAdmissionsStudentOnboardingWorkflowLazyRoute,
+  AdminCafeteriaNutritionalMealManagementLazyRoute:
+    AdminCafeteriaNutritionalMealManagementLazyRoute,
+  AdminCentralReportsMoeAnalyticsCenterLazyRoute:
+    AdminCentralReportsMoeAnalyticsCenterLazyRoute,
+  AdminClassesArmsSectionCapacityAllocatorLazyRoute:
+    AdminClassesArmsSectionCapacityAllocatorLazyRoute,
+  AdminCommunicationMultichannelBroadcastCenterLazyRoute:
+    AdminCommunicationMultichannelBroadcastCenterLazyRoute,
+  AdminExaminationsContinuousAssessmentReportCardCompilerLazyRoute:
+    AdminExaminationsContinuousAssessmentReportCardCompilerLazyRoute,
+  AdminFacilitiesVisitorGatehouseManagementLazyRoute:
+    AdminFacilitiesVisitorGatehouseManagementLazyRoute,
+  AdminFeeManagementBillingLazyRoute: AdminFeeManagementBillingLazyRoute,
+  AdminHostelBoardingAccommodationManagementLazyRoute:
+    AdminHostelBoardingAccommodationManagementLazyRoute,
+  AdminInventoryAssetsProcurementLazyRoute:
+    AdminInventoryAssetsProcurementLazyRoute,
+  AdminLibraryServicesLearningResourceCenterLazyRoute:
+    AdminLibraryServicesLearningResourceCenterLazyRoute,
+  AdminParentGuardianMultiChildPortalLazyRoute:
+    AdminParentGuardianMultiChildPortalLazyRoute,
+  AdminPromotionGraduationEngineLazyRoute:
+    AdminPromotionGraduationEngineLazyRoute,
+  AdminRbacPermissionMatrixLazyRoute: AdminRbacPermissionMatrixLazyRoute,
+  AdminSchoolClinicMedicalHealthRecordsLazyRoute:
+    AdminSchoolClinicMedicalHealthRecordsLazyRoute,
+  AdminSchoolEventsAcademicCalendarLazyRoute:
+    AdminSchoolEventsAcademicCalendarLazyRoute,
+  AdminSecurityAuditLogsSystemInspectorLazyRoute:
+    AdminSecurityAuditLogsSystemInspectorLazyRoute,
+  AdminStaffAttendanceLeaveManagementLazyRoute:
+    AdminStaffAttendanceLeaveManagementLazyRoute,
+  AdminStaffPayrollRemittanceLedgerLazyRoute:
+    AdminStaffPayrollRemittanceLedgerLazyRoute,
+  AdminStaffTeachersHrDirectoryLazyRoute:
+    AdminStaffTeachersHrDirectoryLazyRoute,
+  AdminStudentDailyAttendanceRollCallRegisterLazyRoute:
+    AdminStudentDailyAttendanceRollCallRegisterLazyRoute,
+  AdminStudentDirectoryRecordsLazyRoute: AdminStudentDirectoryRecordsLazyRoute,
+  AdminStudentDisciplineWelfareRegistryLazyRoute:
+    AdminStudentDisciplineWelfareRegistryLazyRoute,
+  AdminStudentLearningAssignmentPortalLazyRoute:
+    AdminStudentLearningAssignmentPortalLazyRoute,
+  AdminSystemSettingsSchoolProfileConfigurationLazyRoute:
+    AdminSystemSettingsSchoolProfileConfigurationLazyRoute,
+  AdminTeacherDailyClassroomPortalLazyRoute:
+    AdminTeacherDailyClassroomPortalLazyRoute,
+  AdminTimetableMasterAcademicSchedulingLazyRoute:
+    AdminTimetableMasterAcademicSchedulingLazyRoute,
+  AdminTransportationBusFleetManagementLazyRoute:
+    AdminTransportationBusFleetManagementLazyRoute,
+  AdminIndexLazyRoute: AdminIndexLazyRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
+  AdminRoute: AdminRouteWithChildren,
   AcademicProgramsLazyRoute: AcademicProgramsLazyRoute,
   AdmissionsLazyRoute: AdmissionsLazyRoute,
   CampusGalleryLazyRoute: CampusGalleryLazyRoute,

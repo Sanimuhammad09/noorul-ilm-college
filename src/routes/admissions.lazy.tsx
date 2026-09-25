@@ -1,4 +1,6 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
+import bgImg4 from '../assets/images/56faa8f9-fbc2-453e-b2b0-e3bc5c534a17.jpg';
+import bgImg5 from '../assets/images/61ff5787-a152-41e4-80c8-f47ef2bece5b.jpg';
 import { Link } from '@tanstack/react-router'
 import { useEffect } from 'react'
 
@@ -35,7 +37,7 @@ function Admissions() {
       <section className="relative h-[716px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-t from-[rgba(85,22,37,0.95)] to-[rgba(85,22,37,0.85)] z-10"></div>
-          <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkGKpYoDslNFXSUwdI0WSYBkNFYRW1_v3xuwp64ZcbcYPhxVA2__d_G7PzZR1zNE9rVyigMMO_Zu0-EjzlCVctC0Fg0BpaY5pemouZWJzqAV8Z0EFYtzBlQtK1JA2d5-WASJi3mwvJaxxswUBOf1FEjtRQ4MPMNhosBFg5mNO8JKjUkNQAIUBLAdywHhiwaavVGi2Z9u233ITB5vhYAHOnkYwRCBZqks2j5s-M1D513LDp0D96rGrReA')" }}></div>
+          <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url(${bgImg4})` }}></div>
         </div>
         <div className="relative z-20 px-margin-desktop max-w-container-max mx-auto w-full text-paper-white">
           <span className="inline-block px-4 py-1 border border-academic-gold text-academic-gold font-label-md text-label-md mb-6 uppercase tracking-widest">Enrollment 2024/2025</span>
@@ -143,7 +145,7 @@ function Admissions() {
           </div>
           <div className="relative">
             <div className="absolute -top-10 -left-10 w-40 h-40 border border-academic-gold/30 hidden lg:block"></div>
-            <div className="relative z-10 w-full aspect-[4/5] bg-cover bg-center shadow-2xl" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCA9wxtQMo9wXJ12oWvZ4lgG39LeHWwoUZ7JMNM3kegLnKqIy5KSZzecsBovGrjF-ITKZUiCnrxaXebKWEgACtP0ZgSjylGv-sSFNcAJr5cpZq3mohDhdHUPjy-EZPlPdNoqyxXJaG9YaFpwLRW1yNIOpuElcO8bkc_NQT1Ss-UUCmKMRz_A1JuofFpwnk5Wy9LdDcwKkJJExQvflK88Gd27EbdtPy07-21Zu2UX0XzrNgAk_hw_MT29g')" }}></div>
+            <div className="relative z-10 w-full aspect-[4/5] bg-cover bg-center shadow-2xl" style={{ backgroundImage: `url(${bgImg5})` }}></div>
             <div className="absolute -bottom-6 -right-6 bg-academic-gold p-8 text-ink-black hidden md:block">
               <div className="text-4xl font-bold font-display-lg">100%</div>
               <div className="text-sm font-label-md uppercase tracking-widest">University Acceptance</div>

@@ -1,4 +1,11 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
+import img7 from '../assets/images/775a66ad-33fe-4605-8927-be22af0e4c5f.jpg';
+import img8 from '../assets/images/7ff7f9c3-a04c-4a43-ab47-e49da9c97a5c.jpg';
+import img9 from '../assets/images/87bea5ad-3932-4a66-b68b-6b27bf765d41.jpg';
+import img10 from '../assets/images/ad3967cd-5029-4c44-88f8-a2652c874f31.jpg';
+import img11 from '../assets/images/ad6873e6-5b2c-495a-bd82-dd266efda86f.jpg';
+import img12 from '../assets/images/c7d4bbd8-0b1e-4b52-87e7-48ebc851c0f6.jpg';
+import img13 from '../assets/images/0c95167f-d698-4d13-b559-9e67b9cefad2.jpg';
 import { useState } from 'react'
 
 export const Route = createLazyFileRoute('/campus-gallery')({
@@ -34,7 +41,7 @@ function CampusGallery() {
       <div className="masonry-grid">
         {/* Item 1: Primary Feature (Academics) */}
         <div className="gallery-card masonry-item-large relative overflow-hidden rounded-xl border border-ink-black/10 shadow-sm bg-surface-container-lowest">
-          <img alt="Student Life Collaboration" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLt8tOQmunRzaMeettbBdk6CKR3bnFF8thyK56BO9PD2plcNGPDO7tqiE41IFUv5I03byZhmgLU1ThJrV6q1OFuFc6ZO_Gn5fS6eerjjzktJtxNjzyuQy1EnCx1ez7RIk0HLBe5wR3j_OjbdlcocqIANgI84oPyirmDVvZYvRc0tC5-yC6TnJ-jbULHq-HvK1f8n8NpfW_KV2gNqn_1KtpWQhUJ-mOXDtBA3kzhdSg4q6CtBfMgttczYu_Y"/>
+          <img alt="Student Life Collaboration" className="w-full h-full object-cover" src={img7}/>
           <div className="overlay absolute inset-0 flex flex-col justify-end p-8 text-paper-white">
             <span className="font-label-md bg-academic-gold/90 text-ink-black px-3 py-1 w-fit rounded-full mb-3">Academics</span>
             <h3 className="font-headline-sm text-headline-sm">Collaborative Learning Spaces</h3>
@@ -43,7 +50,7 @@ function CampusGallery() {
         </div>
         {/* Item 2: Vertical Highlight (Islamic Life) */}
         <div className="gallery-card masonry-item-tall relative overflow-hidden rounded-xl border border-ink-black/10 shadow-sm bg-surface-container-lowest">
-          <img alt="Spiritual Life" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLtpH35D05Q_-rJXlk8dF33R3G7w0cUV5Cxa0DzjSkPwnbN602rCqrAtKU86zjnijY6SPRi3mcmxklXenBnxQVhNv8sbKWs2_X-jbXfdNL7kaHUEGnAkQiAsVkcNY74zzQhJhx63HQs2rYqh6pm2F0i2mXrdqAAbwd4sIH5O1cByKXgFHVsaHxxRUMzyvnwmZ2BlJ_SmRmuGvOg45sHD97lFPR-_zCI6S0TORlpYg0DT1V2MLtj0D5dKc-RZ"/>
+          <img alt="Spiritual Life" className="w-full h-full object-cover" src={img8}/>
           <div className="overlay absolute inset-0 flex flex-col justify-end p-6 text-paper-white">
             <span className="font-label-md bg-heritage-burgundy text-paper-white px-3 py-1 w-fit rounded-full mb-3">Islamic Life</span>
             <h3 className="font-headline-sm text-headline-sm">Spiritual Reflection</h3>
@@ -52,7 +59,7 @@ function CampusGallery() {
         </div>
         {/* Item 3: Standard (Facilities) */}
         <div className="gallery-card relative overflow-hidden rounded-xl border border-ink-black/10 shadow-sm bg-surface-container-lowest">
-          <img alt="Campus Infrastructure" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLtpH35D05Q_-rJXlk8dF33R3G7w0cUV5Cxa0DzjSkPwnbN602rCqrAtKU86zjnijY6SPRi3mcmxklXenBnxQVhNv8sbKWs2_X-jbXfdNL7kaHUEGnAkQiAsVkcNY74zzQhJhx63HQs2rYqh6pm2F0i2mXrdqAAbwd4sIH5O1cByKXgFHVsaHxxRUMzyvnwmZ2BlJ_SmRmuGvOg45sHD97lFPR-_zCI6S0TORlpYg0DT1V2MLtj0D5dKc-RZ"/>
+          <img alt="Campus Infrastructure" className="w-full h-full object-cover" src={img9}/>
           <div className="overlay absolute inset-0 flex flex-col justify-end p-6 text-paper-white">
             <span className="font-label-md bg-academic-gold/90 text-ink-black px-3 py-1 w-fit rounded-full mb-2">Facilities</span>
             <h4 className="font-label-lg">Modern Architecture</h4>
@@ -60,7 +67,7 @@ function CampusGallery() {
         </div>
         {/* Item 4: Wide Highlight (Activities) */}
         <div className="gallery-card masonry-item-wide relative overflow-hidden rounded-xl border border-ink-black/10 shadow-sm bg-surface-container-lowest">
-          <img alt="Activities and Events" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLsUFeOMr9OyCUAC-ggSOuCpLghidgNjFkbBd8rdYr0MlUi9vuAQ4XeVGtCd5Vp2viS0AefbjSbDBhENrEDgsoiRNyCP037Q_Kf_x8JImg-6H9ZM5gGiBWqhlIa07ZeBjkPLpHkT1mbNqjy6AAzt_7FfOThWoj_I1X-hy0cvcAiJnzInHdvwWDt_lAQSybSky6wX9V5qTU8YfOE1WW2IE1hUx6JOdwfJvjmPGrV9bXDjZtHgPeB4mHNYJZy_"/>
+          <img alt="Activities and Events" className="w-full h-full object-cover" src={img10}/>
           <div className="overlay absolute inset-0 flex flex-col justify-end p-8 text-paper-white">
             <span className="font-label-md bg-heritage-burgundy text-paper-white px-3 py-1 w-fit rounded-full mb-3">Activities</span>
             <h3 className="font-headline-sm text-headline-sm">Annual Sports Meet</h3>
@@ -70,7 +77,7 @@ function CampusGallery() {
         {/* Additional Placeholders for Visual Rhythm */}
         <div className="gallery-card relative overflow-hidden rounded-xl border border-ink-black/10 shadow-sm bg-surface-container-lowest">
           <div className="w-full h-full bg-surface-container-highest flex items-center justify-center relative">
-            <img alt="STEM Laboratories" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByM9lZSmTDyuXfLcgPNBLjAilcjsrWKqm4hAO8HP433KcEGL1UvFQ0BMbL2RK_XjZODTzTHHRZhBz6Ad2OB_6EL84P6SSEGwKj0Ht9kZ4s6YbWCDrCAnY0ZtZDI-p6DTsF4bpVsOyFszKQSIhh99PBinpjLTwgkp_AKSkEzg4yMEhPytfsMtxi9KUBx-MviGitbLrnBPxZDUQ0soF_hBaNIfsAq_J45y_hsMyK5e6aFGUvliw6oQz5pg"/>
+            <img alt="STEM Laboratories" className="w-full h-full object-cover" src={img11}/>
             <div className="overlay absolute inset-0 flex flex-col justify-end p-6 text-paper-white">
               <span className="font-label-md bg-academic-gold/90 text-ink-black px-3 py-1 w-fit rounded-full mb-2">Facilities</span>
               <h4 className="font-label-lg">STEM Laboratories</h4>
@@ -79,7 +86,7 @@ function CampusGallery() {
         </div>
         <div className="gallery-card masonry-item-tall relative overflow-hidden rounded-xl border border-ink-black/10 shadow-sm bg-surface-container-lowest">
           <div className="w-full h-full bg-surface-container-highest relative">
-            <img alt="Central Library" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9osUaYMrEly12o9h9E1i6gsZbJkl9oE-YBflfbdGUBm8JpeMffofdwjHhdJQooi2LRUj8Ks4DO_hECFpahTBAY8xMJLlza4RPuztY5BpOogFHkI0v7UEXtYRNB6bpfZX3BqQIUO-lJNs87-IyhnsoJS_rd1z93EokK9p6ltPYaFGh-A-urQvEQ7ysQUTzICg3mRyi_uKSzJtc_P5HBEOszxgzTeiy2WStNVtSCKFwxSgR9u4qZYjCKQ"/>
+            <img alt="Central Library" className="w-full h-full object-cover" src={img12}/>
             <div className="overlay absolute inset-0 flex flex-col justify-end p-6 text-paper-white">
               <span className="font-label-md bg-academic-gold/90 text-ink-black px-3 py-1 w-fit rounded-full mb-2">Academics</span>
               <h4 className="font-label-lg">The Central Library</h4>
@@ -88,7 +95,7 @@ function CampusGallery() {
         </div>
         <div className="gallery-card relative overflow-hidden rounded-xl border border-ink-black/10 shadow-sm bg-surface-container-lowest">
           <div className="w-full h-full bg-surface-container-highest relative">
-            <img alt="Main Quadrangle" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvD6NdWFglais_mkhHL_AtNOH3eUuMz1fQl9kb4e2KSq7sTRugiZU2q9xHdfi30D3A_m9Ii8gfvy8dh2ID1OzSpGqPtZ8_Y4GHruBwf1nv6TuFI7S7JZ2xNsE_g0cWt7eEP_lOZppl77JpM8LwwXgE030hAML1YzOZLYYKwyFjhKnxgbxFnMSaKoY38FR2eAOIW_mOfznOKXGiPYI6SORJXIsXwHEdsRjYPaU0KmPuOnK7PnqA_6y_nA"/>
+            <img alt="Main Quadrangle" className="w-full h-full object-cover" src={img13}/>
             <div className="overlay absolute inset-0 flex flex-col justify-end p-6 text-paper-white">
               <span className="font-label-md bg-heritage-burgundy text-paper-white px-3 py-1 w-fit rounded-full mb-2">Campus Life</span>
               <h4 className="font-label-lg">Main Quadrangle</h4>

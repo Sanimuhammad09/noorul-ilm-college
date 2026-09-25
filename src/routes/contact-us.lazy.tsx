@@ -1,4 +1,6 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
+import bgImg3 from '../assets/images/43fcfc05-3f2f-4594-a3d2-741e9b70f588.jpg';
+import img6 from '../assets/images/63e17dc7-673a-4d16-89da-0ddace15c479.jpg';
 import { useState } from 'react'
 import { Link } from '@tanstack/react-router'
 
@@ -23,7 +25,7 @@ function ContactUs() {
       {/* Hero Section */}
       <section className="relative h-[409px] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-ink-black/40 z-10"></div>
-        <div className="absolute inset-0 bg-cover" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAnKbvGHwCBiVMwK8oNyc67uIgqI8euMNtmp6kVfiFBS_hN1NxtctcS651_lz1tnvRIqfMBzRNLSrMptWm2hvYrOFCs44RsGlVZ8pZSrvVYv7OBuVP5nA8FvFsy0mpZPK6oBnaAtAG-eCKID8XHnSyLDd-w4u_tVbS_Bghvn87zM1G4JWouVGespV0OWzhEHHcGFKMdWUS9vE2gXQX2rUfZmU1YT9JJllfXPZE4evLSDVdWFIs_WXVYzQ')" }}></div>
+        <div className="absolute inset-0 bg-cover" style={{ backgroundImage: `url(${bgImg3})` }}></div>
         <div className="relative z-20 text-center px-margin-mobile">
           <h1 className="font-display-lg text-display-lg text-paper-white mb-4">Get in Touch</h1>
           <p className="font-body-lg text-body-lg text-paper-white/90 max-w-2xl mx-auto">Connecting our global academic community. Whether you're an applicant, parent, or partner, our team is here to assist you.</p>
@@ -115,7 +117,7 @@ function ContactUs() {
       {/* Map Section */}
       <section className="w-full h-[600px] relative bg-surface-container-high overflow-hidden">
         <div className="w-full h-full grayscale-[0.5] hover:grayscale-0 transition-all duration-700 cursor-grab active:cursor-grabbing">
-          <img alt="Map" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCflvok53KTs4tlTyKGPOnVXwtOcL0hSfpzyrL_VZveRL1CxsEG5rhQKhuX_jMjlGZ9gexJEhgXtG_zthvsa4nNK7cADdGYHS-hwfKjIvYAnYio7NBK4QhcsAc4YK-fIJoVjfxZVY2Ntjk6iQPxmxxbgnCpj_pxzmsjA5g54PXSIMuDHz_s_bTh2B-IlXABXpr-3rQ2RqK70PnOb8Ix2oS_clRIZ0bjA8sEeZ6yomBj6ouowPQUTTcmqg"/>
+          <img alt="Map" className="w-full h-full object-cover" src={img6}/>
         </div>
         <div className="absolute bottom-12 left-12 p-6 bg-paper-white/90 backdrop-blur-md border border-ink-black/10 rounded-lg shadow-2xl max-w-sm hidden md:block">
           <h4 className="font-headline-sm text-headline-sm text-heritage-burgundy mb-2">Visit Our Campus</h4>

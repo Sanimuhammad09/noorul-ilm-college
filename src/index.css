@@ -15,7 +15,7 @@
     border: 1px solid rgba(7, 7, 7, 0.05);
   }
   .academic-gradient {
-    background: linear-gradient(135deg, #551625 0%, #390111 100%);
+    background: linear-gradient(135deg, #3c3c94 0%, #343494 100%);
   }
 }
 
@@ -24,8 +24,8 @@
     text-wrap: balance;
   }
   .gold-border-focus:focus-within {
-    border-color: #D3BC7C;
-    box-shadow: 0 0 0 2px rgba(211, 188, 124, 0.2);
+    border-color: #a4a4d0;
+    box-shadow: 0 0 0 2px rgba(164, 164, 208, 0.2);
   }
   
   .masonry-grid {
@@ -60,7 +60,7 @@
     opacity: 1;
   }
   .overlay {
-    background: linear-gradient(to top, rgba(85, 22, 37, 0.9) 0%, transparent 100%);
+    background: linear-gradient(to top, rgba(60, 60, 148, 0.9) 0%, transparent 100%);
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -69,11 +69,11 @@
     transition: border-color 0.3s ease;
   }
   .form-input-border:focus {
-    border-bottom: 2px solid #D3BC7C;
+    border-bottom: 2px solid #a4a4d0;
     outline: none;
   }
   .hero-gradient {
-    background: linear-gradient(rgba(85, 22, 37, 0.9), rgba(85, 22, 37, 0.7));
+    background: linear-gradient(rgba(60, 60, 148, 0.9), rgba(60, 60, 148, 0.7));
   }
   .scroll-reveal {
     opacity: 0;

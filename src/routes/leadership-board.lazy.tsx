@@ -1,4 +1,6 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
+import bgImg1 from '../assets/images/175b7c9d-3353-4781-be2f-c3c46d517ea2.jpg';
+import img4 from '../assets/images/56faa8f9-fbc2-453e-b2b0-e3bc5c534a17.jpg';
 import { useEffect } from 'react'
 
 export const Route = createLazyFileRoute('/leadership-board')({
@@ -32,7 +34,7 @@ function LeadershipBoard() {
       {/* Hero Section */}
       <section className="relative h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="w-full h-full bg-cover bg-fixed bg-center" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida/AP1WRLvAWwxpOtujV3WAQFt7q7RAY55vENPKzSd9Z6zYKjqITQBHY3Te0jjHNEoIvj90bqH_10L-OoJ3kKmR4Gwhp5Rf0IzfdGFJgvHyiKEYrFMKi2Z1Wrn-Mdx0stUYFovkn3hIcFHZ213GSPioHoddV0jMazuqLQxq7fD5x5crg2UVM81LxyQqZWycQFmqX-VKx_5UqwKJrMPH77XFvN3YVe-hZDliAk2gizvtG1kP8e--QLPGgpXIbKKkTQBx')" }}></div>
+          <div className="w-full h-full bg-cover bg-fixed bg-center" style={{ backgroundImage: `url(${bgImg1})` }}></div>
           <div className="absolute inset-0 hero-gradient"></div>
         </div>
         <div className="relative z-10 text-center px-margin-mobile">
@@ -46,7 +48,7 @@ function LeadershipBoard() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative group">
             <div className="absolute -inset-4 bg-academic-gold/20 rounded-xl transform -rotate-2 group-hover:rotate-0 transition-transform duration-500"></div>
-            <img alt="Principal Portrait" className="relative rounded-lg shadow-xl w-full object-cover aspect-[4/5] lg:aspect-auto" src="https://lh3.googleusercontent.com/aida/AP1WRLul86-9AHn7d5Ju5kd8QcaLuPcUbpB52C1J7EgxBBrxfH4WyXVGJPMVJ1F8NurSA5MwMy3MlQBJDT84PDFyrj82sMLUlJJq041SpsPAxxENV2auR9joEjAmnayd4xUN_WSWLux53LLnClLVlozdBU6PIOQtYGVcWkemyjaZH-JExjFnp1fVOg8gzPNtWEIXyUPCgiicfsxFN5hqM1z1Q5pOWtZuRuGtMhbu--aFo9Et2lpvwKFCyReGhF6M"/>
+            <img alt="Principal Portrait" className="relative rounded-lg shadow-xl w-full object-cover aspect-[4/5] lg:aspect-auto" src={img4}/>
           </div>
           <div className="space-y-6">
             <div className="inline-flex items-center space-x-2 text-heritage-burgundy">

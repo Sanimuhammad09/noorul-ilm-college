@@ -1,18 +1,52 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
+import { useState, useEffect } from 'react'
+import slide1 from '../assets/images/0c95167f-d698-4d13-b559-9e67b9cefad2.jpg';
+import slide2 from '../assets/images/175b7c9d-3353-4781-be2f-c3c46d517ea2.jpg';
+import slide3 from '../assets/images/2928cca9-fa34-46ba-9230-e5d76a08447d.jpg';
+import slide4 from '../assets/images/43fcfc05-3f2f-4594-a3d2-741e9b70f588.jpg';
+import img5 from '../assets/images/61ff5787-a152-41e4-80c8-f47ef2bece5b.jpg';
 
 export const Route = createLazyFileRoute('/')({
   component: Index,
 })
 
 function Index() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [slide1, slide2, slide3, slide4];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
   return (
     <main>
       {/* Hero Section */}
       <section className="relative h-[716px] flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="w-full h-full bg-cover bg-center scale-105 animate-[pulse_10s_ease-in-out_infinite]" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDmmeCGj7NcFPj_yShUPQxeOAHhddOMfCcj0MKl5BTJTQ-K7O17QfSupKaVVJiQ8j-CNoz4UCXQyq3XaD6odjhr-YoQ2f6fLZlwIZad0x_G-MwttriBBW4A-x7kBwlreML0FyPr7O0kZ0rUxXRn2vjS3wlehb1RGV5M9o3xxV2DYzLu__iNkf71XZ040ox5bRHdsJnSKDY5YW_FEAcUSGyiarZW8mxFOP7yFJ44ymte7kcsjx4X7UpWTw')" }}></div>
-          <div className="absolute inset-0 bg-ink-black/40 backdrop-brightness-75"></div>
+        {slides.map((slide, index) => (
+          <div 
+            key={index}
+            className={`absolute inset-0 z-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
+          >
+            <div className="w-full h-full bg-cover bg-center scale-105 animate-[pulse_10s_ease-in-out_infinite]" style={{ backgroundImage: `url(${slide})` }}></div>
+            <div className="absolute inset-0 bg-ink-black/40 backdrop-brightness-75"></div>
+          </div>
+        ))}
+        
+        {/* Slider Indicators */}
+        <div className="absolute bottom-8 left-0 right-0 z-20 flex justify-center gap-3">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-academic-gold scale-125' : 'bg-paper-white/50 hover:bg-paper-white/80'}`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
+
         <div className="relative z-10 px-margin-desktop max-w-container-max mx-auto w-full text-paper-white">
           <div className="max-w-3xl">
             <span className="font-label-lg text-label-lg text-academic-gold uppercase tracking-widest mb-4 block">Established 2015</span>
@@ -21,7 +55,6 @@ function Index() {
           </div>
         </div>
       </section>
-
       {/* Our Story */}
       <section className="py-24 bg-paper-white relative overflow-hidden">
         <div className="px-margin-desktop max-w-container-max mx-auto">
@@ -30,7 +63,7 @@ function Index() {
               <div className="relative group">
                 <div className="absolute -top-6 -left-6 w-32 h-32 border-l-4 border-t-4 border-academic-gold z-0"></div>
                 <div className="relative z-10 rounded-lg overflow-hidden shadow-2xl">
-                  <img alt="Classroom" className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3F-0JKJbwKBD2gq3wH5VjG-aYaSBfW3qTqVPavY7eutGaqeKNn-AlSystcPAL9OsOBkNNIPwl2mHi9AtmA0n5Ge1Ir1okUPXi8_-bd9oKvxds_DrN-Xj-_RqxQd2gkDQ3GjF_hxbX2qlQELpFqw2Fj4JKvB8N0hy3NT3edKhbqi2v_FucjWlJcNzYlsHLEPh8uc0ClgEH-pQ3iEeLSMDqpxLmN8wMDeasORVoSP3ug8ztMSWZrz9fhQ"/>
+                  <img alt="Classroom" className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" src={img5}/>
                 </div>
                 <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-heritage-burgundy/10 -z-10 rounded-full blur-3xl"></div>
               </div>

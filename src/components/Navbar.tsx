@@ -1,5 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
+import logo from '../assets/images/logo.webp'
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -20,7 +21,9 @@ export function Navbar() {
     <nav className={`fixed top-0 w-full z-50 bg-paper-white/95 backdrop-blur-md border-b border-on-surface-variant/10 h-20 flex items-center transition-shadow ${isScrolled ? 'shadow-md' : 'shadow-sm'}`}>
       <div className="flex justify-between items-center h-full px-margin-desktop max-w-container-max mx-auto w-full">
         <div className="flex items-center gap-4">
-          <span className="font-headline-sm text-headline-sm font-bold text-heritage-burgundy">Noorul Ilm International</span>
+          <Link to="/">
+            <img src={logo} alt="Noorul Ilm International" className="h-12 w-auto object-contain" />
+          </Link>
         </div>
         <div className="hidden md:flex items-center gap-8">
           <Link to="/" className={navLinkClass} activeProps={{ className: activeClass }} inactiveProps={{ className: inactiveClass }}>

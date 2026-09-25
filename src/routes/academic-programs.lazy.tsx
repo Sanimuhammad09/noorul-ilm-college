@@ -1,4 +1,9 @@
 import { createLazyFileRoute } from '@tanstack/react-router'
+import bgImg0 from '../assets/images/0c95167f-d698-4d13-b559-9e67b9cefad2.jpg';
+import img0 from '../assets/images/0c95167f-d698-4d13-b559-9e67b9cefad2.jpg';
+import img1 from '../assets/images/175b7c9d-3353-4781-be2f-c3c46d517ea2.jpg';
+import img2 from '../assets/images/2928cca9-fa34-46ba-9230-e5d76a08447d.jpg';
+import img3 from '../assets/images/43fcfc05-3f2f-4594-a3d2-741e9b70f588.jpg';
 import { Link } from '@tanstack/react-router'
 
 export const Route = createLazyFileRoute('/academic-programs')({
@@ -11,7 +16,7 @@ function AcademicPrograms() {
       {/* Hero Section */}
       <section className="relative h-[614px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0 overflow-hidden">
-          <div className="w-full h-full bg-cover bg-center transition-transform duration-1000 hover:scale-105" style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCjn5gPPWbQ8bb_sKGqvlzhi-Z1kb2r-EYkYeGznITErMuLs97CGXyID3Eci_YlCDE9PexzNTA_Af2fjH362g9xNKxsrlDjFhs-4SQqZ-7L4iIzcFXbdK9FZleXYu4VbjqbFr-F0dRXT4EHg0n4MwBjzCLIkZlyBrQBj0JZoVUifDN-6LWQsycVHLC8Yq0P0JM_5cU5EXhDchK5AgX63hBWEz9xOaApwlpVRJJdXJYpa9Lnl1Q6fIbrJQ')" }}>
+          <div className="w-full h-full bg-cover bg-center transition-transform duration-1000 hover:scale-105" style={{ backgroundImage: `url(${bgImg0})` }}>
           </div>
           <div className="absolute inset-0 bg-gradient-to-r from-heritage-burgundy/90 to-transparent"></div>
         </div>
@@ -69,7 +74,7 @@ function AcademicPrograms() {
                 <a className="inline-flex items-center text-heritage-burgundy font-label-lg hover:gap-2 transition-all" href="#">Curriculum Details <span className="material-symbols-outlined text-sm ml-1">arrow_forward</span></a>
               </div>
               <div className="relative min-h-[300px]">
-                <img alt="Primary school students" className="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCknTy0T44fns2OZDuyC-Velir-mvcQMICv2lTQbHYTpTa3uY_2qG1-CqvNzQdgbfk1s0rtYNGv9QhixkZWVAQb1jPVC1casNKlvTmYtDOCPn9FHnC2QHtsmptXM90sR66GGW_RTfQeWlKDz_E2tbFZaXVIlK0I2JgT8wuiU9CmjLjeni3FjLuG5WqCf9oDLNqTdsjhIUScJDBGWT9mbqQt1fJGlwEkzQqKSd40O5ZLJEDwR_W01W79ZA"/>
+                <img alt="Primary school students" className="absolute inset-0 w-full h-full object-cover" src={img0}/>
               </div>
             </div>
           </div>
@@ -99,7 +104,7 @@ function AcademicPrograms() {
                 </div>
               </div>
               <div className="relative aspect-video rounded-lg overflow-hidden border-2 border-academic-gold/30">
-                <img alt="High school student" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ83-1Ij2NdDZkgnHJEva0AkSxCQEkT4vGkncsMD03n60Yv_aUqFP4NpQtFHFHc1jQ0CJJ2yQzjDlY2DusVjcyUKArQCzqL4-B5_ZcrUQwfJoAhKIQbu4C8LPbsSBbqyfer5c02PQ2l5fyfZJ1RP_QNUyFoTBqSbw_NPWYhoGXdYnUy3e1KL-JjMvRTu007BZD1vH7OIOBD8OU7QahmIJNbs67E6EURx-WVXjkl6pcpxS0sTQ1BXKI1g"/>
+                <img alt="High school student" className="w-full h-full object-cover" src={img1}/>
                 <div className="absolute bottom-4 left-4 glass-panel p-4 rounded text-ink-black max-w-[200px]" style={{ background: 'rgba(255, 255, 255, 0.8)', backdropFilter: 'blur(8px)', border: '1px solid rgba(85, 22, 37, 0.1)' }}>
                   <p className="text-[10px] font-bold text-heritage-burgundy mb-1">PROGRAM HIGHLIGHT</p>
                   <p className="text-xs font-bold">Cambridge Lower Secondary Excellence</p>
@@ -151,7 +156,7 @@ function AcademicPrograms() {
             <div className="relative">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
-                  <img alt="Happy students" className="rounded-lg shadow-md aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWOqvLBq8vP0mJYQ1ZZ_TOolpr3JqA_PajI6PugWMFqbv0IyS5lt6Un42MlthBMIW16D_1wVq-KL6qa70R8hiGveYmDtuVqtDCpRMZApLq4xSdDgATH4LOhSZ6saX617WWtlkEpJIWJKdB_X--pjK4pADLnwnaDew56vWc6VTOVffhFGdd9Fv-byl-OAh3HkFmJKTRUVPdHm3a7_16XDAV86LIgyRXUWziiUTt6DX9G0-iSkpGcdHaIw"/>
+                  <img alt="Happy students" className="rounded-lg shadow-md aspect-[4/5] object-cover" src={img2}/>
                   <div className="bg-academic-gold p-8 rounded-lg text-heritage-burgundy text-center">
                     <p className="text-display-lg font-bold">100%</p>
                     <p className="text-label-md font-bold uppercase tracking-widest">IGCSE Success Rate</p>
@@ -162,7 +167,7 @@ function AcademicPrograms() {
                     <p className="text-headline-lg font-bold">50+</p>
                     <p className="text-label-md font-bold uppercase tracking-widest">Global Partners</p>
                   </div>
-                  <img alt="Aerial view of campus" className="rounded-lg shadow-md aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKynOt7d-YuCimuZ3E6-HE_xlpxSuqi4m4AG1uqCrWgY0Z65bh1p_XLA5AEpwPp2E1T6s4Fw5RsH1pVUrFiMMPG7mPz4AJh_s-ltZas4jtT4X6S-1B-6qD1_RAYFNAbi3uTU7ywtQI-_jD3wvPma7cbS0Hfp27rngeLOLwtrDOesuEsbzIj1Dr7dcwRoaF5F8ClC3e0e-7-5hZevdeKc8fQ5lbFD_poDiuU25rhE-fLgYPJ1i88xdoCQ"/>
+                  <img alt="Aerial view of campus" className="rounded-lg shadow-md aspect-[4/5] object-cover" src={img3}/>
                 </div>
               </div>
             </div>
